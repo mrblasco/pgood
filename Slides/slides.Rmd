@@ -1,0 +1,25 @@
+---
+handout: false
+title: "Contributing to Public Goods Inside Organizations: Field Experimental Evidence"
+author: 
+    - Andrea Blasco*
+    - O. S. Jung
+    - K. R. Lakhani
+    - M. Menietti
+shortauthor: Andrea Blasco et al. (2016)
+date: "IGL Winter Research Meeting, December 8, 2016" 
+bibliography: ~/Papers/library.bib
+---
+
+```{r child='config.Rmd'}
+```
+
+```{r child = '1_content.Rmd'}
+```
+
+```{r child = '2_extra.Rmd'}
+```
+
+
+References
+---------------

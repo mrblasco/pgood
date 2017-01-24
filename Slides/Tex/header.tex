@@ -1,0 +1,35 @@
+% Title page
+\institute{}
+\titlegraphic{\textcolor{gray}{\footnotesize{*Harvard University (ablasco@fas.harvard.edu)}}}
+
+% Packages
+\usepackage{textcomp}
+\usepackage{cancel}
+
+
+% Tables
+\usepackage{array,booktabs,longtable,rotating}
+\newcommand\tablehead{\\[-1.8ex]\hline \hline \\[-1.8ex]}
+\newcommand\tablebottom{\\[-1.8ex]\hline \hline \\[-1.8ex]}
+\newenvironment{tablenotes}[1][Note:]
+{
+  \vskip 1.8ex
+  \begin{minipage}{\textwidth}\itshape\footnotesize{#1}
+}
+{
+  \end{minipage}
+}
+
+% Colors
+\usepackage{xcolor}
+\definecolor{steelblue}{rgb}{0.27, 0.54, 0.71}
+
+% Beamer
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{alerted text}{fg=steelblue}
+\setbeamertemplate{footline}[text line]{
+  \parbox{\linewidth}{%
+    \vspace*{-8pt}\hfill\insertshortauthor\hfill\insertpagenumber
+  }
+}

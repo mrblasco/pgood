@@ -1,0 +1,4 @@
+word_document:
+  pandoc_args: [ 
+      "--bibliography", "~/Papers/library.bib"
+    ]

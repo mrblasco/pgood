@@ -1,0 +1,17 @@
+beamer_presentation:
+  theme: "boxes"
+  colortheme: "rose"
+  fonttheme: "professionalfonts"
+  toc: true
+  keep_tex: false
+  fig_crop: true
+  fig_width: 9.5
+  fig_height: 5
+  fig_caption: true
+  highlight: kate
+  template: Tex/template.beamer
+  includes:
+    in_header: Tex/header.tex
+    before_body: Tex/doc_prefix.tex
+    after_body: Tex/doc_suffix.tex
+    

@@ -1,0 +1,42 @@
+```{r, include=FALSE}
+# Options
+knitr::opts_chunk$set(
+  cache=TRUE,
+  echo=FALSE,
+  message=FALSE,
+  warning=TRUE,
+  error=FALSE,
+  tidy=FALSE,
+  fig.width=5,
+  fig.height=5,
+  cache.path="Cache/",
+  fig.path="Figures/")
+
+# Data
+data.file <- "../.RData"
+load(data.file)
+
+# Libraries
+require(xtable)
+
+# FUNCTIONS
+render.table <- function(x, caption=NULL, label=NULL, notes=NULL, ...) { 
+  cat("\\begin{table}\n")                  
+  cat("\\centering\n")
+  if (!is.null(caption)) {
+    cat(sprintf("\\caption{%s}\n", caption))
+    cat(sprintf("\\label{%s}\n", label))             
+  }
+  cat("\\resizebox{\\linewidth}{!}{\n")
+  print(x, hline.after=NULL, comment=FALSE
+    , caption.placement="top"
+    , floating=FALSE, ...)
+  if (!is.null(notes)) {
+    cat("\\begin{tablenotes}\n")                  
+    cat(sprintf("%s\n", notes))
+    cat("\\end{tablenotes}\n")
+  }
+  cat("}\n")
+  cat("\\end{table}\n")   
+}
+```

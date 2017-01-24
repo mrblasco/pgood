@@ -1,0 +1,293 @@
+Extended model with heterogenous costs
+===========================================
+
+In this section, consider the case of two types of individuals $j=1,2$ forming two groups of equal size $n_1=n_2=n$. Individuals can decide to contribute with a single proposal or not.  
+
+When an agent of type $j$ decides to contribute, the expected utility is as follows. 
+\begin{equation}
+ u_1^j = \gamma \hat Y + \delta_j + \sum_{k_j=1}^n \sum_{k_l=0}^n \Pr(Y=k_j+k_l) \frac{R}{k_j+k_l} - c_j.
+\end{equation}
+The utility of not contributing is as follows. 
+\begin{equation}
+ u_0^j = \gamma (\hat Y - 1).
+\end{equation}
+Equating these two conditions for all individuals gives the following mixed-strategy equilibrium condition:
+\begin{equation}
+\sum_{k_j=1}^n \sum_{k_l=0}^n \Pr(Y=k_j+k_l) \frac{R}{k_j+k_l} = c_j -\delta_j + \gamma
+\end{equation}
+for all $j=1,2$. To examine differences in equilibrium probabilities $p_1^*$ and $p_2^*$, we use the ratio between the above equilibrium condition for individuals of type $j=1$ and the same expression for agents of type $j=2$. This gives: 
+\begin{equation}
+\frac{\sum_{k_1=1}^n \sum_{k_2=0}^n \Pr(Y=k_1+k_2) \frac{R}{k_1+k_2}}{\sum_{k_1=0}^n \sum_{k_2=1}^n \Pr(Y=k_1+k_2) \frac{R}{k_1+k_2}} = \frac{c_1 -\delta_1 + \gamma}{c_2 -\delta_2 + \gamma}.
+\end{equation}
+The left hand side can be rearranged as follows.
+\begin{equation}
+\frac{\Pr(k_2=0) \sum_{k_1=1}^n\Pr(Y=k_1)\frac{R}{k_1} +  \sigma R}{\Pr(k_1=0) \sum_{k_2=1}^n\Pr(Y=k_2)\frac{R}{k_2} +  \sigma R} 
+\end{equation}
+where $\sigma = \sum_{k_1=1}^n \sum_{k_2=1}^n \Pr(Y=k_1+k_2) \frac{1}{k_1+k_2}$.
+Using $1-p_2=\Pr(k_2=0)$ and  $1-p_1=\Pr(k_1=0)$ together with the density of the binomial distribution, we obtain the following simpler expression.
+\begin{equation}
+\frac{(1-p_2) \frac{(1- (1-p_1)^n)}{n p_1} R +  \sigma R }{(1-p_1) \frac{(1- (1-p_2)^n)}{n p_2} R +  \sigma R}  .
+\end{equation}
+If $c_1 - \delta_1 > c_2 - \delta_2$, then the above expression in equilibrium needs to be larger than one. This inequality can be expressed as follows:
+\begin{equation}
+\frac{p_2 (1-p_2)}{(1- (1-p_2)^n)}  > \frac{p_1 (1-p_1)}{(1- (1-p_1)^n)}.
+\end{equation}
+Hence, the inequality is satisfied only if $p_2$ is greater than $p_1$. This proves the last statement reported in the Section with predictions in this paper. 
+
+
+
+Additional tables and figures
+=================================
+
+In this section, we provide additional tables and figures to support the analysis discussed in the main text.
+
+
+Tables \ref{app: proposals}, \ref{app: ratings} and \ref{app: finalist} reports the poitn estimates of the difference in the probability of submitting proposals, rating proposals, and being selected for implementation respectively. Figure \ref{fig: participation} shows that the results concerning participation rates are robust to bootstrap resampling and Holm-Bonferroni adjustments to take into account a multiple comparison problem. Likewise Figure \ref{fig: gender robust} shows that the results concerning gender are robust as well.
+
+Concerning the lack of effects on the "intensive margin," Figure \ref{fig: counts} plots the distributions of the count of projects and words per submission in each condition showing there was no clear difference across treatments.
+
+As discussed in the main text, there was no difference in the the probability of rating proposals in the peer-evaluation phase. We also fail to detect differences in the count of rated proposals per evaluator. Here, Figure \ref{app: rating counts} plots the histogram of the count of rated proposals in each condition, showing that the distributions were indeed pretty similar.
+
+```{r, results='asis'}
+p_ideas <- compare.pairs(hc$num_ideas>0, hc$treatment
+    , caption="Difference in the probability of submitting project proposals"
+    , label="app: proposals")
+p_ratings <- compare.pairs(hc$num_voted_ideas>0, hc$treatment
+    , caption="Difference in the probability of rating project proposals"
+    , label="app: ratings")
+p_finalist <- compare.pairs(hc$finalist, hc$treatment
+    , caption="Difference in the probability of submitting finalist project proposals"
+    , label="app: finalist", adjust=TRUE)
+```
+
+```{r pairwise-robust, fig.width=9.5, fig.height=3.5, include=FALSE}
+add.axes <- function() {
+  abline(v=0)
+  x.seq <- seq(xlim[1], xlim[2], length=5)
+  xticks <- pretty(x.seq)
+  axis(3, at=xticks, paste(round(xticks*100), "%"))
+  yticks <- 1:6
+  axis(2, at=yticks, paste(mlev[, 1], "-",mlev[, 2]), las=2)
+}
+mlev <- matrix(levels(hc$treatment)[combn(1:4, 2)], 6, byrow=TRUE)
+y <- hc$num_ideas>0
+l <- hc$treatment
+
+# Figure
+xlim <- c(-.05, .10)
+ylim <- c(1, 6) + c(-0.1, 0.1)
+par(mar=c(4.1, 9.1, 4.1, 2.1), mfrow=c(1, 2))
+
+## BOOTSTRAP ####################### 
+nboot <- 999
+conf.levels <- c(0.50, 0.9, 0.95)
+conf.levels.lwd <- c(4, 2, 1)
+plot(NA,NA, ylim=ylim, xlim=xlim, ann=FALSE, xaxt="n", yaxt="n", bty="n")
+for (i in 1:6) {
+  index <- hc$treatment %in% mlev[i, ]
+  z <- replicate(nboot, diff(tapply(y[index], droplevels(l[index])
+      , function(x) mean(sample(x, replace=TRUE)))))
+  for (j in 1:3) {
+    jj <- conf.levels[j]
+    CI <- quantile(z, p=c(jj+(1-jj)/2, (1-jj)/2))
+    points(y=i, x=mean(z), pch=16)
+    segments(y0=i, x0=CI[1], x1=CI[2], lwd=conf.levels.lwd[j])
+  }
+}  
+add.axes()
+mtext("Bootstrap", 1, 2)
+
+## BONFERRONI ####################### 
+plot(NA,NA, ylim=ylim, xlim=xlim, ann=FALSE, xaxt="n", yaxt="n", bty="n")
+conf.levels <- c(0.50, 1-0.1/6, 1-0.05/6)
+conf.levels.lwd <- c(4, 2, 1)
+for (i in 1:6) {
+  index <- hc$treatment %in% mlev[i, ]
+  tab <- table(droplevels(l[index]), y[index])
+  for (j in 1:3) { 
+    p <- prop.test(tab, conf.level=conf.levels[j], correct=FALSE)
+    points(diff(p$estimate[2:1]), i, pch=16)
+    segments(y0=i, x0=p$conf.int[1], x1=p$conf.int[2], lwd=conf.levels.lwd[j])
+  }
+}
+add.axes()
+mtext("Holm-Bonferroni", 1, 2)
+```
+
+\begin{figure} 
+  \centering
+  \caption{Pairwise comparisons of the percentage of employees submitting a project proposal in the different treatments with Holm-Bonferroni method and bootstrap resampling}
+  \label{fig: participation}
+  \includegraphics{Figures/pairwise-robust-1.pdf}
+\end{figure}
+
+```{r gender-robust, fig.width=9.5, fig.height=3.5, include=FALSE}
+## GENDER
+y <- hc$num_ideas>0
+l <- levels(hc$treatment)
+g <- hc$gender
+
+xlim <- c(-.1, .10)
+ylim <- c(1, 4) + c(-0.1, 0.1)
+par(mar=c(4.1, 5.1, 4.1, 2.1), mfrow=c(1, 2))
+
+
+## BOOTSTRAP ####################### 
+nboot <- 999
+conf.levels <- c(0.50, 0.9, 0.95)
+conf.levels.lwd <- c(4, 2, 1)
+
+plot(NA,NA, ylim=ylim, xlim=xlim, ann=FALSE, xaxt="n", yaxt="n", bty="n")
+for (i in 1:4) {
+  index <- hc$treatment %in% l[i]
+  z <- replicate(nboot, diff(tapply(y[index], g[index]
+      , function(x) mean(sample(x, replace=TRUE)))))
+  for (j in 1:3) { 
+    jj <- conf.levels[j]
+    CI <- quantile(z, p=c(jj+(1-jj)/2, (1-jj)/2))
+    points(y=i, x=mean(z), pch=16)
+    segments(y0=i, x0=CI[1], x1=CI[2], lwd=conf.levels.lwd[j])
+  }
+}  
+abline(v=0)
+x.seq <- seq(xlim[1], xlim[2], length=5)
+xticks <- pretty(x.seq)
+axis(3, at=xticks, paste(round(xticks*100), "%"))
+mtext("Bootstrap", 1, 2)
+
+## BONFERRONI ####################### 
+conf.levels <- c(0.50, 1-0.1/6, 1-0.05/6)
+conf.levels.lwd <- c(4, 2, 1)
+
+plot(NA,NA, ylim=ylim, xlim=xlim, ann=FALSE, xaxt="n", yaxt="n", bty="n")
+for (i in 1:4) {
+  index <- hc$treatment %in% l[i]
+  tab <- table(g[index], y[index])
+  for (j in 1:3) { 
+    p <- prop.test(tab, conf.level=conf.levels[j], correct=FALSE)
+    points(diff(p$estimate[2:1]), i, pch=16)
+    segments(y0=i, x0=p$conf.int[1], x1=p$conf.int[2], lwd=conf.levels.lwd[j])
+  }
+}
+abline(v=0)
+x.seq <- seq(xlim[1], xlim[2], length=5)
+xticks <- pretty(x.seq)
+axis(3, at=xticks, paste(round(xticks*100), "%"))
+mtext("Holm-Bonferroni", 1, 2)
+
+```
+
+\begin{figure} 
+  \centering
+  \caption{Difference in the probability of submitting between men and women with Holm-Bonferroni method and bootstrap resampling}
+  \label{fig: gender robust}
+  \includegraphics{Figures/gender-robust-1.pdf}
+\end{figure}
+
+
+```{r counts, fig.width=9.5, fig.height=3.5, include=FALSE}
+par(mfrow=c(1, 2))
+boxplot(hc$num_ideas ~ hc$treatment, main="Projects per submission", ylab="Projects")
+boxplot(hc$wordcount ~ hc$treatment, main="Count words per submission", ylab="Words")
+```
+
+\begin{figure} 
+  \centering
+  \caption{Count of projects (left panel) and words (right panel) per submission by treatments}
+  \label{fig: counts}
+  \includegraphics{Figures/counts-1.pdf}
+\end{figure}
+
+
+
+```{r plot-ratings-appendix, include=FALSE}
+z <- split(hc$num_voted_ideas[hc$num_voted_ideas>0], hc$treatment[hc$num_voted_ideas>0])
+par(mfrow=c(2, 2))
+for (i in 1:length(z)) {
+  hist(z[[i]], breaks=50, ylim=c(0, 10), main=names(z)[i], xlab="Rated project proposals")
+}
+```
+
+\begin{figure}
+\centering
+\caption{Count of the rated project proposals per evaluator}
+\label{app: rating counts}
+\includegraphics{Figures/plot-ratings-appendix-1.pdf}
+\end{figure}
+
+Solicitation and website
+===========================
+
+In Section \ref{solicitation-and-graphics}, Figure \ref{app: solicitation} shows copy of the solicitation sent via email and Figure \ref{app: graphics} shows the graphics automatically matching the treatment of the employee signing in to the contest's website. 
+In Section \ref{rules-of-the-competition}, we report the text displayed in the "Rules of the Competition" section of the contest's website.
+
+Solicitation and Graphics
+--------------------------
+
+\begin{figure}
+\centering
+\caption{Copy of the solicitation sent via email to the employees in our subject pool}
+\label{app: solicitation}
+\includegraphics[width=\textwidth]{Images/solicitationEmail.pdf}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\caption{Graphics matching the treatment of the employee signing in to the contest's website}
+\label{app: graphics}
+\begin{tabular}{cc}
+\includegraphics[width=2in, height=1.5in]{Images/priming/funding.png} & 
+\includegraphics[width=2in, height=1.5in]{Images/priming/money.png} \\
+FUND & PRIZE \\
+\includegraphics[width=2in, height=1.5in]{Images/priming/patientcare.png} & 
+\includegraphics[width=2in, height=1.5in]{Images/priming/workplace.png} \\
+PCARE & WPLACE
+\end{tabular}
+\end{figure}
+\clearpage
+
+
+Rules of the competition
+--------------------------
+
+- The Ether Dome Challenge is an ideas competition to
+improve the Heart Center workplace, patient care, patient satisfaction,
+workplace efficiency and cost.
+
+- If you've noticed something about patient experience, employee satisfaction, workplace efficiency, or anything that could be improved; if you've had an inspiration about a new way to safeguard health; or if you simply have a cost-saving idea, then now is the time to share your idea. We would like to encourage all members of
+the Heart Center to participate in this initiative. We encourage you to
+submit as many ideas as you have: no ideas are too big or too small! You
+never know... your idea could be the next big thing!
+
+*Timeline*
+
+-  Ideation Contest Launch
+-  Idea Submission Closes
+-  Crowd-Voting on Submitted Ideas
+-  Top 3 Crowd Voting Winners Announced (winners will receive
+iPads) & Final Round Idea Selections Announced
+-  Final Round Idea "Brainstorming" Support Sessions & Team
+Submissions Accepted
+-  Final Round Submissions Due
+-  Judging Panel Review of Final Round
+Submissions
+-  Ether Dome Challenge Final Award Event - Grant Winners
+Announced!
+
+*Logistics of Idea Submissions*
+
+- All Heart Center Staff (physicians, nurses, administrators, etc.) are eligible to submit Ideas.
+- Ideas should be submitted electronically via this site. Please click the "Submit Your Ideas" button at the top of the page, to enter the Challenge.
+- Submit as many ideas as you'd like!
+
+*To promote all kinds of ideas... even the zanny ones!*
+
+- All ideas submitted during the challenge will be posted on this website to be voted on by all Heart Center staff. The best ideas will be awarded a prize. To keep voting fair, ideas will be anonymously posted to the voting site. If your idea wins, you will be able to choose whether or not you'd like recognition for the idea. To ensure everyone feels free to submit all types of creative ideas - no matter how disruptive - all ideas will remain anonymous and shared only with the Harvard Business School study designers and the MGH Healthcare Transformation Lab staff. Individual information/ideas will not be shared with your managers/division heads, unless you elect for it to be shared publicly after the voting period. De-identified idea submissions will be shared with all levels of hospital administration deemed appropriate by the Healthcare Transformation Lab staff.
+
+*Areas of focus - but don't limit your thinking!*
+
+- Areas of focus for the Ether Dome Challenge include, but are not limited to: New models of care delivery; Enhancing the patient experience; Improving the MGH workplace, Improving efficiency, quality and safety; Lowering the cost of care
+
+
+

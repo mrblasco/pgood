@@ -1,0 +1,164 @@
+
+# Load data ###################################################
+load(".RData")
+set.seed(4881) # for bootstrap
+
+# Libraries ###################################################
+require(xtable)
+require(stargazer)
+require(sandwich)
+#require(knitr)
+
+# Options ###################################################
+options('xtable.type'='latex')
+
+# FUNCTIONS ###################################################
+string.break <- function(x) {
+  gsub('(.{1,12})(\\s|$)', '\\1\n', x)
+}
+
+render.table <- function(x, caption, label, add=NULL, align=NULL, digits=1, notes=NULL) {
+  if (is.null(align)) {
+    align <- c("@{}l",rep("c", ncol(x)))
+  }
+  table.head <- "\\\\[-1.8ex]\\hline \\hline \\\\[-1.8ex]\n"
+  table.mid <- "\\hline \\\\[-1.86ex]\n"
+  table.bottom <- table.head
+  add.to.cmd <- c(table.head, table.mid, table.bottom)
+  add.to.row <- list(pos = list(-1, 0, nrow(x))
+                , command = add.to.cmd)
+  if (!is.null(add)) {
+    add.to.row$command  <- c(add.to.row$command, add$cmd)
+    add.to.row$pos[[4]] <- add$pos
+  }
+  cat("\\begin{table}\n")         
+  cat("\\centering\n")                  
+  cat(sprintf("\\caption{%s}\n", caption))
+  cat(sprintf("\\label{%s}\n", label))
+  print(xtable(x, caption, label, align, digits)
+      , add.to.row=add.to.row
+      , hline.after=NULL
+      , floating=FALSE
+      , comment=FALSE)
+  if (!is.null(notes)) {
+    cat("\\begin{tablenotes}\n")                  
+    cat(sprintf("%s\n", notes))
+    cat("\\end{tablenotes}\n")
+  }
+  cat("\\end{table}\n")   
+}               
+
+
+# Robust standard errors
+# Input: Object
+# Output: Standard errors
+robust.se <- function(object) {
+  require(sandwich)
+  stopifnot (class(object) %in% c("lm", "glm"))
+  z <- object
+  vcov.mat <- vcovHC(z)
+  sqrt(diag(vcov.mat))
+}
+
+
+add.error.bars <- function(y, p, SE, alpha.levels=c(0.316, 0.10, 0.05), ...) {
+    for (a in alpha.levels) {
+      w <- qnorm(1 - a/2)
+      i <- which(a==alpha.levels)
+      lwd <- ifelse(i==1, 4.5, ifelse(i==2, 3, 1))
+      segments(y0=y, x0=p + w*SE, x1=p-w*SE, lwd=lwd, ...)
+    }
+}
+
+# Coef plot
+coef.plot <- function(pbar, SE, xlim=NULL, ylim=NULL, labels=NULL, ...) {
+  if (is.null(xlim)|is.null(ylim)) { 
+    xlim <- range(pbar + 2*SE, pbar - 2*SE)
+    ylim <- c(1, length(pbar))
+  }
+  yticks <- length(pbar):1
+  if (!is.null(labels)) par(mar=c(2.1, 9.1, 4.1, 2.1))
+  plot(y=yticks, x=pbar, ylim=ylim, xlim=xlim
+    , pch=16, ann=FALSE, xaxt="n", yaxt="n", bty="n")
+  add.error.bars(yticks, pbar, SE, ...)
+  abline(v=0)
+  # X axis
+  xticks <- pretty(seq(xlim[1], xlim[2], length=5))
+  axis(3, at=xticks, paste(round(xticks*100), "%", sep=''))
+  # Y Axis
+  if (!is.null(labels)) axis(2, at=yticks, labels, las=2)
+  else text(y=(yticks)-0.02, x=pbar, names(pbar), pos=1, xpd=TRUE)
+}
+
+
+float <- function (x, caption=NULL, label=NULL, notes=NULL, notes.width="\\textwidth", ...) {
+  cat('\\begin{table}\n\\centering\n')  
+  cat(sprintf('\\caption{%s}', caption))
+  cat(sprintf('\\label{%s}', label))
+  tab <- capture.output(stargazer(x, header=FALSE, float=FALSE, ...))
+  index <- grep("Note:", tab)
+  cat(tab[-index], sep='\n')
+  if (!is.null(notes)) {
+    cat(sprintf('\\begin{minipage}{%s}\n', notes.width))
+    cat(sprintf('\\emph{Note:} %s\n', notes))
+    cat('\\end{minipage}')
+  }
+  cat('\\end{table}\n')  
+}
+
+
+# Plot 
+coef.plot.pairwise <- function(y, l, ylim, xlim) {
+  n.l <- length(levels(l))
+  mlev <- matrix(levels(l)[combn(1:n.l, 2)], n.l*(n.l-1)/2, byrow=TRUE)
+  par(mar=c(4.1, 9.1, 4.1, 4.1))
+  plot(NA,NA, ylim=ylim, xlim=xlim, ann=FALSE, xaxt="n", yaxt="n", bty="n")
+  for (i in 1:6) {
+    index <- l %in% mlev[i, ]
+    tab <- table(droplevels(l[index]), y[index])
+    for (j in c(0.50, 0.95)) { 
+      p <- prop.test(tab, conf.level=j, correct=FALSE)
+      points(diff(p$estimate[2:1]), i, pch=16)
+      segments(y0=i, x0=p$conf.int[1], x1=p$conf.int[2], lwd=ifelse(j==0.50, 4, 1))
+    }
+  }
+  abline(v=0)
+  
+  # Axes
+  x.seq <- seq(xlim[1], xlim[2], length=5)
+  xticks <- pretty(x.seq)
+  axis(3, at=xticks, paste(round(xticks*100), "%"))
+  yticks <- 1:6
+  axis(2, at=yticks, paste(mlev[, 1], "-",mlev[, 2]), las=2)
+}
+
+
+# Express percentage
+percent <- function(x, adjust=FALSE) {
+  if (adjust) return(100*(sum(x)+1) / (length(x)+2))
+  else return(100*sum(x) / length(x))
+}
+
+# Compare pairs
+compare.pairs <- function(y, z, adjust=FALSE, ...) {  
+  require(xtable)
+  lev <- names(sort(tapply(y, z, mean), decreasing=TRUE))
+  allpairs <- combn(lev, 2)
+  rownames(allpairs) <- c("Group 1", "Group 2")
+  m <- matrix(ncol=7, nrow=ncol(allpairs))
+  colnames(m) <- c("p1","p2", "n1","n2", "Diff", "SE", "Z")
+  for (i in 1:ncol(allpairs)) {
+      y1 <- y[z==allpairs[1, i]]
+      y2 <- y[z==allpairs[2, i]]
+      n1 <- length(y1)
+      n2 <- length(y2)
+      p1 <- percent(y1, adjust)
+      p2 <- percent(y2, adjust)
+      p.diff <- p1 - p2
+      se.diff <- sqrt(p1 *(100-p1) / n1 +  p2 *(100-p2) / n2)
+      z.diff <- p.diff/se.diff
+      m[i, ] <- c(p1, p2, n1, n2, p.diff, se.diff, z.diff)
+  }
+  render.table(cbind(t(allpairs), round(m,1)), ...)
+  return(list(labels=paste(allpairs[1,], allpairs[2,], sep=" - "), mat=m))
+}

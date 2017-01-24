@@ -1,0 +1,58 @@
+#!/bin/bash
+paper_dir=Paper
+paper_html_dir=Paper_html
+paper_docx_dir=Paper_docx
+paper_appendix=Appendix
+config_dir=Config
+share_dir=.share
+now=`date +%b%d`
+
+function compile {
+  output_dir="$1"
+  mkdir -p $output_dir/{Code,Data/Raw,Templates}
+  cp Data/Raw/* $output_dir/Data/Raw && cp .RData *.Rmd $output_dir
+  cp Templates/* $output_dir/Templates
+  cd $output_dir && crmd report.Rmd && mv *.Rmd Code/
+  cd ..
+}
+
+if [ "$1" == "--docx" ]; then
+  echo "Compiling docx..."
+  cp $config_dir/_output_docx.yml $paper_docx_dir
+  compile $paper_docx_dir
+  
+elif [ "$1" == "--pdf" ]; then
+  echo "Compiling pdf..."
+  cp $config_dir/_output.yml $paper_dir
+  compile $paper_dir
+
+elif [ "$1" == "--appendix" ]; then
+  echo "Preparing files for appendix..."
+  mkdir -p $paper_appendix/{Code,Templates,Images}
+  cp $config_dir/_output.yml $paper_appendix
+  cp Templates/* $paper_appendix/Templates
+  cp -r Data/Images $paper_appendix
+  cp .RData *.Rmd $paper_appendix
+  echo "Compiling appendix..."
+  cd $paper_appendix && crmd report_appendix.Rmd && mv *.Rmd Code/
+
+elif [ "$1" == "--all" ]; then
+  echo "Compiling all formats..."
+  cp $config_dir/_output.yml $paper_dir
+  cp $config_dir/_output_docx.yml $paper_docx_dir
+  cp $config_dir/_output_html.yml $paper_html_dir
+  compile $paper_dir && pwd && compile $paper_docx_dir && compile $paper_html_dir
+  
+else 
+  echo "Compiling html..."
+  cp $config_dir/_output_html.yml $paper_html_dir
+  compile $paper_html_dir
+fi
+
+
+## Sharable folder
+mkdir -p $share_dir
+cp $paper_dir/report.pdf $share_dir/mgh_report_$now.pdf
+cp $paper_docx_dir/report.docx $share_dir/mgh_report_$now.docx
+cp $paper_appendix/report_appendix.pdf $share_dir/mgh_appendix_$now.pdf
+

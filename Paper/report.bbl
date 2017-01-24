@@ -1,0 +1,349 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Agresti and Caffo]{Agresti and Caffo}{2000}{agresti2000simple}
+{\bf Agresti, Alan and Brian Caffo}, ``Simple and effective confidence
+  intervals for proportions and differences of proportions result from adding
+  two successes and two failures,'' {\it The American Statistician}, 2000, {\it
+  54} (4), 280--288.
+
+\harvarditem[Akerlof and Kranton]{Akerlof and
+  Kranton}{2005}{akerlof2005identity}
+{\bf Akerlof, George~A and Rachel~E Kranton}, ``Identity and the Economics of
+  Organizations,'' {\it Journal of Economic Perspectives}, 2005, {\it 19} (1),
+  9--32.
+
+\harvarditem[Andreoni]{Andreoni}{1995}{andreoni1995warm}
+{\bf Andreoni, James}, ``Warm-Glow versus Cold-Prickle: The Effects of Positive
+  and Negative Framing on Cooperation in Experiments,'' {\it The Quarterly
+  Journal of Economics}, 1995, {\it 110} (1), 1--21.
+
+\harvarditem[Baker et al.]{Baker, Gibbs and Holmstrom}{1994}{baker1994internal}
+{\bf Baker, George, Michael Gibbs, and Bengt Holmstrom}, ``The Internal
+  Economics of the Firm: Evidence from Personnel Data,'' {\it The Quarterly
+  Journal of Economics}, 1994, {\it 109} (4), 881--919.
+
+\harvarditem[Bandiera et al.]{Bandiera, Barankay and
+  Rasul}{2005}{bandiera2005social}
+{\bf Bandiera, Oriana, Iwan Barankay, and Imran Rasul}, ``Social Preferences
+  and the Response to Incentives: Evidence from Personnel Data,'' {\it The
+  Quarterly Journal of Economics}, 2005, {\it 120} (3), 917--962.
+
+\harvarditem[Besley and Ghatak]{Besley and Ghatak}{2005}{besley2005competition}
+{\bf Besley, Timothy and Maitreesh Ghatak}, ``Competition and Incentives with
+  Motivated Agents,'' {\it The American Economic Review}, 2005, {\it 95} (3),
+  616--636.
+
+\harvarditem[Borghans et al.]{Borghans, Heckman, Golsteyn and
+  Meijers}{2009}{borghans2009gender}
+{\bf Borghans, Lex, James~J Heckman, Bart~HH Golsteyn, and Huub Meijers},
+  ``Gender differences in risk aversion and ambiguity aversion,'' {\it Journal
+  of the European Economic Association}, 2009, {\it 7} (2-3), 649--658.
+
+\harvarditem[Boudreau et al.]{Boudreau, Lakhani and
+  Menietti}{2016}{boudreau2016performance}
+{\bf Boudreau, Kevin~J, Karim~R Lakhani, and Michael Menietti}, ``Performance
+  responses to competition across skill levels in rank-order tournaments: field
+  evidence and implications for tournament design,'' {\it The RAND Journal of
+  Economics}, 2016, {\it 47} (1), 140--165.
+
+\harvarditem[Boudreau et al.]{Boudreau, Lacetera and
+  Lakhani}{2011}{boudreau2011incentives}
+{\bf \bysame{}, Nicola Lacetera, and Karim~R Lakhani}, ``Incentives and problem
+  uncertainty in innovation contests: An empirical analysis,'' {\it Management
+  Science}, 2011, {\it 57} (5), 843--863.
+
+\harvarditem[Bull et al.]{Bull, Schotter and
+  Weigelt}{1987}{bull1987tournaments}
+{\bf Bull, Clive, Andrew Schotter, and Keith Weigelt}, ``Tournaments and Piece
+  Rates: An Experimental Study,'' {\it Journal of Political Economy}, 1987,
+  {\it 95} (1), 1--33.
+
+\harvarditem[Charness et al.]{Charness, Masclet and
+  Villeval}{2013}{charness2013dark}
+{\bf Charness, Gary, David Masclet, and Marie~Claire Villeval}, ``The dark side
+  of competition for status,'' {\it Management Science}, 2013, {\it 60} (1),
+  38--55.
+
+\harvarditem[Coffman]{Coffman}{2014}{coffman2014evidence}
+{\bf Coffman, Katherine~Baldiga}, ``Evidence on Self-Stereotyping and the
+  Contribution of Ideas,'' {\it The Quarterly Journal of Economics}, 2014, {\it
+  129} (4), 1625--1660.
+
+\harvarditem[Cohen]{Cohen}{1992}{cohen1992power}
+{\bf Cohen, Jacob}, ``A power primer.,'' {\it Psychological bulletin}, 1992,
+  {\it 112} (1), 155.
+
+\harvarditem[Croson and Gneezy]{Croson and Gneezy}{2009}{croson2009gender}
+{\bf Croson, Rachel and Uri Gneezy}, ``Gender Differences in Preferences,''
+  {\it Journal of Economic Literature}, 2009, {\it 47} (2), 448--474.
+
+\harvarditem[Dale]{Dale}{2004}{dale2004charitable}
+{\bf Dale, Donald~J}, ``Charitable lottery structure and fund raising: Theory
+  and evidence,'' {\it Experimental Economics}, 2004, {\it 7} (3), 217--234.
+
+\harvarditem[Dechenaux et al.]{Dechenaux, Kovenock and
+  Sheremeta}{2014}{dechenaux2014survey}
+{\bf Dechenaux, Emmanuel, Dan Kovenock, and Roman~M Sheremeta}, ``A survey of
+  experimental research on contests, all-pay auctions and tournaments,'' {\it
+  Experimental Economics}, 2014, pp.~1--61.
+
+\harvarditem[Delfgaauw]{Delfgaauw}{2005}{delfgaauw2005dedicated}
+{\bf Delfgaauw, Josse}, ``Dedicated Doctors: Public and Private Provision of
+  Health Care with Altruistic Physicians,'' {\it New England Journal of
+  Medicine}, 2005, {\it 353} (15).
+
+\harvarditem[Delfgaauw and Dur]{Delfgaauw and
+  Dur}{2008}{delfgaauw2008incentives}
+{\bf \bysame{} and Robert Dur}, ``Incentives and Workers' Motivation in the
+  Public Sector*,'' {\it The Economic Journal}, 2008, {\it 118} (525),
+  171--191.
+
+\harvarditem[Delfgaauw et al.]{Delfgaauw, Dur, Sol and
+  Verbeke}{2013}{delfgaauw2013tournament}
+{\bf \bysame{}, \bysame{}, Joeri Sol, and Willem Verbeke}, ``Tournament
+  incentives in the field: Gender differences in the workplace,'' {\it Journal
+  of Labor Economics}, 2013, {\it 31} (2), 305--326.
+
+\harvarditem[Ehrenberg and Bognanno]{Ehrenberg and
+  Bognanno}{1990}{ehrenberg1990tournaments}
+{\bf Ehrenberg, Ronald~G and Michael~L Bognanno}, ``Do Tournaments Have
+  Incentive Effects?,'' {\it The Journal of Political Economy}, 1990, {\it 98}
+  (6), 1307--1324.
+
+\harvarditem[Erat and Gneezy]{Erat and Gneezy}{2015}{erat2015incentives}
+{\bf Erat, Sanjiv and Uri Gneezy}, ``Incentives for creativity,'' {\it
+  Experimental Economics}, 2015, pp.~1--12.
+
+\harvarditem[Eriksson]{Eriksson}{1999}{eriksson1999executive}
+{\bf Eriksson, Tor}, ``Executive Compensation and Tournament Theory: Empirical
+  Tests on Danish Data,'' {\it Journal of Labor Economics}, 1999, {\it 17} (2),
+  262--280.
+
+\harvarditem[Evans]{Evans}{2002}{evans2002cautious}
+{\bf Evans, Joan~A}, ``Cautious caregivers: gender stereotypes and the
+  sexualization of men nurses' touch,'' {\it Journal of advanced nursing},
+  2002, {\it 40} (4), 441--448.
+
+\harvarditem[Fehr et al.]{Fehr, Kirchsteiger and Riedl}{1998}{fehr1998gift}
+{\bf Fehr, Ernst, Georg Kirchsteiger, and Arno Riedl}, ``Gift exchange and
+  reciprocity in competitive experimental markets,'' {\it European Economic
+  Review}, 1998, {\it 42} (1), 1--34.
+
+\harvarditem[Forastiere et al.]{Forastiere, Airoldi and
+  Mealli}{2016}{forastiere2016identification}
+{\bf Forastiere, Laura, Edoardo~M Airoldi, and Fabrizia Mealli},
+  ``Identification and estimation of treatment and interference effects in
+  observational studies on networks,'' {\it arXiv preprint arXiv:1609.06245},
+  2016.
+
+\harvarditem[Frey]{Frey}{1997}{frey1997not}
+{\bf Frey, Bruno~S}, ``Not just for the money: An Economic Theory of Personal
+  Motivation,'' {\it Books}, 1997.
+
+\harvarditem[Gibbs]{Gibbs}{1995}{gibbs1995incentive}
+{\bf Gibbs, Michael}, ``Incentive compensation in a corporate hierarchy,'' {\it
+  Journal of Accounting and Economics}, 1995, {\it 19} (2), 247--277.
+
+\harvarditem[Gibbs et al.]{Gibbs, Neckermann and
+  Siemroth}{2015}{gibbs2014field}
+{\bf \bysame{}, Susanne Neckermann, and Christoph Siemroth}, ``A field
+  experiment in motivating employee ideas,'' {\it Review of Economics and
+  Statistics, Forthcoming}, 2015.
+
+\harvarditem[Gneezy and Rustichini]{Gneezy and
+  Rustichini}{2000}{gneezy2000fine}
+{\bf Gneezy, Uri and Aldo Rustichini}, ``A fine is a price,'' {\it Journal of
+  Legal Studies}, 2000, {\it 29}, 1.
+
+\harvarditem[Green and Stokey]{Green and Stokey}{1983}{green1983comparison}
+{\bf Green, Jerry~R and Nancy~L Stokey}, ``A Comparison of Tournaments and
+  Contracts,'' {\it The Journal of Political Economy}, 1983, {\it 91} (3),
+  349--364.
+
+\harvarditem[Guinan et al.]{Guinan, Boudreau and
+  Lakhani}{2013}{guinan2013experiments}
+{\bf Guinan, Eva, Kevin~J Boudreau, and Karim~R Lakhani}, ``Experiments in open
+  innovation at Harvard Medical School,'' {\it MIT Sloan Management Review},
+  2013, {\it 54} (3), 45.
+
+\harvarditem[Hamilton et al.]{Hamilton, Nickerson and
+  Owan}{2003}{hamilton2003team}
+{\bf Hamilton, Barton~H, Jack~A Nickerson, and Hideo Owan}, ``Team incentives
+  and worker heterogeneity: An empirical analysis of the impact of teams on
+  productivity and participation,'' {\it Journal of political Economy}, 2003,
+  {\it 111} (3), 465--497.
+
+\harvarditem[Hellmann and Thiele]{Hellmann and
+  Thiele}{2011}{hellmann2011incentives}
+{\bf Hellmann, Thomas and Veikko Thiele}, ``Incentives and innovation: A
+  multitasking approach,'' {\it American Economic Journal: Microeconomics},
+  2011, {\it 3} (1), 78--128.
+
+\harvarditem[Holmstrom and Milgrom]{Holmstrom and
+  Milgrom}{1991}{holmstrom1991multitask}
+{\bf Holmstrom, Bengt and Paul Milgrom}, ``Multitask Principal-Agent Analyses:
+  Incentive Contracts, Asset Ownership, and Job Design,'' {\it Journal of Law,
+  Economics and Organization}, 1991, {\it 7}, 24--52.
+
+\harvarditem[Hong et al.]{Hong, Hossain and List}{2015}{hong2015framing}
+{\bf Hong, Fuhai, Tanjim Hossain, and John~A List}, ``Framing manipulations in
+  contests: a natural field experiment,'' {\it Journal of Economic Behavior \&
+  Organization}, 2015.
+
+\harvarditem[Hossain and List]{Hossain and
+  List}{2012}{hossain2012behavioralist}
+{\bf Hossain, Tanjim and John~A List}, ``The behavioralist visits the factory:
+  Increasing productivity using simple framing manipulations,'' {\it Management
+  Science}, 2012, {\it 58} (12), 2151--2167.
+
+\harvarditem[Blanes~i Vidal and Nossol]{Blanes~i Vidal and
+  Nossol}{2011}{blanes2011tournaments}
+{\bf i~Vidal, Jordi~Blanes and Mareike Nossol}, ``Tournaments without prizes:
+  Evidence from personnel records,'' {\it Management Science}, 2011, {\it 57}
+  (10), 1721--1736.
+
+\harvarditem[Kandel and Lazear]{Kandel and Lazear}{1992}{kandel1992peer}
+{\bf Kandel, Eugene and Edward~P Lazear}, ``Peer pressure and partnerships,''
+  {\it Journal of political Economy}, 1992, {\it 100} (4), 801--817.
+
+\harvarditem[Knoeber and Thurman]{Knoeber and
+  Thurman}{1994}{knoeber1994testing}
+{\bf Knoeber, Charles~R and Walter~N Thurman}, ``Testing the Theory of
+  Tournaments: An Empirical Analysis of Broiler Production,'' {\it Journal of
+  Labor Economics}, 1994, {\it 12} (2), 155--79.
+
+\harvarditem[Kosfeld and Neckermann]{Kosfeld and
+  Neckermann}{2011}{kosfeld2011getting}
+{\bf Kosfeld, Michael and Susanne Neckermann}, ``Getting More Work for Nothing?
+  Symbolic Awards and Worker Performance,'' {\it American Economic Journal:
+  Microeconomics}, 2011, {\it 3} (3), 86--99.
+
+\harvarditem[Kube et al.]{Kube, Mar{\'e}chal and Puppe}{2012}{kube2012currency}
+{\bf Kube, Sebastian, Michel~Andr{\'e} Mar{\'e}chal, and Clemens Puppe}, ``The
+  Currency of Reciprocity: Gift Exchange in the Workplace,'' {\it The American
+  Economic Review}, 2012, {\it 102} (4), 1644--1662.
+
+\harvarditem[Lacetera et al.]{Lacetera, Macis and
+  Slonim}{2013}{lacetera2013economic}
+{\bf Lacetera, Nicola, Mario Macis, and Robert Slonim}, ``Economic rewards to
+  motivate blood donations,'' {\it Science}, 2013, {\it 340} (6135), 927--928.
+
+\harvarditem[Lacetera et al.]{Lacetera, Macis and
+  Slonim}{2014}{lacetera2014rewarding}
+{\bf \bysame{}, \bysame{}, and \bysame{}}, ``Rewarding volunteers: a field
+  experiment,'' {\it Management Science}, 2014, {\it 60} (5), 1107--1129.
+
+\harvarditem[Lakhani et al.]{Lakhani, Boudreau, Loh, Backstrom, Baldwin,
+  Lonstein, Lydon, MacCormack, Arnaout and Guinan}{2013}{lakhani2013prize}
+{\bf Lakhani, Karim~R, Kevin~J Boudreau, Po-Ru Loh, Lars Backstrom, Carliss
+  Baldwin, Eric Lonstein, Mike Lydon, Alan MacCormack, Ramy~A Arnaout, and
+  Eva~C Guinan}, ``Prize-based contests can provide solutions to computational
+  biology problems,'' {\it Nature biotechnology}, 2013, {\it 31} (2), 108--111.
+
+\harvarditem[Landry et al.]{Landry, Lange, List, Price and
+  Rupp}{2006}{landry2006toward}
+{\bf Landry, Craig~E, Andreas Lange, John~A List, Michael~K Price, and
+  Nicholas~G Rupp}, ``Toward an Understanding of the Economics of Charity:
+  Evidence from a Field Experiment*,'' {\it The Quarterly journal of
+  economics}, 2006, {\it 121} (2), 747--782.
+
+\harvarditem[Lange et al.]{Lange, List and Price}{2007}{lange2007using}
+{\bf Lange, Andreas, John~A List, and Michael~K Price}, ``Using lotteries to
+  finance public goods: Theory and experimental evidence*,'' {\it International
+  Economic Review}, 2007, {\it 48} (3), 901--927.
+
+\harvarditem[Lazear]{Lazear}{1989}{lazear1989pay}
+{\bf Lazear, Edward~P}, ``Pay Equality and Industrial Politics,'' {\it Journal
+  of Political Economy}, 1989, {\it 97} (3), 561--80.
+
+\harvarditem[Lazear and Rosen]{Lazear and Rosen}{1981}{lazear1981rank}
+{\bf \bysame{} and Sherwin Rosen}, ``Rank-Order Tournaments as Optimum Labor
+  Contracts,'' {\it The Journal of Political Economy}, 1981, {\it 89} (5),
+  841--864.
+
+\harvarditem[Levitt and List]{Levitt and List}{2007}{levitt2007laboratory}
+{\bf Levitt, Steven~D and John~A List}, ``What Do Laboratory Experiments
+  Measuring Social Preferences Reveal About the Real World?,'' {\it The Journal
+  of Economic Perspectives}, 2007, {\it 21} (2), 153--174.
+
+\harvarditem[List]{List}{2011}{list2011market}
+{\bf List, John~A}, ``The Market for Charitable Giving,'' {\it The Journal of
+  Economic Perspectives}, 2011, {\it 25} (2), 157.
+
+\harvarditem[List and Lucking-Reiley]{List and
+  Lucking-Reiley}{2002}{list2002effects}
+{\bf \bysame{} and David Lucking-Reiley}, ``The effects of seed money and
+  refunds on charitable giving: Experimental evidence from a university capital
+  campaign,'' {\it Journal of Political Economy}, 2002, {\it 110} (1),
+  215--233.
+
+\harvarditem[Manso]{Manso}{2011}{manso2011motivating}
+{\bf Manso, Gustavo}, ``Motivating innovation,'' {\it The Journal of Finance},
+  2011, {\it 66} (5), 1823--1860.
+
+\harvarditem[Mary et al.]{Mary, Viscusi and Zeckhauser}{1984}{mary1984economic}
+{\bf Mary, O'Keeffe, W~Kip Viscusi, and Richard~J Zeckhauser}, ``Economic
+  Contests: Comparative Reward Schemes,'' {\it Journal of Labor Economics},
+  1984, {\it 2} (1), 27--56.
+
+\harvarditem[Morgan]{Morgan}{2000}{morgan2000financing}
+{\bf Morgan, John}, ``Financing public goods by means of lotteries,'' {\it The
+  Review of Economic Studies}, 2000, {\it 67} (4), 761--784.
+
+\harvarditem[Morgan and Sefton]{Morgan and Sefton}{2000}{morgan2000funding}
+{\bf \bysame{} and Martin Sefton}, ``Funding public goods with lotteries:
+  experimental evidence,'' {\it The Review of Economic Studies}, 2000, {\it 67}
+  (4), 785--810.
+
+\harvarditem[Niederle and Vesterlund]{Niederle and
+  Vesterlund}{2007}{niederle2007women}
+{\bf Niederle, Muriel and Lise Vesterlund}, ``Do Women Shy Away From
+  Competition? Do Men Compete Too Much?,'' {\it The Quarterly Journal of
+  Economics}, 2007, {\it 122} (3), 1067--1101.
+
+\harvarditem[Prendergast]{Prendergast}{2007}{prendergast2007motivation}
+{\bf Prendergast, Canice}, ``The Motivation and Bias of Bureaucrats,'' {\it The
+  American Economic Review}, 2007, {\it 97} (1), 180--196.
+
+\harvarditem[Reeve and Deci]{Reeve and Deci}{1996}{reeve1996elements}
+{\bf Reeve, Johnmarshall and Edward~L Deci}, ``Elements of the competitive
+  situation that affect intrinsic motivation,'' {\it Personality and Social
+  Psychology Bulletin}, 1996, {\it 22}, 24--33.
+
+\harvarditem[Rosenbaum]{Rosenbaum}{2007}{rosenbaum2007interference}
+{\bf Rosenbaum, Paul~R}, ``Interference between units in randomized
+  experiments,'' {\it Journal of the American Statistical Association}, 2007,
+  {\it 102} (477).
+
+\harvarditem[Rubin]{Rubin}{1974}{rubin1974estimating}
+{\bf Rubin, Donald~B}, ``Estimating causal effects of treatments in randomized
+  and nonrandomized studies.,'' {\it Journal of educational Psychology}, 1974,
+  {\it 66} (5), 688.
+
+\harvarditem[Terwiesch and Ulrich]{Terwiesch and
+  Ulrich}{2009}{terwiesch2009innovation}
+{\bf Terwiesch, Christian and Karl~T Ulrich}, {\it Innovation tournaments:
+  Creating and selecting exceptional opportunities}, Harvard Business Press,
+  2009.
+
+\harvarditem[Terwiesch and Xu]{Terwiesch and Xu}{2008}{terwiesch2008innovation}
+{\bf \bysame{} and Yi~Xu}, ``Innovation contests, open innovation, and
+  multiagent problem solving,'' {\it Management science}, 2008, {\it 54} (9),
+  1529--1543.
+
+\harvarditem[Vesterlund]{Vesterlund}{2012}{vesterlund2012voluntary}
+{\bf Vesterlund, Lise}, ``Voluntary giving to public goods: moving beyond the
+  linear VCM,'' in John~H Kagel and Alvin~E Roth, eds., {\it The Handbook of
+  Experimental Economics}, Vol. 2, in preparation, Princeton University Press,
+  2012.
+
+\harvarditem[Della~Vigna et al.]{Della~Vigna, List, Malmendier and
+  Rao}{2016}{dellavigna2016estimating}
+{\bf Vigna, Stefano~Della, John~A List, Ulrike Malmendier, and Gautam Rao},
+  ``Estimating Social Preferences and Gift Exchange at Work,'' Technical
+  Report, National Bureau of Economic Research 2016.
+
+\end{thebibliography}

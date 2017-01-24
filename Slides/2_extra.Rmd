@@ -1,0 +1,186 @@
+Extras
+==============
+
+Web announcement
+-------------------------
+
+> If you've noticed something about patient experience, employee satisfaction, workplace efficiency, or anything that could be improved; if you've had an inspiration about a new way to safeguard health; or if you simply have a cost-saving idea, then now is the time to share your idea.
+
+
+Personalized email
+---------------------------
+
+> Dear Heart Center team member,
+	
+> [TREATMENT HERE]
+
+> The Ether Dome Challenge is your chance to submit ideas on how to improve the MGH Corrigan Minehan Heart Center, patient care and satisfaction, workplace efficiency and cost. All Heart Center Staff are eligible to submit ideas online. We encourage you to submit as many ideas as you have: no ideas are too big or too small!
+
+> Submissions will be reviewed and judged in two rounds, first by the Heart Center staff via crowd-voting, and then by an expert panel. Winning ideas will be eligible for project implementation funding in the Fall of 2014!
+
+
+The random assignment
+-----------------------
+
+```{r assignment, results='asis'}
+f <- function(caption, label) { 
+  text <- c("Submit your ideas to win an Apple iPad mini."
+  , "Submit your ideas to win project funding up to $20,000 to turn your ideas into actions."
+  , "Submit your ideas to improve patient care at the Heart Center."
+  , "Submit your ideas to improve the workplace at the Heart Center.")
+  names(text) <- c("PRIZE", "FUND", "PCARE", "WPLACE")
+  m <- table(hc$treatment)
+  index <- match(names(text), names(m))
+  m <- m[index]
+  m <- cbind("Employees"=m, "%"=round(100*m/sum(m)))
+  m <- rbind(m, "Total"=apply(m, 2, sum))
+  rownames(m)[-1] <- paste("[1.8ex]", rownames(m)[-1])
+  m <- cbind(m, Paragraph=c(text, NA))
+  xtab <- xtable(m, align=c("@{}l", "c","c", "p{6cm}"), digits=rep(0, ncol(m)+1))
+  add.to.row <- list(pos = list(-1, -1, -1, 0, nrow(m)),
+                    command = c("\\tablehead\n"
+                    , " & \\multicolumn{2}{c}{\\emph{Random assignment:}} \\\\\n"
+                    , " \\cmidrule(r){2-3} \\\\\n"
+                    , "\\hline \\\\[-1.86ex]\n"
+                    , "\\tablebottom\n"))
+  render.table(x=xtab, caption=caption, label=label, add.to.row=add.to.row)
+}
+cat("\\footnotesize\n")
+f(NULL, NULL)
+```
+
+
+
+Submissions' areas of focus
+--------------------------
+
+
+```{r, results='asis'}
+f <- function(caption, label, notes=NULL) { 
+  m <- sort(table(agg.voting$focus2), decreasing=T)
+  m <- cbind("% proposals"=round(100*m/sum(m)),"Proposals"=m)
+  m <- rbind(m, "[1.8ex] Total"=apply(m, 2, sum))
+  xtab <- xtable(m, caption=caption
+                    , label=label
+                    , align=c("@{}l",rep("c", ncol(m)))
+                    , digits=c(0, 0, 0))
+  cmd <- c("\\tablehead\n", "\\hline \\\\[-1.86ex]\n", "\\tablebottom\n")
+  add.to.row <- list(pos = list(-1, 0, nrow(m)), command = cmd)
+  render.table(x=xtab, caption=caption, label=label, notes=notes, add.to.row=add.to.row)
+}
+cat("\\footnotesize\n")
+f(NULL, NULL)
+```
+
+
+Pairwise differences
+------------------------
+
+\resizebox{\textwidth}{!}{
+\begin{tabular}{@{}lccccc}
+  \tablehead
+ & Diff & CI (2.5\%) & CI (97.5\%) & P-value & Adj. P-value \\ 
+  \hline \\[-1.86ex]
+FUND (women) vs. FUND (men) & -1.2 & -5.3 & 2.3 & 0.576 & 0.588 \\ 
+  PCARE (women) vs. PCARE (men) & 5.0 & 1.0 & 8.7 & 0.014 & 0.056 \\ 
+  WPLACE (women) vs. WPLACE (men) & -3.8 & -10.8 & 1.6 & 0.212 & 0.424 \\ 
+  PRIZE (women) vs. PRIZE (men) & 1.6 & -4.7 & 7.5 & 0.588 & 0.588 \\ 
+   \tablebottom
+\end{tabular}
+}
+
+
+Probability of Submitting
+-----------------------
+
+\resizebox{\textwidth}{!}{
+{\tiny
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{5}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-6} 
+\\[-1.8ex] & \multicolumn{5}{c}{$ SUBMIT_{ij} $} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5)\\ 
+\hline \\[-1.8ex] 
+ treatmentPRIZE & 2.53$^{**}$ & 2.53$^{**}$ & 2.52$^{**}$ & 2.46$^{**}$ & 2.45$^{**}$ \\ 
+  & (1.21) & (1.21) & (1.21) & (1.21) & (1.21) \\ 
+  & & & & & \\ 
+ treatmentWPLACE & 0.37 & 0.37 & 0.35 & 0.38 & 0.30 \\ 
+  & (1.09) & (1.09) & (1.10) & (1.09) & (1.10) \\ 
+  & & & & & \\ 
+ treatmentFUND & $-$2.57$^{***}$ & $-$2.57$^{***}$ & $-$2.55$^{***}$ & $-$2.49$^{***}$ & $-$2.38$^{***}$ \\ 
+  & (0.86) & (0.86) & (0.85) & (0.86) & (0.85) \\ 
+  & & & & & \\ 
+ jobNursing &  & 0.14 &  &  & 1.85 \\ 
+  &  & (0.82) &  &  & (1.23) \\ 
+  & & & & & \\ 
+ jobMD/Fellow &  & $-$0.31 &  &  & $-$1.14 \\ 
+  &  & (1.03) &  &  & (1.24) \\ 
+  & & & & & \\ 
+ genderMale &  &  & $-$0.54 &  & $-$0.42 \\ 
+  &  &  & (1.33) &  & (1.64) \\ 
+  & & & & & \\ 
+ officeYes &  &  &  & 2.79$^{**}$ & 4.56$^{***}$ \\ 
+  &  &  &  & (1.20) & (1.60) \\ 
+  & & & & & \\ 
+ Constant & 4.84$^{***}$ & 4.78$^{***}$ & 5.00$^{***}$ & 3.35$^{***}$ & 1.97 \\ 
+  & (0.61) & (0.66) & (0.73) & (0.75) & (1.25) \\ 
+  & & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 1,237 & 1,237 & 1,237 & 1,237 & 1,237 \\ 
+Log Likelihood & 150.63 & 150.67 & 150.71 & 153.25 & 155.15 \\ 
+Akaike Inf. Crit. & $-$293.26 & $-$289.35 & $-$291.42 & $-$296.49 & $-$294.29 \\ 
+\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{5}{r}{} \\ 
+\end{tabular} 
+}
+}
+
+
+
+
+Probability of submitting X Gender
+------------------------
+
+\resizebox{\textwidth}{!}{
+{\tiny
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{$ SUBMIT_{ij} $} \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ PRIZE $\times$ female & 2.99$^{*}$ & 2.95$^{*}$ & 2.84 \\ 
+  & (1.68) & (1.79) & (1.78) \\ 
+ PCARE $\times$ female & 1.25 & 1.21 & 1.08 \\ 
+  & (1.57) & (1.61) & (1.61) \\ 
+ FUND $\times$ female & $-$2.91$^{***}$ & $-$2.95$^{**}$ & $-$2.79$^{**}$ \\ 
+  & (1.06) & (1.20) & (1.19) \\ 
+ WPLACE $\times$ female & $-$0.49 & $-$0.52 & $-$0.62 \\ 
+  & (1.35) & (1.44) & (1.43) \\ 
+ PRIZE $\times$ male & 1.37 & 1.42 & 1.40 \\ 
+  & (2.44) & (2.51) & (2.50) \\ 
+ PCARE $\times$ male & $-$3.75$^{***}$ & $-$3.72$^{***}$ & $-$3.64$^{***}$ \\ 
+  & (1.15) & (1.16) & (1.16) \\ 
+ FUND $\times$ male & $-$1.67 & $-$1.65 & $-$1.48 \\ 
+  & (1.70) & (1.65) & (1.66) \\ 
+ gender & yes & yes & yes \\ 
+ job &  & yes & yes \\ 
+ office &  &  & yes \\ 
+\hline \\[-1.8ex] 
+Observations & 1,237 & 1,237 & 1,237 \\ 
+Log Likelihood & 153.55 & 153.57 & 157.91 \\ 
+Akaike Inf. Crit. & $-$291.11 & $-$287.14 & $-$293.82 \\ 
+\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{r}{} \\ 
+\end{tabular}
+}
+}
+
+
+

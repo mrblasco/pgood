@@ -1,0 +1,424 @@
+
+Introduction
+====================
+
+The provision of public goods inside organizations
+--------------------------------------------------
+
+- Organization members are asked to perform activities that benefit everyone with little or no direct compensation for the worker
+  
+- Classic examples: teamwork, innovation
+ 
+- An undersupply problem:
+    - Contractual incentives backfire (multi-tasking, low experimentation)
+    - Voluntary contributions have free riding problem
+
+Fostering contributions with \alert{internal contests}
+------------------------------------------
+
+Two important reasons to use contests
+
+- Competing for \alert{a prize} (bonus, promotion) can mitigate free riding incentives and increase the provision of PG [@morgan2000financing]
+
+. . .
+
+- On the other hand, it can also leverage the \alert{mission preferences} of workers ("vertical" social preferences) [@besley2005competition]
+    + E.g, workers from organizations for social public goods (nurses, teachers, researchers)
+
+. . .
+
+- \alert{Our goal:} compare these two explanations, understanding potential trade-offs
+
+Our setup
+-----------------
+
+- **Medical organization** $\leadsto$ \alert{mission-motivated} employees
+
+. . .
+
+- **Task**: participate in internal \alert{contest} to select \alert{innovation projects} to improve the organization
+    + Submitting proposals and participate in implementation
+    + Rating quality of proposals made by others
+
+. . .
+
+- **Motivations**: 
+    + Being awarded a "small" prize
+    + Opportunity to improve the organization
+
+ 
+Main findings
+-----------------
+
+- Small \alert{prizes} (an iPad mini) $\leadsto$ \alert{strong effect on participation} of mission motivated employees
+    + Effect \alert{exceeds prize value} $\leadsto$ as in @morgan2000financing
+
+. . .
+    
+- Distribution of \alert{quality of proposals} is not affected by prizes
+
+. . .
+
+- All else equal, \alert{women} respond more than \alert{men} to a call framed as an opportunity to provide better care to their patients 
+
+
+
+Experimental design
+=======================
+
+The context of the experiment
+-------------------------
+
+![The Massachusetts General Hospital Heart Center](Pictures/us-news-mgh-ranking1.jpg)
+
+- Serves thousands of patients 
+- 35000 square feet of office space for research
+- Very busy environment. No incentives for PG
+
+Our sample
+-------------------------------------------------
+
+- \alert{Entire population} $\sim 1,200$ people 
+    - 50% Nurses
+    - 20% Doctors
+    - 30% Others (admins, technicians, researchers)
+
+. . .
+ 
+- \alert{Gender separation:} Nurses: 90% women / Doctors: 70% men
+
+. . . 
+
+- \alert{Income differences} large across the professions (US BLS)
+
+<!-- 
+- Other stats:
+    + 50% in wards, no office location
+    + Age: $> 40$
+    + Tenure: between 3 and 10 years 
+ -->
+
+The innovation contest
+--------------------
+
+- Online contest to \alert{propose}, \alert{select} and \alert{implement} new projects
+    + $\leadsto$ Ask for more work, unpaid!
+
+. . .
+
+- Timing: 
+    1. Submission phase (4 weeks)
+    2. Peer evaluation phase (2 weeks)
+    3. Implementation phase (implementation of selected projects)
+
+. . .
+
+- Announced via series of \alert{personalized emails}
+    + \alert{Content was randomized}
+    
+Four treatments
+-----------------------------------------------
+
+> "Dear Heart Center team member, Submit your ideas to ... 
+
+> - Nudging with different \alert{information}
+    1. ... win an apple iPad (PRIZE)
+    2. ... win project funding up to $20,000 (FUND)
+
+> - \alert{Framing} mission-oriented goals
+    3. ... improve patient care (PCARE)
+    4. ... improve the workplace (WPLACE)
+
+
+Additional implementation features
+---------------------------------------
+
+- \alert{Website} of the contest
+    + No leaderboards, no feedback
+    + Matching features with treatment
+
+. . .
+
+> - Only \alert{official} channels (from top management)
+
+> - Good \alert{statistical power} @cohen1992power ($>300$ per treatment)
+
+. . .
+
+- Possible \alert{interference} for $i\neq j$
+    + Assignment $Z_j$ affects $Y_j$  affects $Y_i$
+        * No feedback during the contest
+    + Assignment $Z_j$ affects $Y_i$
+        * Competition does not incentivize communication
+        * "bias" towards no effect
+
+
+Results
+=====================
+
+Overview of participation in the contest
+--------------------------------------------------
+
+```{r outcomes, fig.width=9.5}
+profession <- hc$job
+levels(profession)[2] <- "MD"
+
+par(mfrow=c(2, 2), mar=c(4,4,2,2))
+
+ylim <- c(0, 5.5)
+space <- 0.5
+mycol <- "orange"
+
+barplot(100*tapply(hc$num_ideas>0, profession, mean)
+  , ylim=ylim, space=space, col=mycol
+  , ylab="% employees"
+  , main="Submitting by profession")
+barplot(100*tapply(hc$num_ideas>0, hc$gender, mean)
+  , ylim=ylim, space=space, col=mycol
+  , main="Submitting by gender")
+
+ylim <- c(0, 18)
+mycol <- "dodgerblue"
+
+barplot(100*tapply(hc$num_voted_ideas>0, profession, mean)
+  , ylim=ylim, space=space, col=mycol
+  , ylab="% employees"
+  , main="Rating by profession")
+barplot(100*tapply(hc$num_voted_ideas>0, hc$gender, mean)
+  , ylim=ylim, space=space, col=mycol
+  , main="Rating by gender")
+```
+
+
+Strong positive (negative) effect of \alert{PRIZE}  (\alert{FUND})
+---------------------------
+
+$$
+  y_i \sim \text{Bernulli}(g(\tau_i + X_i\beta))
+$$
+
+```{r simulations}
+sim <- function(level, fit, data, gender.level=NULL, job.level=NULL) {
+  ilogit <- function(x)exp(x) /(1+exp(x))
+  newdata <- data
+  newdata$treatment <- level
+  if (!is.null(gender.level)) {
+    newdata <- subset(newdata, gender==gender.level)
+  }
+  if (!is.null(job.level)) {
+    newdata <- subset(newdata, job==job.level)
+  }
+  p <- ilogit(predict(fit, newdata=newdata))
+  mean(rbinom(p, 1, prob=p))
+}
+
+# Regression
+fit <- glm(num_ideas>0 ~ treatment + job + gender + has_office, data=hc, family=binomial)
+set.seed(1)
+n.sim <- 1e3
+simulations <- sapply(levels(hc$treatment), function(x) {
+                      replicate(n.sim, sim(x, fit, hc))
+                      })
+names(simulations) <- levels(hc$treatment)
+sim.pdf <- apply(simulations, 2, density)
+```
+
+```{r main-effect, fig.width=9.5, fig.cap="$X$'s: the gender, profession, and fixed office location (yes/no)"}
+plot(NA, NA, xlim=c(0, 0.10), ylim=c(0, 100), bty='n', main='', ylab='Density', xlab="% employees submitting a proposal", xaxt='n')
+axis(1, at=pretty(seq(0, 0.10, length=5)), labels=100*pretty(seq(0, 0.10, le=5)))
+
+# add curves
+sapply(1:length(sim.pdf), function(x) { 
+  d <- sim.pdf[[x]]
+  lines(d, lty=1, col=x)
+  index <- which.max(d$y)
+  text(d$x[index], d$y[index], names(sim.pdf)[x], col=x, pos=3)
+}) -> x
+```
+
+\alert{Women} respond more than \alert{men} in the PCARE group
+------------------------------------------------
+
+$$
+  y_{i, \text{gender}} \sim \text{Bernulli}(g(\tau_{i, \text{gender}} + X_i\beta))
+$$
+
+```{r}
+fit <- glm(num_ideas>0 ~ treatment*gender + job + has_office, data=hc, family=binomial)
+
+# Simulations 
+set.seed(1)
+n.sim <- 1e3
+simulations <- rep()
+for (j in unique(hc$gender)) {
+  simulations[[j]] <- sapply(levels(hc$treatment), function(x) {
+                        replicate(n.sim, sim(x, fit, hc, j))
+                        })
+  names(simulations[[j]]) <- levels(hc$treatment)
+}
+sim.pdf <- lapply(simulations, function(x) apply(x, 2, density))
+```
+
+```{r, fig.width=9.5}
+par(mfrow=c(2,2), mar=c(4,4,2,2))
+for (x in 1:4) {
+
+  plot(NA, NA, xlim=c(0, 0.10), ylim=c(0, 150)
+      , bty='n', xaxt='n'
+      , ylab='Density'
+      , xlab="% employees submitting a proposal")
+  axis(1, at=pretty(seq(0, 0.10, length=5)), labels=100*pretty(seq(0, 0.10, le=5)))
+  legend("top", levels(hc$treatment)[x], col=x, bty='n')  
+  for (j in unique(hc$gender)) {
+    d <- sim.pdf[[j]][[x]]
+    lines(d, lty=1, col=x)
+    index <- which.max(d$y)
+    text(d$x[index], d$y[index], j, col=x, pos=3)
+  }
+}
+```
+
+
+No \alert{"income" effects} in the PRIZE group
+--------------------------------------
+
+$$
+  y_{i, \text{prof}} \sim \text{Bernulli}(g(\tau_{i, \text{prof}} + X_i\beta))
+$$
+
+```{r}
+fit <- glm(num_ideas>0 ~ treatment*job + gender + has_office, data=hc, family=binomial)
+
+# Simulations 
+set.seed(1)
+n.sim <- 1e3
+simulations <- rep()
+for (j in unique(hc$job)) {
+  simulations[[j]] <- sapply(levels(hc$treatment), function(x) {
+                        replicate(n.sim, sim(x, fit, hc, gender.level=NULL, job.level=j))
+                        })
+  names(simulations[[j]]) <- levels(hc$treatment)
+}
+sim.pdf <- lapply(simulations, function(x) apply(x, 2, density))
+```
+
+```{r, fig.width=9.5}
+par(mfrow=c(2,2), mar=c(4,4,2,2))
+for (x in 1:4) {
+
+  plot(NA, NA, xlim=c(0, 0.10), ylim=c(0, 150)
+      , bty='n', xaxt='n'
+      , ylab='Density'
+      , xlab="% employees submitting a proposal")
+  axis(1, at=pretty(seq(0, 0.10, length=5)), labels=100*pretty(seq(0, 0.10, le=5)))
+  legend("top", levels(hc$treatment)[x], col=x, bty='n')  
+  for (j in unique(hc$job)) {
+    d <- sim.pdf[[j]][[x]]
+    lines(d, lty=1, col=x)
+    index <- which.max(d$y)
+    text(d$x[index], d$y[index], j, col=x, pos=3)
+  }
+}
+```
+
+
+
+No differences in rating submissions
+-------------------------------------
+
+```{r}
+fit <- glm(num_voted_ideas>0 ~ treatment + job + has_office, data=hc, family=binomial)
+set.seed(1)
+n.sim <- 1e3
+simulations <- sapply(levels(hc$treatment), function(x) {
+                      replicate(n.sim, sim(x, fit, hc))
+                      })
+names(simulations) <- levels(hc$treatment)
+sim.pdf <- apply(simulations, 2, density)
+```
+
+
+```{r, fig.width=9.5, fig.cap="$X$'s: the gender, profession, and fixed office location (yes/no)"}
+
+xlim <- c(0.08, 0.20)
+ylim <- c(0, 60)
+
+plot(NA, NA, xlim=xlim, ylim=ylim, bty='n', main='', ylab='Density', xlab="% employees rating a proposal", xaxt='n')
+axis(1, at=pretty(seq(min(xlim), max(xlim), length=5))
+    , labels=100*pretty(seq(min(xlim), max(xlim), le=5)))
+
+# add curves
+sapply(1:length(sim.pdf), function(x) { 
+  d <- sim.pdf[[x]]
+  lines(d, lty=1, col=x)
+  index <- which.max(d$y)
+  text(d$x[index], d$y[index], names(sim.pdf)[x], col=x, pos=3)
+}) -> x
+```
+
+\alert{No difference} in the distribution of \alert{quality}
+-------------------------------------------
+
+```{r, fig.width=9.5}
+y.lim <- range(sapply(rating.ave.pdfs, function(x)range(x$y)))
+x.lim <- range(sapply(rating.ave.pdfs, function(x)range(x$x)))
+lab <- names(rating.ave.pdfs)
+
+plot(NA, NA, xlim=x.lim, ylim=y.lim, bty="n"
+    , xlab='Ave. rating'
+    , ylab="Density")
+for (i in 1:4) {
+  d <- rating.ave.pdfs[[i]]
+  lines(d, col=i, lty=i)
+  index <- which.max(d$y)
+  text(d$x[index], d$y[index], lab[i], col=i, pos=3, xpd=TRUE)
+}
+n <- format(nrow(voting), big.mark=",")
+legend("topleft", sprintf("Based on %s ratings", n), bty='n')
+```
+
+- Same no-difference result for other content: 
+    + individual rating, number of proposals, wordcount, areas of focus
+
+
+To recap the results
+---------------------------------------------
+
+- PRIZE strong positive effect on participation
+    + No "income" effects & prize appears small
+    + $\leadsto$ complementarity between prizes and social preferences [as in @morgan2000financing]
+    + Calibrate a model of PG to estimate magnitudine of social preferences (~25% costs)
+
+. . .
+
+- FUND strong negative effect on participation
+    + cheap talk $\leadsto$ no effect $\leadsto$ NO!
+    + OR informative $\leadsto$ more work in implementation phase $\leadsto$ higher free-riding incentives $\leadsto$ YES!
+    
+. . .
+
+- Gender differences in PCARE $\leadsto$ mission preferences may differ between motivated agents
+
+
+Conclusions
+====================
+
+Summing up
+-------------
+
+- The nature of the prize matters
+    - Not just compensation for effort
+    - Small prizes mitigate free riding incentives as in @morgan2000financing
+    - No quality vs participation trade-off
+
+- Communication is important    
+    - The way the contest is announced can increase participation 
+    - It can also generate gender differences
+
+
+----------
+
+- Questions?
+- Comments?
+- Thoughts?
+- Discussion

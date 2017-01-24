@@ -1,0 +1,63 @@
+% Todos
+% 
+% 
+
+Intro
+========
+
+- @gallus2015fostering 
+- @bull1987tournaments
+
+Results
+-------------
+
+- Bootstrap in gender are robust? yes. Show it here!
+
+Discussion
+===============
+
+1. incorrect judgments about incentives.  
+
+2. Pecuniary incentives may interact in a "negative" way, thus crowding out nonpecuniary incentives to work [@deci1985intrinsic; @benabou2003intrinsic]. The occurrence of a negative interaction would bias our estimate of $\Delta R$ downward because incentives would not simply "add up," but would become smaller by some unknown amount. If so, our procedure would then underestimate social preferences, $\hat \gamma$, which would go in the direction of an even larger effect of individual social preferences on participation.
+
+3. We cannot distinguish between soc. pref. and a "gift exchange" situation [@gneezy2006putting; @kube2012currency]. Awarding a prize can be viewed as an in-kind gift made by the employer to its employees. As a result, employees may feel the need to reciprocate by exerting more effort, thus leading to more participation. This explanation, however, is not fully satisfactory for various reasons. First, other empirical studies on the effect of in-kind gifts in the field, such as @kube2012currency,  have found relatively small effects on effort^[In a data-entry task, offering an unexpected in-kind prize being worth an about 20 percent of the flat wage raised average effort by 25 percent.] and we should expect even less on participation
+
+4. a commitment to invest $20,000
+
+5. Interference
+
+
+6. Peer effects Another concern is that decisions could be influenced by the pressure and monitoring exerted by peers during the contest. A large literature has shown substantial peer effects at work [@mas2009peers] and peer effects are found to limit the incentive to free ride in team production [@kandel1992peer; @erev1993constructive; @hamilton2003team; @boning2007opportunity; @bandiera2013team; @chan2014compensation]. Our experimental design restricts such peer effects by preventing team submissions, keeping submissions anonymous, and witholding feedback about the ongoing competition during the submission and evaluation phases of the contest.  
+
+6. By surveying HTL staff a few months after the contest, we find no examples of interference (such as workers noticing or complaining about the difference in the content of the messages received).
+
+7. Another finding that deserves further consideration is the negative effect on participation rates of announcing a precise commitment by the management. Our interpretation is that workers viewed the commitment as a "matching gift," a conditional commitment by the management to "match" the efforts of more ambitious projects, up to a maximum amount of $20,000. In the public goods context, @karlan2007does finds a positive effect of matching gifts on participation and contributions to charitable giving. Here, instead, we find a negative effect on participation. One possible explanation is that the announcement of a large commitment produced a reference point on which workers built their expectations about the additional cost of effort conditional on winning, thus exacerbating the incentive to free ride. According to this interpretation, this finding indicates that interventions that resemble a "matching gift" may not work well in an organizational environment.[^We also rule out that employees viewed the commitment in the FUND treatment as "cheap," due to prior expectations of a higher commitment. As it was the first iteration of the challenge, no specific expectation from prior experience could have existed.]
+
+ 
+ 
+8. Quality [[]]While our results indicate strong treatment effects on participation, we do not find effects on the distribution of content, quality, and amount of proposals. In particular, the lack of quality effects holds with both peer voting and the projects selected by the management. This result is consistent with our hypothesis that every worker has the same probability of contributing a high quality project idea, and that increasing participation helps to raise the levels of the public good (hypothesis H4). This result is in apparent contrast with other studies on public goods in the field, such as @landry2006toward that finds effects of prizes on both the amount of contributions and participation (intensive and extensive margins) in a natural field experiment on charitable giving.  One problem in interpreting this incongruity is that we do not observe an accurate measure of the hours worked or the effort spent on each submission, and we do not observe the production function for quality. Thus, it is hard to tell whether the lack of quality differences is due to differences in contributions or, rather, it was a feature of a non-monotonic production function.
+
+10. Concerning the role of prize incentives in creative endeavors, @gibbs2014field finds effects in both the number and quality of submissions. The contexts of the experiment were quite different. In @gibbs2014field, the authors study a two-year, pay-for-performance type of compensation scheme to encourage proposals for process improvements for clients of a consulting frame, whereas we focus on a four-week internal innovation contest that rewards best project proposals to improve the organization. Additionally, one goal of the innovation contest was to maximize engagement. To that end, messaging emphasized contributing project proposals of any scope.  So, one may argue that the difference in the incentives could explain the no quality effect. However, the short time frame and nature of the contest do not give much scope for investing in proposal quality versus the environment in @gibbs2014field.
+
+
+
+<!-- 
+Since prize awards entail additional costs for the organization, one may wonder whether the increase in participation was sufficient to repay the cost of the prizes paid. To address this question, one possibility is to examine the count of projects invited to follow up with implementation plans and assume benefits from these selected projects were worth more than the cost of the prize, which seems  a reasonable assumption given Heart Center executives sought projects worth implementation funds of up to $20,000 and the retail price of an iPad mini is less than 2 percent of these funds. By this metric, awarding a prize was very profitable as it resulted in 4 to 12 more selected project proposals compared to the other treatments. Another possibility is to express the submissions in terms of overall worked hours and compare the costs of "hiring" an average employee for the same amount of time. Also in this case, the difference in worked hours between the PRIZE and the other treatments appears large enough to repay the cost of the prize.[^Timing of submissions suggests that it took, on average, at least a full hour to make a full submission. Assuming an average cost of $40 per hour, the *minimum* difference in hours worked between the PRIZE and the other treatments ranges from about $400 to $1000; that is larger than the cost of an iPad mini (about $270).]  Overall, we conclude that awarding a prize to the top submissions was very profitable from the point of view of the organization.
+ -->
+
+
+Conclusions
+=============
+ 
+In recent years incentive schemes based on an employee's performance in a contest have been increasingly used by management to foster employees' contributions to internal public goods.  In many settings, members of the same organization have been competing for prizes to be awarded on the basis of their ability to solve common issues at the organizational level, such as addressing specific problems, innovating, providing business ideas, etc. Therefore they ended up posing a positive externality on each other. 
+
+The literature on contests, both theoretical and empirical, often neglects the role of positive externalities. Traditional scenarios presume benefits accruing only to the sponsor of the contest (more sales, higher production, etc.) and private benefits to the top competitors (winning a prize, gaining reputation, etc.). Instead, our experiment investigates the intricate relationship between personal rewards and the motivation to participate and contribute proposals in a contest where individual outcomes are expected to benefit other contestants (by promoting the innovation process at the organizational level) or the whole organization.
+
+Within this context, our results indicate that awarding personal rewards to the employees having made the best contributions generally increase participation, without significantly affecting the quality or the content of the contributions. We argue that this effect is due in part due to employees internalizing the effect of their contributions via personal rewards awarded by a contest mechanism. We also find significant effects of framing manipulations that we interpret as consistent with altruism. We further observe differences between genders in participation that are consistent with the presence of gender-based stereotypes. In particular, announcing the competition by emphasizing the need of "providing care to patients" appears to stimulate a negative response from men. 
+
+Our work may have important implications on the design of contests to encourage employees' contributions to public goods inside organizations. Awarding personal rewards increase overall participation and may subsidize participation of women, who seem to pay higher entry costs; the framing of the competition is important and it seems that stereotypes could play a larger-than-expected role and encourage sorting; managers may decide to adopt individualized announcements (of the kind of target advertising) to prevent a negative sorting. Finally, our data suggest that a large commitment by the management to invest in the implementation of public goods may be a double-edged sward, as it may increase the value of contributing but it may also signal high individual costs from winning, thus reducing participation; thus suggesting that contest designers would be better off by splitting the phase of ideation and implementation, for example, by running multiple contests.
+
+Overall, these results support the view that workers have multiple underlying motivations to contribute to public goods inside the organization, consisting of a combination of personal and altruistic incentives associated with the mission of the organization. And these results provide insights on how mangers can use these preferences via contests to foster employees' contributions to internal public goods.
+
+
+
