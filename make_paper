@@ -7,6 +7,16 @@ config_dir=Config
 share_dir=.share
 now=`date +%b%d`
 
+
+# Compile the report in pdf
+cp *.Rmd .RData Paper/
+cp Templates/* Paper/Templates
+cd Paper && crmd report.Rmd
+
+exit
+
+### Temporary
+
 function compile {
   output_dir="$1"
   mkdir -p $output_dir/{Code,Data/Raw,Templates}
