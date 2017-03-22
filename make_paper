@@ -7,13 +7,15 @@ config_dir=Config
 share_dir=.share
 now=`date +%b%d`
 
-
 # Compile the report in pdf
+cp ~/Library/Application\ Support/BibDesk/library.bib Paper/
+cp Config/_output.yml Paper/
 cp *.Rmd .RData Paper/
 cp Templates/* Paper/Templates
-cd Paper && crmd report.Rmd
-
+cd Paper && crmd report.Rmd && mv *.Rmd Code/
 exit
+
+
 
 ### Temporary
 

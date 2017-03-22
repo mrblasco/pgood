@@ -5,9 +5,11 @@ Experimental Design
 The context
 ------------
 
-Our natural field experiment was conducted at the Heart Center from July 2014 to November 2014. The Heart Center is a leading academic medical center specializing in clinical cardiac care and research in the United States. Founded more than a hundred years ago, the Heart Center serves thousands of patients every year, occupies more than 35,000 square feet of office space, and employs more than 1,200 people (nurses, physicians, researchers, technicians, and administrative staff) scattered across several buildings on the Massachusetts General Hospital's main campus in downtown Boston and a few other satellite locations.
+<!-- The experiment was conducted from July 2014 to November 2014.  -->
 
-The study was in cooperation with the Heart Center's launch of the Healthcare Transformation Lab (HTL), an initiative aimed at developing innovative health care process improvements to enhance the health care safety and delivery of the hospital.^[See http://www.healthcaretransformation.org for more information about the HTL initiative.] The launch of the HTL was accompanied by the announcement of an internal "innovation contest," called the Ether Dome Challenge (the name is taken from a historical place on MGH's main campus where the first public surgery using anesthetic was demonstrated in 1846) that sought to engage all staff members to participate. 
+The Heart Center is a leading academic medical center specializing in clinical cardiac care and research in the United States. Founded more than a hundred years ago, the Heart Center serves thousands of patients every year, occupies more than 35,000 square feet of office space, and employs more than 1,200 people (nurses, physicians, researchers, technicians, and administrative staff) scattered across several buildings on the Massachusetts General Hospital's main campus in downtown Boston and a few other satellite locations.
+
+The study was in cooperation with the Heart Center's launch of the Healthcare Transformation Lab (HTL), an initiative aimed at developing innovative health care process improvements to enhance the health care safety and delivery of the hospital.^[See http://www.healthcaretransformation.org for more information about the HTL initiative.] The launch of the HTL was accompanied by the announcement of an internal "innovation contest," called the Ether Dome Challenge (the name is taken from a historical place on MGH's main campus where the first public surgery using anesthesia was demonstrated in 1846) that sought to engage all staff members to participate. 
 
 The communication around the innovation contest highlighted the opportunity for staff to help in the selection process of the ideas and a commitment by the Heart Center Management that the leading ideas would be provided appropriate resources so that they could be implemented. The announcement on the contest's website read:
 
@@ -41,8 +43,7 @@ timeline()
 knitr::include_graphics("Figures/timeline-1.png")
 ```
 
-
-The innovation contest can be divided into three main phases: the submission phase, the peer evaluation phase, and the implementation phase. The timing is shown in Figure \ref{fig: phase}.
+The innovation contest was divided into three main phases: the submission phase, the peer evaluation phase, and the implementation phase. The timing is shown in Figure \ref{fig: phase}.
 
 In the four-week submission phase, all staff members were encouraged to identify one or more organizational problems and submit proposals addressing them. Employee participation was voluntary. All project submissions were done online via the website of the contest. There was no limit to the project proposals to submit (proposals could cover any issue within the organization, as described above), but each proposal was limited to approximately 300 words to lower the costs of entry and encourage broader participation. To ensure that treatment effects could be isolated, identified, and matched to participants, team submissions were not permitted. Limiting submissions to individual participation allowed us to match each submitter's characteristics to the randomly assigned treatment. It also lowered incentives to communicate or exchange information with other employees. Also, the website was designed to not provide any information about the status of the contest during the submission period. In this way, decisions could not be easily influenced by the perceived popularity of the contest or previous submissions.
 
