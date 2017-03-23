@@ -18,7 +18,8 @@ The communication around the innovation contest highlighted the opportunity for 
 
 ```{r timeline, fig.width=9, fig.height=4, include=FALSE}
 timeline <- function() {
-  dat <- read.csv("Data/Raw/timing.csv")
+  dat <- read.csv("timing.csv")
+  # dat <- read.csv("Data/Raw/timing.csv")
   d <- as.Date(dat$date)
   a <- string.break(dat$activity)
 
@@ -73,8 +74,13 @@ The first paragraph of the above message was randomized into _four_ different so
 In the first two groups (FUND and PRIZE), the solicitation nudged employees to participate by announcing individual prizes to be won (PRIZE), i.e., an Apple iPad mini, or a $20,000 budget for developing their project proposals (FUND). In the remaining two groups (PCARE and WPLACE), the solicitation "framed" the contest as an opportunity to improve the healthcare of their patients (PCARE) or the workplace (WPLACE). The exact words are in Table \ref{experimental-design}. In all groups, employees were not told that they were part of an experiment. 
 
 ```{r design, results='asis'}
-f <- function() { 
-  txt <- read.csv("Data/Raw/solicitation_text.csv")
+f <- function() {
+parag <- c("Submit your ideas to win an Apple iPad mini"
+,"Submit your ideas to win project funding up to $20,000 to turn your ideas into actions"
+,"Submit your ideas to improve patient care at the Heart Center"
+,"Submit your ideas to improve the workplace at the Heart Center")
+txt <- data.frame(treatment=c("PRIZE","FUND", "PCARE", "WPLACE"), paragraph=parag)
+  # txt <- read.csv("Data/Raw/solicitation_text.csv")
   m <- table(hc$treatment)
   index <- match(txt$treatment, names(m))
   m <- m[index]
