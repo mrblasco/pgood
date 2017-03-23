@@ -44,7 +44,9 @@
 \makeatother
 
 \usepackage{natbib}% plainnat
-\bibliographystyle{aer}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(},close={)}}
+%\bibliographystyle{aer}
 
 
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
@@ -1550,52 +1552,42 @@ prestige and peer recognition
 \citep{kosfeld2011getting, blanes2011tournaments}. While these other
 factors are important and could have influenced overall participation
 levels, these do not seem to explain well our findings. First, the
-incentive to gain a career promotion through the challenge was only
-marginal but even assuming that employees viewed winning the innovation
-contest as a good chance to advance their career, our messaging
-intervention was fairly neutral to any potential career opportunties
-associated with the challenge. The same goes for the opportunity of a
-recognition, which is possibly a more plausable alternative explanation
-for participation. Also in this case, it is hard to imagine how the
-messaging could create different reputation incentives that appear
-instead associated to actions that were the same in each treatment, such
-as the HTL announcing the winners during a public event at MGH and/or
-publishing their names on the website of the organization. So, because
-these ulterior motivations were only marginally influenced by our
-messaging, these do not seem to explain well our finding of significant
-differences between treatments.
+incentive to gain a career promotion was only marginal but even assuming
+that employees viewed winning the innovation contest as a good chance to
+advance their career, our messaging intervention was fairly neutral to
+any potential career opportunities associated with the challenge. So, it
+does not explain well our finding of significant differences between
+treatments. The same goes for the opportunity of a recognition, which is
+possibly a more plausible alternative explanation for participation.
+Also, in this case, it is hard to imagine how the messaging could create
+different reputation incentives that appear instead associated with
+actions that were the same in each treatment, such as the HTL announcing
+the winners during a public event at MGH and/or publishing their names
+on the website of the organization.
 
 Another concern is with ``contamination'' or ``interference'' between
-experimental units \citep{rosenbaum2007interference}. This situation is
-problematic as it violates the Stable Unit Treatment Value Assumption
-(SUTVA) for causal inference \citep{rubin1974estimating}. With
-contamination, for instance, decisions of one staff member depend on its
-treatment and on the treatments of others, such as its neighbors. This
-may lead to a bias that depends on the level of interference (how
-intense is the communication among subjects) but also on the association
-between individual and neighborhood treatments (how dense is the network
-of social interactions). Despite this problem can seriously bias our
-estimates, there are several xx xxx. First, the resulting bias would be
-in the direction of a null effect. This is because communication would
-spread the content of the messaging and, if everyone had the same
-information about the contest, then participation would have been the
-same in each condition. So, if one does not believe the SUTVA, our
-finding significant differences between treatments can still be
-interpreted in the sense of a lower bound (the true effect might be
-bigger). Second, internal communication during the submission phase was
-likely small: staff members competing against one another had only weak
-incentives for information sharing. Furthermore, one may expect
-participation rates to converge over time, as staff members share
-information. Contrary to this expectation, we find little evidence of
-converge when we examine the dynamic of submission. A third reason to
-not be too concerned with contamination is that the bias disappears with
-a growing sample size and with a sparse network
-\citep{forastiere2016identification}. In our setting, the sample size
-was relatively large (being of over 1200 units) and the network of
-interactions was likely sparse (given the limited number of participants
-and the diversity of tasks and roles inside the organization). Hence,
-and overall, even if there was a bias due to contamination, one should
-expect such bias to be small.
+experimental units. This situation is problematic as it violates the
+Stable Unit Treatment Value Assumption (SUTVA) for causal inference
+\citep{rubin1974estimating}. With contamination, for instance, decisions
+of one staff member depend on its treatment and on the treatments of
+others, such as its neighbors. This may lead to a bias that depends on
+the level of interference (how intense is the communication among
+subjects) but also on the association between individual and
+neighborhood treatments (how dense is the network of social
+interactions). Despite this problem can seriously bias our estimates, we
+know the direction of the bias. Because communication would spread the
+content of the messaging across treatments, we should expect
+participation differences to converge to zero (a bias towards a null
+effect). When the information is the same for everyone, participation
+rates should be on average the same in each condition. So, if one does
+not believe the SUTVA holds, our finding significant differences between
+treatments can still be interpreted in the sense of a lower bound of the
+true effect. Even so, internal communication during the submission phase
+was likely small: staff members competing against one another had only
+weak incentives for information sharing. Furthermore, we find little
+evidence of a converge when we examine the dynamic of participation.
+Hence, and overall, even if there was a bias due to contamination one
+should expect such bias to be small.
 
 One might also worry that employees had a poor understanding of the
 costs from winning the contest which may explain the participation
@@ -1609,7 +1601,7 @@ employees to pay less attention to the costs of being involved in
 implementing their own project. If so, some of those who submitted
 proposals in the PRIZE treatment would reconsider their choice as the
 competition moved to the implementation phase. Instead, we find that
-only a negligible fraction of employees submitting proposals were not
+only a negligible fraction of employees submitting proposals was not
 responsive to the invitation or declined participation in the
 implementation phase; a behavior that was not different across
 treatments. Hence, although employees might have had incorrect beliefs
@@ -1651,8 +1643,8 @@ unique characteristics of our subject pool (healthcare professional
 workers), the exploration of which is beyond the scope of the present
 study.
 
-One key concern when combining a pecuniary incentive with contributions
-to a public good is the interaction of incentives with the motive to
+Another key aspect of our study is the possibly negative interaction
+between reward incentives and the mission-oriented motivation to
 contribute. A \emph{negative interaction} occurs when incentives
 crowd-out the motive to contribute. Crowding out effects have been seen
 in other experiments in the context of blood donations
@@ -1669,7 +1661,7 @@ Finally, while the choice of focusing on healthcare workers may limit
 the generality of our results in some respect, it should be noted that
 in the US alone health care spending accounts for 17 percent of the GDP
 (in 2015) and, more generally, our study results are also directly
-applicable to a variety of other professions exposed to a public-good
+applicable to a variety of other professions exposed to a public good
 dilemma (e.g., teachers, public servants, researchers).
 
 In conclusion, the results presented here have implications that go

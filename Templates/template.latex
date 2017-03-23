@@ -48,7 +48,9 @@ $endif$
 
 $if(natbib)$
 \usepackage{natbib}% plainnat
-\bibliographystyle{$if(biblio-style)$$biblio-style$$else$aer$endif$}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(},close={)}}
+%\bibliographystyle{$if(biblio-style)$$biblio-style$$else$aer$endif$}
 $endif$
 $if(biblatex)$
 \usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
