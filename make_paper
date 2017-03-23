@@ -14,9 +14,8 @@ cp ~/Library/Application\ Support/BibDesk/library.bib Paper/
 cp Config/_output.yml Paper/
 cp *.Rmd .RData timing.csv Paper/
 cp Templates/* Paper/Templates
-cd Paper 
-crmd report.Rmd && mv *.Rmd Code/ 
-pdflatex report.tex 
+cd Paper && crmd report.Rmd && mv *.Rmd Code/ 
+# pdflatex report.tex 
 exit
 
 
