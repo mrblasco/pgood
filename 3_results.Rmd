@@ -1,5 +1,6 @@
 
-```{r cplot, include=FALSE, fig.width=5, fig.height=3.5}
+```{r cplot, echo=FALSE, include=FALSE, fig.height=3.5}
+#, fig.width=5
 l <- hc$treatment
 y1 <- factor(hc$num_ideas>0, levels=c("FALSE","TRUE"))
 y2 <- factor(hc$finalist>0, levels=c("FALSE","TRUE"))
@@ -29,7 +30,7 @@ for (y in Y) {
 #  coef.plot(p, SE, labels=names(p), alpha.levels=c(0.316, 0.10/6, 0.05/6))
 }
 ```
-
+ 
 Results
 ========
 

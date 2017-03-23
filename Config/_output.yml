@@ -1,16 +1,16 @@
 pdf_document:
-  toc: false
-  keep_tex: true
-  fig_crop: false
-  fig_width: 5  # 7
-  fig_height: 5 # 3.5
-  fig_caption: true
-  highlight: kate
-  template: Templates/template.latex
-  includes:
-    in_header:    Templates/header.tex
-    before_body:   Templates/doc_prefix.tex
-    after_body:    Templates/doc_suffix.tex
-  pandoc_args: [
+    toc: false
+    keep_tex: true
+    fig_crop: false
+    fig_width: 5  # 7
+    fig_height: 5 # 3.5
+    fig_caption: true
+    highlight: kate
+    template: Templates/template.latex
+    includes:
+        in_header:    Templates/header.tex
+        before_body:   Templates/doc_prefix.tex
+        after_body:    Templates/doc_suffix.tex
+    pandoc_args: [
       "--natbib", "--bibliography", "library.bib"
     ]

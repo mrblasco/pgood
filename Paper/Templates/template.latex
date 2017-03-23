@@ -136,9 +136,11 @@ $endfor$
 %\newcommand\redmarginpar[1]{\marginpar{\footnotesize{\textcolor{red}{#1}}}}
 %\listoftodos[Notes]
 \clearpage
+$if(toc)$
 \tableofcontents
 \setcounter{tocdepth}{2}
 \clearpage
+$endif$
 
 $body$
 
