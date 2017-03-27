@@ -1,5 +1,8 @@
 
-```{r cplot, echo=FALSE, include=FALSE, fig.height=3.5}
+```{r cplot, echo=FALSE, include=FALSE, fig.width=5, fig.height=3.5}
+
+op <- par(family='serif')
+
 #, fig.width=5
 l <- hc$treatment
 y1 <- factor(hc$num_ideas>0, levels=c("FALSE","TRUE"))
@@ -7,6 +10,7 @@ y2 <- factor(hc$finalist>0, levels=c("FALSE","TRUE"))
 y3 <- factor(hc$num_voted_ideas>0, levels=c("FALSE","TRUE"))
 Y <- list(y1, y2, y3)
 for (y in Y) {
+
   # Compute stats
   p <- numeric(6)
   SE <- numeric(6)
@@ -106,6 +110,8 @@ Results are also robust to restricting attention to staff members that were then
 
 
 ```{r dynamic, include=FALSE}
+op <- par(family='serif')
+
 tab <- table(hc$treatment, hc$week_submission)
 plot(NA, bty="n", xaxt="n"
   , ylim=c(0, 25), xlim=c(1, 4)
@@ -186,7 +192,7 @@ Viewing these results through our theoretical model, it appears that the contrib
 We now turn to examine treatment interactions involving the employee's gender and profession.^[We also look at interactions with office location without finding any significant difference.] Following extensive literature on differences in preferences between men and women [@croson2009gender], gender interactions might occur as a result of three main factors: differences in risk taking, social preferences (willingness to contribute to public goods), and competitive inclinations. If women prefer to work on activities that are less risky, more pro-social (e.g., aiming at improving people's health) and where competition is less intense, then we should observe significant treatment interactions.  Similarly, one may also expect treatment interactions associated with the employee's profession since the information of a fixed-value prize (i.e., the PRIZE treatment) could be relatively less effective for employees with a higher income, such as doctors, than the others. 
 
 ```{r plot-gender, fig.width=9, fig.height=3.5, include=FALSE}
-par(mfrow=c(1, 2), mar=c(2.1, 4.1, 5.1, 2.1))
+par(mfrow=c(1, 2), mar=c(2.1, 4.1, 5.1, 2.1), family='serif')
 
 xlim <- c(-0.1, 0.1)
 ylim <- c(1, 4) + c(-0.1, 0.1)
@@ -342,6 +348,7 @@ The treatment interventions may not have only impacted the propensity to make a 
 The ratings collected in the peer evaluation phase of the challenge provide our main measure of quality. Figure \ref{fig: ratings} shows the distribution of the ratings received by a proposal conditional on treatment of its proponent. In each treatment, a proposal was given a rating of 3, the "neutral" point, on a five-point scale about 30 percent of the times with  employees being more likely to give high (4-5) rather than low (1-2) ratings.
 
 ```{r plot-ratings, include=FALSE}
+op <- par(family='serif')
 f <- function() {
   tab <- 100*prop.table(table(voting$vote, voting$treatment.proponent), 2)
   xlim <- c(1,4.1)
@@ -389,6 +396,7 @@ The above analysis on the aggregate ratings does not hold in general. It crucial
 
 
 ```{r finalist, include=FALSE, fig.width=7, fig.height=3.5}
+op <- par(family='serif')
 submitters <- hc$num_ideas>0
 tab <- table(hc$finalist[submitters], hc$treatment[submitters])
 ft <- fisher.test(tab)
@@ -487,6 +495,7 @@ xtable(t(m), digits=c(0,0, 1, 1, 1, 3))
 
 
 ```{r areas, fig.width=9, height=8, include=FALSE}
+op <- par(family='serif')
 y <- factor(agg.voting$focus2)
 l <- factor(agg.voting$treatment)
 
@@ -563,6 +572,8 @@ We assume the cost of making a submission $c$ is the same in each treatment,^[Th
 This implies that the parameter capturing individual preference for the public good (that is consistent with our data) must be proportional to the ratio between the difference in rewards and the difference in the probability of submitting.  Although we do not observe the levels of $R$ in each treatment, we approximate the difference of rewards between the PRIZE and the other conditions by the pecuniary value of the reward, which has its upper bound in the highest price that can be paid for an iPad mini ($350).^[The price paid by the Heart Center was $239 at the end of 2014 (including shipping cost). Other popular models (those with cellular data and large storage) could cost as high as $350.  Agents, however, were not aware of the specific model used for the competition and of the price paid. So, the value of $350 is very conservative.] We further calibrate the cost of submitting a proposal $c$ to $40 which is the median income per hour of a Nurse Practitioner according to the Bureau of Labor Statistics; we assume the number of competitors $n$ to be 30 percent of the entire sample to take into account rational expectations about the actual number of participants in the contest.^[This choice is our best guess of the number of active staff members at the Heart Center and is based on the number of employees who voluntarily took a survey before the experiment (378 people).  Assuming greater participation would lead to artificially increasing the estimates of underlying incentives. In fact, staff members may have rational expectations about the actual number of potential participants, which may be less than the entire population.] Finally, by substituting these calibrated values into equation \eqref{eq: gamma} along with the empirical difference in participation rates between the PRIZE and the other treatments ($\Delta p=0.037$), we get an estimate of the magnitude of the social preferences towards the organization which is $\hat\gamma=\$12$. As shown in Figure \ref{fig: gamma}, this value is equivalent to about 30 percent reduction in the cost of contributing. Hence, increasing the prize by $100 is expected to raise the probability of submitting by 1 percentage points. This increase can be compared to the corresponding increase of 0.7 that one will obtain by assuming no social preferences $\gamma=0$ at all. 
 
 ```{r gamma, include=FALSE}
+op <- par(family='serif')
+
 f <- function(cost=40, n=372, dR=350) {
   m <- table(PRIZE=hc$treatment=="PRIZE", PROPOSAL=!hc$num_ideas>0)
   p <- prop.test(m, correct=FALSE)

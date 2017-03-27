@@ -10,7 +10,7 @@ require(sandwich)
 #require(knitr)
 
 # Options ###################################################
-options('xtable.type'='latex')
+options('xtable.type'='latex', 'digits'=3)
 
 # FUNCTIONS ###################################################
 string.break <- function(x) {
@@ -72,7 +72,7 @@ add.error.bars <- function(y, p, SE, alpha.levels=c(0.316, 0.10, 0.05), ...) {
 
 # Coef plot
 coef.plot <- function(pbar, SE, xlim=NULL, ylim=NULL, labels=NULL, ...) {
-  if (is.null(xlim)|is.null(ylim)) { 
+  if (is.null(xlim) | is.null(ylim)) { 
     xlim <- range(pbar + 2*SE, pbar - 2*SE)
     ylim <- c(1, length(pbar))
   }
@@ -82,7 +82,7 @@ coef.plot <- function(pbar, SE, xlim=NULL, ylim=NULL, labels=NULL, ...) {
     , pch=16, ann=FALSE, xaxt="n", yaxt="n", bty="n")
   add.error.bars(yticks, pbar, SE, ...)
   abline(v=0)
-  # X axis
+  # X axis 
   xticks <- pretty(seq(xlim[1], xlim[2], length=5))
   axis(3, at=xticks, paste(round(xticks*100), "%", sep=''))
   # Y Axis
