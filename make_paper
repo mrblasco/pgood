@@ -7,15 +7,23 @@ config_dir=Config
 share_dir=.share
 now=`date +%b%d`
 
-mkdir Paper/{Code,Templates}
 
 # Compile the report in pdf
-cp ~/Library/Application\ Support/BibDesk/library.bib Paper/
-cp Config/_output.yml Paper/
-cp *.Rmd .RData timing.csv Paper/
-cp Templates/* Paper/Templates
-cd Paper && crmd report.Rmd && mv *.Rmd Code/ 
-# pdflatex report.tex 
+output_dir="Paper"
+mkdir $output_dir/{Code,Templates}
+echo "Copy library..."
+cp ~/Library/Application\ Support/BibDesk/library.bib $output_dir/
+echo "Copy config files..."
+cp Config/_output.yml $output_dir/
+echo "Copy data and R files..."
+cp *.Rmd .RData timing.csv $output_dir/
+echo "Copy templates, headers, footers..."
+cp Templates/* $output_dir/Templates
+echo "Compile report..."
+cd $output_dir && crmd report.Rmd > report.Rout 2> report.err
+echo "Clean up..."
+mv *.Rmd Code/ 
+echo "Done!"
 exit
 
 

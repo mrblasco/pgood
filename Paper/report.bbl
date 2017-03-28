@@ -1,4 +1,4 @@
-\begin{thebibliography}{65}
+\begin{thebibliography}{64}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -227,13 +227,6 @@ J.~R. Green and N.~L. Stokey.
 \newblock A comparison of tournaments and contracts.
 \newblock \emph{The Journal of Political Economy}, 91\penalty0 (3):\penalty0
   349--364, 1983.
-
-\bibitem[Guinan et~al.(2013)Guinan, Boudreau, and
-  Lakhani]{guinan2013experiments}
-E.~Guinan, K.~J. Boudreau, and K.~R. Lakhani.
-\newblock Experiments in open innovation at harvard medical school.
-\newblock \emph{MIT Sloan Management Review}, 54\penalty0 (3):\penalty0 45,
-  2013.
 
 \bibitem[Hamilton et~al.(2003)Hamilton, Nickerson, and Owan]{hamilton2003team}
 B.~H. Hamilton, J.~A. Nickerson, and H.~Owan.
