@@ -1,0 +1,29 @@
+
+
+processing file: report.Rmd
+Loading required package: xtable
+Loading required package: stargazer
+
+Please cite as: 
+
+ Hlavac, Marek (2015). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+ R package version 5.2. http://CRAN.R-project.org/package=stargazer 
+
+Loading required package: sandwich
+
+
+processing file: ./1_intro.Rmd
+
+
+processing file: ./2_methods.Rmd
+
+
+processing file: ./3_results.Rmd
+
+
+processing file: ./4_discussion.Rmd
+output file: report.knit.md
+
+Latexmk: This is Latexmk, John Collins, 22 April 2016, version: 4.45.
+
+Output created: report.pdf

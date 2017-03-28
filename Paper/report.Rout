@@ -1,0 +1,240 @@
+  |                                                                         |                                                                 |   0%  |                                                                         |......                                                           |   9%
+   inline R code fragments
+
+  |                                                                         |............                                                     |  18%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo    : logi FALSE
+ $ warnings: logi FALSE
+ $ message : logi FALSE
+
+  |                                                                         |..................                                               |  27%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  36%
+label: unnamed-chunk-2 (with options) 
+List of 1
+ $ child: chr "1_intro.Rmd"
+
+  |                                                                         |                                                                 |   0%  |                                                                         |......................                                           |  33%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-6
+  |                                                                         |.................................................................| 100%
+   inline R code fragments
+
+
+  |                                                                         |..............................                                   |  45%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  55%
+label: unnamed-chunk-3 (with options) 
+List of 1
+ $ child: chr "2_methods.Rmd"
+
+  |                                                                         |                                                                 |   0%  |                                                                         |......                                                           |   9%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  18%
+label: timeline (with options) 
+List of 3
+ $ fig.width : num 9
+ $ fig.height: num 4
+ $ include   : logi FALSE
+
+  |                                                                         |..................                                               |  27%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  36%
+label: fig-timeline (with options) 
+List of 1
+ $ fig.cap: chr "Timeline of the innovation contest\\label{fig: phase}"
+
+  |                                                                         |..............................                                   |  45%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  55%
+label: design (with options) 
+List of 1
+ $ results: chr "asis"
+
+  |                                                                         |.........................................                        |  64%
+  ordinary text without R code
+
+  |                                                                         |...............................................                  |  73%
+label: unnamed-chunk-7
+  |                                                                         |.....................................................            |  82%
+   inline R code fragments
+
+  |                                                                         |...........................................................      |  91%
+label: summary (with options) 
+List of 1
+ $ results: chr "asis"
+
+  |                                                                         |.................................................................| 100%
+   inline R code fragments
+
+
+  |                                                                         |.........................................                        |  64%
+  ordinary text without R code
+
+  |                                                                         |...............................................                  |  73%
+label: unnamed-chunk-4 (with options) 
+List of 1
+ $ child: chr "3_results.Rmd"
+
+  |                                                                         |                                                                 |   0%  |                                                                         |..                                                               |   3%
+  ordinary text without R code
+
+  |                                                                         |....                                                             |   6%
+label: cplot (with options) 
+List of 4
+ $ echo      : logi FALSE
+ $ include   : logi FALSE
+ $ fig.width : num 5
+ $ fig.height: num 3.5
+
+  |                                                                         |......                                                           |   9%
+  ordinary text without R code
+
+  |                                                                         |.......                                                          |  11%
+label: unnamed-chunk-8
+  |                                                                         |.........                                                        |  14%
+   inline R code fragments
+
+  |                                                                         |...........                                                      |  17%
+label: table-outcomes (with options) 
+List of 1
+ $ results: chr "asis"
+
+  |                                                                         |.............                                                    |  20%
+   inline R code fragments
+
+  |                                                                         |...............                                                  |  23%
+label: dynamic (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |                                                                         |.................                                                |  26%
+  ordinary text without R code
+
+  |                                                                         |...................                                              |  29%
+label: table-ols (with options) 
+List of 1
+ $ results: chr "asis"
+
+  |                                                                         |....................                                             |  31%
+   inline R code fragments
+
+  |                                                                         |......................                                           |  34%
+label: plot-gender (with options) 
+List of 3
+ $ fig.width : num 9
+ $ fig.height: num 3.5
+ $ include   : logi FALSE
+
+  |                                                                         |........................                                         |  37%
+  ordinary text without R code
+
+  |                                                                         |..........................                                       |  40%
+label: table-interactions (with options) 
+List of 1
+ $ results: chr "asis"
+
+  |                                                                         |............................                                     |  43%
+  ordinary text without R code
+
+  |                                                                         |..............................                                   |  46%
+label: stats-ratings
+  |                                                                         |................................                                 |  49%
+   inline R code fragments
+
+  |                                                                         |.................................                                |  51%
+label: summary-ratings (with options) 
+List of 1
+ $ results: chr "asis"
+
+  |                                                                         |...................................                              |  54%
+  ordinary text without R code
+
+  |                                                                         |.....................................                            |  57%
+label: plot-ratings (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |                                                                         |.......................................                          |  60%
+  ordinary text without R code
+
+  |                                                                         |.........................................                        |  63%
+label: unnamed-chunk-9
+  |                                                                         |...........................................                      |  66%
+   inline R code fragments
+
+  |                                                                         |.............................................                    |  69%
+label: finalist (with options) 
+List of 3
+ $ include   : logi FALSE
+ $ fig.width : num 7
+ $ fig.height: num 3.5
+
+  |                                                                         |..............................................                   |  71%
+  ordinary text without R code
+
+  |                                                                         |................................................                 |  74%
+label: unnamed-chunk-10
+  |                                                                         |..................................................               |  77%
+   inline R code fragments
+
+  |                                                                         |....................................................             |  80%
+label: unnamed-chunk-11 (with options) 
+List of 1
+ $ results: chr "asis"
+
+  |                                                                         |......................................................           |  83%
+   inline R code fragments
+
+  |                                                                         |........................................................         |  86%
+label: unnamed-chunk-12 (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |                                                                         |..........................................................       |  89%
+  ordinary text without R code
+
+  |                                                                         |...........................................................      |  91%
+label: areas (with options) 
+List of 3
+ $ fig.width: num 9
+ $ height   : num 8
+ $ include  : logi FALSE
+
+  |                                                                         |.............................................................    |  94%
+  ordinary text without R code
+
+  |                                                                         |...............................................................  |  97%
+label: gamma (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |...........................................................      |  91%
+label: unnamed-chunk-5 (with options) 
+List of 1
+ $ child: chr "4_discussion.Rmd"
+
+  |                                                                         |                                                                 |   0%  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+/usr/local/bin/pandoc +RTS -K512m -RTS report.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output report.tex --template Templates/template.latex --highlight-style kate --latex-engine /Library/TeX/texbin/pdflatex --include-in-header Templates/header.tex --include-before-body Templates/doc_prefix.tex --include-after-body Templates/doc_suffix.tex --natbib --bibliography library.bib 
