@@ -33,41 +33,33 @@ label: unnamed-chunk-3 (with options)
 List of 1
  $ child: chr "2_methods.Rmd"
 
-  |                                                                         |                                                                 |   0%  |                                                                         |......                                                           |   9%
+  |                                                                         |                                                                 |   0%  |                                                                         |.......                                                          |  11%
   ordinary text without R code
 
-  |                                                                         |............                                                     |  18%
+  |                                                                         |..............                                                   |  22%
 label: timeline (with options) 
 List of 3
  $ fig.width : num 9
  $ fig.height: num 4
- $ include   : logi FALSE
+ $ fig.cap   : chr "Timeline of the innovation contest\\label{fig: phase}"
 
-  |                                                                         |..................                                               |  27%
+  |                                                                         |......................                                           |  33%
   ordinary text without R code
 
-  |                                                                         |........................                                         |  36%
-label: fig-timeline (with options) 
-List of 1
- $ fig.cap: chr "Timeline of the innovation contest\\label{fig: phase}"
-
-  |                                                                         |..............................                                   |  45%
-  ordinary text without R code
-
-  |                                                                         |...................................                              |  55%
+  |                                                                         |.............................                                    |  44%
 label: design (with options) 
 List of 1
  $ results: chr "asis"
 
-  |                                                                         |.........................................                        |  64%
+  |                                                                         |....................................                             |  56%
   ordinary text without R code
 
-  |                                                                         |...............................................                  |  73%
+  |                                                                         |...........................................                      |  67%
 label: unnamed-chunk-7
-  |                                                                         |.....................................................            |  82%
+  |                                                                         |...................................................              |  78%
    inline R code fragments
 
-  |                                                                         |...........................................................      |  91%
+  |                                                                         |..........................................................       |  89%
 label: summary (with options) 
 List of 1
  $ results: chr "asis"

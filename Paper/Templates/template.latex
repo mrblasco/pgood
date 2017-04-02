@@ -1,4 +1,4 @@
-\documentclass[11pt, titlepage]{$documentclass$}
+\documentclass[12pt, titlepage]{$documentclass$}
 \usepackage{beamerarticle}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
@@ -6,8 +6,9 @@
 
 % Page settings
 \usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{times}
 %\usepackage{palatino}%\usepackage{lmodern, times}
-\usepackage{lmodern}%\usepackage{lmodern, times}
+%\usepackage{lmodern}%\usepackage{lmodern, times}
 \usepackage{setspace}                           
 \onehalfspacing %\doublespacing  % \singlespacing 
 
