@@ -1,3 +1,5 @@
+<!-- The experiment was conducted from July 2014 to November 2014.  -->
+<!--  Message was three times: at the launch of the submission phase, eight days from the launch and two days before the end of the submission phase of the challenge. -->
 
 Experimental Design
 ===============
@@ -5,44 +7,36 @@ Experimental Design
 The context
 ------------
 
-Our natural field experiment was conducted at the Heart Center from July 2014 to November 2014. The Heart Center is a leading academic medical center specializing in clinical cardiac care and research in the United States. Founded more than a hundred years ago, the Heart Center serves thousands of patients every year, occupies more than 35,000 square feet of office space, and employs more than 1,200 people (nurses, physicians, researchers, technicians, and administrative staff) scattered across several buildings on the Massachusetts General Hospital's main campus in downtown Boston and a few other satellite locations.
+The Heart Center is a leading academic medical center specializing in clinical cardiac care and research in the United States. Founded more than a hundred years ago, the Heart Center serves thousands of patients every year, occupies more than 35,000 square feet of office space, and employs more than 1,200 people (nurses, physicians, researchers, technicians, and administrative staff) scattered across several buildings on the Massachusetts General Hospital's main campus in downtown Boston and a few other satellite locations.
 
-The study was in cooperation with the Heart Center's launch of the Healthcare Transformation Lab (HTL), an initiative aimed at developing innovative health care process improvements to enhance the health care safety and delivery of the hospital.^[See http://www.healthcaretransformation.org for more information about the HTL initiative.] The launch of the HTL was accompanied by the announcement of an internal "innovation contest," called the Ether Dome Challenge (the name is taken from a historical place on MGH's main campus where the first public surgery using anesthetic was demonstrated in 1846) that sought to engage all staff members to participate. 
+The study was in cooperation with the Heart Center's launch of the Healthcare Transformation Lab (HTL), an initiative aimed at developing innovative health care process improvements to enhance the health care safety and delivery of the hospital.^[See http://www.healthcaretransformation.org for more information about the HTL initiative.] The launch of the HTL was accompanied by the announcement of an internal "innovation contest," called the Ether Dome Challenge (the name is taken from a historical place on MGH's main campus where the first public surgery using anesthesia was demonstrated in 1846) that sought to engage all staff members to participate. 
 
 The communication around the innovation contest highlighted the opportunity for staff to help in the selection process of the ideas and a commitment by the Heart Center Management that the leading ideas would be provided appropriate resources so that they could be implemented. The announcement on the contest's website read:
 
-> If you've noticed something about patient experience, employee satisfaction, workplace efficiency, or anything that could be improved; if you've had an inspiration about a new way to safeguard health; or if you simply have a cost-saving idea, then now is the time to share your idea.
+> "If you've noticed something about patient experience, employee satisfaction, workplace efficiency, or anything that could be improved; if you've had an inspiration about a new way to safeguard health; or if you simply have a cost-saving idea, then now is the time to share your idea."
 
 
-```{r timeline, fig.width=9, fig.height=4, include=FALSE}
-timeline <- function() {
-  dat <- read.csv("Data/Raw/timing.csv")
-  d <- as.Date(dat$date)
-  a <- string.break(dat$activity)
-
-  par(mar=c(4.1,2.1,4.1,2.1))
-  xlim <- range(c(d+15, d-5))
-  plot(d, rep(1,7), pch=16, bty="n", yaxt="n", xaxt="n", ann=FALSE
-      , ylim=c(-2, 2)
-      , xlim=xlim)
-  yrand <- c(-1.4, -0.8, 2, 1.5, -1.8, 1.5, 1.5)
-  text(x=d, y=yrand, a, pos=4, xpd=TRUE)
-  segments(x0=d, y0=1, y1=yrand)
-  segments(x0=d, x1=d+1, y0=yrand, y1=yrand)
-  abline(h=1)
-  x.sq <- as.Date(c("2014-08-01", "2014-09-01", "2014-10-01", "2014-11-01"))
-  text(x=x.sq, y=1, format(x.sq, "%b"),pos=1)
-  points(x=x.sq, y=rep(1, 4), pch=3)
+```{r timeline, fig.width=9, fig.height=4, fig.cap="Timeline of the innovation contest\\label{fig: phase}"}
+plot.timeline <- function(dat, ...) {
+	d <- as.Date(dat$date)
+	a <- string.break(dat$activity)
+	par(mar=c(4.1,2.1,4.1,2.1))
+	xlim <- range(c(d+15, d-5))
+	plot(d, rep(1,7), pch=16, bty="n", yaxt="n", xaxt="n", ann=FALSE
+	  , ylim=c(-2, 2), xlim=xlim, ...)
+	yrand <- c(-1.4, -0.8, 2, 1.5, -1.8, 1.5, 1.5)
+	text(x=d, y=yrand, a, pos=4, xpd=TRUE)
+	segments(x0=d, y0=1, y1=yrand)
+	segments(x0=d, x1=d+1, y0=yrand, y1=yrand)
+	abline(h=1)
+	x.sq <- as.Date(c("2014-08-01", "2014-09-01", "2014-10-01", "2014-11-01"))
+	text(x=x.sq, y=1, format(x.sq, "%b"),pos=1)
+	points(x=x.sq, y=rep(1, 4), pch=3)
 }
-timeline()
+plot.timeline(read.csv("timing.csv"))
 ```
 
-```{r fig-timeline, fig.cap="Timeline of the innovation contest\\label{fig: phase}"}
-knitr::include_graphics("Figures/timeline-1.png")
-```
-
-
-The innovation contest can be divided into three main phases: the submission phase, the peer evaluation phase, and the implementation phase. The timing is shown in Figure \ref{fig: phase}.
+The innovation contest was divided into three main phases: the submission phase, the peer evaluation phase, and the implementation phase. The timing is shown in Figure \ref{fig: phase}.
 
 In the four-week submission phase, all staff members were encouraged to identify one or more organizational problems and submit proposals addressing them. Employee participation was voluntary. All project submissions were done online via the website of the contest. There was no limit to the project proposals to submit (proposals could cover any issue within the organization, as described above), but each proposal was limited to approximately 300 words to lower the costs of entry and encourage broader participation. To ensure that treatment effects could be isolated, identified, and matched to participants, team submissions were not permitted. Limiting submissions to individual participation allowed us to match each submitter's characteristics to the randomly assigned treatment. It also lowered incentives to communicate or exchange information with other employees. Also, the website was designed to not provide any information about the status of the contest during the submission period. In this way, decisions could not be easily influenced by the perceived popularity of the contest or previous submissions.
 
@@ -51,48 +45,51 @@ In the two-week peer evaluation phase, all staff members were invited to rate th
 In the final implementation phase, employees having submitted proposals highly rated by peers and judged as particularly promising by the HTL staff were invited to submit a full proposal detailing plans for implementation. Following evaluation by MGH senior leadership, top proposals were selected to receive support and funding for implementation. This final phase took a few months to complete, essentially the time necessary to select and implement the best projects.
 
 The design
---------------------------
+----------
 
-The main intervention was to alter the content of the communication that announced the innovation contest. The start of the submission phase was indeed announced to all staff members in a series of personalized emails. A direct message was sent to each contact in the list of employees' emails from our subject pool. 
+The basic idea of the experiment was to randomize the content of the communication announcing the innovation contest to all staff members. The start of the submission phase was indeed announced to everyone in a series of personalized emails. A direct message was sent to each contact in the list of employees' emails from our subject pool. 
 
-<!--  three times: at the launch of the submission phase, eight days from the launch and two days before the end of the submission phase of the challenge. -->
-
-The body of this communication with a placeholder for our treatment is reported below (a copy of the exact email is in the Appendix). 
+The content of this communication with a placeholder for our treatment is reported below (a copy of the exact email is in the Appendix). 
 
 > Dear Heart Center team member,
 >    
-> [TREATMENT HERE]
+> **Submit your ideas to [TREATMENT HERE]**
 >    
 > The Ether Dome Challenge is your chance to submit ideas on how to improve the MGH Corrigan Minehan Heart Center, patient care and satisfaction, workplace efficiency and cost. All Heart Center Staff are eligible to submit ideas online. We encourage you to submit as many ideas as you have: no ideas are too big or too small!
 >
 > Submissions will be reviewed and judged in two rounds, first by the Heart Center staff via crowd-voting, and then by an expert panel. Winning ideas will be eligible for project implementation funding in the Fall of 2014!
 
-The first paragraph of the above message was randomized into _four_ different solicitation treatments: FUND, PRIZE, PCARE and WPLACE. Thus, creating four treatment groups of equal size (Table \ref{experimental-design}). 
+The first paragraph of the above message was randomized into _four_ different solicitation treatments creating as many treatment groups of equal size (Table \ref{experimental-design}). 
 
-In the first two groups (FUND and PRIZE), the solicitation nudged employees to participate by announcing individual prizes to be won (PRIZE), i.e., an Apple iPad mini, or a $20,000 budget for developing their project proposals (FUND). In the remaining two groups (PCARE and WPLACE), the solicitation "framed" the contest as an opportunity to improve the healthcare of their patients (PCARE) or the workplace (WPLACE). The exact words are in Table \ref{experimental-design}. In all groups, employees were not told that they were part of an experiment. 
+In the first treatment group (PRIZE), the solicitation nudged employees to participate by announcing a personal prize (iPad mini's) for top submissions. In the second treatment group (FUND), the solicitation nudged employees to participate by announcing a $20,000 budget for developing their project proposals. In the remaining two groups, the solicitation "framed" the contest as an opportunity to improve the healthcare of their patients (PCARE) or the workplace (WPLACE). The exact words used in each group are reported in Table \ref{experimental-design}. In all groups, employees were not told that they were part of an experiment. 
 
 ```{r design, results='asis'}
-f <- function() { 
-  txt <- read.csv("Data/Raw/solicitation_text.csv")
-  m <- table(hc$treatment)
-  index <- match(txt$treatment, names(m))
-  m <- m[index]
-  m <- cbind("Obs."=m, "%"=round(100*m/sum(m)))
-  rownames(m)[-1] <- paste("[1.8ex]", rownames(m)[-1])
-  m <- rbind(m, "[1.8ex] Total"=apply(m, 2, sum))
-  m <- cbind(m, `First paragraph`=c(as.character(txt$paragraph), NA))
-  return(m)
+# INPUTS:  hc; render.table 
+design <- function() {
+p <- c("win an Apple iPad mini"
+	, "win project funding up to $20,000 to turn your ideas into actions"
+	, "improve patient care at the Heart Center"
+	, "improve the workplace at the Heart Center")
+	txt <- data.frame(treatment=c("PRIZE","FUND", "PCARE", "WPLACE"), paragraph=p)
+	m <- table(hc$treatment)
+	index <- match(txt$treatment, names(m))
+	m <- m[index]
+	m <- cbind("Obs."=m, "%"=round(100*m/sum(m)))
+	rownames(m)[-1] <- paste("[1.8ex]", rownames(m)[-1])
+	m <- rbind(m, "[1.8ex] Total"=apply(m, 2, sum))
+	m <- cbind(m, `Submit your ideas to`=c(as.character(txt$paragraph), NA))
+	return(m)
 }
 add <- rep()
 add$cmd <- "& \\multicolumn{2}{c}{\\emph{Employees:}}& \\multicolumn{1}{c}{\\emph{Randomized solicitation:}}\\\\\n \\cmidrule(lr){2-3}"
 add$pos <- -1
-render.table(f(), caption="Experimental design", label="experimental-design"
+render.table(design(), caption="Experimental design", label="experimental-design"
     , add=add, align=c("@{}l", "c","c", "p{10cm}"))
 ```
 
 A sample size of more than 300 units for each treatment ensured a sufficiently high statistical power based upon standard power calculations on the difference of proportions [@cohen1992power]. In testing the difference of proportions between any two treatments, the probability of type-I errors was slightly below $0.80$ for _small_ differences at 5 percent significance level but higher than $0.80$ for _medium_ and _large_ differences at the more stringent 1 percent significance level.^[The definition of small, medium and large differences is given by @cohen1992power;  e.g., a difference of 5 percentage points of the pair $(0.05, 0.10)$ is considered a small effect: see @cohen1992power p. 158.]
 
-Also, note the lack of a traditional "control" treatment in this study.^[Since the experiment was run in a workplace, we were constrained to carry out treatments having equal chances of being successful. This prevented us from having a 'null' treatment with no personalized incentives messaging as a control group.] Indeed, the analysis focused on multiple comparisons of several unordered discrete treatments (e.g., prizes vs funding vs framing).^[Nevertheless, if we were to think of one treatment as the benchmark against which to compare the others, the FUND treatment would be our best candidate because giving information about the size of available funding is the default option for announcing grant programs and was part of the HTL's initial design before our cooperation in the experiment.]
+Also, note the lack of a traditional "control" treatment in this study. Since the experiment was run in a workplace, we were constrained to carry out treatments having equal chances of being successful. This prevented us from having a 'null' treatment with no personalized incentives messaging as a control group. Indeed, the analysis focused on multiple comparisons of several unordered discrete treatments (e.g., prizes vs funding vs framing).^[Nevertheless, if we were to think of one treatment as the benchmark against which to compare the others, the FUND treatment would be our best candidate because giving information about the size of available funding is the default option for announcing grant programs and was part of the HTL's initial design before our cooperation in the experiment.]
 
 The website of the innovation contest had supporting information about the available prizes, funding, and timing of the initiative. The website also required an institutional email address to login. Using this feature, we designed the website graphics and layout to reinforce the effect of the announcement: the headings, background images, a short video, and the space just below a "submit your ideas" button were designed to show the exact same first paragraph of the solicitation that the employee received by email (i.e., text in Table \ref{experimental-design}).
 
@@ -126,7 +123,7 @@ f <- function() {
           , "P-value"=round(tbl.test,3))
     return(m)
   }
-  office <- ifelse(hc$office!="", "Office", "No office")
+  office <- ifelse(hc$has_office=="yes", "Office", "No office")
   age <- factor(hc$age, exclude=c("", NA))
   levels(age) <- paste(levels(age), "years old*")
   levels(age)[4:5] <- rep(">45 years old*", 2)
@@ -146,7 +143,6 @@ f <- function() {
   colnames(m)[5:6] <- c('%', 'Obs.')
   return(m)
 }
-
 cs <- chisq.test(table(hc$treatment, hc$gender))
 add <- rep()
 add$cmd <- "& \\multicolumn{4}{c}{\\emph{Assigned treatments:}} & \\multicolumn{2}{c}{\\emph{All:}} \\\\\n\\cmidrule(lr){2-5}\\cmidrule(lr){6-7}"

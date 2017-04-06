@@ -2,30 +2,47 @@
 paper_dir=Paper
 paper_html_dir=Paper_html
 paper_docx_dir=Paper_docx
-paper_appendix=Appendix
+appendix_dir=Paper_appendix
 config_dir=Config
 share_dir=.share
 now=`date +%b%d`
 
+# Settings
+output_dir="Paper"
+data="mgh3.RData"
+
+
+# Folders
+mkdir $output_dir/{Code,Templates}
 
 # Compile the report in pdf
-output_dir="Paper"
-mkdir $output_dir/{Code,Templates}
-echo "Copy library..."
+echo "Copy bibdesk library..."
 cp ~/Library/Application\ Support/BibDesk/library.bib $output_dir/
-echo "Copy config files..."
-cp Config/_output.yml $output_dir/
-echo "Copy data and R files..."
-cp *.Rmd .RData timing.csv $output_dir/
-echo "Copy templates, headers, footers..."
+echo "Copy data..."
+cp $data $output_dir/.RData 
+cp timing.csv $output_dir/
+echo "Copy source R files..."
+cp *.Rmd $output_dir/
+echo "Copy config, templates, headers, footers..."
 cp Templates/* $output_dir/Templates
+cp Config/_output.yml $output_dir/
 echo "Compile report..."
 cd $output_dir && crmd report.Rmd > report.Rout 2> report.err
 echo "Clean up..."
-mv *.Rmd Code/ 
+mv .RData *.Rmd Code/ 
 echo "Done!"
 exit
 
+
+# Appendix
+echo "Compiling the appendix..."
+mkdir -p $appendix_dir/{Code,Templates,Images}
+cp $config_dir/_output.yml $appendix_dir
+cp Templates/* $appendix_dir/Templates
+cp -r Data/Images $appendix_dir
+cp .RData *.Rmd $appendix_dir
+cd $appendix_dir && crmd report_appendix.Rmd && mv *.Rmd Code/
+exit
 
 
 ### Temporary
@@ -58,7 +75,7 @@ elif [ "$1" == "--appendix" ]; then
   cp .RData *.Rmd $paper_appendix
   echo "Compiling appendix..."
   cd $paper_appendix && crmd report_appendix.Rmd && mv *.Rmd Code/
-
+ 
 elif [ "$1" == "--all" ]; then
   echo "Compiling all formats..."
   cp $config_dir/_output.yml $paper_dir

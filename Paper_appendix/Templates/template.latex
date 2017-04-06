@@ -1,4 +1,4 @@
-\documentclass[11pt, titlepage]{$documentclass$}
+\documentclass[12pt, titlepage]{$documentclass$}
 \usepackage{beamerarticle}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
@@ -6,7 +6,9 @@
 
 % Page settings
 \usepackage[letterpaper, margin=1in]{geometry}
-\usepackage{palatino}%\usepackage{lmodern, times}
+\usepackage{times}
+%\usepackage{palatino}%\usepackage{lmodern, times}
+%\usepackage{lmodern}%\usepackage{lmodern, times}
 \usepackage{setspace}                           
 \onehalfspacing %\doublespacing  % \singlespacing 
 
@@ -47,7 +49,9 @@ $endif$
 
 $if(natbib)$
 \usepackage{natbib}% plainnat
-\bibliographystyle{$if(biblio-style)$$biblio-style$$else$aer$endif$}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(},close={)}}
+%\bibliographystyle{$if(biblio-style)$$biblio-style$$else$aer$endif$}
 $endif$
 $if(biblatex)$
 \usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
@@ -135,9 +139,11 @@ $endfor$
 %\newcommand\redmarginpar[1]{\marginpar{\footnotesize{\textcolor{red}{#1}}}}
 %\listoftodos[Notes]
 \clearpage
+$if(toc)$
 \tableofcontents
 \setcounter{tocdepth}{2}
 \clearpage
+$endif$
 
 $body$
 

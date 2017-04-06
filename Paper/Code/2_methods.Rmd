@@ -123,7 +123,7 @@ f <- function() {
           , "P-value"=round(tbl.test,3))
     return(m)
   }
-  office <- ifelse(hc$office!="", "Office", "No office")
+  office <- ifelse(hc$has_office=="yes", "Office", "No office")
   age <- factor(hc$age, exclude=c("", NA))
   levels(age) <- paste(levels(age), "years old*")
   levels(age)[4:5] <- rep(">45 years old*", 2)

@@ -1,4 +1,4 @@
-\documentclass[11pt, titlepage]{article}
+\documentclass[12pt, titlepage]{article}
 \usepackage{beamerarticle}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
@@ -6,7 +6,9 @@
 
 % Page settings
 \usepackage[letterpaper, margin=1in]{geometry}
-\usepackage{palatino}%\usepackage{lmodern, times}
+\usepackage{times}
+%\usepackage{palatino}%\usepackage{lmodern, times}
+%\usepackage{lmodern}%\usepackage{lmodern, times}
 \usepackage{setspace}                           
 \onehalfspacing %\doublespacing  % \singlespacing 
 
@@ -43,7 +45,9 @@
 \makeatother
 
 \usepackage{natbib}% plainnat
-\bibliographystyle{aer}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(},close={)}}
+%\bibliographystyle{aer}
 
 
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
@@ -64,8 +68,8 @@
 \newcommand\sub[1]{_{#1}}
 \newcommand\supsc[1]{^{#1}}
 
-\title{Online Appendix: Contributing to Public Goods Inside Organizations:
-Field Experimental Evidence {[}NOT FOR PUBLICATION{]}\thanks{Blasco: Harvard Institute for Quantitative Social Science, Harvard
+\title{Online Appendix: Incentives for Public Goods Inside Organizations: Field
+Experimental Evidence {[}NOT FOR PUBLICATION{]}\thanks{Blasco: Harvard Institute for Quantitative Social Science, Harvard
 University, 1737 Cambridge Street, Cambridge, MA 02138 (email:
 \href{mailto:ablasco@fas.harvard.edu}{\nolinkurl{ablasco@fas.harvard.edu}}).
 Jung: Harvard Business School, Soldiers Field, Boston, MA 02163 (email:
@@ -83,7 +87,7 @@ This project would not have been possible without the support of Eric
 Isselbacher, Julia Jackson, Maulik Majmudar and Perry Band from the
 Massachusetts General Hospital's Healthcare Transformation Lab.}}
 \author{Andrea Blasco \and Olivia S. Jung \and Karim R. Lakhani \and Michael Menietti}
-\date{Last updated: 13 January, 2017}
+\date{Last updated: 05 April, 2017}
 
 \begin{document}
 \maketitle
@@ -104,9 +108,6 @@ website.
 %\usepackage[textsize=tiny]{todonotes}
 %\newcommand\redmarginpar[1]{\marginpar{\footnotesize{\textcolor{red}{#1}}}}
 %\listoftodos[Notes]
-\clearpage
-\tableofcontents
-\setcounter{tocdepth}{2}
 \clearpage
 
 \section{Extended model with heterogenous
@@ -400,6 +401,6 @@ PCARE & WPLACE
   and safety; Lowering the cost of care
 \end{itemize}
 
-\bibliography{/Users/andrea/Papers/library.bib}
+\bibliography{library.bib}
 
 \end{document}
