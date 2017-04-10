@@ -58,6 +58,5 @@ source("config.Rmd")
 ```{r child = '4_discussion.Rmd'}
 ```
 
-
-References
-=============
+\footnotesize
+\linespread{1}
