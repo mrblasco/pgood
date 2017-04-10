@@ -574,7 +574,6 @@ This implies that the parameter capturing individual preference for the public g
 
 ```{r gamma, include=FALSE}
 op <- par(family='serif')
-
 f <- function(cost=40, n=372, dR=350) {
   m <- table(PRIZE=hc$treatment=="PRIZE", PROPOSAL=!hc$num_ideas>0)
   p <- prop.test(m, correct=FALSE)
@@ -602,8 +601,6 @@ f <- function(cost=40, n=372, dR=350) {
 f()
 ```
 
-
-<!-- Sensitivity picture -->
 \begin{figure} 
 \centering
 \caption{Estimated value of social preferences ($\hat\gamma$)}

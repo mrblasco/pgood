@@ -11,12 +11,12 @@ author:
     - Karim R. Lakhani
     - Michael Menietti
 
-abstract: "We report results of a natural field experiment conducted at a medical organization that held an innovation contest seeking contribution of public goods (i.e., projects for organizational improvement) from its more than 1200 employees. We find that offering a prize for winning submissions boosted participation by 85 percent ($+2.5$ percentage points) without affecting the quality of the submissions. The effect was consistent across gender and job type. We posit that the allure of a prize, in combination with mission-oriented preferences, drove participation. Using a simple model, we estimate that these preferences explain about a third of the magnitude of the effect. We also find that these results were sensitive to the solicited person's gender. Overall, because the incentive effect of offering a prize for winning the contest interacts with prosocial motivations of workers to contribute to the public good, prizes appear to be a more profitable way for firms to encourage contribution to public goods from their workers than currently acknowledged in the traditional tournament theory literature."
+abstract: "We report results of a natural field experiment conducted at a medical organization that sought contribution of public goods (i.e., projects for organizational improvement) from its 1200 employees. Offering a prize for winning submissions boosted participation by 85 percent without affecting the quality of the submissions. The effect was consistent across gender and job type. We posit that the allure of a prize, in combination with mission-oriented preferences, drove participation. Using a simple model, we estimate that these preferences explain about a third of the magnitude of the effect. We also find that these results were sensitive to the solicited person's gender."
 
 JEL: 
-  - H41
   - D23
-  - D03
+  - H41
+  - M52
 
 keywords: 
   - innovation contest
