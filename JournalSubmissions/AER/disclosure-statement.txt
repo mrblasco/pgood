@@ -1,0 +1,16 @@
+\today 
+
+**Disclosure statement**
+
+We hereby declare that we have no relevant or material financial interests that relate to the research described in the paper "Motivating Effort In Contributing to Public Goods Inside Organizations: Field Experimental Evidence".
+
+The study received human subjects (IRB) approval by the Standing Committee on the Use of Human Subjects in Research (CUHS) administered by the Faculty of Arts and Sciences at Harvard University.
+\bigskip
+
+Sincerely,
+
+Andrea Blasco,
+Olivia S. Jung,
+Karim R. Lakhani,
+Michael Menietti
+

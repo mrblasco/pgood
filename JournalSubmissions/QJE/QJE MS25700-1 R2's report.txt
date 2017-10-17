@@ -1,0 +1,35 @@
+This is a very interesting paper, and here are some comments:
+
+1. I wonder if the authors can do a bit more to strengthen the motivation for this study. There is plenty of evidence on contribution to public goods in many setting, and most evidence does show that people (or workers) respond to a multiplicity of incentives. Most of the experimental evidence is from the lab (though it is not necessarily the case that lab evidence has less generalizability than very specific field settings – see for example the recent debate between John List and Colin Camerer in the Handbook of Experimental Economic Methodology); however, there also is important evidence from the field, such as the studies of Gibbs et al. and DellaVigna et al. that the authors cite. I am not clear that, in general, the current study adds much. There could be a contribution for health-based organization, however, so the authors may consider framing the paper in that sense.
+
+2. Was this a natural or artefactual field experiment, i.e. did the participants know that a randomized intervention was going on? Also, were power calculations performed, and was a pre-trial plan registered anywhere?
+
+3. I’m not sure of what to make of the main submission results because of the small number of submissions. Statistical significance is weak in some cases, but this could either be due to power issues or true underlying zero effects. The authors should also test the statistical difference of the effect between treatments, and not only between the controls and each treatment. Is the prize effect different from the pcare or wplace effects, for example?
+
+4. I am also not clear whether the iPad Mini would be assigned to the “winners” of the competition or was some sort of lottery prize. This might affect the interpretation of the mechanism explaining the prize effect: do people like the idea of a lottery (some sort of taste for gaming)? Or are they responding to the incentive of doing their best to win?
+More generally, the fact that the prize has a monetary value, but is in kind, introduce additional motivation and mechanisms that the authors are not considering. A cash prize might be more directly interpretable as an “extrinsic” motive, whereas an in-kind prize may be seen as a form of reciprocity or gratitude on the part of the organization.
+
+5. The small sample size makes the heterogeneous effect analysis even more problematic – it is very hard to rely on small numbers when the sample is split or interactions are added. Moreover, could the “gender effect” be explained by the fact that most nurses are women, and nurses may be more attentive or expert in patient care?
+
+6. A further problem with the heterogeneous treatment effect analysis is that they don’t seem to be back up by theory – why are the authors performing these tests, in other words?
+
+7. Regarding the quality results, again it is difficult to say if the limited significance is due to the limited statistical power or to a genuine absence of effect. For example, the difference in the incidence of a top rate of “5”s between the wplace and the prize treatments is not very small (and looking at “extreme” valuations may be interesting in this context), but we can’t really tell if this difference is real or just noise, because of the very small number of submissions.
+
+8. Still on the quality results (arguably the most interesting and potentially novel part of the study), the authors should further motivate why they thing that the conclusion of no quality effect cannot be drawn from their analysis (I am referring to the discussion at page 28 in particular).
+
+9. Are the authors concerned about social information that might reduce the differences between treatments, or could this even be exploited somehow (see for example Duflo-Saez, QJE 2003)?
+
+10. Another interesting theme here may be the effect of the treatment not only on the “rate” of submission, but also on the “direction”. May an appeal to patient care as opposed to workplace improvement lead to generating different ideas, for example?
+
+11. Can the authors explain why the time distribution of submissions (Fig. 2) matter? What do we learn from this?
+
+12. What does the model add to the analysis? Can the authors push more on the connection with the empirics?
+
+13. Sections 1 and 2 can be easily shortened into 5 pages in total, without any loss of insight and with gains in readability
+
+14. I’d move table 5 and the related discussion in an appendix, and mention this in a footnote in the main text.
+
+15. There is a bit of confusion in the use of tenses. The authors moves from the past and the present, especially when describing the research design, data and results. I’d advise some consistency.
+
+16. Because the economics behind this study are unclear, I was wondering if this could be a more interesting contribution to the literature in health (JHE, Social Science and Medicine, Health Economics, etc.) or organizational sociology (Organization science, Administrative Science Quarterly, and so on).
+
