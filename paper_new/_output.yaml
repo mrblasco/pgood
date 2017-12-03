@@ -1,0 +1,10 @@
+pdf_document:
+  toc: true
+  keep_tex: true
+  citation_package: natbib
+  template: "~/Templates/Pandoc/paper.latex"
+  pandoc_args: [
+	  "--bibliography", "refs.bib"
+  ]
+
+# 

@@ -1,0 +1,464 @@
+\clearpage
+
+<!---
+NOTES Excluding an additional 20 proposals from 11 employees who were not part of the Heart Center when the experiment was designed.
+--->
+
+```{r}
+knitr::read_chunk("R/results.R")
+```
+
+# Results
+
+## Submitting project proposals
+
+```{r results_common}
+```
+
+We first examine treatment differences in participation by looking at the percentage of employees who made a project submission (Figure \ref{figure_participation}). Based on the results of the four-week submission period, we find that, when the solicitation highlights the opportunity of a prize to be won (PRIZE), employee participation is considerably higher relative to the other solicitation treatments.  In particular, the proportion of submissions in the PRIZE solicitation treatment (`r p["PRIZE"]` percent) is `r p["PRIZE"]`/`r p["PCARE"]`=`r rr_prize_pcare` and `r p["PRIZE"]`/`r p["WPLACE"]`=`r rr_prize_wplace` times higher relative to solicitation treatments that show a general encouragement to participate instead of the prize opportunity (PCARE, `r p["PCARE"]` percent; and WPLACE, `r p["WPLACE"]` percent); and the difference is even more dramatic when the prize opportunity is replaced by information about available project implementation funding (FUND, `r p["WPLACE"]` percent), compared to which the proportion of submissions in the PRIZE solicitation treatment is `r p["PRIZE"]`/`r p["FUND"]`=`r rr_prize_fund` times higher.
+
+
+```{r figure_participation, include=FALSE}
+```
+
+\begin{figure}
+\caption{Employee participation by solicitation treatment}
+\label{figure_participation}
+\centering
+\includegraphics{figures/figure_participation-1.pdf}
+\end{figure}
+
+```{r pairwise_comparisons, results="asis"}
+```
+
+To test to see whether participation rates are statistically different across solicitation treatments, we use a series of pairwise two-sample tests of proportions (Table \ref{pairwise}). The analysis reveals that the positive difference between the PRIZE and PCARE solicitation treatments is marginally statistically significant (p=`r mat["PRIZE - PCARE", 3]`); the positive difference between the PRIZE and WPLACE solicitation treatments is insignificant (p=`r mat["PRIZE - WPLACE", 3]`); and the positive difference between the PRIZE and FUND solicitation treatments is statistically significant (p=`r mat["PRIZE - FUND", 3]`). This evidence thus indicates a positive causal effect on participation of highlighting the prize opportunity compared to a general encouragement (although only marginally significant) and announcing available funding. The analysis also shows a large, negative difference between the FUND and the WPLACE solicitation treatments that is statistically significant (p=`r mat["FUND - WPLACE",3]`); and a large, negative difference between the FUND and the PCARE solicitation treatments that is marginally statistically significant (p=`r mat["FUND - PCARE",3]`). This evidence thus indicates a negative causal effect on employee participation of highlighting the available funding compared to a general encouragement to participate. In other words, while a solicitation strategy based on individual prizes is effective, a solicitation focused on the opportunity of getting implementation funding alone could harm participation relative not only to prizes but also to general encouragements towards improving the workplace. 
+
+```{r figure_dynamics, include=FALSE}
+```
+
+\begin{figure}
+\caption{Submissions over time by solicitation treatment}
+\label{figure_dynamics}
+\centering
+\includegraphics{figures/figure_participation-1.pdf}
+\end{figure}
+
+
+We now turn to examining how employee participation evolves over time (Figure \ref{figure_dynamics}). Though our data may not allow for a complete analysis of submission dynamics, looking at the overall submission patterns can be useful for various reasons. In particular, if employees assigned to different solicitation treatments were sharing (either face-to-face or electronically) the content of their solicitation with others, one should expect their participation rates to converge over time, yielding estimates of the causal effects of a solicitation treatment biased towards zero. Contrary to these expectations, Figure \ref{figure_dynamics} shows no evidence of a strong convergence. Submissions in the PRIZE solicitation treatment are constantly higher than in the other treatments (except perhaps the last week where submissions in the PCARE and WPLACE solicitation treatments show a little boost); at the same time, submissions in the FUND treatment are constantly low. These patterns are hence consistent with communication effects having little, or no, consequences on our findings, a topic we will discuss in greater detail later (Section \ref{discussion}).
+
+Another important question related to employee participation is the role of employee heterogeneity. Though staff may benefit from organizational improvements in similar ways, the opportunity cost of contributing time and effort to improvement will likely vary with the gender, profession, and organizational role of the employee. 
+
+We use the following model to check whether differences in participation can be explained by differences in the gender, profession, and organizational role of the employee. The probability of submitting, $y_i=1$, is given by
+
+\begin{equation} 
+  \label{eq: submit}
+	\Pr(y_i=1) = \alpha_0 + \alpha_{j} 
+									+ \text{JOB}_{i} 
+									+ \text{MALE}_{i} 
+									+ \text{OFFICE}_{i}, 
+\end{equation}
+
+where $\alpha_0$ is a constant, $\alpha_j$ is the causal effect of the solicitation treatment $j$, controlling for the employee's profession ($\text{JOB}_i$), the gender ($\text{MALE}_i$), and a dummy for office location ($\text{OFFICE}_i$) that indicates whether the employee had a permanent office instead of being assigned to a ward. Note that, in our context, having a fixed office location is highly correlated with the type of profession.^[Much of the clinical staff might be mobile and only half of the employees ($53$ percent) had fixed office locations, as they may be on duty in multiple wards. More senior staff tend to have a fixed location. So, within each profession, this measure can be viewed as a proxy for status inside the organization.] For example, nurses are more likely to being assigned to a ward than physicians or administrative workers, due to the nature of their job. Within each profession, however,  having a fixed office location is usually correlated with the hierarchical position inside the organization. Beyond the effect of having a fixed office location, this variable is thus potentially controlling for income and hierarchical differences occurring within each profession as well.
+
+```{r table-ols, results='asis'}
+fit <- rep()
+fit$baseline  <- glm(100*proposal_y ~ treatment2, data=hc)
+fit$ctrl1     <- glm(100*proposal_y ~ treatment2 + job2, data=hc)
+fit$ctrl2     <- glm(100*proposal_y ~ treatment2 + gender, data=hc)
+fit$ctrl3     <- glm(100*proposal_y ~ treatment2 + has_office, data=hc)
+fit$full      <- glm(100*proposal_y ~ treatment2 + gender + job2 + has_office, data=hc)
+SE <- sapply(fit, robust.se)
+
+mynotes <- "This table reports OLS estimates with heteroskedasticity robust standard errors in parenthesis. All coefficients are multiplied by 100 to indicate the percentage point change in the probability of submitting. Treatment coefficients indicate the percentage point deviation from the overall probability of submitting (there is no specific reference category). The asterisks $^{\\ast\\ast\\ast}$, $^{\\ast\\ast}$, $^{\\ast}$ indicate significance at 1, 5 and 10 percent level, respectively."
+
+float(fit, se=SE, caption="Probability of submitting proposals"  
+      , label="tab: probability submitting"
+      , notes=mynotes
+      , covariate.labels = c("PRIZE", "WPLACE", "FUND"
+                            , "Job (nursing)", "Job (MD)"
+                            , "Male (yes)", "Office (yes)")
+      , dep.var.labels   = " $SUBMIT_{ij}=1$ "
+      , keep.stat=c('n'), digits=2
+      , add.lines=list(c("Log Likelihood", round(sapply(fit, logLik)))))
+
+cf.baseline <- round(coef(fit$baseline), 1)
+cf.full <- round(coef(fit$full), 1)
+
+# Testing the models
+p <- anova(fit$baseline, fit$full, test='Chisq')[5]
+p <- format(p[2,], digits=3)
+``` 
+ 
+Table \ref{tab: probability submitting} reports the estimation results. We find an insignificant effect associated with an employee's profession and gender, which is not consistent with sorting. We find instead a large, positive effect on participation associated with the worker having a fixed office location, as opposed to being assigned to a ward. This evidence thus suggests that staff with an office location and, therefore, higher up in the organizational hierarchy is more likely to participate in the contest, controlling for the profession and gender.[^tenure]
+
+[^tenure]: To further corroborate this interpretation we run the full model regression with additional controls for age and tenure that we observe for only a fraction of our sample and impute for the rest. In this regression, the coefficient for office becomes insignificant with the effect being absorbed by  the coefficients for tenure and age. This result, however, relies on the way we imputed the data; a reason for which we have decided to not report the regression results in the paper.
+
+
+<!---
+Though one might expect employees to sort by profession because differences in income between hospital employees can be sharp,^[As mentioned before, the median wage of a physician is about 40 percent higher than the that of a registered nurse.] we find no effect associated with an employee's profession.^[The coefficient for nurses is indeed positive and negative for physicians, consistent with sorting. These effects are, however, not statistically different from the residual category of other workers, as well as from one another.] Similarly, though a large literature in economics and psychologs has documented a lower propensity of women to become involved in competitive activities [@croson2009gender; @niederle2007women], our data indicate that women are as likely as men to submit proposals. We find instead a large, positive effect on participation associated with the worker having a fixed office location, as opposed to being assigned to a ward. 
+-->
+
+In theory, the multiple regression gives more efficient estimates for solicitation treatment differences by reducing the overall noise associated with baseline characteristics. Controlling for differences in baseline characteristics, we estimate indeed that, at the 95 level of statistical significance, employees in the PRIZE solicitation treatment are `r cf.full["treatment2PRIZE"]` percentage points _more_ likely to submit compared to the grand mean, whereas employees in the FUND solicitation treatment are `r -cf.full["treatment2FUND"]` percentage points _less_ likely to do so.^[Subtracting these two effects gives `r cf.full["treatment2PRIZE"] - cf.full["treatment2FUND"]` which is the difference in the probability of submitting between PRIZE and FUND treatments.] By comparison, these effects are about half the effect of the heterogeneity captured by the office dummy, which means these are sizable effects.
+
+We now turn to examining treatment interactions involving the employee's gender and profession.^[We also look at interactions with office location without finding any significant difference.] We hypothesize gender interactions to occur as a result of three main factors: differences in risk taking, social preferences (willingness to contribute to public goods), and competitive inclinations. If women prefer to work on activities that are less risky, more pro-social (e.g., aiming at improving people's health) and where competition is less intense, then we should observe significant treatment interactions.  Similarly, we expect treatment interactions associated with the employee's profession to occur because, for example, the prize opportunity (i.e., the PRIZE treatment) could be relatively less effective for employees with a higher income, such as doctors, than the others. 
+
+```{r figure_interactions, fig.width=9, fig.height=6, include=FALSE}
+```
+
+\begin{figure} 
+  \centering
+  \caption{Employee participation by gender or profession and solicitation treatment}
+  \label{interactions}
+  \includegraphics{figures/figure_interactions-1.pdf}
+\end{figure}
+
+Looking at differences in the proportion of submissions conditional on the gender (Figure \ref{interactions}, panel a), it appears that women are more likely (about 5 percentage points) to participate than men in the PCARE solicitation treatment. [DISCUSS TABLE 5] and [INTERPRET] 
+
+Looking at the same differences but conditional on the employee's profession
+(Figure \ref{interactions}, panel b), it appears that doctors are as likely to submit as any other worker in PRIZE solicitation treatment; thus suggesting that the prize opportunity play a similar role even among radically different professional types, which is conflict with our initial hypothesis of income-driven effects. [DISCUSS TABLE 5] & [INTERPRET]
+
+[REDUCE AND MOVE UP] To isolate gender and profession effects, we now employ a version of model \eqref{eq: submit} with gender-treatment interactions.^[We also run a model with profession-treatment interactions and results are simular to those shown in Figure \ref{fig: interactions}.] Estimates are shown in Table \ref{tab: probability submitting interactions}. After gradually adding profession and office controls, interaction coefficients remain stable across all specifications. The response of men under PCARE is about 3 times the magnitude and in the opposite direction of the women's response. By subtracting these two coefficients, we find a significant difference between men and women of about 5 percentage points ($p=.018$), which is consistent with our previous analysis. Thus, and overall, we find that men responded less than women in the PCARE treatment. This effect could be due to gender differences in preferences and we will return on this in the discussion of the results. 
+
+
+```{r table-interactions, results='asis'}
+fit <- rep()
+fit$baseline    <- glm(100*proposal_y ~ treatXgender, data=hc)
+fit$ctrl1       <- glm(100*proposal_y ~ treatXgender + job2, data=hc)
+fit$ctrl2       <- glm(100*proposal_y ~ treatXgender + job2 + has_office, data=hc)
+
+proposal_ols_gender <- fit
+SE <- sapply(proposal_ols_gender, robust.se)
+
+mynotes <- "This table reports OLS estimates with heteroskedasticity robust standard errors in parenthesis. All coefficients are multiplied by 100 to indicate the percentage point change in the probability of submitting. Treatment coefficients indicate the percentage point deviation from the overall probability of submitting (there is no specific reference category). The asterisks $^{\\ast\\ast\\ast}$, $^{\\ast\\ast}$, $^{\\ast}$ indicate significance at 1, 5 and 10 percent level, respectively."
+
+ll <- round(sapply(proposal_ols_gender, logLik))
+
+
+float(proposal_ols_gender, se=SE, caption="Probability of submitting proposals"  
+      , label="tab: probability submitting interactions"
+      , notes=mynotes
+      , covariate.labels = c("PRIZE$\\times$female"
+              , "PCARE$\\times$female"
+              , "FUND$\\times$female"
+              , "WPLACE$\\times$female"
+              , "PRIZE$\\times$male"
+              , "PCARE$\\times$male"
+              , "FUND$\\times$male")
+      , dep.var.labels   = " $SUBMIT_{ij}=1$ "
+      , keep.stat=c('n'), digits=2
+      , omit='job2|has_office'
+      , add.lines=list(c("Job", c("no", "yes", "yes"))
+                  , c("Office", c("no", "no", "yes"))
+                  , c("Log Likelihood", ll))
+      )
+      
+```
+
+
+[Robustness] 
+
+<!-- 
+One possible problem concerning the above regression analysis is the relatively small number of responses per treatment compared to the sample size (response rates below 10 percent are usually seen as rare events). The main problem is that asymptotic confidence intervals may not be fully accurate  [@king2001logistic]. Logistic regression models allow testing this issue by direct methods that deal with rare events, such as exact inference. Using logistic regression, we find the same results indicating these are robust under exact inference (tables available on request).
+ -->
+
+
+## Rating project proposals
+
+```{r stats-ratings}
+# Compute statistics 
+submitters      <- hc$num_ideas>0
+raters          <- hc$num_voted_ideas>0
+ratings         <-  hc$num_voted_ideas
+n_raters_group  <- sort(tapply(hc$num_voted_ideas>0, hc$treatment, sum), decreasing=TRUE)
+
+# Participation in ratings
+ft <- fisher.test(table(hc$treatment, hc$num_voted_ideas>0))
+
+# Rated proposals
+l <- split(hc$num_voted_ideas[raters], hc$treatment[raters])
+kt <- kruskal.test(l)
+
+# Proponents voting own ideas
+p_own_rated <- round(100*sum(hc$num_voted_ideas>0 & hc$num_ideas>0) / 60)
+```
+
+The submitted project proposals ended up being rated by a total of `r sum(raters)` employees (`r round(100*mean(raters),0)` percent of our sample). Each evaluator rated a median of `r median(ratings[raters])` out of 113 project proposals (`r round(100*median(ratings[raters])/113)` percent) yielding a total of `r format(sum(ratings), big.mark=",")` evaluator-proposal pairs.^[The projects were 118 in total but, due to a technical problem in uploading the proposals on the website for evaluation, five proposals ended up with no ratings. This problem was independent of the treatment. A Fisher's exact test rejects any association between the missed proposals and the treatment of its proponent ($p=.7$).] 
+
+As staff members could decide whether and how many project proposals to rate, one may argue that the observed differences in rating behavior (Table \ref{tab: ratings}) can be explained by our solicitation treatments. After all, the selection of the best proposals could be seen as a contribution to a public good as well. 
+
+We check this hypothesis by testing the overall association between participation in rating and our solicitation treatments, which is insignificant (a `r ft$method` gives a p-value of `r ft$p.value`), and the differences in the rated proposals, which are insignificant too (a `r kt$method` gives a p-value  of `r round(kt$p.val, 3)`).  Therefore we find no evidence indicating that participation in rating was somewhat associated with the solicitation treatments.[^counterintuitive]
+
+[^counterintuitive]: One may find counterintuitive that there was less (although not significant) participation in the evaluation phase from employees in the PRIZE  than in the other solicitation treatments, given the greater participation in the submission phase. This result is, however, not unexpected because only `r round(100*mean(raters[submitters]))` percent of employees who made submissions resolved to rate proposals as well (we detect no difference in the propensity of submitting and rating proposals between the treatments);  so, even a difference of 2 percentage points in submitting will shrink to about 1 percentage point in the rating phase. In other words, we were not expecting self-rating to affect evaluation much.
+
+```{r summary-ratings, results='asis'}
+f <- function() {
+  text <- c("PRIZE", "FUND", "PCARE", "WPLACE")
+  m <- table(hc$treatment, hc$num_voted_ideas>0)
+  index <- match(text, rownames(m))
+  m <- m[index, ]
+  m <- rbind(m, "[1.8ex] Total"=apply(m, 2, sum))
+  n <-  apply(m , 1, sum)
+  p <- round(100*m[, 2] / n, 1)
+  m <- cbind(m, p)
+  proposals.sum <- tapply(hc$num_voted_ideas, hc$treatment, sum)
+  proposals.ave <- tapply(hc$num_voted_ideas, hc$treatment, function(x)mean(x[x>0]))
+  proposals.med <- tapply(hc$num_voted_ideas, hc$treatment, function(x)median(x[x>0]))
+  index <- match(text, names(proposals.sum))
+  proposals.sum <- c(proposals.sum[index], sum(proposals.sum))
+  proposals.ave <- c(proposals.ave[index], mean(hc$num_voted_ideas[hc$num_voted_ideas>0]))
+  proposals.med <- c(proposals.med[index], median(hc$num_voted_ideas[hc$num_voted_ideas>0]))
+  m <- cbind(m, proposals.sum, proposals.ave, proposals.med)
+  colnames(m) <- c("No", "Yes", "% yes", "Total", "Mean", "Median")
+  return(m)
+}
+add <- rep()
+add$cmd <- "& \\multicolumn{3}{c}{\\emph{Rating proposals:}} &         \\multicolumn{3}{c}{\\emph{Rated proposals:}} \\\\\n \\cmidrule(lr){2-4}\\cmidrule(lr){5-7}"
+add$pos <- -1
+render.table(f()
+  , caption="Outcomes of the peer evaluation phase"
+  , label="tab: ratings"
+  , digits=c(0, 0, 0, 1, 0, 1, 0), add=add)
+```
+
+## The quality of the project proposals
+
+The treatment interventions may not have only impacted the propensity to make a submission, but the quality of the submission as well. Of particular interest is any indication of a quantity versus quality trade-off. For example, if the treatment which generated the fewest submissions (FUND) also produced the highest quality submissions. A quality versus quantity trade-off would increase the complexity of choosing optimal incentives for employees. 
+
+
+```{r figure_ratings, include=FALSE}
+```
+
+
+### Quality assessed by peers
+
+To check whether differences in the quality of the submissions can be explained by the solicitation treatments of the submitter, we first look at differences in the distribution of ratings obtained from peers (Figure \ref{ratings}).  We find that, overall, a proposal was given the "neutral" point (i.e., a rating of 3) on a five-point scale about 30 percent of the times with employees being more likely to give high (4-5) rather than low (1-2) ratings. This pattern does not change much when we condition the data to the solicitation treatments of the proponent. Aggregating the mean rating for each proposal shows only insignificant treatment effects (a `r kt$method` gives a p-value of `r kt$p.value`). Similarly, a linear regression of mean ratings on treatment dummies does not reveal any relationship between ratings and treatments. The treatment coefficients are not significant, with the linear model not significantly different from a constant model (an overall F-test gives a p-value of `r ftest$p.value`).
+
+\begin{figure}
+  \centering
+  \caption{Distribution of ratings by solicitation treatment of the proponent}
+  \label{ratings}
+  \includegraphics{figures/figure_ratings-1.pdf}
+\end{figure}
+
+ 
+The above analysis on the aggregate ratings does not hold in general. It crucially relies on the assumption that an increment in a proposal's quality as measured by an increase in ratings from $v$ to $v+1$ is the same for any value $v$. So, we also examine the distribution of ratings as generated by treatments with no aggregation. We have over 12,000 ratings, providing a very sensitive test for differences across treatments. Using a `r cs$method` we find that the hypothesis of dependence between the distribution of ratings and the treatments is _not_ quite significant at the 10 percent level (p-value of `r cs$p.value`). Driving the p-value is a less than $2$ percent difference between the proportion of 5's in the WPLACE treatment versus the other distributions (Figure \ref{fig: ratings}), which is probably due to outliers (the winning proposal was in the WPLACE treatment). Taken together with the fact that our sample is large, we have strong evidence suggesting that there are no (economically meaningful) differences in the quality of project proposals across treatments and in particular no evidence of a quantity versus quality trade-off up to the resolution of the five-point scale.^[One may worry that such binning is a fairly coarse measure of quality.  In particular, effects concentrated in the upper tail of the distribution may not be detected. For example, compare the ratings of proposals A, B, C and D with hypothetical true qualities of 3, 4, 5, and 10 stars respectively. Under a five-point scale rating system, proposals A and B can be distinguished, but C and D cannot be distinguished. Hence, one needs to be very cautious in interpreting these results as evidence against quality effects in general.]
+
+
+```{r finalist, include=FALSE, fig.width=7, fig.height=3.5}
+op <- par(family='serif')
+submitters <- hc$num_ideas>0
+tab <- table(hc$finalist[submitters], hc$treatment[submitters])
+ft <- fisher.test(tab)
+
+mlev <- matrix(levels(hc$treatment)[combn(1:4, 2)], 6, byrow=TRUE)
+y <- hc$finalist[submitters]
+l <- hc$treatment[submitters]
+
+xlim <- c(-0.4, 0.80)
+ylim <- c(1, 6) + c(-0.1, 0.1)
+
+p <- numeric(6)
+SE <- numeric(6)
+for (i in 1:6) {
+  index <- l %in% mlev[i, ]
+  tab <- table(droplevels(l[index]), y[index]) + 1
+  n <- apply(tab, 1, sum) 
+  pbar <- tab / n
+  pbar <- pbar[, "TRUE"]
+  p[i] <- diff(pbar)
+  SE[i] <- sqrt(sum(pbar * (1-pbar) / n))
+  names(p)[i] <- paste(mlev[i, 2:1], collapse=' - ')
+}
+coef.plot(p, SE, labels=names(p))
+coef.plot(p, SE, labels=names(p), alpha.levels=c(0.316, 0.10/6, 0.05/6)) # Bonferroni
+```
+
+```{r}
+# Excluded
+voting2 <- voting
+voting2$vote <- as.numeric(voting2$vote)
+voting2$score[is.na(voting2$score)] <- 0
+aggregate(vote ~ treatment.proponent+score+idea_id, data=voting2, mean)->z
+
+ft <- fisher.test(table(z$score>0, z$treatment.proponent))
+
+# Correlation
+i <- z$score>0
+spear <- cor(z$score[i], z$vote[i], method='spearman')
+
+# Kruska
+z.l <- split(z$score[i], z$treatment.proponent[i])
+kt <- kruskal.test(z.l)
+```
+
+
+### Quality assessed by managers 
+
+One potential limit of assessing quality only on the basis of peer ratings is that the employees might have a different view of a proposal's quality than executives (due, for instance, to a misalignment of incentives). Indeed, to ensure alignment between managerial goals and the peer assessment, all project proposals were further vetted by the HTL staff before being considered for implementation funding. So, we now focus on the outcomes of this vetting process to investigate more broadly the presence of treatment effects on the quality of project proposals.
+
+The vetting process conducted by the HTL staff resulted in `r sum(z$score>0)` proposals being scored (from 1 to 100 points) with the best `r sum(hc$finalist)` proposals invited to submit implementation plans. The remaining `r sum(z$score==0)` proposals were excluded (and received a score of zero) either because flagged as inappropriate for funding or because the proponent manifested no intention to participate in the implementation phase (a `r ft$method` finds no association between proposals excluded and treatments with a p-value of `r ft$p.value`). 
+
+The Spearman's rank correlation coefficient between the scores given by the HTL staff and the average peer ratings was relatively high (`r spear`), indicating good agreement between our two measures of quality. Indeed, as before, we find no treatment effects on quality using the scores (a `r kt$method` gives a p-value of `r kt$p.value`). We also find no treatment differences in the percentage of submitters being selected and invited by HTL staff to present additional implementation plans (a `r ft$method` gives a p-value of `r ft$p.value`). Although not significant, employees who made project proposals in the FUND treatment were less likely to be selected as finalist than the others (only 1 out of 7 in the FUND treatment were selected and invited by the HTL staff), providing additional evidence of a no quantity versus quality trade-off, as discussed before.
+
+
+The content of the project proposals
+-------------------
+
+The goal of the challenge was to improve Heart Center operations by identifying problem areas and potential solutions. The proposed projects broadly conformed to the stated goals of the contest, aligning with improving the work processes within the organization or providing high-quality patient care. For example, one project proposal that received high peer ratings was to create a platform for patients to electronically review and update their med list in the office prior to seeing the physician. Another was to develop a smartphone application that allows the patient to see the itinerary for the day providing a guide from one test or appointment to another. Nevertheless, other contest organizers may have varying goals and be concerned about different aspects of the submissions.  In order to examine additional dimensions of submission content, we now study the area of focus of the submissions. Of particular interest is understanding whether the framing intervention induced employees to concentrate on different categories. For example, while staff in the WPLACE treatment focused on improvements for the workplace, those in the PCARE treatment concentrated on interventions directly targeting the patients.
+
+```{r, results='asis'}
+m0 <- table(agg.voting$focus2, agg.voting$treatment.proponent)
+m <- addmargins(m0, 2)
+colnames(m)[5] <- "Total"
+m <- m[order(m[, 5], decreasing=TRUE), ]
+m <- rbind(m, "[1.8ex] Total"=apply(m, 2, sum))
+
+render.table(m, "Project proposals by area of focus", "tab: area-of-focus", digits=0, notes="The areas of focus were manually identified by the HTL staff at the end of the competition. Due to a technical problem five proposals ended up with no classification.")
+
+ft <- fisher.test(m0, simulate.p.value=T, B=5e4)
+cs <- chisq.test(m0, simulate.p.value=T, B=5e4)
+```
+
+
+Members of the HTL categorized each project proposal into one of seven "areas of focus" (Table \ref{tab: area-of-focus}): three categories ("Care coordination", "Staff workflow", "Workplace") identified improvements for the workplace, other three ("Information and access", "Patient care", and "Quality and Safety") focused on improvements centered around patients, and another one ("Surgical tools and support to research") categorized projects developing tools to support scientific research.
+
+Using a `r ft$method`, we find a mildly significant (p=`r ft$p.value`) association between these categories and the treatments.^[Simulations are used to reduce the computational burden.] The analysis of pairwise differences between treatments (Figure \ref{fig: areas of focus}) reveals that this result is driven by differences in the "Quality and Safety" and "Information and access" categories. Project proposals in the PCARE treatment were less likely to fall in the "Quality and Safety" category. Similarly, project proposals in the FUND treatment were less likely to fall in the "Information and access" category.  
+It is difficult to interpret these effects because our model does not provide any prediction on the content of proposals. One possibility is that framing induced participants to concentrate on different areas of interventions but our data do not appear consistent with this story. 
+ 
+```{r, include=FALSE}
+## Regression for the areas of focus
+fit <- rep() # For each area of focus
+for (l in unique(voting$focus2)) {
+  voting$focus_patient <- voting$focus2==l
+  agg <- aggregate(focus_patient ~ treatment.proponent + idea_id, data=voting, unique)
+  agg$treat2 <- factor(agg$treatment.proponent, 
+                          levels=c("WPLACE", "PCARE", "FUND", "PRIZE"))
+  contrasts(agg$treat2) <-  named.contr.sum(levels(agg$treat2))
+  fit[[l]] <- lm(focus_patient ~ treat2, data=agg)
+}
+areas_of_focus <- fit
+ftest <- lapply(areas_of_focus, anova, test="F")
+pval <- sapply(ftest, function(x) x[1, 5])
+m <- sapply(ftest, function(x) x[1, ])
+xtable(t(m), digits=c(0,0, 1, 1, 1, 3))
+#stargazer(areas_of_focus) # in the appendix
+```
+
+
+```{r areas, fig.width=9, height=8, include=FALSE}
+op <- par(family='serif')
+y <- factor(agg.voting$focus2)
+l <- factor(agg.voting$treatment)
+
+mlev <- matrix(levels(hc$treatment)[combn(1:4, 2)], 6, byrow=TRUE)
+ylev <- c("Care Coordination", "Staff workflow", "Workplace", "Information and access", "Patient support", "Quality and safety ")
+
+xlim <- c(-.5, 0.4)
+ylim <- c(1, 6) + c(-0.1, 0.1)
+
+layout(matrix(c(1:6), 2, 3, byrow=T), width=c(1.25, 1, 1, 1.5, 1, 1))
+for (k in 1:length(ylev)) {
+  if (k%%3==1) {
+    par(mar=c(2.1, 9.1, 5.1, 0.1), new=FALSE)
+  } else {
+    par(mar=c(2.1, 0.5, 5.1, 0.1), new=FALSE)  
+  }
+  plot(NA,NA, ylim=ylim, xlim=xlim, ann=FALSE, xaxt="n", yaxt="n", bty='n')
+  for (i in 1:6) {
+    index <- l %in% mlev[i, ]
+    tab <- table(droplevels(l[index])
+            , factor(y[index]==ylev[k], levels=c("FALSE", "TRUE")))
+    tab <- tab + 1 
+    n <- apply(tab, 1, sum)
+    pbar <- tab[, 2] /  n 
+    p.diff <- diff(-pbar)
+    SE.diff <- sqrt(sum(pbar *(1-pbar) / n))
+    add.error.bars(i, p.diff, SE.diff)
+    points(y=i, x=p.diff, pch=16, cex=1.5)
+    abline(v=0)
+    mtext(ylev[k], 3, 3)
+    x.seq <- seq(xlim[1], xlim[2], length=5)
+    xticks <- pretty(x.seq)
+    axis(3, at=xticks, paste(round(xticks*100), "%"))
+    if (k%%3==1) {
+        yticks <- 1:6
+        axis(2, at=yticks, paste(mlev[, 1], "-",mlev[, 2]), las=2)
+    } 
+  }
+}
+```
+
+\begin{figure}
+  \centering
+  \caption{Differences in the probability of proposals being in a given area of focus in each treatment}
+  \label{fig: areas of focus}
+  \includegraphics{figures/areas-1.pdf}
+  \begin{tablenotes}
+  This figure plots the point estimates of the difference plus $\pm 1$, $\pm 1.6$, and $\pm 2$ standard errors. Estimates have been adjusted for the small counts of the data \citep{agresti2000simple} resulting in more conservative confidence intervals.
+  \end{tablenotes}
+\end{figure}
+
+We also look at differences in the underlying complexity of the project proposal as captured by differences in the length (i.e., the word count) of a submission. Submissions were below 200 words in most cases with little differences between the treatments. Indeed, testing for a significant linear regression relationship between the length of submissions and treatment dummies returned an overall insignificant result (p=.43, F-test).
+ 
+As a result, based on the analysis of the areas of focus and the length of the submissions, we do find only little evidence of differences in submission content across treatments. However, submission content is not a well-defined concept and could be characterized in many dimensions. While content does not vary in the dimensions we selected, we have not exhausted all possible dimensions.
+
+
+Estimating social preferences
+-----------------------------
+
+In this section, we calibrate the theoretical model developed in Section \ref{analytical-framework-and-predictions} with the experimental data to get a sense of the magnitude of underlying preferences for contributing to the organization. Following, the mixed-strategy equilibrium of the model, the theoretical probability of contributing must be proportional to the expected value of winning, $R$, the underlying preferences towards the public good, $\gamma$, the marginal costs of contributing, $c$, and the number of agents, $n$.
+
+We assume the cost of making a submission $c$ is the same in each treatment,^[This seems a reasonable assumption, given everyone is asked to perform the same task (identical submission procedure, same word limit, etc.).] and the individual preferences are constant, being predetermined to our intervention. Then we derive a structural relationship between the observed difference in the probability of contributing $\Delta p$ and the difference in the expected rewards from winning $\Delta R$ between the treatments.That is,^[This equation can be obtained by following these steps. First, we approximate the profit equating condition \eqref{eq: mixed-strategy} to a linear function by noticing that the $1/(1-(1-p)^n)$ approximates one for $n$ large enough and $p$ sufficiently small. Second, we solve for $p$ and we simplify using the definitions of $\Delta p$ and $\Delta R$.]
+ 
+\begin{equation}
+  \Delta p \approx\frac{\Delta R}{n (c - \gamma)}.
+\end{equation}
+
+(Throughout this section we will consider $\delta=0$ ignoring the distinction between impure and pure altruism.)  By solving for $\gamma$, we get 
+\begin{equation}
+  \label{eq: gamma}
+  \gamma   \approx  c -  \Delta R / (n\Delta p). 
+\end{equation}
+
+This implies that the parameter capturing individual preference for the public good (that is consistent with our data) must be proportional to the ratio between the difference in rewards and the difference in the probability of submitting.  Although we do not observe the levels of $R$ in each treatment, we approximate the difference of rewards between the PRIZE and the other conditions by the pecuniary value of the reward, which has its upper bound in the highest price that can be paid for an iPad mini ($350).^[The price paid by the Heart Center was $239 at the end of 2014 (including shipping cost). Other popular models (those with cellular data and large storage) could cost as high as $350.  Agents, however, were not aware of the specific model used for the competition and of the price paid. So, the value of $350 is very conservative.] We further calibrate the cost of submitting a proposal $c$ to $40 which is the median income per hour of a Nurse Practitioner according to the Bureau of Labor Statistics; we assume the number of competitors $n$ to be 30 percent of the entire sample to take into account rational expectations about the actual number of participants in the contest.^[This choice is our best guess of the number of active staff members at the Heart Center and is based on the number of employees who voluntarily took a survey before the experiment (378 people).  Assuming greater participation would lead to artificially increasing the estimates of underlying incentives. In fact, staff members may have rational expectations about the actual number of potential participants, which may be less than the entire population.] Finally, by substituting these calibrated values into equation \eqref{eq: gamma} along with the empirical difference in participation rates between the PRIZE and the other treatments ($\Delta p=0.037$), we get an estimate of the magnitude of the social preferences towards the organization which is $\hat\gamma=\$12$. As shown in Figure \ref{fig: gamma}, this value is equivalent to about 30 percent reduction in the cost of contributing. Hence, increasing the prize by $100 is expected to raise the probability of submitting by 1 percentage points. This increase can be compared to the corresponding increase of 0.7 that one will obtain by assuming no social preferences $\gamma=0$ at all. 
+
+```{r gamma, include=FALSE}
+op <- par(family='serif')
+f <- function(cost=40, n=372, dR=350) {
+  m <- table(PRIZE=hc$treatment=="PRIZE", PROPOSAL=!hc$num_ideas>0)
+  p <- prop.test(m, correct=FALSE)
+  dP <- diff(p$estimate)
+  structural <- function(cost, dR, dP, n) {
+    x <- cost - dR / (dP * n) 
+    return(x)
+  }
+  curve(structural(cost=x, dR=dR, dP=dP, n=n)/x, from=20, to=100
+          ,ylab="Social preferences as % of cost", xlab="Cost of submitting proposals"
+          , lwd=3, ylim=c(-0.2, 1), yaxt="n", xaxt="n")
+  num <- list(1237, 800, 500, 370, 300)
+  sapply(num,  function(number) {
+  curve(structural(cost=x, dR=dR, dP=dP, n=number)/x, from=10, to=100, lty=2, add=TRUE)})
+  axis(1, at=seq(20, 100, length=5), paste("$", seq(20, 100, length=5), sep=''))
+  axis(2, at=seq(0, 1, length=5), 100*seq(0, 1, length=5))
+  add.text <- function(cost=45, num, ...) {
+    text(cost, structural(cost=cost, dR=dR, dP=dP, n=num)/cost, paste("n", num, sep="="), ...)
+  }
+  sapply(num, function(x) add.text(num=x, pos=4, cex=0.75))
+  points(y=structural(cost=40, dR=dR, dP=dP, n=n)/40, x=40, pch=22, bg="red")
+  abline(v=40, lty=3)
+#  abline(h=structural(cost=40, dR=dR, dP=dP, n=n)/40, lty=3, col=2)
+}
+f()
+```
+
+\begin{figure} 
+\centering
+\caption{Estimated value of social preferences ($\hat\gamma$)}
+\label{fig: gamma}
+\includegraphics{figures/gamma-1.pdf}
+\begin{tablenotes}
+This figure plots the theoretical relationship between the cost of participation and the the social preferences parameter $\gamma$ (in percentage of the costs) which is consistent with our experimental data. Different curves represents different assumptions on the number of competitors. 
+\end{tablenotes}
+\end{figure}
+ 
+A few remarks are in order here. To get confidence around these estimates one need to consider several sources of uncertainty. First,  there is the uncertainty of estimating the probability of submitting in our sample (standard errors can be computed directly from the data). Another source of uncertainty is due to the calibration of the marginal cost or the number of competitors. As shown in Figure \ref{fig: gamma}, the fraction of costs explained by social preferences increases monotonically in the number of competitors (going up to 80 percent of costs if employees expected to compete against every Heart Center staff member); and decreases monotonically in the calibrated cost of making a submission. Finally, another important source of uncertainty is regarding the main behavioral assumptions of the model, as we discuss in the next section.

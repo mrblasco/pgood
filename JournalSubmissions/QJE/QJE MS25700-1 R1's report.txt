@@ -1,22 +1,0 @@
-"Motivating Effort In Contributing to Public Goods Inside Organizations: Field Experimental Evidence"
-
-by Andrea Blasco, Harvard University and
-Olivia Jung, Harvard Business School and
-Karim Lakhani, Harvard Business School and
-Michael Menietti, Harvard University 
-
-
-Summary 
-
-This paper proposes to study what motivates employees to contribute to public goods within organizations. The authors solicit ideas to improve the workplace from about 1200 employees of a medical center. They try out four ways to encourage employees to contribute, to be precise they tell the employees that: (1) they can win up to $20k funding to implement their idea (control group), (2) they can win an iPad; (3) they can improve patient care; (4) they can improve the workplace
-
-The main findings are that: (1) participation rates are very low: only 60 employees out of 1237 send in a proposal; (2) the iPad treatment attracts the largest number of proposals (still only 23 out of 213); (3) women respond more to the iPad treatment and to the Patient Care treatment. 
-
-Comments
-
-I think this is an interesting question although it is less novel than the authors make it sound. What is rare is to have access to a “real” organization that allows researchers to run a field experiment as part of the normal running of the business. This can give very precious insights on how individuals interact within organizations. Having said that, I do have several concerns about the interpretation of the treatments, the analysis, and ultimately what we can learn from this exercise.  
-
-1.	The control condition is supposed to “isolate the underlying intrinsic motivation to work”. In practice the control group is also offered a prize: $20k to implement their proposal. Assume that you work in a hot room, your welfare (and arguably your team’s productivity) would be a lot higher with an extra a/c unit-- $20k to buy a new unit is a prize in-kind, exactly like the iPad. One can imagine very many variants of this story, all of which imply that the control group is not effectively a control. 
-2.	The task at hand (write a proposal to improve the workplace) is not akin to what motivates the paper in the first place, ie volunteering for regular tasks such as sitting in committees that are necessary for the functioning of the organization. Writing a one-off proposal seems to have  much lower returns for the organization, and hence probably not worth the effort as shown by the very low participation rate. 
-3.	There is no evidence on the mechanisms driving the results, and without this evidence we cannot draw lessons that can be applied to other settings. Take for instance the finding that the iPad treatment is more effective than the other three. Is this because people like iPads more than helping patients? Or do they reciprocate the employer’s generosity (the iPad costs them money, saying “help our patients” costs them nothing)? Or, still, is it because it is easy to assess the expected value of the ipad while the value of helping patients is hard to quantify? Or is it that employees in a medical center  already do all they can to help patients  so they don’t feel they should do more? 
-
