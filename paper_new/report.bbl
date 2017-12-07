@@ -1,35 +1,8 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{0}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Croson and Gneezy(2009)]{croson2009gender}
-R.~Croson and U.~Gneezy.
-\newblock {Gender Differences in Preferences}.
-\newblock \emph{Journal of Economic Literature}, 2009.
-
-\bibitem[Della~Vigna et~al.(2016)Della~Vigna, List, Malmendier, and
-  Rao]{dellavigna2016estimating}
-S.~Della~Vigna, J.~A. List, U.~Malmendier, and G.~Rao.
-\newblock {Estimating Social Preferences and Gift Exchange at Work}.
-\newblock Technical report, 2016.
-
-\bibitem[Lange et~al.(2007)Lange, List, and Price]{lange2007using}
-A.~Lange, J.~A. List, and M.~K. Price.
-\newblock {Using lotteries to finance public goods: Theory and experimental
-  evidence*}.
-\newblock \emph{International Economic Review}, 2007.
-
-\bibitem[Niederle and Vesterlund(2007)]{niederle2007women}
-M.~Niederle and L.~Vesterlund.
-\newblock {Do Women Shy Away From Competition? Do Men Compete Too Much?}
-\newblock \emph{The Quarterly Journal of Economics}, 2007.
-
-\bibitem[Vesterlund(2012)]{vesterlund2012voluntary}
-L.~Vesterlund.
-\newblock {Voluntary giving to public goods: moving beyond the linear VCM}.
-\newblock In \emph{The Handbook of Experimental Economics}. 2012.
 
 \end{thebibliography}
