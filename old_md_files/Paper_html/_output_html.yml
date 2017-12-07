@@ -1,0 +1,8 @@
+html_document:
+  theme: cosmo
+  toc: false
+  css: styles.css
+  highlight: kate
+  pandoc_args: [ 
+      "--bibliography", "$HOME/Papers/library.bib"
+    ]
