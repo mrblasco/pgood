@@ -6,7 +6,7 @@ paper.Rout: $(PAPERDIR)/report.Rmd
 	Rscript -e 'rmarkdown::render("$<");' > paper.Rout
 
 # Paper dependencies
-paper.Rout: $(addprefix $(PAPERDIR)/,*.Rmd refs.bib R/*.R)
+paper.Rout: $(addprefix $(PAPERDIR)/,*.Rmd refs.bib scripts)
 
 # Slides
 slides.Rout: slides/slides.Rmd

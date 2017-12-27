@@ -48,18 +48,18 @@ opts_chunk$set(
   message=FALSE,
   warning=TRUE,
   error=FALSE,
-  tidy=FALSE,
-  fig.width=5,
-  fig.height=5,
+#   tidy=FALSE,
+#   fig.width=5,
+#   fig.height=5,
   fig.path="figures/")
   
-options(digits=3, tz="America/New_York")
+options(digits=3)
 
 # Data
 load("../.RData")
 
 # Required resources  
-source("R/help_func.R")
+source("scripts/help_func.R")
 
 # List of files
 child_docs <- c('1_intro.Rmd'
@@ -68,9 +68,7 @@ child_docs <- c('1_intro.Rmd'
 							, '4_discussion.Rmd')
 
 # Analysis
-read_chunk("R/methods.R")
-read_chunk("R/results-participation.R")
-read_chunk("R/results-ratings.R")
+req_chunks <- sapply(list.files("scripts", full=T), read_chunk)
 ```
 
 ```{r child=child_docs}
