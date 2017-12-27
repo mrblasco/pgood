@@ -7,7 +7,8 @@ This folder contains scripts for the paper:
 Scripts by:
 	Andrea Blasco (ablasco@fas.harvard.edu)
 
-To compile paper & slides, use the following code in terminal
+To compile paper & slides, use the following 
+`make` commands in terminal
 ```
 make
 make slides
