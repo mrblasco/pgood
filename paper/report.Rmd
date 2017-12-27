@@ -43,7 +43,7 @@ require(knitr)
 
 # Options
 opts_chunk$set(
-  cache=TRUE,
+  cache=FALSE,
   echo=FALSE,
   message=FALSE,
   warning=TRUE,
@@ -51,7 +51,6 @@ opts_chunk$set(
   tidy=FALSE,
   fig.width=5,
   fig.height=5,
-  cache.path="cache/",
   fig.path="figures/")
   
 options(digits=3, tz="America/New_York")
