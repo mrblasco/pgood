@@ -1,14 +1,12 @@
 PAPERDIR=paper
+VIEWER=open -a Skim
 
-all: paper.Rout
-
-# Compile markdown file
+# Paper
 paper.Rout: $(PAPERDIR)/report.Rmd
 	Rscript -e 'rmarkdown::render("$<");' > paper.Rout
 
-# Dependencies
+# Paper dependencies
 paper.Rout: $(addprefix $(PAPERDIR)/,*.Rmd refs.bib R/*.R)
-
 
 # Slides
 slides.Rout: slides/slides.Rmd
@@ -16,11 +14,11 @@ slides.Rout: slides/slides.Rmd
 
 # View
 view:
-	open -a Skim $(PAPERDIR)/report.pdf
+	$(VIEWER) $(PAPERDIR)/report.pdf
 
 view-slides:
-	open -a Skim slides/slides.pdf
+	$(VIEWER) slides/slides.pdf
 	
 # Clean files
 clean:
-	rm -fv *.Rout 
+	rm -fv *.Rout
