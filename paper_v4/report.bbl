@@ -1,0 +1,159 @@
+\begin{thebibliography}{27}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Besley and Ghatak(2005)]{besley2005competition}
+T.~Besley and M.~Ghatak.
+\newblock {Competition and Incentives with Motivated Agents}.
+\newblock \emph{The American Economic Review}, 2005.
+
+\bibitem[Blanes~i Vidal and Nossol(2011)]{blanes2011tournaments}
+J.~Blanes~i Vidal and M.~Nossol.
+\newblock {Tournaments without prizes: Evidence from personnel records}.
+\newblock \emph{Management Science}, 2011.
+
+\bibitem[Boudreau et~al.(2011)Boudreau, Lacetera, and
+  Lakhani]{boudreau2011incentives}
+K.~J. Boudreau, N.~Lacetera, and K.~R. Lakhani.
+\newblock {Incentives and problem uncertainty in innovation contests: An
+  empirical analysis}.
+\newblock \emph{Management Science}, 2011.
+
+\bibitem[Bull et~al.(1987)Bull, Schotter, and Weigelt]{bull1987tournaments}
+C.~Bull, A.~Schotter, and K.~Weigelt.
+\newblock {Tournaments and Piece Rates: An Experimental Study}.
+\newblock \emph{Journal of Political Economy}, 1987.
+
+\bibitem[Croson and Gneezy(2009)]{croson2009gender}
+R.~Croson and U.~Gneezy.
+\newblock {Gender Differences in Preferences}.
+\newblock \emph{Journal of Economic Literature}, 2009.
+
+\bibitem[Cutler et~al.(2012)Cutler, Wikler, and Basch]{cutler2012reducing}
+D.~Cutler, E.~Wikler, and P.~Basch.
+\newblock {Reducing administrative costs and improving the health care system}.
+\newblock \emph{New England Journal of Medicine}, 2012.
+
+\bibitem[Dechenaux et~al.(2014)Dechenaux, Kovenock, and
+  Sheremeta]{dechenaux2014survey}
+E.~Dechenaux, D.~Kovenock, and R.~M. Sheremeta.
+\newblock {A survey of experimental research on contests, all-pay auctions and
+  tournaments}.
+\newblock \emph{Experimental Economics}, 2014.
+
+\bibitem[Delfgaauw(2005)]{delfgaauw2005dedicated}
+J.~Delfgaauw.
+\newblock {Dedicated Doctors: Public and Private Provision of Health Care with
+  Altruistic Physicians}.
+\newblock \emph{New England Journal of Medicine}, 2005.
+
+\bibitem[Delfgaauw and Dur(2008)]{delfgaauw2008incentives}
+J.~Delfgaauw and R.~Dur.
+\newblock {Incentives and Workers' Motivation in the Public Sector*}.
+\newblock \emph{Economic Journal}, 2008.
+
+\bibitem[Della~Vigna et~al.(2016)Della~Vigna, List, Malmendier, and
+  Rao]{dellavigna2016estimating}
+S.~Della~Vigna, J.~A. List, U.~Malmendier, and G.~Rao.
+\newblock {Estimating Social Preferences and Gift Exchange at Work}.
+\newblock Technical report, 2016.
+
+\bibitem[Ehrenberg and Bognanno(1990)]{ehrenberg1990tournaments}
+R.~G. Ehrenberg and M.~L. Bognanno.
+\newblock {Do Tournaments Have Incentive Effects?}
+\newblock \emph{The Journal of Political Economy}, 1990.
+
+\bibitem[Eriksson(1999)]{eriksson1999executive}
+T.~Eriksson.
+\newblock {Executive Compensation and Tournament Theory: Empirical Tests on
+  Danish Data}.
+\newblock \emph{Journal of Labor Economics}, 1999.
+
+\bibitem[Gibbs(1995)]{gibbs1995incentive}
+M.~Gibbs.
+\newblock {Incentive compensation in a corporate hierarchy}.
+\newblock \emph{Journal of Accounting and Economics}, 1995.
+
+\bibitem[Glaeser et~al.(2016)Glaeser, Hillis, Kominers, and
+  Luca]{glaeser2016predictive}
+E.~L. Glaeser, A.~Hillis, S.~D. Kominers, and M.~Luca.
+\newblock {Predictive Cities Crowdsourcing City Government: Using Tournaments
+  to Improve Inspection Accuracy}.
+\newblock \emph{The American Economic Review}, 2016.
+
+\bibitem[Green and Stokey(1983)]{green1983comparison}
+J.~R. Green and N.~L. Stokey.
+\newblock {A Comparison of Tournaments and Contracts}.
+\newblock \emph{The Journal of Political Economy}, 1983.
+
+\bibitem[Hamilton et~al.(2003)Hamilton, Nickerson, and Owan]{hamilton2003team}
+B.~H. Hamilton, J.~A. Nickerson, and H.~Owan.
+\newblock {Team incentives and worker heterogeneity: An empirical analysis of
+  the impact of teams on productivity and participation}.
+\newblock \emph{Journal of Political Economy}, 2003.
+
+\bibitem[Hong et~al.(2015)Hong, Hossain, and List]{hong2015framing}
+F.~Hong, T.~Hossain, and J.~A. List.
+\newblock {Framing manipulations in contests: a natural field experiment}.
+\newblock \emph{Journal of Economic Behavior \& Organization}, 2015.
+
+\bibitem[Lakhani et~al.(2013)Lakhani, Boudreau, Loh, Backstrom, Baldwin,
+  Lonstein, Lydon, MacCormack, Arnaout, and Guinan]{lakhani2013prize}
+K.~R. Lakhani, K.~J. Boudreau, P.-R. Loh, L.~Backstrom, C.~Baldwin,
+  E.~Lonstein, M.~Lydon, A.~MacCormack, R.~A. Arnaout, and E.~C. Guinan.
+\newblock {Prize-based contests can provide solutions to computational biology
+  problems}.
+\newblock \emph{Nature biotechnology}, 2013.
+
+\bibitem[Lange et~al.(2007)Lange, List, and Price]{lange2007using}
+A.~Lange, J.~A. List, and M.~K. Price.
+\newblock {Using lotteries to finance public goods: Theory and experimental
+  evidence*}.
+\newblock \emph{International Economic Review}, 2007.
+
+\bibitem[Lazear and Rosen(1981)]{lazear1981rank}
+E.~P. Lazear and S.~Rosen.
+\newblock {Rank-Order Tournaments as Optimum Labor Contracts}.
+\newblock \emph{The Journal of Political Economy}, 1981.
+
+\bibitem[Mary et~al.(1984)Mary, Viscusi, and Zeckhauser]{mary1984economic}
+O.~Mary, W.~K. Viscusi, and R.~J. Zeckhauser.
+\newblock {Economic Contests: Comparative Reward Schemes}.
+\newblock \emph{Journal of Labor Economics}, 1984.
+
+\bibitem[Morgan(2000)]{morgan2000financing}
+J.~Morgan.
+\newblock {Financing public goods by means of lotteries}.
+\newblock 2000.
+
+\bibitem[Morgan and Sefton(2000)]{morgan2000funding}
+J.~Morgan and M.~Sefton.
+\newblock {Funding public goods with lotteries: experimental evidence}.
+\newblock 2000.
+
+\bibitem[Niederle and Vesterlund(2007)]{niederle2007women}
+M.~Niederle and L.~Vesterlund.
+\newblock {Do Women Shy Away From Competition? Do Men Compete Too Much?}
+\newblock \emph{The Quarterly Journal of Economics}, 2007.
+
+\bibitem[Terwiesch and Ulrich(2009)]{terwiesch2009innovation}
+C.~Terwiesch and K.~T. Ulrich.
+\newblock \emph{{Innovation tournaments: Creating and selecting exceptional
+  opportunities}}.
+\newblock Harvard Business Press, 2009.
+
+\bibitem[Terwiesch and Xu(2008)]{terwiesch2008innovation}
+C.~Terwiesch and Y.~Xu.
+\newblock {Innovation contests, open innovation, and multiagent problem
+  solving}.
+\newblock \emph{Management Science}, 2008.
+
+\bibitem[Vesterlund(2012)]{vesterlund2012voluntary}
+L.~Vesterlund.
+\newblock {Voluntary giving to public goods: moving beyond the linear VCM}.
+\newblock In \emph{The Handbook of Experimental Economics}. 2012.
+
+\end{thebibliography}

@@ -8,7 +8,7 @@ author:
     - M. Menietti
 shortauthor: Andrea Blasco et al. (2016)
 date: "IGL Winter Research Meeting, December 8, 2016" 
-bibliography: ~/Papers/library.bib
+# bibliography: ~/Papers/library.bib
 ---
 
 ```{r child='config.Rmd'}

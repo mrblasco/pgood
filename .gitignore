@@ -1,6 +1,9 @@
-Archive
-Submissions
+prep_data
+paper_v[123]*
+misc
+submissions
 *.DS_Store
 *.RData*
 *.csv
-.*
+*.Rout
+*.pdf
