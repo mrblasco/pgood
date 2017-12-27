@@ -1,4 +1,4 @@
-PAPERDIR=paper_v4
+PAPERDIR=paper
 
 all: paper.Rout
 

@@ -2,9 +2,7 @@ pdf_document:
   toc: true
   keep_tex: true
   citation_package: natbib
-  template: "~/Templates/Pandoc/paper.latex"
+  template: template.tex
   pandoc_args: [
 	  "--bibliography", "refs.bib"
   ]
-
-# 
