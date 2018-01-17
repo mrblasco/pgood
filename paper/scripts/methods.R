@@ -51,14 +51,17 @@ p <- c("Submit your ideas to win an Apple iPad mini"
 	rownames(m)[-1] <- paste("[1.8ex]", rownames(m)[-1])
 	m <- rbind(m, "[1.8ex] Total"=apply(m, 2, sum))
 	m <- cbind(c(as.character(txt$paragraph), NA), m)
-	colnames(m) <- c(".","freq.", "%")
+	colnames(m) <- c("\t","freq.", "%")
 	return(m)
 }
 add <- list(pos=-1)
 add$cmd <- "& \\multicolumn{1}{c}{\\emph{Solicitation treatment:}}
 						& \\multicolumn{2}{c}{\\emph{Employees:}}\\\\
 						\\cmidrule(lr){2-2}\\cmidrule(lr){3-4}"
-table_render(design(), caption="Experimental design", label="experimental-design", add=add, align=c("@{}l", "p{5cm}", "r", "r"))
+table_render(design(), add=add
+					, caption="Experimental design"
+					, label="experimental-design"
+					, align=c("@{}l", "p{5cm}>{\\raggedright}", "r", "r"))
 
 
 ######################################## 

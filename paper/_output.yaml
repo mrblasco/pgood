@@ -1,5 +1,5 @@
 pdf_document:
-  toc: true
+  toc: false
   keep_tex: true
   citation_package: natbib
   template: template.tex

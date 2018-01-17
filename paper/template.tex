@@ -1,37 +1,45 @@
 \documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$, titlepage]{$documentclass$}
-\usepackage{beamerarticle}
 \usepackage[utf8]{inputenc}
-\usepackage{amssymb,amsmath}
-\usepackage{indentfirst}
-\usepackage[norule,bottom]{footmisc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{indentfirst} % Indent paragraph
+\usepackage[norule,bottom]{footmisc} % Footing options
 \usepackage[justification=centering,textfont={sc},labelfont={rm}]{caption}
-%\usepackage[bf,textfont=sc,figureposition=top,tableposition=top]{caption}
 
 % Page settings
 \usepackage[$if(geometry)$$geometry$$else$margin=1in$endif$]{geometry}
-\usepackage{times} % palatino, lmodern
 \usepackage{setspace}
 $if(setspace)$$setspace$$else$\onehalfspacing$endif$
 %\doublespacing  % \singlespacing 
 
-% Appendix
-\usepackage{appendix}
+% Font
+\usepackage{times} % times, palatino, lmodern, tgtermes
+									 % bookman, charter, tgschola, pslatex
 
+% Tools
+\usepackage{beamerarticle} % Not sure
+\usepackage{todonotes} % Todos
+\usepackage{appendix} % Appendix
+\usepackage{array,booktabs,longtable,rotating} % Tables
+%\usepackage{lineno}+ %\linenumbers
+
+% Sections, captions, etc.
+\usepackage{sectsty} % Section styles
+\sectionfont{\centering\scshape} % \normalfont
+\subsectionfont{\itshape}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
 
 % Line numbers
-%\usepackage{lineno}+
-%\linenumbers
 
 % Links
 \usepackage{hyperref}
-\hypersetup{%
-  colorlinks=false,% hyperlinks will be black
-  linkbordercolor=red,% hyperlink borders will be red
-  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
-}
-
-% Tables
-\usepackage{array,booktabs,longtable,rotating}
+%\hypersetup{%
+%  colorlinks=false,% hyperlinks will be black
+%  linkbordercolor=red,% hyperlink borders will be red
+%  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+%}
 
 % Position tables {here, top, bottom, page}
 \makeatletter

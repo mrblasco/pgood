@@ -1,19 +1,45 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{34}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Akerlof and Kranton(2005)]{akerlof2005identity}
+G.~A. Akerlof and R.~E. Kranton.
+\newblock {Identity and the Economics of Organizations}.
+\newblock \emph{Journal of Economic Perspectives}, 2005.
+
+\bibitem[Bandiera et~al.(2005)Bandiera, Barankay, and
+  Rasul]{bandiera2005social}
+O.~Bandiera, I.~Barankay, and I.~Rasul.
+\newblock {Social Preferences and the Response to Incentives: Evidence from
+  Personnel Data}.
+\newblock \emph{The Quarterly Journal of Economics}, 2005.
+
+\bibitem[Bandiera et~al.(2008)Bandiera, Barankay, and
+  Rasul]{bandiera2008social}
+O.~Bandiera, I.~Barankay, and I.~Rasul.
+\newblock {Social capital in the workplace: Evidence on its formation and
+  consequences}.
+\newblock \emph{Labour Economics}, 2008.
+
+\bibitem[Bandiera et~al.(2013)Bandiera, Barankay, and Rasul]{bandiera2013team}
+O.~Bandiera, I.~Barankay, and I.~Rasul.
+\newblock {Team incentives: Evidence from a firm level experiment}.
+\newblock \emph{Journal of the European Economic Association}, 2013.
+
 \bibitem[Besley and Ghatak(2005)]{besley2005competition}
 T.~Besley and M.~Ghatak.
 \newblock {Competition and Incentives with Motivated Agents}.
 \newblock \emph{The American Economic Review}, 2005.
 
-\bibitem[Blanes~i Vidal and Nossol(2011)]{blanes2011tournaments}
-J.~Blanes~i Vidal and M.~Nossol.
-\newblock {Tournaments without prizes: Evidence from personnel records}.
-\newblock \emph{Management Science}, 2011.
+\bibitem[Boning et~al.(2007)Boning, Ichniowski, and
+  Shaw]{boning2007opportunity}
+B.~Boning, C.~Ichniowski, and K.~Shaw.
+\newblock {Opportunity Counts: Teams and the Effectiveness of Production
+  Incentives}.
+\newblock \emph{Journal of Labor Economics}, 2007.
 
 \bibitem[Boudreau et~al.(2011)Boudreau, Lacetera, and
   Lakhani]{boudreau2011incentives}
@@ -22,10 +48,23 @@ K.~J. Boudreau, N.~Lacetera, and K.~R. Lakhani.
   empirical analysis}.
 \newblock \emph{Management Science}, 2011.
 
-\bibitem[Bull et~al.(1987)Bull, Schotter, and Weigelt]{bull1987tournaments}
-C.~Bull, A.~Schotter, and K.~Weigelt.
-\newblock {Tournaments and Piece Rates: An Experimental Study}.
-\newblock \emph{Journal of Political Economy}, 1987.
+\bibitem[Boudreau et~al.(2016)Boudreau, Lakhani, and
+  Menietti]{boudreau2016performance}
+K.~J. Boudreau, K.~R. Lakhani, and M.~Menietti.
+\newblock {Performance responses to competition across skill levels in
+  rank-order tournaments: field evidence and implications for tournament
+  design}.
+\newblock \emph{The RAND Journal of Economics}, 2016.
+
+\bibitem[{Coffman, Katherine Baldiga}(2014)]{coffman2014evidence}
+{Coffman, Katherine Baldiga}.
+\newblock {Evidence on Self-Stereotyping and the Contribution of Ideas}.
+\newblock \emph{The Quarterly Journal of Economics}, 2014.
+
+\bibitem[Cohen(1992)]{cohen1992power}
+J.~Cohen.
+\newblock {A power primer}.
+\newblock \emph{Psychological bulletin}, 1992.
 
 \bibitem[Croson and Gneezy(2009)]{croson2009gender}
 R.~Croson and U.~Gneezy.
@@ -36,13 +75,6 @@ R.~Croson and U.~Gneezy.
 D.~Cutler, E.~Wikler, and P.~Basch.
 \newblock {Reducing administrative costs and improving the health care system}.
 \newblock \emph{New England Journal of Medicine}, 2012.
-
-\bibitem[Dechenaux et~al.(2014)Dechenaux, Kovenock, and
-  Sheremeta]{dechenaux2014survey}
-E.~Dechenaux, D.~Kovenock, and R.~M. Sheremeta.
-\newblock {A survey of experimental research on contests, all-pay auctions and
-  tournaments}.
-\newblock \emph{Experimental Economics}, 2014.
 
 \bibitem[Delfgaauw(2005)]{delfgaauw2005dedicated}
 J.~Delfgaauw.
@@ -61,21 +93,27 @@ S.~Della~Vigna, J.~A. List, U.~Malmendier, and G.~Rao.
 \newblock {Estimating Social Preferences and Gift Exchange at Work}.
 \newblock Technical report, 2016.
 
+\bibitem[Drago and Turnbull(1988)]{drago1988incentive}
+R.~Drago and G.~K. Turnbull.
+\newblock {The Incentive Effects of Tournaments with Positive Externalities
+  among Workers*}.
+\newblock \emph{Southern Economic Journal}, 1988.
+
 \bibitem[Ehrenberg and Bognanno(1990)]{ehrenberg1990tournaments}
 R.~G. Ehrenberg and M.~L. Bognanno.
 \newblock {Do Tournaments Have Incentive Effects?}
 \newblock \emph{The Journal of Political Economy}, 1990.
 
-\bibitem[Eriksson(1999)]{eriksson1999executive}
-T.~Eriksson.
-\newblock {Executive Compensation and Tournament Theory: Empirical Tests on
-  Danish Data}.
-\newblock \emph{Journal of Labor Economics}, 1999.
+\bibitem[Erev et~al.(1993)Erev, Bornstein, and Galili]{erev1993constructive}
+I.~Erev, G.~Bornstein, and R.~Galili.
+\newblock {Constructive intergroup competition as a solution to the free rider
+  problem: A field experiment}.
+\newblock \emph{Journal of Experimental Social Psychology}, 1993.
 
-\bibitem[Gibbs(1995)]{gibbs1995incentive}
-M.~Gibbs.
-\newblock {Incentive compensation in a corporate hierarchy}.
-\newblock \emph{Journal of Accounting and Economics}, 1995.
+\bibitem[Gibbs et~al.(2015)Gibbs, Neckermann, and Siemroth]{gibbs2014field}
+M.~Gibbs, S.~Neckermann, and C.~Siemroth.
+\newblock {A field experiment in motivating employee ideas}.
+\newblock \emph{Review of Economics and Statistics}, 2015.
 
 \bibitem[Glaeser et~al.(2016)Glaeser, Hillis, Kominers, and
   Luca]{glaeser2016predictive}
@@ -95,10 +133,11 @@ B.~H. Hamilton, J.~A. Nickerson, and H.~Owan.
   the impact of teams on productivity and participation}.
 \newblock \emph{Journal of Political Economy}, 2003.
 
-\bibitem[Hong et~al.(2015)Hong, Hossain, and List]{hong2015framing}
-F.~Hong, T.~Hossain, and J.~A. List.
-\newblock {Framing manipulations in contests: a natural field experiment}.
-\newblock \emph{Journal of Economic Behavior \& Organization}, 2015.
+\bibitem[Knoeber and Thurman(1994)]{knoeber1994testing}
+C.~R. Knoeber and W.~N. Thurman.
+\newblock {Testing the Theory of Tournaments: An Empirical Analysis of Broiler
+  Production}.
+\newblock \emph{Journal of Labor Economics}, 1994.
 
 \bibitem[Lakhani et~al.(2013)Lakhani, Boudreau, Loh, Backstrom, Baldwin,
   Lonstein, Lydon, MacCormack, Arnaout, and Guinan]{lakhani2013prize}
@@ -107,12 +146,6 @@ K.~R. Lakhani, K.~J. Boudreau, P.-R. Loh, L.~Backstrom, C.~Baldwin,
 \newblock {Prize-based contests can provide solutions to computational biology
   problems}.
 \newblock \emph{Nature biotechnology}, 2013.
-
-\bibitem[Lange et~al.(2007)Lange, List, and Price]{lange2007using}
-A.~Lange, J.~A. List, and M.~K. Price.
-\newblock {Using lotteries to finance public goods: Theory and experimental
-  evidence*}.
-\newblock \emph{International Economic Review}, 2007.
 
 \bibitem[Lazear and Rosen(1981)]{lazear1981rank}
 E.~P. Lazear and S.~Rosen.
@@ -134,16 +167,28 @@ J.~Morgan and M.~Sefton.
 \newblock {Funding public goods with lotteries: experimental evidence}.
 \newblock 2000.
 
-\bibitem[Niederle and Vesterlund(2007)]{niederle2007women}
-M.~Niederle and L.~Vesterlund.
-\newblock {Do Women Shy Away From Competition? Do Men Compete Too Much?}
-\newblock \emph{The Quarterly Journal of Economics}, 2007.
+\bibitem[Nalebuff and Stiglitz(1983)]{nalebuff1983prizes}
+B.~J. Nalebuff and J.~E. Stiglitz.
+\newblock {Prizes and incentives: towards a general theory of compensation and
+  competition}.
+\newblock \emph{The Bell Journal of Economics}, 1983.
 
-\bibitem[Terwiesch and Ulrich(2009)]{terwiesch2009innovation}
-C.~Terwiesch and K.~T. Ulrich.
-\newblock \emph{{Innovation tournaments: Creating and selecting exceptional
-  opportunities}}.
-\newblock Harvard Business Press, 2009.
+\bibitem[Prendergast(2007)]{prendergast2007motivation}
+C.~Prendergast.
+\newblock {The Motivation and Bias of Bureaucrats}.
+\newblock \emph{The American Economic Review}, 2007.
+
+\bibitem[Rotemberg(2006)]{rotemberg2006altruism}
+J.~J. Rotemberg.
+\newblock {Altruism, reciprocity and cooperation in the workplace}.
+\newblock In \emph{Handbook of the economics of giving, altruism and
+  reciprocity}. 2006.
+
+\bibitem[Rubin(1974)]{rubin1974estimating}
+D.~B. Rubin.
+\newblock {Estimating causal effects of treatments in randomized and
+  nonrandomized studies.}
+\newblock \emph{Journal of educational Psychology}, 1974.
 
 \bibitem[Terwiesch and Xu(2008)]{terwiesch2008innovation}
 C.~Terwiesch and Y.~Xu.

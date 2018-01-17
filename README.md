@@ -5,5 +5,4 @@ This folder contains scripts for the paper:
 	Evidence
 
 December 2017
-Andrea Blasco
-(ablasco@fas.harvard.edu)
+Andrea Blasco (ablasco@fas.harvard.edu)

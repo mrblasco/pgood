@@ -11,7 +11,7 @@ author:
     - Karim R. Lakhani
     - Michael Menietti
 
-abstract: "We report results of a natural field experiment conducted at a medical organization that sought contribution of public goods (i.e., projects for organizational improvement) from its 1200 employees. Offering a prize for winning submissions boosted participation by 85 percent without affecting the quality of the submissions. The effect was consistent across gender and job type. We posit that the allure of a prize, in combination with mission-oriented preferences, drove participation. Using a simple model, we estimate that these preferences explain about a third of the magnitude of the effect. We also find that these results were sensitive to the solicited person's gender."
+abstract: "We report results of a natural field experiment conducted at a medical organization that sought contribution of public goods (i.e., projects for organizational improvement) from its 1200 employees. Offering a prize for winning submissions boosted participation without affecting the quality of the submissions. The effect was consistent across gender and job type. We posit that the allure of a prize, in combination with mission-oriented preferences, drove participation. Using a simple model, we estimate that these preferences explain about a third of the magnitude of the effect. We also find that the opportunity of winning financial resources to lead one's own project implementation had a negative effect on participation. These results were sensitive to the solicited person's gender."
 
 JEL: 
   - D23
@@ -30,9 +30,6 @@ geometry: "left=1.5in, right=1.5in, top=1in, bottom=1in"
 fontsize: 12pt
 # setspace: \doublespacing
 # endfloat: true
-header-includes:
-  - \usepackage{todonotes}
-  - \usepackage{palatino}
 ---
     
 ```{r, echo=FALSE, warnings=FALSE, message=FALSE}
@@ -43,7 +40,7 @@ require(knitr)
 
 # Options
 opts_chunk$set(
-  cache=FALSE,
+  cache=TRUE,
   echo=FALSE,
   message=FALSE,
   warning=TRUE,
@@ -51,8 +48,9 @@ opts_chunk$set(
 #   tidy=FALSE,
 #   fig.width=5,
 #   fig.height=5,
+  cache.path="cache/",
   fig.path="figures/")
-  
+
 options(digits=3)
 
 # Data
@@ -74,5 +72,5 @@ req_chunks <- sapply(list.files("scripts", full=T), read_chunk)
 ```{r child=child_docs}
 ```
 
-References
-==========
+# References
+

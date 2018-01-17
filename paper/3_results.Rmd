@@ -1,5 +1,3 @@
-\clearpage
-
 <!-- NOTES Excluding an additional 20 proposals from 11 employees who were not part of the Heart Center when the experiment was designed. -->
 
 # Results
@@ -111,9 +109,7 @@ The treatment interventions may not have only impacted the propensity to make a 
 ```{r test_ratings}
 ```
 
-### Quality assessed by peers
-
-To check whether differences in the quality of the submissions can be explained by the solicitation treatments of the submitter, we first look at differences in the distribution of ratings obtained from peers.  Overall, a project proposal is given the "neutral" point (i.e., a rating of 3) on a five-point scale about 30 percent of the times with employees being more likely to give high (4-5) rather than low (1-2) ratings. This rating pattern does not change much when we condition the data to the solicitation treatments of the proponent (Figure \ref{ratings}); suggesting an equal distribution of good and bad quality projects across the solicitation treatments.
+_Quality assessed by peers._ To check whether differences in the quality of the submissions can be explained by the solicitation treatments of the submitter, we first look at differences in the distribution of ratings obtained from peers.  Overall, a project proposal is given the "neutral" point (i.e., a rating of 3) on a five-point scale about 30 percent of the times with employees being more likely to give high (4-5) rather than low (1-2) ratings. This rating pattern does not change much when we condition the data to the solicitation treatments of the proponent (Figure \ref{ratings}); suggesting an equal distribution of good and bad quality projects across the solicitation treatments.
 
 To formally test this hypothesis, we aggregate the mean ratings for each proposal and regress these aggregate measures on solicitation treatment dummies. The regression results (not reported) show only an insignificant relationship between ratings and solicitation treatments. The treatment coefficients are all insignificantly different from zero, with the linear model not significantly different from a constant model (an overall F-test gives a p-value of `r ftest$p.value`).
 
@@ -176,10 +172,7 @@ z.l <- split(z$score[i], z$treatment.proponent[i])
 kt <- kruskal.test(z.l)
 ```
 
-
-### Quality assessed by managers 
-
-One potential limit of assessing quality only on the basis of peer ratings is that the employees might have a different view of a proposal's quality than executives (due, for instance, to a misalignment of incentives). Indeed, to ensure alignment between managerial goals and the peer assessment, all project proposals were further vetted by the HTL staff before being considered for implementation funding. So, we now focus on the outcomes of this vetting process to investigate more broadly the presence of treatment effects on the quality of project proposals.
+_Quality assessed by managers._ One potential limit of assessing quality only on the basis of peer ratings is that the employees might have a different view of a proposal's quality than executives (due, for instance, to a misalignment of incentives). Indeed, to ensure alignment between managerial goals and the peer assessment, all project proposals were further vetted by the HTL staff before being considered for implementation funding. So, we now focus on the outcomes of this vetting process to investigate more broadly the presence of treatment effects on the quality of project proposals.
 
 The vetting process conducted by the HTL staff resulted in `r sum(z$score>0)` proposals being scored (from 1 to 100 points) with the best `r sum(hc$finalist)` proposals invited to submit implementation plans. The remaining `r sum(z$score==0)` proposals were excluded (and received a score of zero) either because flagged as inappropriate for funding or because the proponent manifested no intention to participate in the implementation phase (a `r ft$method` finds no association between proposals excluded and treatments with a p-value of `r ft$p.value`). 
 
