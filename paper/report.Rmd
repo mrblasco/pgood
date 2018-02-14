@@ -28,8 +28,21 @@ keywords:
 
 geometry: "left=1.5in, right=1.5in, top=1in, bottom=1in"
 fontsize: 12pt
-# setspace: \doublespacing
-# endfloat: true
+fontfamily: tgbonum
+#setspace: \doublespacing
+endfloat: false
+bibliography: refs.bib
+
+output: 
+  pdf_document:
+    toc: true
+    keep_tex: true
+    latex_engine: pdflatex
+    citation_package: natbib
+    template: template.tex
+#     pandoc_args: [
+# 	    "--bibliography", "",
+#     ]
 ---
     
 ```{r, echo=FALSE, warnings=FALSE, message=FALSE}
@@ -40,33 +53,36 @@ require(knitr)
 
 # Options
 opts_chunk$set(
-  cache=TRUE,
+  cache=FALSE,
   echo=FALSE,
   message=FALSE,
   warning=TRUE,
   error=FALSE,
+  fig.path="figures/")
 #   tidy=FALSE,
 #   fig.width=5,
 #   fig.height=5,
-  cache.path="cache/",
-  fig.path="figures/")
+#   cache.path="cache/",
 
 options(digits=3)
 
-# Data
-load("../.RData")
-
-# Required resources  
-source("scripts/help_func.R")
+# Load data
+load("../data-clean/mgh.RData")
+source("../scripts/functions.R")
+read_chunk("../scripts/methods.R")
+read_chunk("../scripts/results-participation.R")
+read_chunk("../scripts/results-ratings.R")
+capitalize <- function(x) x
 
 # List of files
 child_docs <- c('1_intro.Rmd'
 							, '2_methods.Rmd'
-							, '3_results.Rmd'
-							, '4_discussion.Rmd')
+# 							, '3_results.Rmd'
+							, '4_discussion.Rmd'
+)
 
 # Analysis
-req_chunks <- sapply(list.files("scripts", full=T), read_chunk)
+#req_chunks <- sapply(list.files("scripts", full=T), read_chunk)
 ```
 
 ```{r child=child_docs}

@@ -1,0 +1,5 @@
+load("/Users/ablasco/Documents/NTL/pgood/Prep_data/mgh.RData")
+ls
+ls()
+summary(hc)
+q()

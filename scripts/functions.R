@@ -54,7 +54,7 @@ float <- function (x, caption=NULL, label=NULL, notes=NULL, notes.width="\\textw
   if (!is.null(notes)) {
     cat(sprintf('\\begin{minipage}{%s}\n', notes.width))
     cat(sprintf('\\emph{Note:} %s\n', notes))
-    cat('\\end{minipage}')
+    cat('\\end{minipage}\n')
   }
   cat('\\end{table}\n')  
 }
@@ -90,18 +90,20 @@ add.error.bars <- function(y, p, SE, alpha.levels=c(0.316, 0.10, 0.05), ...) {
 
 
 # Function to render tables into latex
-table_render <- function(x, caption, label, add=NULL, align=NULL, digits=1, notes=NULL) {
+table_render <- function(x, caption, label, add=NULL, align=NULL, digits=1, notes=NULL, ...) {
 	require(xtable)
   if (is.null(align)) align <- c("@{}l",rep("c", ncol(x)))
   table.head <- "\\\\[-1.8ex]\\hline \\hline \\\\[-1.8ex]\n"
   table.mid <- "\\hline \\\\[-1.86ex]\n"
   table.bottom <- table.head
-  add.to.cmd <- c(table.head, table.mid, table.bottom)
-  add.to.row <- list(pos = list(-1, 0, nrow(x))
-                , command = add.to.cmd)
+  add.to.row <- list()
+  add.to.row$pos <- list(-1, 0, nrow(x))
+  add.to.row$command <- c(table.head, table.mid, table.bottom)
   if (!is.null(add)) {
     add.to.row$command  <- c(add.to.row$command, add$cmd)
-    add.to.row$pos[[4]] <- add$pos
+    for (k in 1:length(add$pos)) {
+    	add.to.row$pos[[k+3]] <- add$pos[[k]]
+    }
   }
   cat("\\begin{table}\n")         
   cat("\\centering\n")                  
@@ -111,11 +113,11 @@ table_render <- function(x, caption, label, add=NULL, align=NULL, digits=1, note
       , add.to.row=add.to.row
       , hline.after=NULL
       , floating=FALSE
-      , comment=FALSE)
+      , comment=FALSE, ...)
   if (!is.null(notes)) {
-    cat("\\begin{tablenotes}\n")                  
-    cat(sprintf("%s\n", notes))
-    cat("\\end{tablenotes}\n")
+    cat("\\begin{minipage}{\\textwidth}\\itshape\\footnotesize\n")                  
+    cat(sprintf("Note: %s\n", notes))
+    cat("\\end{minipage}\n")
   }
   cat("\\end{table}\n")
 }           

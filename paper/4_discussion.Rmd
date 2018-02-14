@@ -1,4 +1,3 @@
-
 # Summary and conclusions
 
 We report results of a natural field experiment conducted at a medical organization that held an innovation contest seeking contribution of public goods (i.e., projects for organizational improvement) from its more than 1200 employees. The experiment tested incentives for contributing by manipulating the content of emails soliciting staff participation. We presented different incentives to participate in the contest, such as a prize (PRIZE) for winning submissions, improving patient care (PCARE), improving the workplace (WPLACE), and funding for implementation (FUND). Each staff was randomly assigned to receiving an email containing one of the four incentives. 

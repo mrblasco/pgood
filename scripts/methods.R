@@ -7,7 +7,6 @@
 # --- methods_experimental_design
 ######################################## 
 
-
 ######################################## 
 ## @knitr methods_timeline
 ######################################## 
@@ -29,8 +28,17 @@ plot_timeline <- function(x, ...) {
 	text(x=x.sq, y=1, format(x.sq, "%b"),pos=1)
 	points(x=x.sq, y=rep(1, 4), pch=3)
 }
-
-plot_timeline(x=read.csv("timing.csv"))
+d.timing <- data.frame(matrix(c(
+	"2014-07-28","Innovation Contest Launch & Submission opens",
+	"2014-08-22","Submission Closes",
+	"2014-08-27","Peer-Evaluation Opens",
+	"2014-09-05","Peer-Evaluation Closes",
+	"2014-09-12","Winners Announced & Invited Selections Announced",
+	"2014-10-03","Final Round Implementation Plans Due",
+	"2014-10-30","Final Award Event & Grant Winners Announced"
+), 7, byrow=TRUE))
+colnames(d.timing) <- c("date", "activity")
+plot_timeline(x=d.timing)
 
 
 ######################################## 
@@ -69,7 +77,6 @@ table_render(design(), add=add
 ######################################## 
 
 n_survey <- ""
-
 f <- function() {
   prepare.table <- function(tbl, TEST=chisq.test, ...) {
     tbl.test <- c(TEST(tbl, ...)$p.val, rep(NA, nrow(tbl)-1))
@@ -81,29 +88,29 @@ f <- function() {
   }
   office <- ifelse(hc$has_office=="yes", "Office", "No office")
   age <- factor(hc$age, exclude=c("", NA))
-  levels(age) <- paste(levels(age), "years old*")
-  levels(age)[4:5] <- rep(">45 years old*", 2)
+  levels(age)[4:5] <- rep(">45", 2)
   tenure <- factor(round(hc$tenure/10))
   lv <- c("< 10", "10-20", "20-30", "30-40", ">40", ">40")
-  levels(tenure) <- paste(lv, "years tenure*")
-
+  levels(tenure) <- lv
   m <- rbind(prepare.table(table(hc$job, hc$treatment))
   , prepare.table(table(capitalize(hc$gender), hc$treatment))
   , prepare.table(table(office, hc$treatment))
   , prepare.table(table(age, hc$treatment), simulate.p=TRUE)
   , prepare.table(table(tenure, hc$treatment), simulate.p=TRUE))
-  rownames(m)[rownames(m)=="Female"] <- "[1.86ex] Female"
+  rownames(m)[rownames(m)=="female"] <- "[1.86ex] Female"
+  rownames(m)[rownames(m)=="male"] <- "Male"
   rownames(m)[rownames(m)=="No office"] <- "[1.86ex] No office"
-  rownames(m)[rownames(m)=="18-25 years old*"] <- "[1.86ex] 18-25 years old*"
-  rownames(m)[rownames(m)=="< 10 years tenure*"] <- "[1.86ex] < 10 years tenure*"
   colnames(m)[5:6] <- c('%', 'Obs.')
   return(m)
 }
 cs <- chisq.test(table(hc$treatment, hc$gender))
-add <- list(pos=-1)
-add$cmd <- "& \\multicolumn{4}{c}{\\emph{Assigned treatments:}} 
+add <- list()
+add$pos <- list(-1, 7, 11)
+add$cmd <- c("& \\multicolumn{4}{c}{\\emph{Assigned treatments:}} 
 						& \\multicolumn{2}{c}{\\emph{All:}}\\\\
 						\\cmidrule(lr){2-5}\\cmidrule(lr){6-7}"
+						, "[1.86ex] Age* &&&&&&\\\\"
+						, "[1.86ex] Tenure* &&&&&&\\\\")
 table_render(f(), caption="Summary statistics by treatment"
-            , label="summary-statistics", digits=c(rep(0, 7), 3), add=add
-            , notes=sprintf("This table reports the percentage of employees in our sample cross tabulated by the assigned treatment across the gender, profession, whether the employee had a fixed office location, age, and years of tenure at the Heart Center. For each categorical variable, the last column reports the p-value from a %s with the assigned treatment and the variable. The asterisk $^{\\ast}$ indicates non-representative self-reported information obtained from an online survey polling %s employees that was run about two months before the launch of the innovation contest.", cs$method, n_survey))
+            , label="summary-statistics", digits=c(rep(0, 7), 2), add=add
+            , notes=sprintf("This table reports the percentage of employees in our sample cross tabulated by the assigned treatment across the gender, profession, whether the employee had a fixed office location, age, and years of tenure at the Heart Center. For each categorical variable, the last column reports the p-value from a %s with the assigned treatment and the variable. The asterisk $^{\\ast}$ indicates self-reported information obtained from an online survey polling %s employees about two months before the launch of the innovation contest.", cs$method, n_survey))

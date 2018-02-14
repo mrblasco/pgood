@@ -12,7 +12,7 @@ The communication around the innovation contest highlighted the opportunity for 
 
 > "If you've noticed something about patient experience, employee satisfaction, workplace efficiency, or anything that could be improved; if you've had an inspiration about a new way to safeguard health; or if you simply have a cost-saving idea, then now is the time to share your idea."
 
-```{r methods_timeline, fig.width=9, fig.height=4, include=FALSE}
+```{r methods_timeline, fig.width=9, fig.height=5, include=FALSE}
 ```
 
 \begin{figure}
