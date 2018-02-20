@@ -2,11 +2,18 @@
 # Andrea Blasco 
 # Fall 2017
 
+# Tools
+EDITOR := open -a BBEdit
+VIEWER := open -a Skim
+
+# Folders
 TEXFILE := paper/report
 RDIR := scripts2
+PAPERDIR := paper
 FIGDIR := figs
 RFILES := $(wildcard $(RDIR)/*.R)
 OUT_FILES:=  $(RFILES:%.R=%.Rout)
+DOC_FILES:= $(wildcard $(PAPERDIR)/*.Rmd)
 
 all: $(OUT_FILES) $(TEXFILE).pdf
 
@@ -15,15 +22,19 @@ $(RDIR)/%.Rout: $(RDIR)/%.R
 	R CMD BATCH $< $@
 
 # Compile main tex file and show errors
-$(TEXFILE).pdf: $(OUT_FILES)
+$(TEXFILE).pdf: $(OUT_FILES) $(DOC_FILES) $(PAPERDIR)/*.bib
 	Rscript -e 'rmarkdown::render("paper/report.Rmd");'
 
 # Run R files
 R: $(OUT_FILES)
 
 # View main tex file
-# view: $(TEXFILE).pdf
-#     evince $(TEXFILE).pdf &
+view: $(TEXFILE).pdf
+	$(VIEWER) $(TEXFILE).pdf & 
+
+
+bib: 
+	$(EDITOR) paper/*.bib 
 
 # Clean up stray files
 # clean:
@@ -38,7 +49,6 @@ R: $(OUT_FILES)
 
 
 ############################
-# EDITOR := open -a BBEdit
 # VIEWER := open -a Skim
 # CONFIG := config.R
 # RUN := R CMD BATCH

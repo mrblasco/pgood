@@ -6,22 +6,18 @@
 
 The Heart Center is a leading academic medical center specializing in clinical cardiac care and research in the United States. Founded more than a hundred years ago, the Heart Center serves thousands of patients every year, occupies more than 35,000 square feet of office space, and employs more than 1,200 people (nurses, physicians, researchers, technicians, and administrative staff) scattered across several buildings on the Massachusetts General Hospital's main campus in downtown Boston and a few other satellite locations.
 
-The study was in cooperation with the Heart Center's launch of the Healthcare Transformation Lab (HTL),^[http://www.healthcaretransformation.org] an initiative aimed at developing innovative health care process improvements to enhance the health care safety and delivery of the hospital. The launch of the HTL was accompanied by the announcement of an internal "innovation contest," called the Ether Dome Challenge^[The name is taken from a historical place on MGH's main campus where the first public surgery using anesthesia was demonstrated in 1846.] that sought to engage all staff members to participate. 
+The study was in cooperation with the Heart Center's launch of the Health-care Transformation Lab (HTL),^[http://www.healthcaretransformation.org] an initiative aimed at developing innovative health care process improvements to enhance the health care safety and delivery of the hospital. The launch of the HTL was accompanied by the announcement of an internal "innovation contest," called the Ether Dome Challenge^[The name is taken from a historical place on MGH's main campus where the first public surgery using anesthesia was demonstrated in 1846.] that sought to engage all staff members to participate. 
 
-The communication around the innovation contest highlighted the opportunity for staff to help in the selection process of the ideas and a commitment by the Heart Center Management that the leading ideas would be provided appropriate resources so that they could be implemented. The announcement on the contest's website read:
+The communication around the innovation contest highlighted the opportunity for staff to help in the selection process of the ideas and a commitment by the Heart Center Management that the leading ideas would be provided appropriate resources so that they could be implemented. The announcement on the contest website read:
 
 > "If you've noticed something about patient experience, employee satisfaction, workplace efficiency, or anything that could be improved; if you've had an inspiration about a new way to safeguard health; or if you simply have a cost-saving idea, then now is the time to share your idea."
-
-```{r methods_timeline, fig.width=9, fig.height=5, include=FALSE}
-```
 
 \begin{figure}
 \centering
 \caption{Timeline of the innovation contest}
 \label{timeline}
-\includegraphics{figures/methods_timeline-1.pdf}
+\includegraphics{../figs/timeline.pdf}
 \end{figure}
-
 
 The innovation contest was divided into three main phases (Figure \ref{timeline}): submission, the peer evaluation, and implementation phase.
 
@@ -47,8 +43,7 @@ The content of this communication with a placeholder for our solicitation treatm
 
 The first paragraph of the above message was randomized into _four_ different solicitation treatments (the exact words are in Table \ref{experimental-design}), thus creating as many treatment groups of equal size (Table \ref{experimental-design}). The first group was given a solicitation treatment (PRIZE) announcing the innovation contest as an opportunity to win individual prizes (iPad mini's) for top submissions. The second group was given a solicitation treatment (FUND) announcing the contest as an opportunity to  win a $20,000 budget for developing their project proposals. The other groups received solicitation treatments announcing the contest as an opportunity to improve the health care of their patients (PCARE) or the workplace (WPLACE).
 
-```{r methods_experimental_design, results='asis'}
-```
+\input{../tables/design.tex}
 
 A sample size of more than 300 units for each treatment group ensured a sufficiently high statistical power based upon standard power calculations on the difference of proportions. In testing the difference of proportions between any two treatments, the probability of type-I errors was slightly below $0.80$ for _small_ differences at 5 percent significance level but higher than $0.80$ for _medium_ and _large_ differences at the more stringent 1 percent significance level.^[The definition of small, medium and large differences is given by @cohen1992power;  e.g., a difference of 5 percentage points of the pair $(0.05, 0.10)$ is considered a small effect: see @cohen1992power p. 158.]
 
@@ -82,6 +77,5 @@ Nursing workers constitute about half of the sample, and the rest is split almos
 Finally, it is also important to remark that only half of the employees ($53$ percent) have fixed office locations, as they may be on duty in multiple wards. However, more senior staff tend to have a fixed location. So, within each profession, this measure can be viewed as a proxy for the employee's position or status inside the organization. 
 
 
-```{r methods_summary_stats, results="asis"}
-```
+\input{../tables/summary.tex}
 

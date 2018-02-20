@@ -77,7 +77,7 @@ capitalize <- function(x) x
 # List of files
 child_docs <- c('1_intro.Rmd'
 							, '2_methods.Rmd'
-# 							, '3_results.Rmd'
+							, '3_results.Rmd'
 							, '4_discussion.Rmd'
 )
 
