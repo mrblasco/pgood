@@ -11,41 +11,51 @@ TEXFILE := paper/report
 RDIR := scripts2
 PAPERDIR := paper
 FIGDIR := figs
+TABDIR := tables
 RFILES := $(wildcard $(RDIR)/*.R)
-OUT_FILES:=  $(RFILES:%.R=%.Rout)
 DOC_FILES:= $(wildcard $(PAPERDIR)/*.Rmd)
+PDF_FILES := $(wildcard $(FIGDIR)/*.pdf)
+TAB_FILES :=  $(wildcard $(TABDIR)/*.tex)
+OUT_FILES:=  $(RFILES:%.R=%.Rout)
+PNG_FILES :=  $(PDF_FILES:%.pdf=%.png)
 
-all: $(OUT_FILES) $(TEXFILE).pdf
+all: $(OUT_FILES) $(TEXFILE).pdf $(PNG_FILES)
 
 # run every R file, when needed
 $(RDIR)/%.Rout: $(RDIR)/%.R
 	R CMD BATCH $< $@
 
-# Compile main tex file and show errors
+# convert PDF to PNG
+$(FIGDIR)/%.png: $(FIGDIR)/%.pdf
+	sips -s format png $< --out $@
+
+# compile main tex file
 $(TEXFILE).pdf: $(OUT_FILES) $(DOC_FILES) $(PAPERDIR)/*.bib
 	Rscript -e 'rmarkdown::render("paper/report.Rmd");'
 
-# Run R files
+# produce all ROUT files
 R: $(OUT_FILES)
 
-# View main tex file
+# produce all PNG files
+png: $(PNG_FILES)
+
+# view report
 view: $(TEXFILE).pdf
 	$(VIEWER) $(TEXFILE).pdf & 
 
-
+# edit bibliography
 bib: 
 	$(EDITOR) paper/*.bib 
 
-# Clean up stray files
-# clean:
-#     rm -fv $(OUT_FILES) 
-#     rm -fv $(CROP_FILES)
-#     rm -fv *.aux *.log *.toc *.blg *.bbl *.synctex.gz
-#     rm -fv *.out *.bcf *blx.bib *.run.xml
-#     rm -fv *.fdb_latexmk *.fls
-#     rm -fv $(TEXFILE).pdf
-# 
-# .PHONY: all clean
+# clean up
+clean:
+	 rm -fv $(OUT_FILES) 
+	 rm -fv $(PDF_FILES)
+	 rm -fv $(PNG_FILES)
+	 rm -fv $(TEXFILE).pdf
+	 mr -fv $(TAB_FILES)
+ 
+.PHONY: all clean
 
 
 ############################
