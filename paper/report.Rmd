@@ -57,8 +57,7 @@ opts_chunk$set(
   echo=FALSE,
   message=FALSE,
   warning=TRUE,
-  error=FALSE,
-  fig.path="figures/")
+  error=FALSE)
 #   tidy=FALSE,
 #   fig.width=5,
 #   fig.height=5,
@@ -68,10 +67,6 @@ options(digits=3)
 
 # Load data
 load("../data-clean/mgh.RData")
-source("../scripts/functions.R")
-read_chunk("../scripts/methods.R")
-read_chunk("../scripts/results-participation.R")
-read_chunk("../scripts/results-ratings.R")
 capitalize <- function(x) x
 
 # List of files

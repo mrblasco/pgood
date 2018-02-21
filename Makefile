@@ -8,12 +8,12 @@ VIEWER := open -a Skim
 
 # Folders
 TEXFILE := paper/report
-RDIR := scripts2
+RDIR := scripts
 PAPERDIR := paper
 FIGDIR := figs
 TABDIR := tables
 RFILES := $(wildcard $(RDIR)/*.R)
-DOC_FILES:= $(wildcard $(PAPERDIR)/*.Rmd)
+RMD_FILES:= $(wildcard $(PAPERDIR)/*.Rmd)
 PDF_FILES := $(wildcard $(FIGDIR)/*.pdf)
 TAB_FILES :=  $(wildcard $(TABDIR)/*.tex)
 OUT_FILES:=  $(RFILES:%.R=%.Rout)
@@ -30,7 +30,7 @@ $(FIGDIR)/%.png: $(FIGDIR)/%.pdf
 	sips -s format png $< --out $@
 
 # compile main tex file
-$(TEXFILE).pdf: $(OUT_FILES) $(DOC_FILES) $(PAPERDIR)/*.bib
+$(TEXFILE).pdf: $(OUT_FILES) $(RMD_FILES) $(PAPERDIR)/*.bib
 	Rscript -e 'rmarkdown::render("paper/report.Rmd");'
 
 # produce all ROUT files
@@ -56,19 +56,4 @@ clean:
 	 mr -fv $(TAB_FILES)
  
 .PHONY: all clean
-
-
-############################
-# VIEWER := open -a Skim
-# CONFIG := config.R
-# RUN := R CMD BATCH
-# RDIR := scripts2
-# RFILES := $(wildcard $(RDIR)/*.R)
-# OUT_FILES:= $(RFILES:.R=.Rout)
-# #########################
-
-
-# knit the paper with rmarkdown
-# paper: 
-#   Rscript -e 'rmarkdown::render("paper/report.Rmd");'
 
