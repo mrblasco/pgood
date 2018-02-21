@@ -1,36 +1,17 @@
 
 # Introduction
 
-Public goods problems are pervasive in organizations. Employees are expected to be effective and efficient on their own assigned tasks but also to make *voluntary* contributions that go beyond the role specifications, such as those towards improving the overall operations and performance of the shared enterprise. 
+<!--
+"Organizational Citizen Behavior; the good soldier syndrome" (Book, xxxx) defines this type of behavior as "discretionary, not directly recognized by the formal reward system, and that promotes the effective functioning of the organization." 
 
-A central question for many organizations that rely upon these types of public goods to increase productivity is determining what motivates their own members to self-select and volunteer time and effort into activities beyond the line of duty. Career concerns and other formal incentives play a key xxx explaining why employees sort into these discretionary tasks. Even so, sometimes workers seem to be motivated by xxxx. 
+@ashraf2014no studies efforts in HIV prevention finds that non-financial rewards are effective at improving performance.  
+-->
 
-Professors, for example, are expected to teach and publish research (with pay, promotion, and tenure tied to performance in those activities) and serve on various internal committees that directly benefit the university and department operations, with indirect benefits to committee members (XXX). Similarly in companies, employees are expected to work on production activities and also to collaborate in teams, contribute to common resources, provide feedback on strategy and direction of the firm, and drive innovation efforts.
+The effective functioning of organizations -- both in business and non-profit -- crucially depends on the willingness' of their members to volunteer time and effort in tasks that go beyond their regular duties and produce generalized benefits. Typical examples are attending decisional committees, suggesting improvements in workplace practices, and experimenting with new ideas. Despite the relevance for the organization, managers often struggle to identify employees and use formal incentives to have them perform these tasks. 
 
-A central question for many organizations that rely upon these types of public goods to increase productivity is determining what motivates their own members to self-select and volunteer time and effort into activities beyond the line of duty. Career concerns and other formal incentives play a large role. Yet, in many settings employees are not formal incentives and may be tempted to behave opportunistically and free ride, hoping that the other members of the organization will pay the cost of doing these tasks. It is possible also that, despite these free riding incentives, employees will contribute out of their pro-social preferences towards specific individuals, or groups, within the organization (xxxx) or the organization as a whole (xxxx). A third is that the empowerment xxxx. But what is it? Is their willingness to do something? Or altruistic preferences? Understanding these questions is important also to enable organizations to design better incentive schemes. (Pure or impure altruism?) (gift exchange?) (care about their contribution to the firm?)
+In many cases, organizations use internal contests -- organization-wide competitions -- to foster employee participation and self-selection into these tasks. These internal contests may affect behavior through many mechanisms: (1) financial awards; (2) empowering workers to run their own projects; and (3) triggering workers' pro-social preferences.
 
-In this study, we examine empirically these two perspectives within the context of an organization running an internal, organization-wide competition that seek to engage its employee in contributions to organizational public goods (e.g., improvements for the workplace). Organizations often use internal contests to engage the workforce in collective production. Among many popular examples are Apple's contest xxxx; etc.  Indeed, contests can solve the problem of incentives in many ways. One of our goals is to unbundle some of these mechanism. In particular, we focus on the effects on participation and self-selection of three aspects of the contest: (1) the presence of personal , financial awards for the winners; (2) the presence of organizational resources for the winners' to lead the implementation of their own projects; and (3) the presence of call to action appealing to contributing for the organization's own good.
-
-Empirical research on prize-mechanisms for encouraging public goods have been studied in the laboaroty; or in the context of charity donations [xxxx]. Results xxxx.  We extend these findings to inside the org. Internal contests both explicit (e.g., sales contests) or implicit (e.g., the mechanism promotions) have been studied in the literature [xxx]. However, common assumption is that workers compete for the prize and there are no spillover effects due to the public good nature of their contributions. 
-
-
-~~~~~~~~
-
-The effective functioning of organizations -- both in business and non-profit -- crucially depends on the willingness' of their members to volunteer time and effort in tasks that go beyond their regular duties and produce generalized benefits. Typical examples are attending decisional committees, suggesting improvements in workplace practices, and experimenting with new ideas. However, the concomitant presence of private costs for the worker and generalized benefits makes often hard to engage employees in such operations.
-
-One common remedy is to use *internal contests* -- organization-wide competitions -- that grant resources and formal recognition to employees who self-select into these tasks. Key elements of these contests are a direct call to action, personal awards for the winners, and internal resources awards enabling the winners to perform the task. From a theoretical point of view, these elements may affect behavior through many distinct mechanisms that involve different extrinsic and intrinsic motivations. For example, a call to address specific organizational needs may stimulate workers' pro-social preferences towards specific individuals, or groups, within the organization or the organization as a whole; whereas a call focused on personal awards may stimulate the worker's self-interest. Understanding how xxx respond to these different incentives is crucial to xxx and design better incentives. 
-
-Existing empirical studies, however, have focused on contests where xxx xxx and contest organizers xxxx. Much less attention has been given to contests where output benefits contestants xxxx. 
-
-The theoretical literature on contests also has focused on contests with no spillovers. But public goods prize-mechanisms to foster public goods suggest "small rewards." However, the recognition and xxx from being running a project maybe a better incentive than a small reward. Also, small rewards may crowd-out other xxx.
-
-Based on these insights, here we report the results of a *natural field experiment* to unbundle the different mechanisms XXX. That is, we try to assess the relative effectiveness of three alternative incentives: (1) personal awards; (2) resource-grants awards; and (3) communication of organizational needs. 
-
-
-Another important reason to focus on xxxx. There exists an extensive literature in economics on the use of contests as a source of incentives inside firms [xxxx]. Much of the existing theoretical literature, however, presumes that agents are motivated to compete on the basis of the utility derived by winning personal awards. Less attention has been devoted to situations in which a competitor’s performance generates public good effects for the other competitors, and the whole organization (a notable exception is XXX). By focusing on incentives to workers to do organizational tasks (tasks with public good effects for the organization), we improve the existing literature in this direction.
-
-
-Make 
+In this paper, we report the results of a *natural field experiment* to unbundle the xxxx. That is, we try to assess the relative effectiveness of these three alternative incentives in the field. 
 
 In particular, the experiment involved more than 1200 staff members of a medical organization (doctors, nurses, and administrative staff) in the United States. St
 

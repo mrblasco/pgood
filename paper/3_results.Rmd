@@ -2,15 +2,15 @@
 
 # Results
 
-## Submissions
+## Employee submissions
 
-We start by examining treatment differences in participation by looking at the percentage of employees who made at least one project submission during the four-week submission phase of the contest.
-
-Table \ref{submit} shows the participation rates by solicitation treatment. For testing the independence between the participation and our solicitations, a Fisher's exact test gives a p-value of 0.026; indicating thus that the observed participation differences can be ascribed to our experimental intervention.
+We begin to evaluate the effect of the four experimental solicitation treatments on employee participation in organizational public goods provision by examining the percentage of employees who made project submissions within the four-week submission period of the contest.
 
 \input{../tables/submit.tex}
 
-Pairwise comparisons among solicitation treatments show further that: (1) the PRIZE solicitation treatment generates xxx, xxx, and xxx times higher participation rates than the WPLACE, PCARE, and FUND, respectively; (2) the PCARE and WPLACE solicitation treatments generate basically identical participation rates; and (3) the FUND solicitation treatment generates xx and xx times less participation rates than xx and xxx. 
+Table \ref{submit} shows the submission rates by solicitation treatment. We test the independence between the participation rates and the four solicitation treatments using a Fisher's exact test that gives a p-value of 0.026. This means that the four experimental solicitation treatments produced significant participation effects overall.
+
+Pairwise comparisons among individual solicitation treatments show further that: (1) the PRIZE solicitation treatment generates xxx, xxx, and xxx times higher participation rates than the WPLACE, PCARE, and FUND, respectively; (2) the PCARE and WPLACE solicitation treatments generate basically identical participation rates; and (3) the FUND solicitation treatment generates xx and xx times less participation rates than xx and xxx. 
 
 \input{../tables/pairwise.tex}
 
@@ -19,8 +19,6 @@ To test to see whether these pairwise differences are statistically significant,
 \includegraphics{../figs/dynamics.pdf}
 
 Next, we turn to examining participation dynamics (Figure \ref{dynamics}). Though our data may not allow for a complete analysis of participation dynamics, looking at the overall submission patterns can be useful for the following reason. If employees assigned to different solicitation treatments were sharing (either face-to-face or electronically) the content of their solicitation with others, one should expect participation rates to converge over time, yielding estimates of the causal effects of a solicitation treatment biased towards zero. Contrary to these expectations, we find no evidence of convergence. Submissions in the PRIZE solicitation treatment are constantly higher than in the other treatments (except perhaps in the final week); at the same time, submissions in the FUND treatment are constantly low. These patterns are hence consistent with communication effects having little, or no, consequences on our findings, a topic we will discuss in greater detail later (Section \ref{discussion}).
-
-Following xxx literature (xxxx), we check whether gender was a factor driving participation in the contest (with men relatively more willing to sort into the competition). But we find no evidence (xxx gives a p-value).  Similarly we check whether the presence of effects associated with unobservable characteristics that vary by job, like differences in income and education.  But we find again no evidence in favor of this hypothesis (xxxx). We find instead evidence that having an office location is xxx associated with participation. This result, however, is confounded by other factors because more senior staff tend to have a fixed location but, at the same time, having a fixed office location is highly correlated with the type of profession (e.g., nurses xxxx).
 
 To complement the above analysis, we use a multiple linear regression model that explicitly controls for observable  differences across staff members. The probability of submitting, $y_i=1$, is given by:
 
@@ -38,4 +36,78 @@ The regression results (Table \ref{participation ols}) show an insignificant eff
 
 The results of the regression model above (Table \ref{participation ols}) give estimates of the solicitation treatment differences relative to the overall mean participation and controlling for baseline characteristics. In theory, these estimates should be more statistically efficient relative to the pairwise comparisons above (i.e., by reducing the overall noise associated with baseline characteristics). We find that, at the 95 level of statistical significance, employees in the PRIZE solicitation treatment are ` cf.full["treatment2PRIZE"]` percentage points _more_ likely to submit compared to the overall mean, whereas employees in the FUND solicitation treatment are ` -cf.full["treatment2FUND"]` percentage points _less_ likely to do so.^[Subtracting these two effects gives ` cf.full["treatment2PRIZE"] - cf.full["treatment2FUND"]` which is the difference in the probability of submitting between PRIZE and FUND treatments.] Overall, these effects are sizable not only in absolute levels but also relative to the effects of the heterogeneity captured by the other variables.
 
+Following xxx literature (xxxx), we check whether gender was a factor driving participation in the contest (with men relatively more willing to sort into the competition). But we find no evidence (xxx gives a p-value).  Similarly we check whether the presence of effects associated with unobservable characteristics that vary by job, like differences in income and education.  But we find again no evidence in favor of this hypothesis (xxxx). We find instead evidence that having an office location is xxx associated with participation. This result, however, is confounded by other factors because more senior staff tend to have a fixed location but, at the same time, having a fixed office location is highly correlated with the type of profession (e.g., nurses xxxx).
+
+
 We now turn to examining treatment interactions involving the employee's gender and profession (Figure \ref{interactions}).^[We find no significant differences for interactions with office location, which we do not report for space limitation.] We hypothesize gender interactions to occur as a result of three main factors: differences in risk taking, social preferences (willingness to contribute to public goods), and competitive inclinations. If women prefer to work on activities that are less risky, more pro-social (e.g., aiming at improving people's health) and where competition is less intense, then we should observe significant treatment interactions.  Similarly, we expect treatment interactions associated with the employee's profession to occur because, for example, the prize opportunity (i.e., the PRIZE treatment) could be relatively less effective for employees with a higher income, such as doctors, than the others. 
+
+\begin{figure} 
+\caption{Employee participation by gender or profession and solicitation treatment}
+  \label{interactions}
+  \centering
+  \includegraphics{../figs/interactions.pdf}
+\end{figure}
+
+Examining the proportion of submissions conditional on the gender (Figure \ref{interactions}, panel a) shows that women are more likely (about 5 percentage points) to participate than men in the PCARE solicitation treatment. And examining the same proportion conditional on the profession (Figure \ref{interactions}, panel b) shows instead that doctors are as likely to submit as any other worker in PRIZE solicitation treatment; thus suggesting little sorting based on income or other characteristics associated with a given profession.
+
+\input{../tables/interactions.tex}
+
+To isolate gender and profession effects, we employ a version of model \eqref{eq: submit} with gender-treatment interactions.^[We also run a model with profession-treatment interactions and results are simular to those shown in Figure \ref{fig: interactions}.] The regression results  (Table \ref{tab: probability submitting interactions}) show similar results to the simple comparison of proportions. That is, after gradually adding profession and office controls, interaction coefficients remain stable across all specifications: the response of men under the PCARE solicitation treatment is about 3 times the magnitude and in the opposite direction of the women's response. By subtracting these two coefficients, we find a significant difference between men and women of about 5 percentage points ($p=.018$), which is consistent with our previous analysis. Thus, and overall, men respond less than women in the PCARE solicitation treatment, controlling for the profession and office location. This effect could be due to gender differences in preferences, as suggested by the literature, and we will return on this topic in the discussion of the results. 
+
+## Employee participation in project evaluation
+
+We now turn to examining the outcomes of the peer evaluation phase that followed the submission phase of the contest. In this phase, 113 project proposals ended up being rated by a total of ` sum(raters)` employees (` round(100*mean(raters),0)` percent of our sample) who volunteered for the task. Their effort yielded a total of ` format(sum(ratings), big.mark=",")` evaluator-proposal pairs, providing a very sensitive test for differences in  project quality across our solicitation treatments. 
+
+TABLE HERE 
+
+We check with linear regression whether the self-selected sample of staff rating proposals is representative of the whole organization (Table \ref{drivers_rating}), or just a subset of staff members. Testing for statistical significance of the coefficients for the profession, gender, ond office location shows that the evaluators are broadly representative of the organization as a whole, albeit with a significantly higher participation from staff members with an office location.  Furthermore, the lack of statistical significance for the coefficients of the solicitation treatments shows that participation in the evaluation phase was somewhat independent from the solicitation treatment the staff members received in the submission phase.[^counterintuitive] Thus, and overall, the collected ratings appear a profession-wide and gender-wide representative sampling of opinions inside the organization.
+
+[^counterintuitive]: One may find counterintuitive that there was less (although not significant) participation in the evaluation phase from employees in the PRIZE than in the other solicitation treatments, given the greater participation in the submission phase. This result is, however, not unexpected because only ` round(100*mean(raters[submitters]))` percent of employees who made submissions resolved to rate proposals as well (we detect no difference in the propensity of submitting and rating proposals between the treatments);  so, even a difference of 2 percentage points in submitting will shrink to about 1 percentage point in the rating phase. In other words, we expect self-rating to do not affect evaluation much.
+
+## The quality of the project proposals
+
+The treatment interventions may not have only impacted the propensity to make a submission, but the quality of the submission as well. Of particular interest is any indication of a quantity versus quality trade-off. For example, if the treatment which generated the fewest submissions (FUND) also produced the highest quality submissions. A quality versus quantity trade-off would increase the complexity of choosing optimal incentives for employees. 
+
+FIGURE RATINGS
+
+TEST RATINGS
+
+_Quality assessed by peers._ To check whether differences in the quality of the submissions can be explained by the solicitation treatments of the submitter, we first look at differences in the distribution of ratings obtained from peers.  Overall, a project proposal is given the "neutral" point (i.e., a rating of 3) on a five-point scale about 30 percent of the times with employees being more likely to give high (4-5) rather than low (1-2) ratings. This rating pattern does not change much when we condition the data to the solicitation treatments of the proponent (Figure \ref{ratings}); suggesting an equal distribution of good and bad quality projects across the solicitation treatments.
+
+To formally test this hypothesis, we aggregate the mean ratings for each proposal and regress these aggregate measures on solicitation treatment dummies. The regression results (not reported) show only an insignificant relationship between ratings and solicitation treatments. The treatment coefficients are all insignificantly different from zero, with the linear model not significantly different from a constant model (an overall F-test gives a p-value of ` ftest$p.value`).
+
+\begin{figure}
+  \centering
+  \caption{Distribution of ratings by solicitation treatment of the proponent}
+  \label{ratings}
+  \includegraphics{../figs/ratings.pdf}
+\end{figure}
+
+The above analysis on the aggregate ratings does not hold in general.^[It crucially relies on the assumption that an increment in a proposal's quality as measured by an increase in ratings from $v$ to $v+1$ is the same for any value $v$.] So, we also examine the distribution of ratings as generated by treatments with no aggregation. We have over 12,000 ratings, providing a very sensitive test for differences across treatments. Using a ` cs$method` we find that the hypothesis of dependence between the distribution of ratings and the treatments is _not_ quite significant at the 10 percent level (p-value of ` cs$p.value`). Driving the p-value is a less than $2$ percent difference between the proportion of 5's in the WPLACE treatment versus the other distributions, which is probably due to outliers (the winning proposal was in the WPLACE treatment). Taken together with the fact that our sample is large, we have strong evidence suggesting that there are no (economically meaningful) differences in the quality of project proposals across treatments and in particular no evidence of a quantity versus quality trade-off up to the resolution of the five-point scale.^[One may worry that such binning is a fairly coarse measure of quality.  In particular, effects concentrated in the upper tail of the distribution may not be detected. For example, comparing the ratings of proposals A, B, C and D with hypothetical true qualities of 3, 4, 5, and 10 stars respectively. Under a five-point scale rating system, proposals A and B can be distinguished, but C and D cannot be distinguished. Hence, one needs to be very cautious in interpreting these results as evidence against quality effects in general.]
+
+	FINALISTS 
+
+_Quality assessed by managers._ One potential limit of assessing quality only on the basis of peer ratings is that the employees might have a different view of a proposal's quality than executives (due, for instance, to a misalignment of incentives). Indeed, to ensure alignment between managerial goals and the peer assessment, all project proposals were further vetted by the HTL staff before being considered for implementation funding. So, we now focus on the outcomes of this vetting process to investigate more broadly the presence of treatment effects on the quality of project proposals.
+
+The vetting process conducted by the HTL staff resulted in ` sum(z$score>0)` proposals being scored (from 1 to 100 points) with the best ` sum(hc$finalist)` proposals invited to submit implementation plans. The remaining ` sum(z$score==0)` proposals were excluded (and received a score of zero) either because flagged as inappropriate for funding or because the proponent manifested no intention to participate in the implementation phase (a ` ft$method` finds no association between proposals excluded and treatments with a p-value of ` ft$p.value`). 
+
+The Spearman's rank correlation coefficient between the scores given by the HTL staff and the average peer ratings was relatively high (` spear`), indicating good agreement between our two measures of quality. Indeed, as before, we find no treatment effects on quality using the scores (a ` kt$method` gives a p-value of ` kt$p.value`). We also find no treatment differences in the percentage of submitters being selected and invited by HTL staff to present additional implementation plans (a ` ft$method` gives a p-value of ` ft$p.value`). Although not significant, employees who made project proposals in the FUND solicitation treatment are less likely to be selected as finalist than the others (only 1 out of 7 in the FUND treatment were selected and invited by the HTL staff), providing additional evidence of a no quantity versus quality trade-off, as discussed before.
+
+## The content of the project proposals
+
+The goal of the challenge was to improve Heart Center operations by identifying problem areas and potential solutions. The proposed projects broadly conformed to the stated goals of the contest, aligning with improving the work processes within the organization or providing high-quality patient care. For example, one project proposal that received high peer ratings was to create a platform for patients to electronically review and update their medicine list in the office prior to seeing the physician. Another was to develop a smartphone application showing a patient's itinerary for the day providing a guide from one test or appointment to another. Nevertheless, other contest organizers may have varying goals and be concerned about different aspects of the submissions.  
+
+In order to examine additional dimensions of submission content, we now study the area of focus of the submissions. Of particular interest is understanding whether different wordings used in the general encouragement solicitations (either towards improving the workplace or targeting the wellbeing of patients) induce employees to concentrate on different categories. 
+
+Members of the HTL categorized each project proposal into one of seven "areas of focus" (Table \ref{tab: area-of-focus}): three categories ("Care coordination", "Staff workflow", "Workplace") identified improvements for the workplace, other three ("Information and access", "Patient care", and "Quality and Safety") focused on improvements centered around patients, and another one ("Surgical tools and support to research") categorized projects developing tools to support scientific research.
+
+We test overall association between these categories and the solicitation treatments with a ` ft$method`. Results show a marginally significant (p=` ft$p.value`) association, which means that our solicitation treatments have indeed an effect on the content of the submitted proposals.
+
+To test which areas of focus was affected by our treatment, we regress the probability of a project proposal being in a given category against solicitation treatment dummies. We use an F-test where the null hypothesis tested is that all the treatment effects have a zero effect on the probability of the proposal being in a given category. The results of these F-tests of overall significance  (Table \ref{areas of focus}) reveals significant differences in the "Quality and Safety" and "Information and access" categories, which we view as improvements centered around patients (as opposed to workplace improvements).  The first significance result is due to project proposals in the PCARE solicitation treatment being less likely to fall in the "Quality and Safety" category. The second result is due to project proposals in the FUND solicitation treatment being less likely to fall in the "Information and access" category.
+
+Although it is difficult to interpret these results because our model does not provide any prediction on the content of proposals, they indicate a possible trade-off between stimulating participation via solicitations and inducing selection in the type of contributions to the public good, which complicates the analysis of incentives for public goods inside organizations beyond what the current literature anticipates. 
+ 
+We also look at differences in the underlying complexity of the project proposal as captured by differences in the length (i.e., the word count) of a submission. Submissions were below 200 words in most cases with little differences between the treatments. Indeed, testing for a significant linear regression relationship between the length of submissions and treatment dummies returned an overall insignificant result (p=.43, F-test).
+ 
+As a result, based on the analysis of the areas of focus and the length of the submissions, we do find only little evidence of differences in submission content across treatments. However, submission content is not a well-defined concept and could be characterized in many dimensions. While content does not vary in the dimensions we selected, we have not exhausted all possible dimensions.
+
