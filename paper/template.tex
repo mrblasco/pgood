@@ -14,7 +14,7 @@ $if(setspace)$$setspace$$else$\onehalfspacing$endif$
 %\doublespacing  % \singlespacing 
 
 % Font
-\usepackage{$if(fontfamily)$$fontfamily$$else$bookman$endif$}
+\usepackage{$if(fontfamily)$$fontfamily$$else$lmodern$endif$}
 	% times, palatino, lmodern, tgtermes
 	% bookman, charter, tgschola, pslatex
 %\renewcommand{\familydefault}{tgbonum}
@@ -29,13 +29,9 @@ $if(setspace)$$setspace$$else$\onehalfspacing$endif$
 % Sections, captions, etc.
 \usepackage{sectsty} % Section styles
 \sectionfont{\centering\scshape} % \normalfont
+\subsectionfont{\centering\scshape}
 \usepackage{titlesec}
 \titlelabel{\thetitle.\quad}
-%\subsectionfont{\itshape}
-%\renewcommand{\thesection}{\arabic{section}.}
-%\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
-
-% Line numbers
 
 % Links
 \usepackage{hyperref}

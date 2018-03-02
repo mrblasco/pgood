@@ -47,6 +47,13 @@ view: $(TEXFILE).pdf
 bib: 
 	$(EDITOR) paper/*.bib 
 
+# convert file into docx
+docx:
+	cd paper; pandoc report.tex --read=latex -t docx \
+	  --filter pandoc-citeproc --bibliography refs.bib \
+    --reference-doc misc/reference.docx \
+    -o report.docx
+
 # clean up
 clean:
 	 rm -fv $(OUT_FILES) 

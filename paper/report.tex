@@ -1,4 +1,4 @@
-\documentclass[12pt, titlepage]{article}
+\documentclass[11pt, titlepage]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -14,7 +14,7 @@
 %\doublespacing  % \singlespacing 
 
 % Font
-\usepackage{tgbonum}
+\usepackage{lmodern}
 	% times, palatino, lmodern, tgtermes
 	% bookman, charter, tgschola, pslatex
 %\renewcommand{\familydefault}{tgbonum}
@@ -29,13 +29,9 @@
 % Sections, captions, etc.
 \usepackage{sectsty} % Section styles
 \sectionfont{\centering\scshape} % \normalfont
+\subsectionfont{\centering\scshape}
 \usepackage{titlesec}
 \titlelabel{\thetitle.\quad}
-%\subsectionfont{\itshape}
-%\renewcommand{\thesection}{\arabic{section}.}
-%\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
-
-% Line numbers
 
 % Links
 \usepackage{hyperref}
@@ -51,6 +47,7 @@
 \makeatother
 
 %% ... at the end of paper
+\usepackage{endfloat} % if needed, check package "float"
 
 % Create new minipage environment for notes 
 % at the bottom of tables or figures
@@ -106,7 +103,7 @@ This project would not have been possible without the support of Eric
 Isselbacher, Julia Jackson, Maulik Majmudar and Perry Band from the
 Massachusetts General Hospital's Healthcare Transformation Lab.}}
 \author{Andrea Blasco \and Olivia S. Jung \and Karim R. Lakhani \and Michael Menietti}
-\date{Last updated: 21 February, 2018}
+\date{Last updated: 02 March, 2018}
 
 \begin{document}
 \maketitle
@@ -139,65 +136,173 @@ Keywords: innovation contest; free rider problem; social preferences; altruism; 
 
 \section{Introduction}\label{introduction}
 
-Public good problems are pervasive inside organizations. Being
-impossible for organizations to plan ahead all contingencies via role
-specifications and formal incentives, employees are often expected to
-make contributions that go beyond an effective and efficient execution
-of their own assigned tasks, such as those towards improving the overall
-operations and performance of the shared enterprise. Professors, for
-example, are expected to teach and publish research and serve on various
-internal committees that directly benefit the university and department
-operations, with indirect benefits to committee members (XXX). Similarly
-in companies, employees are expected to work on production activities
-and also to collaborate in teams, contribute to common resources,
-provide feedback on strategy and direction of the firm, and drive
-innovation efforts.
+Public good provision problems are pervasive in the workplace. Given
+workers are directly dependent on each other to progress in their job,
+they often face a dilemma when choosing between contributing to common
+resources which are valuable to them and the organization, or behaving
+opportunistically hoping that others will incur the cost of these
+contributions.\footnote{Professors, for example, are expected to teach
+  and publish research (with pay and tenure tied to performance in those
+  tasks) and also to serve on various internal committees that directly
+  benefit the university and department operations, with indirect
+  benefit to committee members. Similarly, in companies, employees are
+  expected to work on production activities and also to contribute to
+  common resources, collaborate in teams, provide feedback on strategy
+  and direction of the firm, and drive innovation efforts.} One key
+problem is that employees often must go above and beyond their own
+assigned tasks to make these contributions, which are then ungoverned by
+formal evaluation and reward systems. This fact prompts an important
+question with many organizational implications: what motivates employees
+to self-select into unpaid tasks and volunteer work for the benefit of
+the organization?
 
-A central question for many organizations that rely upon these types of
-public goods to function is determining what motivates their own members
-to self-select into making contributions, instead of behaving
-opportunistically and free-riding. Career concerns and other extrinsic
-incentives are likely to play a key role. Even so, it is hard to imagine
-xxx. An other xxx can be altruistic preferences in the sense of feeling
-xxxx organizations goals (pure altruism) or finding an inner
-satisfaction from helping specific individuals or groups within the
-organization (impure altruism). This seems xxxx for employees in
-organizations that have embraced a ``mission'' like those pursuing
-social public goods (hospitals, schools, and non-profits) may desire
-helping the organization achieve its goals. Yet, it is still unclear how
-xxx and how organizations should leverage these preferences.
+An extensive literature in economics points to volunteering at work as a
+way to receive extrinsic benefits, such as career advancements or a
+positive reputation.\footnote{See \citet{gibbons1999careers} for a
+  survey of the theoretical literature on careers in organizations.} But
+there is also a growing literature that links this kind of volunteering
+to a form of \emph{altruism} that goes either from the worker to the
+other members of the organization
+\citep{bandiera2005social, rotemberg2006altruism} or from the worker to
+people who might benefit from the activities of the organization
+\citep{delfgaauw2005dedicated, delfgaauw2008incentives, prendergast2007motivation}.
+This second view is usually predominant in organizations in which
+workers may feel a sense of duty that acts as a motivation
+\citep{akerlof2005identity, besley2005competition}, like those producing
+collective goods (e.g., hospitals, schools, government agencies).
+However, the lack of systematic empirical evidence on employee behavior
+makes difficult to assess the strength of these different motivations
+and predict in which direction these might affect the dilemma faced by
+workers inside organizations.\footnote{An extensive literature has
+  looked at settings that mimic the employee-employer relationship in
+  the laboratory {[}see XXX for example{]}.}
 
-In this study, we examine empirically the problem of public goods
-provision from the perspective of organizations running internal,
-organization-wide contests. Organizations often use contests for this
-purpose. However the mechanism under xxx public goods is unclear.
+In this study, one primary goal is to empirically examine how employees
+respond to a public good dilemma in a field setting where both kinds of
+motives are likely to be present. In particular, we examine how over
+1,200 staff members (doctors, nurses, and administrative staff) of an
+elite medical organization in the United States respond to an
+organization-wide call to participate in an internal contest about
+suggestions of organizational improvement opportunities. The contest
+solicited employees to submit project proposals describing an existing
+problem and providing a solution to address the problem, in the spirit
+of ``open innovation'' discussed in \citet{terwiesch2008innovation};
+\citet{lakhani2013prize}; and \citet{glaeser2016predictive}. The entire
+staff was then invited to read and rate each proposal on a five-point
+scale. Based on these ratings and other criteria, the winning proposal
+would receive funding for implementation, implying additional costs and
+responsibilities from making a winning proposal (e.g., providing further
+guidance or a direct involvement in implementation).
 
-Our goal is to unbundle three mechanisms:
+One reason to focus on employee behaviors associated with an internal
+contest, rather than some other kind of incentive scheme, is the
+practical consideration that such competitions are easy to run and
+common to most organizations.\footnote{Among the many examples of
+  internal contests that have appeared in the news are the Apple's 2016
+  contest among its store employees seeking ideas on how to improve the
+  way it sells iPhones (``Apple seeks `pie in the sky' ideas for
+  innovation,'' Computerworld, 2013); Xerox's internal contest seeking
+  employees ideas on how to make a more environmentally friendly
+  workplace environment (``Xerox employees green ideas save company
+  \$10.2 million,'' The Guardian, 2010); and AT\&T's ideation contests
+  seeking employee ideas about new products (``AT\&T develops employee
+  ideas for innovation,'' The Wall Street Journal, 2014).} From another
+perspective, it is relatively inexpensive for the organization to alter
+the communications around the contest in a way to separately identify
+channels associated with the extrinsic and intrinsic motives of
+employees to participate. For example, the messaging strategy may convey
+information about the presence of personal awards for the winners, or
+not. Contests represent thus an ideal setting for experimental
+interventions to study in the field how employees self-select themselves
+into tasks that generate public good effects for the organization.
 
-\begin{enumerate}
-\def\labelenumi{(\arabic{enumi})}
-\tightlist
-\item
-  the presence of personal awards for the winners (formal incentives)
-\item
-  the presence of organizational resources for the winners to use in the
-  implementation of their own projects
-\item
-  a specific call-to-action that appeals to intrinsic motivations to
-  contribute
-\end{enumerate}
+Another key element of our study is the focus on the health care
+delivery context, which is important for two main reasons. First, the
+need for organizational improvement and innovation is vastly noted
+\citep{cutler2012reducing}. Second, health care professionals are
+commonly seen as willing to step beyond the boundaries of their
+contractual duties to offer better care \citep{delfgaauw2005dedicated},
+which makes the comparison of different incentives towards a public good
+especially relevant and interesting.
 
-These mechanisms are important. Extensive empirical research on prizes
-as sources of incentives. {[}Explain prizes{]}. Existing empirical
-studies, however, have focused on contests where xxx xxx and contest
-organizers xxxx. Much less attention has been given to contests where
-output benefits contestants and competitors are affecting one another
-other than via competition for prizes. There exists literature on
-prize-mechanisms for public goods, but these have not been studied
-inside organizations. Less studies have looked at the winning of grants.
-And framing? But not in terms of the public goods. There exists an
-extensive literature in economics on the use of contests as a source of
-incentives inside firms {[}xxxx{]}. Much of the existing theoretical
+Within this empirical context, we conduct a natural field experiment
+based on a randomized messaging strategy that isolates and provides
+evidence on four possible incentives that underlie employee
+participation in the contest: (1) the presence of financial awards for
+the winners; (2) the opportunity of funding most valuable contributions;
+or simply put an emphasis on (3) the potential positive impact on the
+other workers or (4) on the patients (the customers). In particular, we
+compare the responses of staff members who were exposed to four
+different \emph{solicitation treatments.} These are email contest
+announcements seeking participation in the contest. All the four
+solicitation emails were identical except for the first paragraph which
+was assigned at random to isolate the above different motives.
+
+Within this empirical context, we obtain causal estimates of the effect
+of different solicitation strategies on two main outcomes: (a) employee
+participation measured by the decision to submit a proposal and engage
+in an organizational improvement task and (b) the quality of the
+submissions as measured by (over 12,000) peer ratings and by the
+management organizing the contest.
+
+Testing the presence of both participation and quality effects is
+important as the presence of systematic quality differences associated
+with different motivations would substantially complicate the problem of
+incentives for the organization. For example, a higher employee
+participation may represent a desirable outcome for the organization but
+it may also be a waste of resources if the increased participation level
+is mainly driven by employees with low-quality proposals who would have
+stayed away from the contest otherwise.
+
+Another key issue is whether the solicited contributions will be
+representative of the needs of the entire organization, or just a
+smaller group of people. The presence of sorting effects based on the
+gender, for example, may impact on the extent and type of public goods
+provided, complicating the analysis of the incentives substantially. So,
+another aim of our study is to test to see whether differences in the
+motives to participate are attributable to factors associated with the
+employee's profession, gender, and position inside the organization.
+
+The analysis reveals that our experimental intervention achieved overall
+significant effects on employee participation, with small and
+insignificant effects on the quality of the proposals. In particular,
+our findings suggest that: (1) the opportunity of winning a prize
+dominates all other incentives; (2) the opportunity of leading
+implementation of one's own submitted project proposal is the least
+effective incentive and seems to be perceived more as a cost than a
+reward; (3) the increase in participation rates associated with the
+announcement of a prize is without lowering the quality of submissions;
+and (4) calibration of a simple linear public-good model, reveals
+further that responses to the prize incentive may go beyond the
+extrinsic value of the prize, consistently with our theory of prizes as
+means to internalize public goods.
+
+In addition, by looking at the sorting by gender, profession, and
+position inside the organization, we find that: (5) solicitation
+treatments with mission-oriented incentives alone may result in
+responses that appear sensitive to the gender of the solicited person
+(women's response to solicitations for improving patient care is higher
+than men's); and (6) gender differences in preferences, such as
+competitive inclinations or risk aversion, may not exert great influence
+on responses of workers to the competition-for-prizes incentive (women's
+and men's response to solicitations for prizes are the same).
+
+The implications of these results for the provision of public goods
+inside organizations are discussed in Section
+\ref{summary-and-conclusions}.
+
+\section{Literature}\label{literature}
+
+This work adds to the empirical research on the role of prizes in the
+workplace. Existing studies, however, have focused on contests where xxx
+xxx and contest organizers xxxx. Much less attention has been given to
+contests where output benefits contestants and competitors are affecting
+one another other than via competition for prizes. There exists
+literature on prize-mechanisms for public goods, but these have not been
+studied inside organizations. Less studies have looked at the winning of
+grants. And framing? But not in terms of the public goods. There exists
+an extensive literature in economics on the use of contests as a source
+of incentives inside firms {[}xxxx{]}. Much of the existing theoretical
 literature, however, presumes that agents are motivated to compete on
 the basis of the utility derived by winning personal awards. Less
 attention has been devoted to situations in which a competitor's
@@ -206,149 +311,6 @@ the whole organization (a notable exception is XXX). By focusing on
 incentives to workers to do organizational tasks (tasks with public good
 effects for the organization), we improve the existing literature in
 this direction.
-
-We conduct a natural field experiment to assess the relative importance
-of (1), (2), and (3) within the staff members (doctors, nurses, and
-administrative staff) of an elite medical organization in the United
-States. The health care delivery context is particularly relevant as the
-need for organizational improvement and innovation is vastly noted
-\citep{cutler2012reducing}. In addition, health care professionals are
-commonly seen as willing to step beyond the boundaries of their
-contractual duties to offer better care \citep{delfgaauw2005dedicated},
-which makes the comparison of different incentives towards a public good
-especially relevant and interesting.
-
-The subject pool was the entire population of the Heart Center
-consisting of over 1,200 staff members including physicians, nurses, and
-administrative staff. The intervention was associated with an internal
-contest aimed to improve the operations of the organization, in the
-spirit of ``open innovation'' discussed in
-\citet{terwiesch2008innovation}, \citet{lakhani2013prize}, and
-\citet{glaeser2016predictive}. The contest solicited employees to submit
-project proposals describing an existing problem and providing a
-solution to address the problem. After the submission phase, the contest
-invited all employees to read and rate each proposal on a five-point
-scale. The winning proposal would receive funding for implementation,
-implying additional costs and responsibilities from making a winning
-proposal (e.g., providing further guidance or a direct involvement in
-implementation).
-
-We compare the responses among four different \emph{solicitation
-treatments.} These are email contest announcements seeking participation
-in an organization-wide internal contest about project proposals for
-organizational improvement. All the four solicitation emails were
-identical except for the first paragraph which was assigned at random to
-isolate different motives: (1) the opportunity of winning an individual
-reward (PRIZE); (2) the opportunity of winning implementation money to
-lead one's own improvement project (FUND); (3) a generic call to improve
-the workplace (WPLACE) with no direct individual reward for the winners;
-and (4) a generic call to improve the care of patients (PCARE) with no
-direct individual reward for the winners.
-
-Within this empirical context, our solicitation treatments were randomly
-assigned to each staff member, thus allowing us to obtain causal
-estimates of the effect of different solicitation strategies on two main
-outcomes: (a) employee participation measured by the decision to submit
-a proposal and engage in an organizational improvement task and (b) the
-quality of the submissions as measured by (over 12,000) peer ratings and
-by the management organizing the contest.
-
-Testing the presence of both participation and quality effects is
-important as it would substantially complicate the problem of incentives
-for the organization. Quality effects can arise when, for example, the
-allure of winning a prize may attract to the competition workers with
-low-quality proposals, who wouldn't have participated otherwise. At the
-same time, the presence of compensation can discourage intrinsically
-motivated agents who might xxxx; thus lowering quality of xxxx. More
-generally, sorting is xxxx. So, we further check the effects on employee
-participation of differences in preferences or other characteristics
-associated with the employee's profession, gender, and position inside
-the organization. The presence of sorting effects based on the gender,
-for example, may impact on the extent and type of public goods provided,
-complicating the analysis of the incentives substantially.
-
-within the context of an organization running an internal,
-organization-wide competition that seek to engage its employee in
-contributions to organizational public goods (e.g., improvements for the
-workplace). Organizations often use internal contests to engage the
-workforce in collective production. Among many popular examples are
-Apple's contest xxxx; etc. Indeed, contests can solve the problem of
-incentives in many ways. One of our goals is to unbundle some of these
-mechanism. In particular, we focus on the effects on participation and
-self-selection of three aspects of the contest: (1) the presence of
-personal , financial awards for the winners; (2) the presence of
-organizational resources for the winners' to lead the implementation of
-their own projects; and (3) the presence of call to action appealing to
-contributing for the organization's own good.
-
-Empirical research on prize-mechanisms for encouraging public goods have
-been studied in the laboaroty; or in the context of charity donations
-{[}xxxx{]}. Results xxxx. We extend these findings to inside the org.
-Internal contests both explicit (e.g., sales contests) or implicit
-(e.g., the mechanism promotions) have been studied in the literature
-{[}xxx{]}. However, common assumption is that workers compete for the
-prize and there are no spillover effects due to the public good nature
-of their contributions.
-
-The choice of sorting on these tasks yields an immediate cost for the
-worker but also benefits for specific individuals, or groups, within the
-organization or the organization as a whole. This means that
-non-altruistic workers may be tempted to behave opportunistically and
-free ride, hoping that others will sort on these tasks. But, at the same
-time, workers may feel compelled to go the extra mile at work for
-organizations pursuing \emph{social public goods} (hospitals, schools,
-and non-profits) because of the intrinsic satisfaction from contributing
-to the organization for its own good.
-
-The focus on internal contests is in part justified by the growing
-popularity of contests as a source of incentives inside firms. Among the
-many examples that have appeared in the news are the Apple's 2016
-contest among its over xxx store employees seeking ideas on how to
-improve the way it sells iPhones; Xerox's 20XX internal contest seeking
-employees ideas on how to make a more environmentally friendly workplace
-environment; IBM's 20xxx contests on employee ideas to improve xxxx
-internal communication; and AT\&T's xxx contests seeking employee ideas
-about new products {[}xxxx{]}.\footnote{See: ``Apple seeks `pie in the
-  sky' ideas for innovation,''
-  \href{http://www.computerworld.com/article/2474058/smartphones/apple-seeks--pie-in-the-sky--ideas-for-innovation}{Computerworld};
-  ``Xerox employees green ideas save company \$10.2 million,''
-  \href{http://www.theguardian.com/sustainable-business/xerox-employees-green-ideas-save}{The
-  Guardian}; XXXXX, and ``AT\&T develops employee ideas for
-  innovation,''
-  \href{http://blogs.wsj.com/cio/2014/11/12/att-develops-employee-ideas-for-innovation}{The
-  Wall Street Journal}).} And one may well expect this trend to
-intensify as organizations do more xxxx and workers can xxxx.
-
-As we shall discuss in Section \ref{results}, results indicate that our
-solicitation treatments produce significant effects on employee
-participation in the contest, with small and insignificant effects on
-the quality of the proposals. In particular, our findings suggest that:
-(1) the opportunity of winning a prize dominates all other incentives;
-(2) the opportunity of leading implementation of one's own submitted
-project proposal, a non-production task, is the least effective
-incentive and seems to be perceived more as a cost than a reward; (3)
-the increase in participation rates associated with the announcement of
-a prize is without lowering the quality of submissions; and using a
-simple linear public-good model, we estimate that (4) responses to the
-prize incentive may go beyond the extrinsic value of the prize,
-consistently with our theory of prizes as means to internalize public
-goods.
-
-In addition, by looking at the sorting by gender, profession, and
-position inside the organization, we find that: (5) solicitation
-treatments with mission-oriented incentives may result in responses that
-appear sensitive to the gender of the solicited person (women's response
-to solicitations for improving patient care is higher than men's); and
-(6) gender differences in preferences, such as competitive inclinations
-or risk aversion, may not exert great influence on responses of workers
-to the competition-for-prizes incentive (women's and men's response to
-solicitations for prizes are the same).
-
-The implications of these results for the provision of public goods
-inside organizations are discussed in Section
-\ref{summary-and-conclusions}.
-
-\section{Literature}\label{literature}
 
 Economists have long recognized that prize-based competitions are an
 important source of incentives inside organizations
@@ -416,8 +378,8 @@ this finding is consistent with altruism being an important driver of
 effort inside organization, it also suggests that people are sensitive
 to the framing and in ways that may be difficult to predict ex-ante.
 
-\section{Analytical framework and
-predictions}\label{analytical-framework-and-predictions}
+\section{Conceptual framework and
+predictions}\label{conceptual-framework-and-predictions}
 
 In this section, we conceptualize an internal solicitation for
 innovation project proposals to improve the operations of the
@@ -430,11 +392,26 @@ time to identify a problem, form a proposal, write up a concise
 description, and the potential for further involvement during proposal
 implementation.
 
-Consider a linear model of the utility of a typical employee who
-contributes \(x\) and benefits from total contributions of
-\(Y=\sum x\):\footnote{functionalform}
+Consider the public good \(Y\) constitutes the sum of innovation
+projects to improve the organization.\footnote{Instead of using a
+  summation, we could have used different functional forms for the
+  collective benefits (e.g., the max). However, the presence of
+  free-riding incentives does not crucially depend on this specific
+  assumption.} Imagine that the quality of each project is randomly
+drawn from a discrete distribution, the same for every contributor
+(every employee who contributes is assumed to be equally likely to come
+up with a useful idea). Each proposal can be of high quality with
+probability \(\nu\) and of low quality with probability \(1-\nu\). If a
+proposal is of low quality, then the value for the organization is
+normalized to zero. The quality of proposals is learned only after the
+agent paid the cost of effort.
 
-\begin{equation} \label{eq:utility}
+Let consider first the simplest case where the probability \(\nu=1\) so
+any project is of high quality for sure. We assume a linear model of the
+utility of a typical employee who contributes \(x\) and benefits from
+total contributions of \(Y=\sum x\):
+
+\begin{equation}\label{eq:utility}
   u(R,~ Y) =  \gamma Y + \delta x + \frac{x}{Y} R - c x.
 \end{equation}
 
@@ -517,17 +494,9 @@ predictions.
   (\(\gamma+\delta\)).
 \end{enumerate}
 
-Now suppose that the public good \(Y\) constitutes the sum of innovation
-projects to improve the organization. Imagine that the quality of each
-project is randomly drawn from a discrete distribution, the same for
-every contributor (every employee who contributes is assumed to be
-equally likely to come up with a useful idea). Each proposal can be of
-high quality with probability \(\nu\) and of low quality with
-probability \(1-\nu\). If a proposal is of low quality, then the value
-for the organization is normalized to zero. The quality of proposals is
-learned only after the agent paid the cost of effort. Now the
+Now suppose that the probability \(\nu\) is less than one. The
 equilibrium public good \(Y\) is not deterministic but follows a
-binomial distribution with average \(E[Y] = p^{**} \nu n\), where the
+binomial distribution with average \(E[Y] = p^{**}\nu n\), where the
 equilibrium probability \(p^{**}\) can be derived as before with the
 only difference being that it is also an increasing function of the
 probability \(\nu\). This leads to the following prediction.
@@ -565,35 +534,38 @@ This leads the final prediction.
   agents with lower costs (positive sorting).
 \end{enumerate}
 
-\section{Experimental Design}\label{experimental-design}
+\section{Context, experimental design,
+data}\label{context-experimental-design-data}
 
-\subsection{The context}\label{the-context}
+\subsection{Context}\label{context}
 
-The Heart Center is a leading academic medical center specializing in
-clinical cardiac care and research in the United States. Founded more
-than a hundred years ago, the Heart Center serves thousands of patients
-every year, occupies more than 35,000 square feet of office space, and
-employs more than 1,200 people (nurses, physicians, researchers,
-technicians, and administrative staff) scattered across several
-buildings on the Massachusetts General Hospital's main campus in
+The empirical context for the experiment is the Massachusetts General
+Hospital's (MGH) Corrigan Minehan Heart Center, or the ``Heart Center''
+for short. The Heart Center is a prominent medical organization in the
+United States and a teaching hospital of the Harvard Medical School.
+Founded more than a hundred years ago, the Heart Center serves thousands
+of patients every year, occupies more than 35,000 square feet of office
+space, and employs more than 1,200 people (nurses, physicians,
+researchers, technicians, and administrative staff) scattered across
+several buildings on the Massachusetts General Hospital's main campus in
 downtown Boston and a few other satellite locations.
 
-The study was in cooperation with the Heart Center's launch of the
-Health-care Transformation Lab (HTL),\footnote{\url{http://www.healthcaretransformation.org}}
-an initiative aimed at developing innovative health care process
-improvements to enhance the health care safety and delivery of the
-hospital. The launch of the HTL was accompanied by the announcement of
-an internal ``innovation contest,'' called the Ether Dome
-Challenge\footnote{The name is taken from a historical place on MGH's
-  main campus where the first public surgery using anesthesia was
-  demonstrated in 1846.} that sought to engage all staff members to
-participate.
+The study is in cooperation with the Heart Center's launch of the
+Health-care Transformation Lab (HTL),\footnote{See the website at:
+  www.healthcaretransformation.org} an initiative aimed at developing
+innovative health care process improvements to enhance the health care
+safety and delivery of the hospital. The launch of the HTL was
+accompanied by the announcement of an internal \emph{innovation
+contest}, called the Ether Dome Challenge\footnote{The name is taken
+  from a historical place on MGH's main campus where the first public
+  surgery using anesthesia was demonstrated in 1846.} that sought to
+engage all staff members to participate.
 
-The communication around the innovation contest highlighted the
+The communication around the innovation contest highlights the
 opportunity for staff to help in the selection process of the ideas and
 a commitment by the Heart Center Management that the leading ideas would
 be provided appropriate resources so that they could be implemented. The
-announcement on the contest website read:
+announcement on the contest website reads:
 
 \begin{quote}
 ``If you've noticed something about patient experience, employee
@@ -610,67 +582,70 @@ idea.''
 \includegraphics{../figs/timeline.pdf}
 \end{figure}
 
-The innovation contest was divided into three main phases (Figure
-\ref{timeline}): submission, the peer evaluation, and implementation
-phase.
+The innovation contest itself can be divided into three main phases
+(Figure \ref{timeline}): submission, project evaluation, and
+implementation.
 
-The first was a four-week submission phase. All staff members were
-encouraged to identify one or more organizational problems and submit
-proposals addressing them. Employee participation was voluntary. All
-project submissions were done online via the website of the contest.
-There was no limit to the project proposals to submit (proposals could
-cover any issue within the organization, as described above), but each
-proposal was limited to approximately 300 words to lower the costs of
-entry and encourage broader participation. To ensure that treatment
-effects could be isolated, identified, and matched to participants, team
-submissions were not permitted. Limiting submissions to individual
-participation allowed us to match each submitter's characteristics to
-the randomly assigned treatment. It also lowered incentives to
-communicate or exchange information with other employees. Also, the
-website was designed to not provide any information about the status of
-the contest during the submission period. In this way, decisions could
-not be easily influenced by the perceived popularity of the contest or
-previous submissions.
+First, there is a four-week submission phase in which all staff members
+are encouraged to identify one or more organizational problems and
+submit proposals addressing them. Employee participation is voluntary
+and all project submissions can be done online via the website of the
+contest. The number of project proposals to submit is unlimited and
+proposals could cover any issue within the organization. The only
+constraint is that each proposal is limited to approximately 300 words
+to lower the costs of entry and encourage broader participation. Another
+constraint is that team submissions are not permitted to ensure that
+treatment effects could be isolated, identified, and matched to
+individual participants. Beyond matching each submitter's
+characteristics to the randomly assigned treatment, limiting submissions
+to individual participation also lowers the incentives to communicate or
+exchange information with other employees. For the same reason, the
+website is designed to provide no feedback information about the status
+of the contest during the submission period; so that individual
+decisions could not be easily influenced by the perceived popularity of
+the contest or previous submissions.
 
-It followed a two-week peer evaluation phase in which all staff members
-were invited to rate the merit and potential of submitted proposals on a
-five-point rating scale. All evaluations were done online on the website
-of the contest. Each signed-up employee was shown a list of anonymized
-proposals to read and rate. Proposals were presented at random in
-batches of 10 each. Each proposal was described by a title, a main
-description of the problem to solve, and the proposal. Voting was then
-introduced by the following text: ``Rate this idea'' followed by the
-rating scale: 1-low; 2; 3; 4; 5-high. Ratings were kept confidential and
-the website did not provide any feedback or any other kind of additional
-information that might have influenced individual judgment until the
-voting phase was over. Evaluators were free to decide how many (and
-which) proposals to rate. Since these were presented in a random order,
-every proposal had on average the same exposure to people asked to rate
-its quality. Evaluators were offered a limited edition T-shirt as a
-compensation for the effort in voting.
+It follows a two-week project evaluation phase in which all staff
+members are invited to rate the merit and potential of submitted
+proposals on a five-point rating scale. All evaluations are done online
+on the website of the contest. After signing up, each evaluator is shown
+a list of anonymized proposals to read and rate. Proposals are presented
+at random in batches of 10 each. Each proposal is described by a title,
+a main description of the problem to solve, and the proposal. Voting is
+then introduced by the following text: ``Rate this idea'' followed by
+the rating scale: 1-low; 2; 3; 4; 5-high. Ratings would be kept
+confidential and the website is designed to provide no feedback or any
+other kind of information that would influence individual judgment until
+this project evaluation phase is over. Evaluators are left free to
+decide how many (and which) proposals to rate. However, since these are
+presented in a random order, every proposal had on average the same
+exposure to people asked to rate its quality. As a compensation for
+their effort in rating, evaluators get a chance to win a limited edition
+T-shirt.
 
 In the final implementation phase, employees having submitted proposals
-highly rated by peers and judged as particularly promising by the HTL
-staff were invited to submit a full proposal detailing plans for
-implementation. Following evaluation by MGH senior leadership, top
-proposals were selected to receive support and funding for
-implementation. This final phase took a few months to complete,
-essentially the time necessary to select and implement the best
-projects.
+that would have been highly rated by peers and judged as particularly
+promising by the HTL staff are invited to submit a full proposal
+detailing plans for implementation. Following evaluation by MGH senior
+leadership, top proposals are then selected to receive support and
+funding for implementation. This final phase takes a few months to
+complete, essentially the time necessary to select and implement the
+best projects.
 
-\subsection{The design}\label{the-design}
+\subsection{Experimental design}\label{experimental-design}
 
-Within this context, we designed a \emph{natural field experiment}
-(staff members are unaware of being part of an experiment). The basic
-idea of the experiment was to randomize the content of the communication
-announcing the innovation contest to all staff members. The start of the
-submission phase was indeed announced to everyone in a series of
-personalized emails. A direct message was sent to each contact in the
-list of employees' emails from our subject pool.
+Within this context, we designed our experiment that was conducted
+during the normal operations of the Heart Center.\footnote{Following
+  standard taxonomy, the experiment is formally a \emph{natural field
+  experiment.}}. The basic idea of the experiment was to randomize the
+content of the communication announcing the innovation contest to all
+staff members. The start of the submission phase was indeed announced to
+everyone in a series of personalized emails. A direct message was sent
+to each contact in the list of employees' emails from our subject pool.
 
 The content of this communication with a placeholder for our
-solicitation treatment is reported below (a copy of the exact email is
-in the Appendix).
+solicitation treatment is reported below:\footnote{An image of the exact
+  email is in the Appendix.}
 
 \begin{quote}
 Dear Heart Center team member,
@@ -762,7 +737,7 @@ the email solicitation. These flyers and posters were based on a
 generic, undifferentiated version of the solicitation email without the
 text of the treatments.
 
-\section{Data}\label{data}
+\subsection{Data}\label{data}
 
 Our subject pool is the entire population working at the Heart Center as
 of the end of 2014, a total of 1,237 individuals. For each individual,
@@ -801,25 +776,25 @@ proxy for the employee's position or status inside the organization.
 
 \input{../tables/summary.tex}
 
-\section{Results}\label{results}
+\section{Analysis}\label{analysis}
 
-\subsection{Employee submissions}\label{employee-submissions}
-
-We begin to evaluate the effect of the four experimental solicitation
-treatments on employee participation in organizational public goods
-provision by examining the percentage of employees who made project
-submissions within the four-week submission period of the contest.
+\subsection{Employee participation}\label{employee-participation}
 
 \input{../tables/submit.tex}
 
-Table \ref{submit} shows the submission rates by solicitation treatment.
-We test the independence between the participation rates and the four
-solicitation treatments using a Fisher's exact test that gives a p-value
-of 0.026. This means that the four experimental solicitation treatments
-produced significant participation effects overall.
+We begin by focusing on the causal effect of our experimental
+intervention on employee participation (Table \ref{submit}), which is
+defined by the percentage of employees who made project submissions
+within the four-week submission period of the contest.
 
-Pairwise comparisons among individual solicitation treatments show
-further that: (1) the PRIZE solicitation treatment generates xxx, xxx,
+Overall employee participation is 5 percent and the rate of
+participation differs significantly across the four treatment groups (a
+Fisher's exact test gives a p-value of 0.026). This means that, although
+overall participation is moderate, our experimental intervention
+produces significant group differences in participation.
+
+Pairwise comparisons among individual solicitation treatments further
+reveal that: (1) the PRIZE solicitation treatment generates xxx, xxx,
 and xxx times higher participation rates than the WPLACE, PCARE, and
 FUND, respectively; (2) the PCARE and WPLACE solicitation treatments
 generate basically identical participation rates; and (3) the FUND
@@ -843,7 +818,84 @@ Overall, these findings are consistent with employee participation being
 higher under a solicitation with personal awards incentives; and lower
 under a solicitation with funding incentives.
 
+To complement the above univariate analysis, we use a multiple linear
+regression model that explicitly controls for observable differences
+across staff members. Let \(Y_i=1\) denote employee \(i\) making a
+submission, and \(Y_i=0\) otherwise. We assume the conditional
+probability of an employee making a submission is given by:
+
+\[\Pr(Y_i=1) = \alpha_0 
+                                    + \sum_{j} \alpha_{j} \text{SOLICIT}_{ij}
+                                    + \text{JOB}_{i} 
+                                    + \text{MALE}_{i} 
+                                    + \text{OFFICE}_{i},\label{submit}\]
+
+where \(\alpha_0\) is a constant, \(\alpha_j\) is the causal effect of
+the solicitation treatment \(j\) assigned to an employee \(i\)
+(\(\text{SOLICIT}_{ij}\)), controlling for the employee's profession
+(\(\text{JOB}_i\)), the gender (\(\text{MALE}_i\)), and a dummy for
+office location (\(\text{OFFICE}_i\)) indicating whether the employee
+had a permanent office instead of being assigned to a ward. Notice that,
+in our context, having a fixed office location is highly correlated with
+the type of profession.\footnote{Much of the clinical staff might be
+  mobile and only half of the employees (\(53\) percent) had fixed
+  office locations, as they may be on duty in multiple wards. More
+  senior staff tend to have a fixed location. So, within each
+  profession, this measure can be viewed as a proxy for status inside
+  the organization.} Nurses, for instance, are more likely to being
+assigned to a ward than physicians or administrative workers, due to the
+nature of their job. Within each profession, however, having a fixed
+office location is usually correlated with the hierarchical position
+inside the organization. This variable is hence potentially controlling
+for income and hierarchical differences occurring within each profession
+(more than just the effect of having a fixed office location per se).
+
+\input{../tables/participation_ols.tex}
+
+The results of the regression model above (Table
+\ref{participation ols}) give estimates of the solicitation treatment
+differences relative to the overall mean participation and controlling
+for baseline characteristics. We find that, at the 95 level of
+statistical significance, employees in the PRIZE solicitation treatment
+are \texttt{cf.full{[}"treatment2PRIZE"{]}} percentage points
+\emph{more} likely to submit compared to the overall mean, whereas
+employees in the FUND solicitation treatment are
+\texttt{-cf.full{[}"treatment2FUND"{]}} percentage points \emph{less}
+likely to do so.\footnote{Subtracting these two effects gives
+  \texttt{cf.full{[}"treatment2PRIZE"{]}\ -\ cf.full{[}"treatment2FUND"{]}}
+  which is the difference in the probability of submitting between PRIZE
+  and FUND treatments.} Treatment differences appear thus fairly large
+(e.g., a 2 percentage increase is about half of the increase in
+participation associated with a higher organizational position, as
+captured by the office location proxy).
+
+Following the existing literature on gender-based differences in
+preferences towards competition, one may anticipate participation rates
+to be lower for women, holding constant the employee's profession.
+Contrary to these expectations, our results show the participation rate
+is higher for women than for men, although the effect is largely
+insignificant. Similarly, one may expect differences in participation
+associated with the employee's job. These may be driven, among various
+things, to differences in income, education, and the opportunity cost of
+effort (although no explicit barriers to enter the contest based on
+education or income are present). We find that the participation rate
+for nurses is higher relative to the residual category of other workers
+(e.g., admins), whereas it is lower for physicians. However, these
+effects, which are consistent with sorting, are not statistically
+different from the residual category of other workers, as well as from
+one another. Finally, we find a positive effect associated with the
+worker having a fixed office location, as opposed to being assigned to a
+ward (and the effect size doubles after controlling for the profession
+and gender). This evidence suggests that differences in the employee's
+hierarchical position inside the organization, as captured by our
+office-location proxy, may be a stronger driver of participation
+relative to differences in gender and profession as sometimes assumed by
+the literature.
+
+\begin{figure}
 \includegraphics{../figs/dynamics.pdf}
+\caption{Evolution of employee participation over time. Employee participation in the PRIZE treatment is higher than the other solicitation treatments at all periods. By contrast, employee participation in the FUND treatment is lower at all periods. The plot also shows little convergence of the participation rates over time.}
+\end{figure}
 
 Next, we turn to examining participation dynamics (Figure
 \ref{dynamics}). Though our data may not allow for a complete analysis
@@ -861,70 +913,7 @@ constantly low. These patterns are hence consistent with communication
 effects having little, or no, consequences on our findings, a topic we
 will discuss in greater detail later (Section \ref{discussion}).
 
-To complement the above analysis, we use a multiple linear regression
-model that explicitly controls for observable differences across staff
-members. The probability of submitting, \(y_i=1\), is given by:
-
-\[\Pr(y_i=1) = \alpha_0 
-                                    + \sum_{j} \alpha_{j} \text{SOLICIT}_{ij}
-                                    + \text{JOB}_{i} 
-                                    + \text{MALE}_{i} 
-                                    + \text{OFFICE}_{i},\label{submit}\]
-
-where \(\alpha_0\) is a constant, \(\alpha_j\) is the causal effect of
-the solicitation treatment \(j\) assigned to an employee \(i\)
-(\(\text{SOLICIT}_{ij}\)), controlling for the employee's profession
-(\(\text{JOB}_i\)), the gender (\(\text{MALE}_i\)), and a dummy for
-office location (\(\text{OFFICE}_i\)) indicating whether the employee
-had a permanent office instead of being assigned to a ward. Notice that,
-in our context, having a fixed office location is highly correlated with
-the type of profession.{[}\^{}Much of the clinical staff might be mobile
-and only half of the employees (\(53\) percent) had fixed office
-locations, as they may be on duty in multiple wards. More senior staff
-tend to have a fixed location. So, within each profession, this measure
-can be viewed as a proxy for status inside the organization.{]} Nurses,
-for instance, are more likely to being assigned to a ward than
-physicians or administrative workers, due to the nature of their job.
-Within each profession, however, having a fixed office location is
-usually correlated with the hierarchical position inside the
-organization. Beyond having a fixed office location per se, this
-variable is hence potentially controlling for income and hierarchical
-differences occurring within each profession as well.
-
-\input{../tables/participation_ols.tex}
-
-The regression results (Table \ref{participation ols}) show an
-insignificant effect on participation associated with an employee's
-profession or gender.\footnote{The coefficient for nurses is positive
-  and negative for physicians, consistent with sorting. These effects
-  are, however, not statistically different from the residual category
-  of other workers, as well as from one another.} By contrast, we find a
-positive effect associated with the worker having a fixed office
-location, as opposed to being assigned to a ward (and the effect size
-doubles after controlling for the profession and gender). This evidence
-suggests that differences in the employee's hierarchical position inside
-the organization, as captured by our office-location regressor, may be a
-stronger driver of participation relative to differences in gender and
-profession as sometimes assumed by the literature.
-
-The results of the regression model above (Table
-\ref{participation ols}) give estimates of the solicitation treatment
-differences relative to the overall mean participation and controlling
-for baseline characteristics. In theory, these estimates should be more
-statistically efficient relative to the pairwise comparisons above
-(i.e., by reducing the overall noise associated with baseline
-characteristics). We find that, at the 95 level of statistical
-significance, employees in the PRIZE solicitation treatment are
-\texttt{cf.full{[}"treatment2PRIZE"{]}} percentage points \emph{more}
-likely to submit compared to the overall mean, whereas employees in the
-FUND solicitation treatment are \texttt{-cf.full{[}"treatment2FUND"{]}}
-percentage points \emph{less} likely to do so.\footnote{Subtracting
-  these two effects gives
-  \texttt{cf.full{[}"treatment2PRIZE"{]}\ -\ cf.full{[}"treatment2FUND"{]}}
-  which is the difference in the probability of submitting between PRIZE
-  and FUND treatments.} Overall, these effects are sizable not only in
-absolute levels but also relative to the effects of the heterogeneity
-captured by the other variables.
+\subsubsection{Interactions}\label{interactions}
 
 Following xxx literature (xxxx), we check whether gender was a factor
 driving participation in the contest (with men relatively more willing
@@ -990,8 +979,8 @@ location. This effect could be due to gender differences in preferences,
 as suggested by the literature, and we will return on this topic in the
 discussion of the results.
 
-\subsection{Employee participation in project
-evaluation}\label{employee-participation-in-project-evaluation}
+\subsection{Employee participation in peer
+evaluation}\label{employee-participation-in-peer-evaluation}
 
 We now turn to examining the outcomes of the peer evaluation phase that
 followed the submission phase of the contest. In this phase, 113 project
