@@ -1,0 +1,30 @@
+\begin{figure}
+\centering
+\caption{Timeline of the innovation contest}
+\label{timeline}
+\includegraphics{../figs/timeline.pdf}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\includegraphics{../figs/dynamics.pdf}
+\caption{Evolution of employee participation over time. Employee participation in the PRIZE treatment is higher than the other solicitation treatments at all periods. By contrast, employee participation in the FUND treatment is lower at all periods. The plot also shows little convergence of the participation rates over time.}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{Employee participation by gender or profession and solicitation treatment}
+  \label{interactions}
+  \centering
+  \includegraphics{../figs/interactions.pdf}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+  \centering
+  \caption{Distribution of ratings by solicitation treatment of the proponent}
+  \label{ratings}
+  \includegraphics{../figs/ratings.pdf}
+\end{figure}
+\efloatseparator
+ 

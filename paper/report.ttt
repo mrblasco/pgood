@@ -1,0 +1,189 @@
+\begin{table}
+\centering
+\caption{Experimental design}
+\label{experimental-design}
+\begin{tabular}{@{}lp{5cm}>{\raggedright}rr}
+  \\[-1.8ex]\hline \hline \\[-1.8ex]
+ & \multicolumn{1}{c}{\emph{Solicitation treatment:}}
+& \multicolumn{2}{c}{\emph{Employees:}}\\
+\cmidrule(lr){2-2}\cmidrule(lr){3-4} &   & freq. & \% \\
+  \hline \\[-1.86ex]
+PRIZE & Submit your ideas to win an Apple iPad mini & 312 & 25 \\
+  [1.8ex] FUND & Submit your ideas to win project funding up to \$20,000
+to turn your ideas into actions & 308 & 25 \\
+  [1.8ex] PCARE & Submit your ideas to improve patient care at the Heart Center & 310 & 25 \\
+  [1.8ex] WPLACE & Submit your ideas to improve the workplace at the Heart Center & 307 & 25 \\
+  [1.8ex] Total &  & 1237 & 100 \\
+   \\[-1.8ex]\hline \hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\centering
+\caption{Summary statistics by treatment}
+\label{summary-statistics}
+\begin{tabular}{@{}lccccccc}
+  \\[-1.8ex]\hline \hline \\[-1.8ex]
+ & \multicolumn{4}{c}{\emph{Assigned treatments:}}
+& \multicolumn{2}{c}{\emph{All:}}\\
+\cmidrule(lr){2-5}\cmidrule(lr){6-7} & FUND & PCARE & WPLACE & PRIZE & \% & Obs. & P-value \\
+  \hline \\[-1.86ex]
+Other & 30 & 30 & 26 & 32 & 29 & 362 & 0.84 \\
+  MD/Fellow & 19 & 18 & 18 & 18 & 18 & 226 &  \\
+  Nursing & 51 & 52 & 56 & 51 & 52 & 649 &  \\
+  Female & 69 & 70 & 75 & 75 & 72 & 890 & 0.16 \\
+  Male & 31 & 30 & 24 & 26 & 28 & 347 &  \\
+  [1.86ex] No office & 50 & 46 & 47 & 45 & 47 & 577 & 0.56 \\
+  Office & 50 & 54 & 52 & 56 & 53 & 660 &  \\
+   [1.86ex] Age* &&&&&&\\
+18-25 & 6 & 8 & 8 & 6 & 6 & 24 & 1.00 \\
+  26-35 & 29 & 29 & 31 & 26 & 29 & 107 &  \\
+  36-45 & 18 & 19 & 24 & 16 & 22 & 81 &  \\
+  $>$45 & 44 & 46 & 51 & 45 & 42 & 157 &  \\
+   [1.86ex] Tenure* &&&&&&\\
+$<$ 10 & 40 & 31 & 36 & 37 & 36 & 132 & 0.89 \\
+  10-20 & 26 & 29 & 38 & 28 & 30 & 111 &  \\
+  20-30 & 12 & 19 & 15 & 10 & 14 & 50 &  \\
+  30-40 & 10 & 16 & 15 & 12 & 13 & 48 &  \\
+  $>$40 & 10 & 4 & 8 & 8 & 8 & 28 &  \\
+   \\[-1.8ex]\hline \hline \\[-1.8ex]
+\end{tabular}
+\begin{minipage}{\textwidth}\itshape\footnotesize
+Note: This table reports the percentage of employees in our sample cross tabulated by the assigned treatment across the gender, profession, whether the employee had a fixed office location, age, and years of tenure at the Heart Center. For each categorical variable, the last column reports the p-value from a Pearson's Chi-squared test with the assigned treatment and the variable. The asterisk $^{\ast}$ indicates self-reported information obtained from an online survey polling employees about two months before the launch of the innovation contest.
+\end{minipage}
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\centering
+\caption{Employee participation by solicitation treatment}
+\label{submit}
+\begin{tabular}{@{}lcccc}
+  \\[-1.8ex]\hline \hline \\[-1.8ex]
+ & \multicolumn{4}{c}{\emph{Solicitation treatment:}}\\
+\cmidrule(lr){2-5} Submission & FUND & PCARE & WPLACE & PRIZE \\
+  \hline \\[-1.86ex]
+No & 301 & 296 & 291 & 289 \\
+  Yes &  7 & 14 & 16 & 23 \\
+   \\[-1.8ex]\hline \hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\centering
+\caption{P-values for pairwise comparison of proportions}
+\label{pairwise}
+\begin{tabular}{@{}lccc}
+  \\[-1.8ex]\hline \hline \\[-1.8ex]
+ & FUND & PCARE & WPLACE \\
+  \hline \\[-1.86ex]
+PCARE & 0.124 &  &  \\
+  WPLACE & 0.055 & 0.688 &  \\
+  PRIZE & 0.003 & 0.132 & 0.269 \\
+   \\[-1.8ex]\hline \hline \\[-1.8ex]
+\end{tabular}
+\begin{minipage}{\textwidth}\itshape\footnotesize
+Note: This table reports the p-values of pairwise comparisons of proportions
+         among solicitation treatments.
+\end{minipage}
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\centering
+\caption{Probability of submitting proposals}\label{participation ols}
+\begin{tabular}{@{\extracolsep{5pt}}lccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{5}{c}{\textit{Dependent variable:}} \\
+\cline{2-6}
+\\[-1.8ex] & \multicolumn{5}{c}{ $SUBMIT_{ij}=1$ } \\
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5)\\
+\hline \\[-1.8ex]
+ PRIZE & 2.53$^{**}$ & 2.53$^{**}$ & 2.52$^{**}$ & 2.46$^{**}$ & 2.45$^{**}$ \\
+  & (1.21) & (1.21) & (1.21) & (1.21) & (1.21) \\
+  & & & & & \\
+ WPLACE & 0.37 & 0.37 & 0.35 & 0.38 & 0.30 \\
+  & (1.09) & (1.09) & (1.10) & (1.09) & (1.10) \\
+  & & & & & \\
+ FUND & $-$2.57$^{***}$ & $-$2.57$^{***}$ & $-$2.55$^{***}$ & $-$2.49$^{***}$ & $-$2.38$^{***}$ \\
+  & (0.86) & (0.86) & (0.85) & (0.86) & (0.85) \\
+  & & & & & \\
+ Job (nursing) &  & 0.14 &  &  & 1.85 \\
+  &  & (0.82) &  &  & (1.23) \\
+  & & & & & \\
+ Job (MD) &  & $-$0.31 &  &  & $-$1.14 \\
+  &  & (1.03) &  &  & (1.24) \\
+  & & & & & \\
+ Male (yes) &  &  & $-$0.54 &  & $-$0.42 \\
+  &  &  & (1.33) &  & (1.64) \\
+  & & & & & \\
+ Office (yes) &  &  &  & 2.79$^{**}$ & 4.56$^{***}$ \\
+  &  &  &  & (1.20) & (1.60) \\
+  & & & & & \\
+ Constant & 4.84$^{***}$ & 4.78$^{***}$ & 5.00$^{***}$ & 3.35$^{***}$ & 1.97 \\
+  & (0.61) & (0.66) & (0.73) & (0.75) & (1.25) \\
+  & & & & & \\
+\hline \\[-1.8ex]
+Log Likelihood & -5545 & -5545 & -5545 & -5542 & -5540 \\
+Observations & 1,237 & 1,237 & 1,237 & 1,237 & 1,237 \\
+\hline
+\hline \\[-1.8ex]
+\end{tabular}
+\begin{minipage}{\textwidth}
+\emph{Note:} This table reports OLS estimates with heteroskedasticity robust standard errors in parenthesis. All coefficients are multiplied by 100 to indicate a percentage point change in the probability of submitting. Solicitation treatment dummies are coded to indicate deviations from the overall probability of submitting. The asterisks $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$ indicate significance at 1, 5 and 10 percent level, respectively.
+\end{minipage}
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\centering
+\caption{Gender differences}\label{tab: probability submitting interactions}
+\begin{tabular}{@{\extracolsep{5pt}}lccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\
+\cline{2-4}
+\\[-1.8ex] & \multicolumn{3}{c}{ $SUBMIT_{ij}=1$ } \\
+\\[-1.8ex] & (1) & (2) & (3)\\
+\hline \\[-1.8ex]
+ PRIZE$\times$female & 2.99$^{*}$ & 2.95$^{*}$ & 2.84 \\
+  & (1.68) & (1.79) & (1.78) \\
+  & & & \\
+ PCARE$\times$female & 1.25 & 1.21 & 1.08 \\
+  & (1.57) & (1.61) & (1.61) \\
+  & & & \\
+ FUND$\times$female & $-$2.91$^{***}$ & $-$2.95$^{**}$ & $-$2.79$^{**}$ \\
+  & (1.06) & (1.20) & (1.19) \\
+  & & & \\
+ WPLACE$\times$female & $-$0.49 & $-$0.52 & $-$0.62 \\
+  & (1.35) & (1.44) & (1.43) \\
+  & & & \\
+ PRIZE$\times$male & 1.37 & 1.42 & 1.40 \\
+  & (2.44) & (2.51) & (2.50) \\
+  & & & \\
+ PCARE$\times$male & $-$3.75$^{***}$ & $-$3.72$^{***}$ & $-$3.64$^{***}$ \\
+  & (1.15) & (1.16) & (1.16) \\
+  & & & \\
+ FUND$\times$male & $-$1.67 & $-$1.65 & $-$1.48 \\
+  & (1.70) & (1.65) & (1.66) \\
+  & & & \\
+ Constant & 4.80$^{***}$ & 4.79$^{***}$ & 1.87$^{*}$ \\
+  & (0.69) & (0.70) & (1.10) \\
+  & & & \\
+\hline \\[-1.8ex]
+Job & no & yes & yes \\
+Office & no & no & yes \\
+Log Likelihood & -5542 & -5542 & -5538 \\
+Observations & 1,237 & 1,237 & 1,237 \\
+\hline
+\hline \\[-1.8ex]
+\end{tabular}
+\begin{minipage}{\textwidth}
+\emph{Note:} This table reports OLS estimates with heteroskedasticity robust standard errors in parenthesis. All coefficients are multiplied by 100 to indicate the percentage point change in the probability of submitting. Solicitation treatment dummies are coded to indicate deviations from the overall probability of submitting. The asterisks $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$ indicate significance at 1, 5 and 10 percent level, respectively.
+\end{minipage}
+\end{table}
+\efloatseparator
+ 
