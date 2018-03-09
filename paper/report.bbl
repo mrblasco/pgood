@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{22}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -21,6 +21,21 @@ Oriana Bandiera, Iwan Barankay, and Imran Rasul.
 Timothy Besley and Maitreesh Ghatak.
 \newblock {Competition and Incentives with Motivated Agents}.
 \newblock \emph{The American Economic Review}, 2005.
+
+\bibitem[Blumenstock(2008)]{blumenstock2008size}
+Joshua~E Blumenstock.
+\newblock {Size matters: Word Count as a Measure of Quality on Wikipedia}.
+\newblock In \emph{Proceeding of the 17th international conference}, 2008.
+
+\bibitem[Cohen(1992)]{cohen1992power}
+Jacob Cohen.
+\newblock {A power primer}.
+\newblock \emph{Psychological bulletin}, 1992.
+
+\bibitem[Croson and Gneezy(2009)]{croson2009gender}
+Rachel Croson and Uri Gneezy.
+\newblock {Gender Differences in Preferences}.
+\newblock \emph{Journal of Economic Literature}, 2009.
 
 \bibitem[Cutler et~al.(2012)Cutler, Wikler, and Basch]{cutler2012reducing}
 David Cutler, Elizabeth Wikler, and Peter Basch.
@@ -55,6 +70,11 @@ Jerry~R Green and Nancy~L Stokey.
 \newblock {A Comparison of Tournaments and Contracts}.
 \newblock \emph{The Journal of Political Economy}, 1983.
 
+\bibitem[Kreps(1997)]{kreps1997intrinsic}
+David~M Kreps.
+\newblock {Intrinsic Motivation and Extrinsic Incentives}.
+\newblock \emph{The American Economic Review}, 1997.
+
 \bibitem[Lakhani et~al.(2013)Lakhani, Boudreau, Loh, Backstrom, Baldwin,
   Lonstein, Lydon, MacCormack, Arnaout, and Guinan]{lakhani2013prize}
 Karim~R Lakhani, Kevin~J Boudreau, Po-Ru Loh, Lars Backstrom, Carliss Baldwin,
@@ -73,11 +93,21 @@ O'Keeffe Mary, W~Kip Viscusi, and Richard~J Zeckhauser.
 \newblock {Economic Contests: Comparative Reward Schemes}.
 \newblock \emph{Journal of Labor Economics}, 1984.
 
+\bibitem[Morgan(2000)]{morgan2000financing}
+John Morgan.
+\newblock {Financing public goods by means of lotteries}.
+\newblock \emph{Review of Economic Studies}, 2000.
+
 \bibitem[Nalebuff and Stiglitz(1983)]{nalebuff1983prizes}
 Barry~J Nalebuff and Joseph~E Stiglitz.
 \newblock {Prizes and incentives: towards a general theory of compensation and
   competition}.
 \newblock \emph{The Bell Journal of Economics}, 1983.
+
+\bibitem[Niederle and Vesterlund(2007)]{niederle2007women}
+Muriel Niederle and Lise Vesterlund.
+\newblock {Do Women Shy Away From Competition? Do Men Compete Too Much?}
+\newblock \emph{The Quarterly Journal of Economics}, 2007.
 
 \bibitem[Prendergast(2007)]{prendergast2007motivation}
 Canice Prendergast.

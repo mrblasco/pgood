@@ -57,15 +57,23 @@ Note: This table reports the percentage of employees in our sample cross tabulat
  
 \begin{table}
 \centering
-\caption{Employee participation by solicitation treatment}
-\label{submit}
-\begin{tabular}{@{}lcccc}
+\caption{Outcome variables}
+\label{outcomes}
+\begin{tabular}{@{}p{8cm}r}
   \\[-1.8ex]\hline \hline \\[-1.8ex]
- & \multicolumn{4}{c}{\emph{Solicitation treatment:}}\\
-\cmidrule(lr){2-5} Submission & FUND & PCARE & WPLACE & PRIZE \\
+ & Value \\
   \hline \\[-1.86ex]
-No & 301 & 296 & 291 & 289 \\
-  Yes &  7 & 14 & 16 & 23 \\
+Total employees solicited & 1237 \\
+   [1.86ex]\emph{Submission phase:}&\\
+\% employees with submission & 5 \\
+  Total employees with submission & 60 \\
+  Total submitted proposals & 118 \\
+   [1.86ex]\emph{Evaluation phase:}&\\
+\% employees with evaluation & 14 \\
+  Total ratings & 12055 \\
+   [1.86ex]\emph{Implementation phase:}&\\
+Total employee finalists & 29 \\
+  \% finalists among those with submissions & 48 \\
    \\[-1.8ex]\hline \hline \\[-1.8ex]
 \end{tabular}
 \end{table}
@@ -184,6 +192,24 @@ Observations & 1,237 & 1,237 & 1,237 \\
 \begin{minipage}{\textwidth}
 \emph{Note:} This table reports OLS estimates with heteroskedasticity robust standard errors in parenthesis. All coefficients are multiplied by 100 to indicate the percentage point change in the probability of submitting. Solicitation treatment dummies are coded to indicate deviations from the overall probability of submitting. The asterisks $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$ indicate significance at 1, 5 and 10 percent level, respectively.
 \end{minipage}
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\centering
+\caption{Employee participation in the peer evaluation phase}
+\label{tab: ratings}
+\begin{tabular}{@{}lcccc}
+  \\[-1.8ex]\hline \hline \\[-1.8ex]
+ & \multicolumn{4}{c}{\emph{Solicitation treatment:}}\\
+\cmidrule(lr){2-5} \emph{Peer evaluation:} &FUND & PCARE & WPLACE & PRIZE \\
+  \hline \\[-1.86ex]
+\% making no evaluations & 88 \% & 84 \% & 84 \% & 86 \% \\
+   & (272) & (261) & (257) & (269) \\
+  \% making evaluations & 12 \% & 16 \% & 16 \% & 14 \% \\
+   & (36) & (49) & (50) & (43) \\
+   \\[-1.8ex]\hline \hline \\[-1.8ex]
+\end{tabular}
 \end{table}
 \efloatseparator
  

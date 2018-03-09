@@ -65,6 +65,7 @@ options(digits=3)
 # Load data
 load("../data-clean/mgh.RData")
 capitalize <- function(x) x
+percent <- function(x) round(100*x, 0)
 
 # List of files
 child_docs <- c('1_intro.Rmd'
@@ -72,6 +73,23 @@ child_docs <- c('1_intro.Rmd'
 							, '3_results.Rmd'
 							, '4_discussion.Rmd'
 )
+
+# Stats
+participants <- hc$num_ideas>0
+evaluators <- hc$num_voted_ideas>0 # employees who voted
+
+# Testing participation in evaluation
+tab.eval <- xtabs(~ifelse(num_voted_ideas>0, 1,0)  + treatment,hc)
+tab.eval.fisher <- fisher.test(tab.eval)
+
+# Testing differences in quality
+tab.quality.chisq <- chisq.test(ratings)
+
+# Testing differences in content
+index <- tapply(1:nrow(voting), voting$idea_id, head, n=1)
+voting.cs <- voting[index, ] 
+content.tab <- xtabs(~focus2 + treatment.proponent, voting.cs)
+content.ftest <- fisher.test(content.tab, simulate.p.value=T, B=5e4)
 ```
 
 ```{r child=child_docs}

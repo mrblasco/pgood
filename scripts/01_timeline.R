@@ -1,5 +1,5 @@
 # plot timeline of the experiment
-source("scripts/functions.R")
+# source("scripts/functions.R")
 load("data-clean/mgh.RData")
 
 # data about events

@@ -1,6 +1,40 @@
 # Summary Stats Table
-source("scripts/functions.R")
+source("scripts/lib/functions.R")
 load("data-clean/mgh.RData")
+
+# Redefine
+hc$submit <- hc$num_ideas>0
+
+# Outcome variables values
+out <- c("Total employees solicited"=nrow(hc)
+  , "% employees with submission"=percent(mean(hc$submit))
+  , "Total employees with submission"=sum(hc$submit)
+  , "Total submitted proposals"=sum(hc$num_ideas)
+  , "% employees with evaluation"=percent(mean(hc$num_voted_ideas>0))
+  , "Total ratings"=sum(hc$num_voted_ideas)
+  , "Total employee finalists"=sum(hc$finalist)
+  , "% finalists among those with submissions"=percent(sum(hc$finalist) / sum(hc$submit))
+)
+
+# additional rows for latex table
+add <- list()
+add$pos <- list(1,4,6)
+add$cmd <- c("[1.86ex]\\emph{Submission phase:}&\\\\\n"
+            , "[1.86ex]\\emph{Evaluation phase:}&\\\\\n"
+            , "[1.86ex]\\emph{Implementation phase:}&\\\\\n")
+
+sink("tables/summary.outcomes.tex")
+table_render(data.frame(Value=out)
+  , align=c("@{}p{8cm}", "r")
+  , caption="Outcome variables"
+  , label="outcomes"
+  , digits=0, add=add)
+sink()
+
+###########################
+message("Stop here -- TBA")
+q() #######################
+###########################
 
 ### FUNCTION ####
 

@@ -24,6 +24,7 @@ $if(setspace)$$setspace$$else$\onehalfspacing$endif$
 \usepackage{todonotes} % Todos
 \usepackage{appendix} % Appendix
 \usepackage{array,booktabs,longtable,rotating} % Tables
+\usepackage{siunitx} % Align decimal points within tables
 %\usepackage{lineno}+ %\linenumbers
 
 % Sections, captions, etc.
@@ -35,11 +36,12 @@ $if(setspace)$$setspace$$else$\onehalfspacing$endif$
 
 % Links
 \usepackage{hyperref}
-%\hypersetup{%
+\hypersetup{%
+  draft
 %  colorlinks=false,% hyperlinks will be black
-%  linkbordercolor=red,% hyperlink borders will be red
+%  linkbordercolor=false,% hyperlink borders will be red
 %  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
-%}
+}
 
 % Position tables {here, top, bottom, page}
 \makeatletter

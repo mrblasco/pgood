@@ -1,9 +1,33 @@
-source("scripts/functions.R")
+# source("scripts/functions.R")
 load("data-clean/mgh.RData")
+
+# Rating
+tab <- xtabs(~ifelse(num_voted_ideas>0,"Yes","No")+treatment, data=hc)
+tab.count <- apply(tab, 2, function(x) paste("(", x, ")", sep=""))
+tab.pc <- apply(percent(prop.table(tab, 2)), 2, function(x) paste(x, "%"))
+tab.final <- rbind(tab.pc, tab.count)[c(1,3,2,4), ]
+labels <- c("% making no evaluations", "", "% making evaluations", "")
+out <- data.frame(labels, tab.final)
+
+# additional rows for latex table
+add <- list()
+add$pos <- list(-1)
+add$cmd <- c("& \\multicolumn{4}{c}{\\emph{Solicitation treatment:}}\\\\
+						\\cmidrule(lr){2-5} \\emph{Peer evaluation:} &")
+
+sink("tables/ratings_by_treatment.tex")
+table_render(out
+  , align=c("@{}l","@{}l", rep("c", ncol(out)-1))
+  , caption="Employee participation in the peer evaluation phase"
+  , label="tab: ratings"
+  , add=add
+  , digits=0
+  , include.rownames=FALSE
+  , sanitize.colnames.function=function(x)x[-1])
+sink()
 
 
 # Ratings/raters by solicitation treatment
-# (in appendix)
 sink("tables/ratings.tex")
 
 f <- function() {  

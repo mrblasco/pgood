@@ -7,8 +7,32 @@
 \efloatseparator
  
 \begin{figure}
+\caption{Submission rates by solicitation treatment}
+\label{fig: submit}
+\includegraphics{../figs/part.bar.pdf}
+\begin{tablenotes}
+Submission rates for employees randomly assigned to different solicitation treatments (bars represent standard errors).
+\end{tablenotes}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{Sorting}
+\label{fig: sorting}
+\includegraphics{../figs/sorting.bar.pdf}
+\begin{tablenotes}
+Submission rates by the gender, job, and office status of the solicited employees (bars represent standard errors).
+\end{tablenotes}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{Submission time dynamics}
+\label{dynamics}
 \includegraphics{../figs/dynamics.pdf}
-\caption{Evolution of employee participation over time. Employee participation in the PRIZE treatment is higher than the other solicitation treatments at all periods. By contrast, employee participation in the FUND treatment is lower at all periods. The plot also shows little convergence of the participation rates over time.}
+\begin{tablenotes}
+The plot shows the evolution of the cumulative sum of submissions by solicitation treatment. Employee participation in the PRIZE treatment is higher than the other solicitation treatments at all periods. By contrast, employee participation in the FUND treatment is lower at all periods. The plot also shows little convergence of the participation rates over time.
+\end{tablenotes}
 \end{figure}
 \efloatseparator
  
@@ -17,14 +41,27 @@
   \label{interactions}
   \centering
   \includegraphics{../figs/interactions.pdf}
+\begin{tablenotes}
+Panel (a) shows the proportion of submissions conditional on the gender of the solicited employee. Women seem more likely (about 5 percentage points) to participate than men in the PCARE solicitation treatment. Panel (b) shows the same proportion conditional on the profession of the solicited employee. Physicians, who are the highest paid professionals in our setting, are as likely to submit as any other worker in PRIZE solicitation treatment; thus suggesting little sorting based on income or other characteristics associated with a given profession.
+\end{tablenotes}
 \end{figure}
 \efloatseparator
  
 \begin{figure}
-  \centering
-  \caption{Distribution of ratings by solicitation treatment of the proponent}
-  \label{ratings}
-  \includegraphics{../figs/ratings.pdf}
+\centering
+\caption{Differences in the quality of the submitted project proposals}
+\label{fig: quality}
+\includegraphics{../figs/quality.pdf}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\caption{Differences in the content of the submitted project proposals}
+\label{fig: content}
+\includegraphics{../figs/areas.pdf}
+\begin{tablenotes}
+The four panels show the proportions of submitted project proposals in each area of focus (a=Surgical tools and support to research,b=Quality and safety ,c=Workplace,d=Staff workflow,e=Care Coordination,f=Information and access,g=Patient support) for each solicitation treatment. The proportions of the WPLACE treatment are used as a reference in all panels.
+\end{tablenotes}
 \end{figure}
 \efloatseparator
  
