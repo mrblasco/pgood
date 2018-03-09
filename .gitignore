@@ -1,9 +1,10 @@
-prep_data
-paper_v[123]*
-misc
-submissions
 *.DS_Store
 *.RData*
 *.csv
 *.Rout
 *.pdf
+figs
+tables
+misc
+submissions
+prep_data
