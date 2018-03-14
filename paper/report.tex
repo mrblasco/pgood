@@ -33,6 +33,9 @@
 \subsectionfont{\centering\scshape}
 \usepackage{titlesec}
 \titlelabel{\thetitle.\quad}
+%\titleformat{\subsubsection}[runin]{\em}{\thesubsubsection}{1em}{}
+\titleformat{\subsubsection}[runin]{\em}{}{1em}{}
+
 
 % Links
 \usepackage{hyperref}
@@ -105,23 +108,22 @@ This project would not have been possible without the support of Eric
 Isselbacher, Julia Jackson, Maulik Majmudar and Perry Band from the
 Massachusetts General Hospital's Healthcare Transformation Lab.}}
 \author{Andrea Blasco \and Olivia S. Jung \and Karim R. Lakhani \and Michael Menietti}
-\date{Last updated: 09 March, 2018}
+\date{Last updated: 13 March, 2018}
 
 \begin{document}
 \maketitle
 \begin{abstract}
-We report results of a natural field experiment conducted at a medical
-organization that sought contribution of public goods (i.e., projects
-for organizational improvement) from its 1200 employees. Offering a
-prize for winning submissions boosted participation without affecting
-the quality of the submissions. The effect was consistent across gender
-and job type. We posit that the allure of a prize, in combination with
-mission-oriented preferences, drove participation. Using a simple model,
-we estimate that these preferences explain about a third of the
-magnitude of the effect. We also find that the opportunity of winning
-financial resources to lead one's own project implementation had a
-negative effect on participation. These results were sensitive to the
-solicited person's gender.
+We conduct a natural field experiment at a medical organization that
+sought contributions to organizational improvement from its 1200
+employees. Offering a prize for best submissions boosted participation
+without affecting the quality of the submissions, as measured by peer
+ratings and the management. By contrast, offering financial resources to
+lead one's own project implementation had a negative effect on
+participation with no effects on quality. Mission-oriented solicitations
+towards improving the care of patients or the workplace were equally
+effective on average, but responses were sensitive to the solicited
+person's gender (with women responding more than men to mission-oriented
+incentives). Implications xxxx.
 
 \smallskip\noindent 
 JEL Classification: D23; H41; M52.
@@ -139,154 +141,144 @@ Keywords: innovation contest; free rider problem; social preferences; altruism; 
 \section{Introduction}\label{introduction}
 
 Workers employed by firms are often expected to make contributions that
-go beyond an effective and efficient execution of their own tasks. Such
-contributions are essential to generate positive externalities for their
-co-workers, supervisors, and customers; but could be hardly spurred via
-formal evaluation and reward systems alone. This situation presents thus
-employees with the recurrent dilemma of taking actions for the benefit
-of others or behaving opportunistically hoping for the other members of
-the organization to step in. Given the importance of this kind of
-decisions for the functioning of organizations, in this article we ask a
-basic question: What motivates employees to self-select into unpaid
-tasks and volunteer work for the benefit of the organization? And how
-managers should design a work environment that fosters such employee
-behaviors?
+go beyond an effective and efficient execution of their own tasks, such
+as to put their knowledge to use via suggestions for improvement
+(Osterman 1994). Contributions of this type are important because
+generate positive externalities for the other members of the
+organization, but are also difficult to measure objectively so that it
+is hard to fully compensate the worker for its contribution. This paper
+is concerned with understanding what motivates employees to ``go the
+extra mile'' at work by choosing to perform discretionary tasks for the
+benefit of the organization, instead of behaving opportunistically; and
+how to design work environments that foster this kind of contributions
+inside organizations.
 
-An extensive literature in economics points to volunteering at work as a
-way to receive extrinsic benefits, such as career advancements or a
-positive reputation.\footnote{When career advancements depend on this
-  kind of behavior (and not on productivity alone), then the prospect of
-  a promotion provide motivations \citep{kreps1997intrinsic}. See
-  \citet{gibbons1999careers} for a survey of the theoretical literature
-  on careers in organizations.} But there is also a growing literature
-that links this kind of behavior to a form of \emph{altruism} that goes
-either from the worker to the other members of the organization
-\citep{bandiera2005social, rotemberg2006altruism} or from the worker to
-those outsiders who might benefit from the activities of the
-organization (e.g., customers)
+An extensive literature in economics points to volunteering time and
+effort at work as a way to obtain extrinsic benefits, such as career
+advancements or a gain in reputation.\footnote{Since career advancements
+  are uncertain and depend on a variety of conditions and not on
+  productivity alone, the prospect of a promotion provide motivations to
+  do extra-work \citep{kreps1997intrinsic}. \citet{gibbons1999careers}
+  gives a survey of the theoretical literature on careers in
+  organizations.} But it is also possible to link this kind of behavior
+to a form of \emph{altruism} that goes from the worker to the other
+members of the organization
+\citep{bandiera2005social, rotemberg2006altruism} and from the worker to
+external people who might benefit from the activities of the
+organization (e.g., its customers)
 \citep{delfgaauw2005dedicated, delfgaauw2008incentives, prendergast2007motivation}.
-This second view is usually predominant in organizations in which
-workers may feel a sense of duty that acts as a motivation
-\citep{akerlof2005identity, besley2005competition}, like those producing
-collective goods (e.g., hospitals, schools, government agencies).
-However, the lack of systematic empirical evidence on employee behavior
-makes difficult to assess the strength of these different motivations
-and predict in which direction these might affect the dilemma faced by
-workers inside organizations.\footnote{There is a large literature that
-  has looked at these preferences in the laboratory in settings that
-  mimic the employee-employer relationship {[}see XXX for example{]}.}
+These altruistic feelings that acts as a motivation can be also inspired
+by the ``mission'' of the organization
+\citep{akerlof2005identity, besley2005competition}, like providing
+healthcare to patients in hospitals, education to students in schools,
+services to citizens in government agencies. However, the lack of
+systematic empirical evidence on employee behavior makes difficult to
+assess the strength of these different motivations, thus giving no
+prediction as to which direction the dilemma faced by workers inside
+organizations might be affected by them.\footnote{There is a large
+  literature that has looked at these preferences in the laboratory in
+  settings that mimic the employee-employer relationship {[}see XXX for
+  example{]}.}
 
-In this study, one primary goal is to examine how employees respond to a
-public good dilemma in a field setting where both extrinsic and
-intrinsic motives are likely to be present. In particular, we examine
-empirically how over 1,200 staff members (doctors, nurses, and
-administrative staff) of an elite medical organization in the United
-States respond to an organization-wide call to submit proposals for
-improving the organization to an \emph{internal innovation contest}.
-Such innovation contest solicited employees to submit project proposals
-describing an existing problem and providing a solution to address the
-problem, in the spirit of ``open innovation'' contests discussed in
-\citet{terwiesch2008innovation}; \citet{lakhani2013prize}; and
-\citet{glaeser2016predictive}. The entire staff was then invited to read
-and rate each proposal on a five-point scale. Based on these ratings and
-other criteria, the winning proposal would receive funding for
-implementation, implying additional costs and responsibilities from
-making a winning proposal (e.g., providing further guidance or a direct
-involvement in implementation).
+In this study, we conduct a natural field experiment to provide evidence
+on the effectiveness of personal rewards and mission-oriented incentives
+within an internal innovation contest at a medical organization. The
+internal innovation contest aimed to spur voluntary contributions
+(project proposals) to organizational improvement from its more than
+1200 employees. The experiment tested incentives for contributing by
+manipulating the content of personalized emails soliciting staff
+participation, such as offering (\(i\)) awards for winning submissions,
+(\(ii\)) funding for implementation of own projects, and appealing to
+intrinsic motivations towards (\(iii\)) improving patient care (a
+mission-oriented incentive) or (\(iv\)) the workplace.
 
-One reason to focus on employee behaviors associated with an innovation
-contest, rather than some other kind of incentive scheme, is practical:
-such competitions are easy to run and very common to most
-organizations.\footnote{Among the many examples of internal contests
-  that have appeared in the news are the Apple's 2016 contest among its
-  store employees seeking ideas on how to improve the way it sells
-  iPhones (``Apple seeks `pie in the sky' ideas for innovation,''
-  Computerworld, 2013); Xerox's internal contest seeking employees ideas
-  on how to make a more environmentally friendly workplace environment
-  (``Xerox employees green ideas save company \$10.2 million,'' The
-  Guardian, 2010); and AT\&T's ideation contests seeking employee ideas
-  about new products (``AT\&T develops employee ideas for innovation,''
-  The Wall Street Journal, 2014).} From another perspective, it is
-relatively inexpensive for the organization (and the researchers) to
-alter the communications around the contest in a way to separately
-identify channels associated with extrinsic and intrinsic reasons for
+The focus on the health care delivery context is important for two main
+reasons. First, the need for organizational improvement and innovation
+is vastly noted \citep{cutler2012reducing}. Second, health care
+professionals are commonly seen as willing to step beyond the boundaries
+of their contractual duties to offer better care
+\citep{delfgaauw2005dedicated}, which makes the comparison of different
+incentives towards a public good especially relevant and interesting.
+
+The focus on employee behavior within an innovation contest follows both
+practical and theoretical considerations. From a practical standpoint,
+the widespread adoption of internet-based centralized information
+systems has made organization-wide contests easy to design and run so
+that they are increasingly common in most organizations.\footnote{Among
+  the many examples of internal contests that have appeared in the news
+  are the Apple's 2016 contest among its store employees seeking ideas
+  on how to improve the way it sells iPhones (``Apple seeks `pie in the
+  sky' ideas for innovation,'' Computerworld, 2013); Xerox's internal
+  contest seeking employees ideas on how to make a more environmentally
+  friendly workplace environment (``Xerox employees green ideas save
+  company \$10.2 million,'' The Guardian, 2010); and AT\&T's ideation
+  contests seeking employee ideas about new products (``AT\&T develops
+  employee ideas for innovation,'' The Wall Street Journal, 2014).} This
+makes relatively inexpensive for researchers to intervene by altering
+the communications around the contest in a way to separately identify
+channels associated with extrinsic and intrinsic reasons for
 participating. For example, a personalized messaging strategy may either
 convey information about the presence of personal awards for the
-winners, or omit that information. In this sense, a contest represents a
+winners, or omit that information. An internal contest offers thus a
 very convenient setting for experimental interventions to study how
-employees self-select themselves into extra tasks that generate public
-good effects for the organization while they are running the normal
-operations.
+employees self-select themselves into new tasks without affecting the
+normal operations of the firm.
 
-Another key element of our study is the focus on the health care
-delivery context, which is important for two main reasons. First, the
-need for organizational improvement and innovation is vastly noted
-\citep{cutler2012reducing}. Second, health care professionals are
-commonly seen as willing to step beyond the boundaries of their
-contractual duties to offer better care \citep{delfgaauw2005dedicated},
-which makes the comparison of different incentives towards a public good
-especially relevant and interesting.
+From a theoretical perspective, the analysis of employee voluntary
+contributions to a public good in a competitive setting is very
+interesting since much of the empirical work on voluntary contributions
+and on contests has been done separately. However, theoretical work in
+the context of public good games has shown that prizes generate two
+opposing externalities : xxx and xxx. These externalities can mitigate
+the free-riding problem, thus increasing contributions to the public
+goods. We extend this reasoning to inside the organizations and we use
+our experimental conditions to see whether prizes can be seen as a way
+to internalize xxxx.
 
-Within this empirical context, we conduct a natural field experiment
-that isolates and provides evidence on four possible incentives that
-underlie employee participation in the contest: (1) the presence of
-financial awards for the winners; (2) the opportunity of funding most
-valuable contributions; (3) the potential positive impact on the other
-workers; and (4) the potential positive impact on their patients.
-Identification comes from a personalized email marketing campaign with
-four different \emph{solicitation treatments,} which were assigned at
-random to each staff member to isolate one of the above four different
-motives.
-
-This experimental intervention allows us to obtain causal estimates of
-the effect of different solicitation strategies on two main outcomes:
-(a) employee participation measured by the decision to submit a proposal
-and engage in an organizational improvement task and (b) the quality of
-the submissions as measured by (over 12,000) peer ratings and by the
-management organizing the contest.
+We evaluate the causal impact of the randomly assigned experimental
+conditions on two main response variables: (a) employee participation
+measured by the decision to submit a proposal and engage in an
+organizational improvement task and (b) the quality of the submissions
+as measured by (over 12,000) peer ratings and by assessments of the
+management.
 
 Testing the presence of both participation and quality effects is
 important as the presence of systematic quality differences associated
 with different motivations would substantially complicate the problem of
-incentives for the organization. For example, a higher employee
-participation may represent a desirable outcome for the organization but
-it may also be a waste of resources if the increased participation level
-is mainly driven by employees with low-quality proposals who would have
-stayed away from the contest otherwise.
-
-Another key issue is whether the solicited contributions will be
-representative of the needs of the entire organization, or just a
-smaller group of people. The presence of sorting effects based on the
-gender, for example, may impact on the extent and type of public goods
-provided, complicating the analysis of the incentives substantially. So,
-another aim of our study is to test to see whether differences in the
-motives to participate are attributable to factors associated with the
-employee's profession, gender, and position inside the organization.
+incentives for the organization (a higher employee participation is a
+less desirable goal if it is driven by low-quality proposals). We also
+investigate the presence of sorting effects based on the gender,
+profession, and position inside the organization of the solicited
+employee, and whether there are heterogenous treatment effects
+associated with these characteristics. For example, following the
+literature on gender-based differences in preferences
+\citep{croson2004gender}, the gender may impact the willingness to
+participate in a contest for prizes, complicating the analysis of the
+incentives.
 
 We find that the opportunity of winning a prize dominates all other
 incentives, leading to a sizable and significant increase in the rate of
-employees submitting project proposals. By looking at the quality of the
-submitted proposals, we find that such an increase in submission rates
-is without lowering the quality of submissions. And calibration of a
-simple linear public-good model reveals further that the effect may go
-beyond the extrinsic value of the prize, consistently with our theory of
-prizes as means to internalize public goods.
+employees submitting project proposals. We also provide evidence that
+such an increase in submission rates is without lowering the quality of
+submissions and may go beyond the extrinsic value of the prize,
+consistently with our theory of prizes as means to internalize public
+goods.
 
-We also find that the opportunity of leading implementation of one's own
-submitted project proposal is the least effective incentive, leading to
-a lower employee participation to the innovation contest relative to all
-other solicitation treatments with no difference in quality.
+We also find that, on the contrary, offering grant money for leading
+implementation of one's own submitted project proposal is the least
+effective incentive, leading to a lower employee participation to the
+innovation contest relative to all other solicitation treatments with no
+difference in quality.
 
 By looking at the sorting patterns by gender, profession, and position
-inside the organization, we find that women's response to solicitations
-for improving patient care is higher than men's; thus suggesting that
-solicitation treatments with mission-oriented incentives may result in
-responses that appear sensitive to the gender of the solicited person.
-We also find that women's and men's response to solicitations for prizes
-are the same; thus suggesting that gender differences in preferences,
-such as competitive inclinations or risk aversion, may not exert great
-influence on responses of workers to the competition-for-prizes
-incentive.
+inside the organization, we find that mission-oriented incentives result
+in responses that appear sensitive to the gender of the solicited
+person. In particular, women's response to solicitations for improving
+patient care is higher than men's. We also find that women's and men's
+response to solicitations for prizes are the same; thus suggesting that
+gender differences in preferences, such as competitive inclinations or
+risk aversion, may not exert great influence on responses of workers to
+the competition-for-prizes incentive.
 
 Overall, our findings imply that employee participation is different
 under different solicitation treatments, but with small and
@@ -806,25 +798,27 @@ staff members are motivated by the extrinsic value of the prize alone,
 one should expect large differences in participation rates across
 profession.
 
+\input{../tables/summary.outcomes.tex}
+
 Our main response variables include all the submissions to the contest,
 participation in the evaluation phase, and the resulting ratings for
 each project proposal as a measure of proposal quality. Basic summary
 statistics (Table \ref{outcomes}) show the overall participation in the
 submission phase is 5 percent of our sample with 60 submissions and a
 total of 118 project proposals (an average of 2 project proposals per
-submission). A 5 participation rate is unsurprising when one considers a
-few key elements, such as the busy environment, the fact that staff
-members have many conflicting priorities, and the foreseeable additional
-costs of leading implementation of a winning proposal. This result,
-however, does not imply that the overall participation in the contest
-was modest. On the contrary, when we combine data from the submission
-and evaluation phases, the overall participation rate is 16
-percent.\footnote{This is the union of employees who made submissions
-  and evaluated proposals.} This means that about 1 out of 5 staff
-members was engaged in one way or another in the contest, indicating a
-good participation overall.
-
-\input{../tables/summary.outcomes.tex}
+submission).\footnote{Here, and throughout the paper, we exclude an
+  additional 20 proposals from 11 employees who were not part of the
+  Heart Center when the experiment was designed.} A 5 participation rate
+is unsurprising when one considers a few key elements, such as the busy
+environment, the fact that staff members have many conflicting
+priorities, and the foreseeable additional costs of leading
+implementation of a winning proposal. This result, however, does not
+imply that the overall participation in the contest was modest. On the
+contrary, when we combine data from the submission and evaluation
+phases, the overall participation rate is 16 percent.\footnote{This is
+  the union of employees who made submissions and evaluated proposals.}
+This means that about 1 out of 5 staff members was engaged in one way or
+another in the contest, indicating a good participation overall.
 
 \section{Analysis}\label{analysis}
 
@@ -833,17 +827,7 @@ good participation overall.
 We begin by focusing on the causal effect of our experimental
 intervention on employee participation, which is defined by the
 percentage of employees who made project submissions within the
-four-week submission period of the contest.\footnote{EXCLUDE}
-
-First, we point to (Figure \ref{fig: submit}) the relatively large
-variation in the submission rates across solicitation treatments
-(ranging between 2 and 7 percent). We check to see whether there is an
-association between the variation in submission rates and the
-solicitation treatments. A Fisher's exact test fails to reject the null
-of independence (p=0.026), thus indicating a statistically significant
-association. We find thus evidence suggesting that the observed
-variation in submission rates is attributable to our experimental
-intervention.
+four-week submission period of the contest.
 
 \begin{figure}
 \caption{Submission rates by solicitation treatment}
@@ -854,35 +838,43 @@ Submission rates for employees randomly assigned to different solicitation treat
 \end{tablenotes}
 \end{figure}
 
+Employees' submission rates range from 2 to 7 percent (Figure
+\ref{fig: submit}) showing substantial variation across solicitation
+treatments. A Fisher's Exact Test for Count Data fails to reject the
+null of independence between this variation and the solicitation
+treatments (p=0.026), thus indicating a statistically significant
+association, which means that some of the observed variation in
+submission rates is attributable to our experimental intervention.
+
 Pairwise comparisons among individual solicitation treatments further
-reveal that: (\emph{i}) the PRIZE solicitation treatment generates 1.4,
-1.6, and 3.2 times higher participation rates than the WPLACE, PCARE,
-and FUND, respectively; (\emph{ii}) the PCARE and WPLACE solicitation
-treatments generate basically identical participation rates; and
-(\emph{iii}) the FUND solicitation treatment generates about less than
-half of the participation rates of the WPLACE and PCARE solicitation
-treatments.
+reveal that: (\emph{i}) employees in the PRIZE solicitation treatment
+have 1.4, 1.6, and 3.2 times higher participation rates than those in
+the WPLACE, PCARE, and FUND solicitation treatments, respectively;
+(\emph{ii}) employees in the PCARE and WPLACE solicitation treatments
+have basically identical participation rates; and (\emph{iii}) employees
+in the FUND solicitation treatment have less than half of the
+participation rates of the WPLACE and PCARE solicitation treatments.
 
 \input{../tables/pairwise.tex}
 
 To test to see whether these pairwise differences are statistically
-significant, we use pairwise two-sample tests of proportions (Table
-\ref{pairwise}). The analysis reveals that: the positive difference in
-participation rates between the PRIZE and FUND solicitation treatments
-is statistically significant (p=0.003); the positive difference between
-the PRIZE and PCARE solicitation treatments is marginally significant
-(p=0.132); whereas the positive difference between the PRIZE and WPLACE
-solicitation treatments is insignificant (p=0.269); the negative
-difference between the FUND and WPLACE solicitation treatments is
-significant (p=0.055); and the negative difference between the FUND and
-the PCARE solicitation treatments is marginally significant (p=0.124).
-Overall, these findings are consistent with employee participation being
-higher under a solicitation with personal awards incentives; and lower
-under a solicitation with funding incentives.
+significant, we use Pairwise comparison of proportions (Table
+\ref{pairwise}). The analysis reveals that: a significant positive
+difference in participation rates between the PRIZE and FUND
+solicitation treatments (p=0.003); a marginally significant positive
+difference between the PRIZE and PCARE solicitation treatments
+(p=0.132); and an insignificant positive difference between the PRIZE
+and WPLACE solicitation treatments (p=0.269); a significant negative
+difference between the FUND and WPLACE solicitation treatments
+(p=0.055); and a marginally significant negative difference between the
+FUND and the PCARE solicitation treatments (p=0.124). Overall, these
+findings are consistent with employee participation being higher under a
+solicitation with personal awards incentives; and lower under a
+solicitation with funding incentives.
 
-To complement the above univariate analysis, we use a multiple linear
-regression model that explicitly controls for observable differences
-across staff members. Let \(Y_i=1\) denote employee \(i\) making a
+A multiple linear regression model that explicitly controls for
+observable differences across staff members serves to complement the
+above univariate analysis. Let \(Y_i=1\) denote employee \(i\) making a
 submission, and \(Y_i=0\) otherwise. We assume the conditional
 probability of an employee making a submission is given by:
 
@@ -890,7 +882,7 @@ probability of an employee making a submission is given by:
                                     + \sum_{j} \alpha_{j} \text{SOLICIT}_{ij}
                                     + \text{JOB}_{i} 
                                     + \text{MALE}_{i} 
-                                    + \text{OFFICE}_{i},\label{submit}\]
+                                    + \text{OFFICE}_{i},\label{eq: submit}\]
 
 where \(\alpha_0\) is a constant, \(\alpha_j\) is the causal effect of
 the solicitation treatment \(j\) assigned to an employee \(i\)
@@ -928,34 +920,36 @@ Submission rates by the gender, job, and office status of the solicited employee
 \end{tablenotes}
 \end{figure}
 
-\emph{Sorting.} We now look at how the propensity to participate in the
-contest is associated with relevant individual factors, like the gender,
-profession, and status inside the organization of the solicited worker.
+\subsubsection{Sorting}\label{sorting}
 
-Following the literature on gender-based differences in attitudes
-towards competitive settings \citep{croson2009gender}, one may expect
-gender to be a factor driving participation in the contest, with men
-relatively more willing to sort into the competition
-\citep{niederle2007women}. Contrary to this expectation, we find (Figure
-\ref{fig: sorting}) that the submission rate is higher for women than
-for men and testing the difference in a regression (Table
-\ref{participation ols}) with controls for the other baseline
-characteristics gives insignificant results. Similarly, one may expect
-the presence of effects associated with differences in income and
-education. In particular, it is interesting to check if there is a lower
-participation of doctors relative to other staff members, given that
-these are the highest paid staff members in this environment. We find
-(Figure \ref{fig: sorting}, panel B) that the submission rate for
-physicians is lower relative to the residual category of other workers,
-whereas it is higher for nurses. Although these differences are
-consistent with sorting, testing them in a regression (Table
-\ref{participation ols}) with controls for the other baseline
-characteristics gives again insignificant results. Finally, and somewhat
-surprisingly, we find evidence of a positive effect of having an office
-location, as opposed to being assigned to a ward (Figure
-\ref{fig: sorting}, panel C). This effect is statistically significant
-in a regression (Table \ref{participation ols}) controlling for the
-gender and profession of the solicited employee.
+We now look at how the willingness to participate in the contest is
+associated with relevant individual characteristics, like the gender,
+profession, and status inside the organization of the solicited worker.
+Following the literature on gender-based differences in preferences
+\citep{croson2009gender} --- like attitudes towards competitive settings
+\citep{niederle2007women} --- one may expect gender to be a factor
+driving participation in the contest, with men relatively more willing
+to sort into the competition. Contrary to these expectations, the
+submission rate for women (Figure \ref{fig: sorting}) appears higher
+than that for men and testing the difference in a regression with
+controls (as in the last column of Table \ref{participation ols}) gives
+insignificant results (p=0.689). Similarly, one may expect the presence
+of effects associated with differences in income and education as
+captured by the profession of the solicited employee. Consistently with
+this view, physicians appear to have a lower propensity to submit
+(Figure \ref{fig: sorting}) relative to the other workers, whereas it
+appears higher for nurses, but testing them in a regression with
+controls gives again insignificant results (p=0.989). Finally, and
+somewhat surprisingly, we find that having an office location, as
+opposed to being assigned to a ward, is significantly (p=0.003)
+associated with a higher submission rate, controlling for the other
+characteristics. This evidence is suggesting that workers who occupy
+higher positions inside the organization are also more willing to
+contribute to common goods. Hence, and overall, we find no evidence
+supporting sorting based on the gender and profession of the solicited
+employee, whereas we find evidence for sorting based on having an office
+location, which we interpret as a proxy for experience and status inside
+the organization.
 
 \begin{figure}
 \caption{Submission time dynamics}
@@ -966,21 +960,23 @@ The plot shows the evolution of the cumulative sum of submissions by solicitatio
 \end{tablenotes}
 \end{figure}
 
-\emph{Participation dynamics.} We now turn to examining participation
-dynamics (Figure \ref{dynamics}). Though our data may not allow for a
-complete analysis of participation dynamics, looking at the overall
-submission patterns can be useful for the following reason. If employees
-assigned to different solicitation treatments were sharing (either
-face-to-face or electronically) the content of their solicitation with
-others, one should expect participation rates to converge over time,
-yielding estimates of the causal effects of a solicitation treatment
-biased towards zero. Contrary to these expectations, we find no evidence
-of convergence. Submissions in the PRIZE solicitation treatment are
-constantly higher than in the other treatments (except perhaps in the
-final week); at the same time, submissions in the FUND treatment are
-constantly low. These patterns are hence consistent with communication
-effects having little, or no, consequences on our findings, a topic we
-will discuss in greater detail later (Section \ref{discussion}).
+\subsubsection{Participation dynamics}\label{participation-dynamics}
+
+We now turn to examining participation dynamics (Figure \ref{dynamics}).
+Though our data may not allow for a complete analysis of participation
+dynamics, looking at the overall submission patterns can be useful for
+the following reason. If employees assigned to different solicitation
+treatments were sharing (either face-to-face or electronically) the
+content of their solicitation with others, one should expect
+participation rates to converge over time, yielding estimates of the
+causal effects of a solicitation treatment biased towards zero. Contrary
+to these expectations, we find no evidence of convergence. Submissions
+in the PRIZE solicitation treatment are constantly higher than in the
+other treatments (except perhaps in the final week); at the same time,
+submissions in the FUND treatment are constantly low. These patterns are
+hence consistent with communication effects having little, or no,
+consequences on our findings, a topic we will discuss in greater detail
+later.
 
 \begin{figure} 
 \caption{Employee participation by gender or profession and solicitation treatment}
@@ -992,42 +988,41 @@ Panel (a) shows the proportion of submissions conditional on the gender of the s
 \end{tablenotes}
 \end{figure}
 
-\emph{Heterogeneous treatment effects.} Inspection of the participation
-rates conditional to the employee's gender or profession (Figure
-\ref{interactions}) suggests relevant treatment interactions based on
-the gender.\footnote{We find no significant differences for interactions
-  with office location, which we do not report for space limitation.}
-Gender interactions may occur as a result of three main factors:
-differences in risk taking, social preferences (willingness to
-contribute to public goods), and competitive inclinations. If women
-prefer to work on activities that are less risky, more pro-social (e.g.,
-aiming at improving people's health) and where competition is less
-intense, then we should observe significant treatment interactions.
-Similarly, one may expect treatment interactions associated with the
-employee's profession to occur because, for example, the prize
-opportunity could be relatively less effective for employees with a
-higher income, such as doctors.
+\subsubsection{Heterogeneous treatment
+effects}\label{heterogeneous-treatment-effects}
+
+Inspection of the participation rates conditional to the employee's
+gender or profession (Figure \ref{interactions}) suggests relevant
+treatment interactions based on the gender.\footnote{We find no
+  significant differences for interactions with office location, which
+  we do not report for space limitation.} Gender interactions may occur
+as a result of three main factors: differences in risk taking, social
+preferences (willingness to contribute to public goods), and competitive
+inclinations. If women prefer to work on activities that are less risky,
+more pro-social (e.g., aiming at improving people's health) and where
+competition is less intense, then we should observe significant
+treatment interactions. Similarly, one may expect treatment interactions
+associated with the employee's profession to occur because, for example,
+the prize opportunity could be relatively less effective for employees
+with a higher income, such as doctors.
 
 \input{../tables/interactions.tex}
 
 To isolate gender and profession effects, we employ a version of model
-\eqref{eq: submit} with gender-treatment interactions.\footnote{We also
-  run a model with profession-treatment interactions and results are
-  similar to those shown in Figure \ref{fig: interactions}.} The
-regression results (Table
-\ref{tab: probability submitting interactions}) show similar results to
-the simple comparison of proportions. That is, after gradually adding
-profession and office controls, interaction coefficients remain stable
-across all specifications: the response of men under the PCARE
-solicitation treatment is about 3 times the magnitude and in the
-opposite direction of the women's response. By subtracting these two
-coefficients, we find a significant difference between men and women of
-about 5 percentage points (\(p=.018\)), which is consistent with our
-previous analysis. Thus, and overall, men respond less than women in the
-PCARE solicitation treatment, controlling for the profession and office
-location. This effect could be due to gender differences in preferences,
-as suggested by the literature, and we will return on this topic in the
-discussion of the results.
+\eqref{eq: submit} with gender-treatment interactions. The regression
+results (Table \ref{tab: probability submitting interactions}) show
+similar results to the simple comparison of proportions. That is, after
+gradually adding profession and office controls, interaction
+coefficients remain stable across all specifications: the response of
+men under the PCARE solicitation treatment is about 3 times the
+magnitude and in the opposite direction of the women's response. By
+subtracting these two coefficients, we find a significant difference
+between men and women of about 5 percentage points (\(p=.018\)), which
+is consistent with our previous analysis. Thus, and overall, men respond
+less than women in the PCARE solicitation treatment, controlling for the
+profession and office location. This effect could be due to gender
+differences in preferences, as suggested by the literature, and we will
+return on this topic in the discussion of the results.
 
 \subsection{Employee participation in peer
 evaluation}\label{employee-participation-in-peer-evaluation}
@@ -1041,24 +1036,29 @@ differences in project quality across our solicitation treatments.
 
 \input{../tables/ratings_by_treatment.tex}
 
-Interestingly, we note (Table \ref{ratings}) more employees volunteering
-to evaluate proposals in the PCARE and WPLACE than in the PRIZE and FUND
-solicitation treatments. However, the differences attributable to our
-experimental intervention are statistically insignificant (a Fisher's
-exact test gives a p-value of 0.339). So, we find no evidence indicating
-treatment effects on employee participation in evaluation.
+We note (Table \ref{ratings}) that employees who are in the PCARE and
+WPLACE solicitation treatments seem to have a higher propensity to
+evaluate proposals than those in the PRIZE and FUND solicitation
+treatments. Since evaluating proposals is another way for workers to
+contribute to the organization, workers will have incentives similar to
+those in the submission phase so that indirect treatment effects are
+plausible. However, no evidence is found that the observed differences
+in evaluation rates are attributable to our experimental intervention (a
+Fisher's exact test gives a p-value of 0.339). In other words, our data
+do not seem to support the hypothesis of treatment effects on evaluating
+proposals.
 
-We further check with linear regression (results not shown) whether the
-self-selected sample of staff rating proposals is representative of the
-whole organization, or just a subset. Testing for statistical
-significance of the coefficients for the profession, gender, and office
-location shows that evaluators are broadly representative of the
-organization as a whole, with no differences based on gender and
-profession albeit with a significantly higher participation from staff
-members with an office location. This is consistent with our previous
-results about participation incentives. So, overall, the collected
-ratings appear a broadly representative sampling of opinions inside the
-organization.
+We further check for sorting to see whether the evaluators are wholly
+representative of the organization. Testing for the statistical
+significance of coefficients for the profession, gender, and office
+location in a linear regression on the probability of evaluating
+proposals (results not shown), we find no differences based on the
+employee's gender and profession albeit a significantly higher
+participation from staff members with an office location. This evidence
+is thus consistent with our previous results about participation in the
+submission phase; suggesting the collected assessments of proposal
+quality are made by a broadly representative sampling of opinions inside
+the organization.
 
 \subsection{Quality of the project
 proposals}\label{quality-of-the-project-proposals}
@@ -1073,17 +1073,19 @@ choosing optimal incentives for employees. We examine the issue with the
 assessments of quality made by peers in the evaluation phase of the
 contest and, subsequently, by the management.
 
-\emph{Quality assessed by peers.} To check whether differences in the
-quality of the submissions can be explained by the solicitation
-treatments of the submitter, we first look at differences in the
-distribution of ratings obtained from peers. Overall, a project proposal
-is given the ``neutral'' point (i.e., a rating of 3) on a five-point
-scale about 30 percent of the times with employees being more likely to
-give high (4-5) rather than low (1-2) ratings. This rating pattern does
-not change much when we condition the data to the solicitation
-treatments of the proponent (Figure \ref{ratings}); suggesting an equal
-distribution of good and bad quality projects across the solicitation
-treatments.
+\subsubsection{Quality assessed by
+peers}\label{quality-assessed-by-peers}
+
+To check whether differences in the quality of the submissions can be
+explained by the solicitation treatments of the submitter, we first look
+at differences in the distribution of ratings obtained from peers.
+Overall, a project proposal is given the ``neutral'' point (i.e., a
+rating of 3) on a five-point scale about 30 percent of the times with
+employees being more likely to give high (4-5) rather than low (1-2)
+ratings. This pattern does not change much when we condition the data to
+the solicitation treatment of the proponent (Figure \ref{fig: quality});
+suggesting an equal distribution of good and bad quality projects across
+the solicitation treatments.
 
 \begin{figure}
 \centering
@@ -1092,85 +1094,96 @@ treatments.
 \includegraphics{../figs/quality.pdf}
 \end{figure}
 
-To formally test this hypothesis, we aggregate the mean ratings for each
+To formally test this hypothesis, we aggregate mean ratings for each
 proposal and regress these aggregate measures on solicitation treatment
 dummies. The regression results (not reported) show only an
 insignificant relationship between ratings and solicitation treatments.
 The treatment coefficients are all insignificantly different from zero,
 with the linear model not significantly different from a constant model
-(an overall F-test gives a p-value of \texttt{ftest\$p.value}).
+(an overall F-test gives a p-value of 0.609).
 
-The above analysis on the aggregate ratings does not hold in
-general.\footnote{It crucially relies on the assumption that an
-  increment in a proposal's quality as measured by an increase in
-  ratings from \(v\) to \(v+1\) is the same for any value \(v\).} So, we
-also examine the distribution of ratings as generated by treatments with
-no aggregation. We have over 12,000 ratings, providing a very sensitive
-test for differences across treatments. Using a Pearson's Chi-squared
-test we find that the hypothesis of dependence between the distribution
-of ratings and the treatments is \emph{not} quite significant at the 10
-percent level (p-value of 0.103). Driving the p-value is a less than
-\(2\) percent difference between the proportion of 5's in the WPLACE
-treatment versus the other distributions, which is probably due to
-outliers (the winning proposal was in the WPLACE treatment). Taken
-together with the fact that our sample is large, we have strong evidence
-suggesting that there are no (economically meaningful) differences in
-the quality of project proposals across treatments and in particular no
-evidence of a quantity versus quality trade-off up to the resolution of
-the five-point scale.\footnote{One may worry that such binning is a
-  fairly coarse measure of quality. In particular, effects concentrated
-  in the upper tail of the distribution may not be detected. For
-  example, comparing the ratings of proposals A, B, C and D with
-  hypothetical true qualities of 3, 4, 5, and 10 stars respectively.
-  Under a five-point scale rating system, proposals A and B can be
-  distinguished, but C and D cannot be distinguished. Hence, one needs
-  to be very cautious in interpreting these results as evidence against
-  quality effects in general.}
+We also examine the distribution of ratings as generated by treatments
+with no aggregation.\footnote{The analysis on the aggregated data
+  crucially relies on the assumption that an increment in a proposal's
+  quality as measured by an increase in ratings from \(v\) to \(v+1\) is
+  the same for any value \(v\).} We have over 12,000 ratings, providing
+a very sensitive test for differences across treatments. Using a
+Pearson's Chi-squared test we find that the hypothesis of dependence
+between the distribution of ratings and the treatments is \emph{not}
+quite significant at the 10 percent level (p-value of 0.103). Driving
+the p-value is a less than \(2\) percent difference between the
+proportion of 5's in the WPLACE treatment versus the other
+distributions, which is probably due to outliers (the winning proposal
+was in the WPLACE treatment). Taken together with the fact that our
+sample is large, we have strong evidence suggesting that there are no
+(economically meaningful) differences in the quality of project
+proposals across treatments and in particular no evidence of a quantity
+versus quality trade-off up to the resolution of the five-point
+scale.\footnote{One may worry that such binning is a fairly coarse
+  measure of quality. In particular, effects concentrated in the upper
+  tail of the distribution may not be detected. For example, comparing
+  the ratings of proposals A, B, C and D with hypothetical true
+  qualities of 3, 4, 5, and 10 stars respectively. Under a five-point
+  scale rating system, proposals A and B can be distinguished, but C and
+  D cannot be distinguished. Hence, one needs to be very cautious in
+  interpreting these results as evidence against quality effects in
+  general.}
 
-\emph{Quality assessed by managers.} One potential limit of assessing
-quality only on the basis of peer ratings is that the employees might
-have a different view of a proposal's quality than executives (due, for
-instance, to a misalignment of incentives). Indeed, to ensure alignment
-between managerial goals and the peer assessment, all project proposals
-were further vetted by the HTL staff before being considered for
-implementation funding. So, we now focus on the outcomes of this vetting
-process to investigate more broadly the presence of treatment effects on
-the quality of project proposals.
+\subsubsection{Quality assessed by
+managers}\label{quality-assessed-by-managers}
 
-The vetting process conducted by the HTL staff resulted in
-\texttt{sum(z\$score\textgreater{}0)} proposals being scored (from 1 to
-100 points) with the best 29 proposals invited to submit implementation
-plans. The remaining \texttt{sum(z\$score==0)} proposals were excluded
-(and received a score of zero) either because flagged as inappropriate
-for funding or because the proponent manifested no intention to
-participate in the implementation phase (a \texttt{ft\$method} finds no
-association between proposals excluded and treatments with a p-value of
+One potential limit of assessing quality only on the basis of peer
+ratings is that the employees might have a different view of a
+proposal's quality than executives (due, for instance, to a misalignment
+of incentives). Indeed, to ensure alignment between managerial goals and
+the peer assessment, all project proposals were further vetted by the
+HTL staff before being considered for implementation funding. So, we now
+focus on the outcomes of this vetting process to investigate more
+broadly the presence of treatment effects on the quality of project
+proposals.
+
+The vetting process conducted by the HTL staff resulted in 93 proposals
+being scored on a scale from 1 to 100 points with the authors of the
+best 29 proposals invited to submit implementation plans. The remaining
+\texttt{113\ -\ \ nrow(quality2)} proposals were excluded (and received
+a score of zero) either because flagged as inappropriate for funding or
+because the proponent manifested no intention to participate in the
+implementation phase (a \texttt{ft\$method} finds no association between
+proposals excluded and treatments with a p-value of
 \texttt{ft\$p.value}).
 
 The Spearman's rank correlation coefficient between the scores given by
 the HTL staff and the average peer ratings is relatively high
-(\texttt{spear}), indicating good agreement between our two measures of
-quality. Indeed, as before, we find no treatment effects on quality
-using the scores (a \texttt{kt\$method} gives a p-value of
-\texttt{kt\$p.value}). We also find no treatment differences in the
-percentage of submitters being selected and invited by HTL staff to
-present additional implementation plans (a \texttt{ft\$method} gives a
-p-value of \texttt{ft\$p.value}). Although not significant, employees
-who made project proposals in the FUND solicitation treatment are less
+(cor=0.198), indicating good agreement between our two measures of
+quality. As for the assessments made by peers, we find no treatment
+effects on quality using the scores by the management: a linear
+regression on the score of proposals against treatment dummies gives
+coefficients that are all insignificantly different from zero, with the
+linear model not significantly different from a constant model (F-test;
+p=0.378).
+
+We also find no treatment differences in the percentage of submitters
+being selected and invited by HTL staff to present additional
+implementation plans: (a \texttt{ft\$method} gives a p-value of
+\texttt{ft\$p.value}). Although not significant, employees who made
+project proposals in the FUND solicitation treatment are \emph{less}
 likely to be selected as finalist than the others (only 1 out of 7 in
 the FUND treatment were selected and invited by the HTL staff),
 providing additional evidence of a no quantity versus quality trade-off,
 as discussed before.
 
-\emph{Quality assessed by higher word counts.} Following prior research
-indicating that higher total word counts reflect higher quality
-\citep{blumenstock2008size}, we also look at differences in the word
-counts of a submission. We find that most submissions are below 200
-words with little differences between the treatments. Testing for a
-significant linear regression relationship between the length of
-submissions and treatment dummies returned an overall insignificant
-result (p=.43, F-test), which is consistent with our previous assertion
-of little, or no, differences in quality across treatments.
+\subsubsection{Quality assessed by higher word
+counts}\label{quality-assessed-by-higher-word-counts}
+
+Following prior research indicating that higher total word counts
+reflect higher quality \citep{blumenstock2008size}, we also look at
+differences in the word counts of a submission. We find that most
+submissions are below 200 words with little differences between the
+treatments. Testing for a significant linear regression relationship
+between the length of submissions and treatment dummies returned an
+overall insignificant result (p=.43, F-test), which is consistent with
+our previous assertion of little, or no, differences in quality across
+treatments.
 
 \subsection{Content of the project
 proposals}\label{content-of-the-project-proposals}
@@ -1260,27 +1273,30 @@ the common goal of improving the organization?
 
 To gauge the magnitude of underlying preferences for contributing to the
 organization, we now use the experimental data to calibrate the
-theoretical model discussed in Section
-\ref{conceptual-framework-and-predictions}. Following the mixed-strategy
-equilibrium of the model, the theoretical probability of contributing
-must be proportional to the expected value of winning, \(R\), the
-underlying preferences towards the public good, \(\gamma\), the marginal
-costs of contributing, \(c\), and the number of agents, \(n\).
+theoretical model discussed before (Section
+\ref{conceptual-framework-and-predictions}). Following the
+mixed-strategy equilibrium of the model, the theoretical probability of
+contributing must be proportional to the expected value of winning,
+\(R\), the underlying preferences towards the public good, \(\gamma\),
+the marginal costs of contributing, \(c\), and the number of agents,
+\(n\).
 
 We assume the cost of making a submission \(c\) is the same in each
 treatment, which seems a reasonable assumption given everyone is asked
-to perform the exact same task (same submission procedure). Then we
-derive a structural relationship between the observed difference in the
-probability of contributing \(\Delta p\) and the difference in the
-expected rewards from winning \(\Delta R\) between the
-treatments:\footnote{This equation can be obtained by following these
-  steps. First, we approximate the profit equating condition
-  \eqref{eq: mixed-strategy} to a linear function by noticing that the
-  \(1/(1-(1-p)^n)\) approximates one for \(n\) large enough and \(p\)
-  sufficiently small. Second, we solve for \(p\) and we simplify using
-  the definitions of \(\Delta p\) and \(\Delta R\).}
+to perform the exact same task (submitting a project proposal) and the
+submission procedure is identical. Then we derive a structural
+relationship between the observed difference in the probability of
+contributing \(\Delta p\) and the difference in the expected rewards
+from winning \(\Delta R\) between the treatments:\footnote{This equation
+  can be obtained by following these steps. First, we approximate the
+  profit equating condition \eqref{eq: mixed-strategy} to a linear
+  function by noticing that the \(1/(1-(1-p)^n)\) approximates one for
+  \(n\) large enough and \(p\) sufficiently small. Second, we solve for
+  \(p\) and we simplify using the definitions of \(\Delta p\) and
+  \(\Delta R\).}
 
 \begin{equation}
+  \label{eq: delta}
   \Delta p \approx\frac{\Delta R}{n (c - \gamma)}.
 \end{equation}
 
@@ -1293,90 +1309,95 @@ cost of contributing \(\Delta c=c-\gamma\), we get
   \Delta c\approx  \Delta R / (n\Delta p). 
 \end{equation}
 
-This implies that the cost of a submission net of the individual
-preference for the public good must be proportional to the ratio between
-the difference in rewards and the difference in the probability of
-submitting. Although we do not observe the levels of \(R\) in each
-treatment, we approximate the difference of rewards between the PRIZE
-and the other conditions by the pecuniary value of the reward, which has
-its upper bound in the highest price that can be paid for an iPad mini
-(\$350).\footnote{The price paid by the Heart Center was \$239 at the
-  end of 2014 (including shipping cost). Other popular models (those
-  with cellular data and large storage) could cost as high as \$350.
-  Agents, however, were not aware of the specific model used for the
-  competition and of the price paid. So, the value of \$350 is very
-  conservative.} And we round the competitors up to \(n=1000\) to be
-conservative. Finally, by substituting those calibrated values into
-equation \eqref{eq: gamma} along with the empirical difference in
-participation rates between the PRIZE and the other treatments
-(\(\Delta p=0.037\)), we get an estimate of the magnitude of net cost
-which is \(\Delta c=\) \$350/(1000*0.037)=\$9.5. We can now contrast and
-compare this value against the hourly wage of the median staff member,
-which is of more than \$40 (xxxx). Hence, the calibrated net cost of
-making a submission is more than four times lower than the hourly wage
-of the median staff member. Since xxxx, this value appears too low to
-expect \(\gamma\) to be zero. In other words, xxxx.
+This implies that the net cost of a submission (the material cost of
+submitting net of the individual preference for the public good) must be
+proportional to the ratio between the difference in rewards and the
+difference in the probability of submitting. Although we do not observe
+the levels of \(R\) in each treatment, we approximate the difference of
+rewards between the PRIZE and the other conditions by the pecuniary
+value of the reward, which has its upper bound in the highest price that
+can be paid for an iPad mini (\$350).\footnote{The price paid by the
+  Heart Center was \$239 at the end of 2014 (including shipping cost).
+  Other popular models (those with cellular data and large storage)
+  could cost as high as \$350. Agents, however, were not aware of the
+  specific model used for the competition and of the price paid. So, the
+  value of \$350 is very conservative.} And we round the competitors up
+to \(n=1000\) to be conservative. Finally, by substituting those
+calibrated values into equation \eqref{eq: gamma} along with the
+empirical difference in participation rates between the PRIZE and the
+other treatments (\(\Delta p=0.037\)), we get an estimate of the
+magnitude of net cost which is \(\Delta c=\) \$350/(1000*0.037)=\$9.5.
+
+We can now compare the estimated net cost of contributing against the
+hourly wage of the median staff member, which is \$40 (the median income
+per hour of a nurse according to the Bureau of Labor Statistics). This
+comparison shows that the wage of the median staff member per hour is
+more than 4 times \emph{higher} than the net cost of making a
+contribution. Since the time to write and submit a project proposal will
+likely take one hour of work or more, the net cost of contributing
+appears too low to be consistent with no preferences towards the public
+good. In other words, by comparing the calibrated net cost of
+contributing against the monetary cost of an hour of work, we find a
+negative gap that appears too large to be explained without assuming
+some non-monetary motivations acting as a compensating force.
 
 \section{Summary and conclusions}\label{summary-and-conclusions}
 
-We report results of a natural field experiment conducted at a medical
-organization that held an innovation contest seeking contribution of
-public goods (i.e., projects for organizational improvement) from its
-more than 1200 employees. The experiment tested incentives for
-contributing by manipulating the content of emails soliciting staff
-participation. We presented different incentives to participate in the
-contest, such as a prize (PRIZE) for winning submissions, improving
-patient care (PCARE), improving the workplace (WPLACE), and funding for
-implementation (FUND). Each staff was randomly assigned to receiving an
-email containing one of the four incentives.
+We conduct a natural field experiment to provide evidence on the
+effectiveness of personal rewards and mission-oriented incentives within
+an internal innovation contest at a medical organization seeking
+contribution of public goods (i.e., projects for organizational
+improvement) from its more than 1200 employees. The experiment tested
+incentives for contributing by manipulating the content of personalized
+emails soliciting staff participation, such as (\(i\)) offering awards
+for winning submissions, (\(ii\)) funding for implementation of own
+projects, and appealing to intrinsic motivations towards (\(iii\))
+improving patient care or (\(iv\)) the workplace.
 
-We find that the PRIZE solicitation treatment boosts participation by
-about 40 percent relative to the WPLACE and PCARE solicitation
-treatments. The FUND solicitation treatment is the least effective. It
-generates not only about three times less submissions than the PRIZE
-solicitation treatment, but also less submissions than the WPLACE and
-PCARE solicitation treatments.
+We find that solicited employees who are offered personal rewards for
+winning submissions have a higher propensity to participate in the
+contest than those who are offered funding to implement own projects or
+are encouraged appealing to their intrinsic motivations towards the
+patients and coworkers. The observed participation differences, we find,
+are without changing the quality of the submissions as judged by peer
+ratings and the evaluations conducted by the management, for which there
+is good agreement (high positive correlation) suggesting incentives
+being sufficiently aligned. This means that the higher propensity to
+participate of solicited employees who are offered prizes does not seem
+to be driven by low-quality submissions. In addition, we provide
+evidence that the effect of a prize competition on participation goes
+beyond the actual value of the prize itself, thus suggesting employees
+have internalized some of the public good effects of contributing.
 
-These participation differences, we find, are without changing the
-quality of the submissions as judged by peers and the
-management.\footnote{We find good agreement (high positive correlation)
-  in the assessed quality of proposals between peer ratings and the
-  evaluations conducted by the management; thus suggesting incentives
-  being sufficiently aligned.} The higher employee participation in the
-PRIZE solicitation treatment does not seem to be driven by low-quality
-submissions. Similarly, the lower employee participation in the FUND
-solicitation treatment does not seem to be driven by high-quality
-submissions. In other words, treatments that attracted more (or less)
-participation resulted in proposals of comparable quality and content.
+Another key finding is that the opportunity of funding is a poor
+incentive. Solicited employees who are offered funding to lead the
+implementation of one's own submitted project proposal have a lower
+propensity to participate than those who are offered prizes for winning
+submissions and those who are not offered any particular reward (besides
+the value of improving the organization for its own good). A potential
+trade-off may occur with employee participation suffering at the
+expenses of high-quality proposals. Contrary to this possibility, we
+find that the lower employee participation is without changing the
+quality of the submissions as measured by the assessment of peers and
+the management, thus it does not seem to be driven by high-quality
+submissions.
 
-Taken together, these findings suggest that (1) the
-competition-for-prizes incentive dominates mission-oriented incentives
-and (2) the opportunity to lead implementation of one's own submitted
-project proposal is a poor incentive. In addition, these effects
-combined with the small (extrinsic) value of the prize relative to the
-median income of the participants, the long odds of winning the prize,
-the lack of differences in participation among professions, and the
-foreseeable additional costs of winning may suggest that (3) the effect
-of a prize competition on participation goes beyond the actual value of
-the prize itself, suggesting workers have, in fact, internalized some of
-the benefits of participating in an organizational task.
-
-We also fined that, although the WPLACE and PCARE solicitation
-treatments are equally effective on average, responses appear sensitive
-to the gender of the solicited person. Women's participation is greater
-when emphasizing the patient care whereas men's participation is
-significantly lower, controlling for the profession and position inside
-the organization. This finding suggests that gender may be an important
-factor influencing sensitivity of responses to solicitations concerning
-the organizational mission.
-
-At the same time, only an insignificant gender-based differences with
-respect to participation in the PRIZE solicitation treatment was found:
-women's participation was slightly higher but not significant than
-men's, all else being equal. This evidence indicates that gender
-differences in preferences, such as competitive inclinations or risk
-aversion, may not exert great influence on responses of workers to
-contests inside organizations.
+While employees who are asked to contribute for intrinsic motives, such
+as those towards providing better care to their patients and improving
+the workplace environment, have equally strong participation propensity
+on average, we find that responses appear sensitive to the gender of the
+solicited person. Women's participation is greater when emphasizing the
+patient care whereas men's participation is significantly lower,
+controlling for the profession and position inside the organization.
+This finding suggests that gender may be an important factor influencing
+sensitivity of responses to solicitations concerning the organizational
+mission. At the same time, only an insignificant gender-based
+differences with respect to participation associated with the offering
+of prizes was found: women's participation was slightly higher but not
+significant than men's, all else being equal. This evidence indicates
+that gender differences in preferences, such as competitive inclinations
+or risk aversion, may not exert great influence on responses of workers
+to contests inside organizations.
 
 We believe these results have three main implications for comparable
 organizations and, more broadly, the internal provision of public goods.
@@ -1457,11 +1478,12 @@ workers may limit the generalizability of our results in some respect,
 it should be noted that in the US alone health care spending accounts
 for 17 percent of the GDP (in 2015). And, more generally, our study
 results are also directly applicable to a variety of other professions
-exposed to a public good dilemma (e.g., teachers, public servants,
-researchers). In all these settings, our study suggests that contests
-soliciting employee contributions and awarding an individual prize to
-the winning contribution appear an effective way to foster the internal
-provision of public goods inside organizations.
+exposed to a public good dilemma in a mission-driven environment (e.g.,
+teachers, public servants, researchers). In all these settings, our
+study suggests that contests soliciting employee contributions and
+awarding an individual prize to the winning contribution appear an
+effective way to foster the internal provision of public goods inside
+organizations.
 
 \renewcommand\refname{References}
 \bibliography{refs.bib}

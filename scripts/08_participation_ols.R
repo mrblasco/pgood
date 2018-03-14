@@ -4,7 +4,7 @@
 # profession, and organizational role of the employe
 
 library(stargazer)
-source("scripts/functions.R")
+source("scripts/lib/functions.R")
 load("data-clean/mgh.RData")
 
 ### FUNCTIONS ##############
@@ -46,11 +46,9 @@ part.mlr.fit.interact <- fit
 # loglikelihood
 part.mlr.fit.interact.ll <- sapply(part.mlr.fit.interact, logLik)
 
-
 # Additional controls with arbitrary imputation (not reported)
 # hc$age.imp <- factor(hc$age, exclude=FALSE)
 # hc$tenure.imp <- factor(hc$tenure%/%10, exclude=FALSE)
-
 
 # print results as latex table
 sink("tables/part.mlr.tex")

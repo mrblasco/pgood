@@ -1,5 +1,5 @@
 # experimental design table
-source("scripts/functions.R")
+source("scripts/lib/functions.R")
 load("data-clean/mgh.RData")
 
 # Treatment variable 
@@ -16,7 +16,7 @@ m <- cbind(m, round(100*m/sum(m)))
 rownames(m)[-1] <- paste("[1.8ex]", rownames(m)[-1])
 m <- rbind(m, "[1.8ex] Total"=apply(m, 2, sum))
 m <- cbind(c(as.character(txt$paragraph), NA), m)
-colnames(m) <- c("\t","freq.", "%")
+colnames(m) <- c("\t","N", "%")
 
 add <- list(pos=-1)
 add$cmd <- "& \\multicolumn{1}{c}{\\emph{Solicitation treatment:}}
@@ -27,5 +27,5 @@ sink("tables/design.tex")
 table_render(m, add=add
 					, caption="Experimental design"
 					, label="experimental-design"
-					, align=c("@{}l", "p{5cm}>{\\raggedright}", "r", "r"))
+					, align=c("@{}l", "p{6cm}>{\\raggedright}", "r", "r"))
 sink()

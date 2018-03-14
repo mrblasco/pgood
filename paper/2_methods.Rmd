@@ -86,9 +86,14 @@ As much of the clinical staff might be mobile, only half of the employees (`r pc
 
 Differences in income and education are other important differences across professions. Though we do not have data on income, there exist large differences in earnings across professions. According to the United States Bureau of Labor Statistics, the median annual wage of a physician was $187,200 in 2015, which is about 60 percent higher than the that of a registered nurse ($67,490) and about 70 percent higher than that of a laboratory technician ($38,970). It follows that, if staff members are motivated by the extrinsic value of the prize alone, one should expect large differences in participation rates across profession.
 
-Our main response variables include all the submissions to the contest, participation in the evaluation phase, and the resulting ratings for each project proposal as a measure of proposal quality. Basic summary statistics (Table \ref{outcomes}) show the overall participation in the submission phase is 5 percent of our sample with 60 submissions and a total of 118 project proposals (an average of 2 project proposals per submission). A 5 participation rate is unsurprising when one considers a few key elements, such as the busy environment, the fact that staff members have many conflicting priorities, and the foreseeable additional costs of leading implementation of a winning proposal. This result, however, does not imply that the overall participation in the contest was modest. On the contrary, when we combine data from the submission and evaluation phases, the overall participation rate is 16 percent.^[This is the union of employees who made submissions and evaluated proposals.] This means that about 1 out of 5 staff members was engaged in one way or another in the contest, indicating a good participation overall. 
-
+<!-- Outcome variables -->
 \input{../tables/summary.outcomes.tex}
+
+Our main response variables include all the submissions to the contest, participation in the evaluation phase, and the resulting ratings for each project proposal as a measure of proposal quality. Basic summary statistics (Table \ref{outcomes}) show the overall participation in the submission phase is 5 percent of our sample with 60 submissions and a total of 118 project proposals (an average of 2 project proposals per submission).[^EXCLUDE] A 5 participation rate is unsurprising when one considers a few key elements, such as the busy environment, the fact that staff members have many conflicting priorities, and the foreseeable additional costs of leading implementation of a winning proposal. This result, however, does not imply that the overall participation in the contest was modest. On the contrary, when we combine data from the submission and evaluation phases, the overall participation rate is 16 percent.^[This is the union of employees who made submissions and evaluated proposals.] This means that about 1 out of 5 staff members was engaged in one way or another in the contest, indicating a good participation overall. 
+
+
+
+[^EXCLUDE]: Here, and throughout the paper, we exclude an additional 20 proposals from 11 employees who were not part of the Heart Center when the experiment was designed.
 
 
 

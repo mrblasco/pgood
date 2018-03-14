@@ -27,6 +27,11 @@ Joshua~E Blumenstock.
 \newblock {Size matters: Word Count as a Measure of Quality on Wikipedia}.
 \newblock In \emph{Proceeding of the 17th international conference}, 2008.
 
+\bibitem[Coffman(2014)]{coffman2014evidence}
+Katherine~Baldiga Coffman.
+\newblock {Evidence on Self-Stereotyping and the Contribution of Ideas}.
+\newblock \emph{The Quarterly Journal of Economics}, 2014.
+
 \bibitem[Cohen(1992)]{cohen1992power}
 Jacob Cohen.
 \newblock {A power primer}.
@@ -58,13 +63,6 @@ Robert Gibbons and Michael Waldman.
 \newblock {Careers in organizations: Theory and evidence}.
 \newblock In \emph{Handbook of Labor Economics}. 1999.
 
-\bibitem[Glaeser et~al.(2016)Glaeser, Hillis, Kominers, and
-  Luca]{glaeser2016predictive}
-Edward~L Glaeser, Andrew Hillis, Scott~Duke Kominers, and Michael Luca.
-\newblock {Predictive Cities Crowdsourcing City Government: Using Tournaments
-  to Improve Inspection Accuracy}.
-\newblock \emph{The American Economic Review}, 2016.
-
 \bibitem[Green and Stokey(1983)]{green1983comparison}
 Jerry~R Green and Nancy~L Stokey.
 \newblock {A Comparison of Tournaments and Contracts}.
@@ -74,14 +72,6 @@ Jerry~R Green and Nancy~L Stokey.
 David~M Kreps.
 \newblock {Intrinsic Motivation and Extrinsic Incentives}.
 \newblock \emph{The American Economic Review}, 1997.
-
-\bibitem[Lakhani et~al.(2013)Lakhani, Boudreau, Loh, Backstrom, Baldwin,
-  Lonstein, Lydon, MacCormack, Arnaout, and Guinan]{lakhani2013prize}
-Karim~R Lakhani, Kevin~J Boudreau, Po-Ru Loh, Lars Backstrom, Carliss Baldwin,
-  Eric Lonstein, Mike Lydon, Alan MacCormack, Ramy~A Arnaout, and Eva~C Guinan.
-\newblock {Prize-based contests can provide solutions to computational biology
-  problems}.
-\newblock \emph{Nature biotechnology}, 2013.
 
 \bibitem[Lazear and Rosen(1981)]{lazear1981rank}
 Edward~P Lazear and Sherwin Rosen.
@@ -119,6 +109,12 @@ Julio~J Rotemberg.
 \newblock {Altruism, reciprocity and cooperation in the workplace}.
 \newblock In \emph{Handbook of the economics of giving, altruism and
   reciprocity}. 2006.
+
+\bibitem[Rubin(1974)]{rubin1974estimating}
+Donald~B Rubin.
+\newblock {Estimating causal effects of treatments in randomized and
+  nonrandomized studies.}
+\newblock \emph{Journal of educational Psychology}, 1974.
 
 \bibitem[Terwiesch and Xu(2008)]{terwiesch2008innovation}
 Christian Terwiesch and Yi~Xu.

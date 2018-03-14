@@ -1,7 +1,7 @@
-#source("scripts/functions.R")
+source("scripts/lib/functions.R")
 load("data-clean/mgh.RData")
 
-
+# PLOT quality differences
 pdf("figs/quality.pdf")
 par(mfrow=c(2,2), bty="n")
 

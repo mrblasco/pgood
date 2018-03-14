@@ -3,7 +3,6 @@
 source("scripts/lib/functions.R")
 load("data-clean/mgh.RData")
 
-
 #### FUNCTIONS ###############
 compute_stats <- function(x, y) {
 	tab <- table(x, y)
@@ -16,13 +15,20 @@ compute_stats <- function(x, y) {
 }
 
 # custom barplot with arrows
-barplot2 <- function(p, se, labels, add.grid=TRUE, ...) {
-	b <- barplot(p, las=1, ...)
+barplot2 <- function(p, se, labels, add.grid=TRUE, space=.5, ...) {
+	b <- barplot(p, las=1, space=space, ...)
 	if (add.grid) {
   	grid(lty=3, nx=NA, ny=NULL)
-  	b <- barplot(p, las=1, add=TRUE,...)
+  	b <- barplot(p, las=1, space=space, add=TRUE,...)
 	}
 	arrows(x0=b, y0=p, y1=p+sign(p)*se, angle=90, length=0.1)
+}
+
+barplot3 <- function(p, ylim=c(0,8), ...) {
+  barplot2(p$p, p$se, ylim=ylim
+    , col=gray(c(.25,.75)), border=gray(c(.25,.75))
+    , ylab="% employees with submissions"
+    , xlab="", ...)
 }
 
 # estimate pairwise differences
@@ -40,8 +46,6 @@ compute.diff <- function(tab, levels, FUN, ...) {
   return(df.diff)
 }
 
-percent <- function(x, ...) round(100*x, ...)
-
 tabl2 <- function(tab, labels, digits=1) { 
   tab.count <- apply(tab, 2, function(x) paste("(", x, ")", sep=""))
   tab.pc <- apply(percent(prop.table(tab, 2), digits), 2, function(x) paste(x, "%"))
@@ -49,12 +53,6 @@ tabl2 <- function(tab, labels, digits=1) {
   data.frame(labels, tab.final)
 }
 
-barplot3 <- function(p, ylim=c(0,8)) {
-  barplot2(p$p, p$se, ylim=ylim
-    , col=gray(c(.25,.75)), border=gray(c(.25,.75))
-    , ylab="% employees with submissions"
-    , xlab="")
-}
 
 
 #### MAIN PROGRAM ###############
@@ -62,8 +60,7 @@ barplot3 <- function(p, ylim=c(0,8)) {
 # compute contingency table of submissions
 hc$submit <- hc$num_ideas>0
 tab.submit <- xtabs(~ifelse(submit,"Yes","No")+treatment, data=hc)
-tab.submit.fisher <- fisher.test(tab.submit)
-tab.submit.fisher
+(tab.submit.fisher <- fisher.test(tab.submit))
 
 # Print in latex format
 out <- tabl2(tab.submit, c("% with no submission","","% with submission",""))
@@ -86,21 +83,20 @@ sink()
 
 # barplot of participation rates
 pdf("figs/part.bar.pdf")
-p <- compute_stats(hc$treatment, hc$submit)
-barplot2(p$p, p$se, ylim=c(0, 10)
-  , border=gray(.75), col=gray(.75)
-  , ylab="% employees with submissions"
-  , xlab=NA)
+barplot3(compute_stats(hc$treatment, hc$submit), ylim=c(0,10))
 dev.off()
 
-pdf("figs/sorting.bar.pdf")
 
+# redef vars
 hc$office_y <- ifelse(hc$has_office=="yes","Fixed office", "Ward (no office)")
 hc$gender2 <- factor(hc$gender)
 levels(hc$gender2) <- capitalize(levels(hc$gender2))
 
-par(mfrow=c(2,2), bty="n") 
 
+# PLOT sorting
+pdf("figs/sorting.bar.pdf")
+
+par(mfrow=c(2,2), bty="n") 
 barplot3(compute_stats(hc$gender2, hc$submit))
 title("Gender")
 barplot3(compute_stats(hc$job, hc$submit))
@@ -110,13 +106,6 @@ title("Office")
 
 dev.off()
 
-
-# 
-# pdf("figs/part.bar.pdf")
-# boxplot(num_ideas ~ treatment, hc, subset=num_ideas>0
-#   , ylab="Project proposal in submission"
-#   , xlab="Solicitation treatment")
-# dev.off()
 
 # order success and failures
 tab.submit.rev <- t(tab.submit[2:1, ])[c(2,3,1,4), ]
