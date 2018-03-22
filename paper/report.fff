@@ -7,7 +7,7 @@
 \efloatseparator
  
 \begin{figure}
-\caption{Submission rates by solicitation treatment}
+\caption{Submission rates}
 \label{fig: submit}
 \includegraphics{../figs/part.bar.pdf}
 \begin{tablenotes}

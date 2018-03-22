@@ -1,12 +1,8 @@
 TODOs:
 
-  - Fix introduction sentence about "opposing externalities"
-  - Fix introduction "Important implications"
-  - Finish Literature section
-  - Experimental design subsection "The first paragraph ..." add comments
-  - Experimental design subsection "A sample size..." move back
-  - Analysis section - management voting
-  - Conclusions
+  - Fix conclusions
+  - Fix Experimental design subsection "The first paragraph ..." add comments
+  - Move ITT in the analysis of results *(?)*
 
 
 Useful references:

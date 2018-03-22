@@ -1,6 +1,8 @@
 # anonymize MGH data
+rm(list=ls())
 load("data-clean/mgh.RData")
 str(hc)
+str(voting)
 
 ### FUNCTIONS ########
 # https://stackoverflow.com/questions/15871522/is-digest-function-in-r-suitable-for-anonymising-participant-identifiers
@@ -13,14 +15,20 @@ anonymize <- function(x, algo, salt="") {
 
 
 ### MAIN PROGRAM ############
-# remove employee names and office location
-for (v in c("employee_id", "office")) {
-  hc[,v] <- anonymize(hc[, v], algo="crc32")
-}
-str(hc)
+
+hc$employee_id <- NULL
+hc$office <- NULL
+hc$proposal_y <- NULL
+hc$off <- NULL
 
 # remove dimnames
 for (v in colnames(hc)) {
      attr(hc[,deparse(as.name(v))], "dimnames") <- NULL
 }
-str(hc)
+
+
+# Save curated file
+if (file.exists("data-clean/mgh2.RData")) {
+  stop("File exists already!")
+}
+save(hc, ratings, file="data-clean/mgh2.RData")

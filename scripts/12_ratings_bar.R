@@ -1,9 +1,8 @@
-source("scripts/lib/functions.R")
-load("data-clean/mgh.RData")
+source("scripts/lib/config.R")
 
 # PLOT quality differences
 pdf("figs/quality.pdf")
-par(mfrow=c(2,2), bty="n")
+par(mfrow=c(1,2), bty="n")
 
 # Average 
 vote.mean <- aggregate(vote ~ idea_id + treatment.proponent, data=voting, function(x)mean(as.numeric(x)))

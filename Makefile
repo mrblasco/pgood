@@ -43,10 +43,6 @@ png: $(PNG_FILES)
 view: $(TEXFILE).pdf
 	$(VIEWER) $(TEXFILE).pdf & 
 
-# edit bibliography
-bib: 
-	$(EDITOR) paper/*.bib 
-
 # convert file into docx
 docx:
 	cd paper; pandoc report.tex --read=latex -t docx \

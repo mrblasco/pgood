@@ -1,6 +1,5 @@
-source("scripts/functions.R")
-load("data-clean/mgh.RData")
-require(stargazer)
+source("scripts/lib/config.R")
+library(stargazer)
 
 sink("figs/ratings_ols.tex") 
 

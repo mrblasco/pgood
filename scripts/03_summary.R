@@ -1,9 +1,5 @@
 # Summary Stats Table
-source("scripts/lib/functions.R")
-load("data-clean/mgh.RData")
-
-# Redefine
-hc$submit <- hc$num_ideas>0
+source("scripts/lib/config.R")
 
 # Outcome variables values
 out <- c("Total employees solicited"=nrow(hc)

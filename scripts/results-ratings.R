@@ -1,5 +1,4 @@
-source("scripts/lib/functions.R")
-load("data-clean/mgh.RData")
+source("scripts/lib/config.R")
 
 # Voting data
 str(voting) # 

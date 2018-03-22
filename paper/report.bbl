@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -8,34 +8,73 @@
 \bibitem[Akerlof and Kranton(2005)]{akerlof2005identity}
 George~A Akerlof and Rachel~E Kranton.
 \newblock {Identity and the Economics of Organizations}.
-\newblock \emph{Journal of Economic Perspectives}, 2005.
+\newblock \emph{Journal of Economic Perspectives}, 19\penalty0 (1):\penalty0
+  9--32, 2005.
+
+\bibitem[Ashraf et~al.(2014)Ashraf, Bandiera, and Lee]{ashraf2014awards}
+Nava Ashraf, Oriana Bandiera, and Scott~S Lee.
+\newblock {Awards unbundled: Evidence from a natural field experiment}.
+\newblock \emph{Journal of Economic Behavior \& Organization}, 100:\penalty0
+  44--63, April 2014.
 
 \bibitem[Bandiera et~al.(2005)Bandiera, Barankay, and
   Rasul]{bandiera2005social}
 Oriana Bandiera, Iwan Barankay, and Imran Rasul.
 \newblock {Social Preferences and the Response to Incentives: Evidence from
   Personnel Data*}.
-\newblock \emph{The Quarterly Journal of Economics}, 2005.
+\newblock \emph{The Quarterly Journal of Economics}, 120\penalty0 (3):\penalty0
+  917--962, August 2005.
+
+\bibitem[Bandiera et~al.(2010)Bandiera, Barankay, and
+  Rasul]{bandiera2010social}
+Oriana Bandiera, Iwan Barankay, and Imran Rasul.
+\newblock {Social Incentives in the Workplace}.
+\newblock \emph{Review of Economic Studies}, 77\penalty0 (2):\penalty0
+  417--458, April 2010.
+
+\bibitem[Bandiera et~al.(2011)Bandiera, Barankay, and Rasul]{bandiera2011field}
+Oriana Bandiera, Iwan Barankay, and Imran Rasul.
+\newblock {Field experiments with firms}.
+\newblock \emph{Journal of Economic Perspectives}, 25\penalty0 (3):\penalty0
+  63--82, 2011.
+
+\bibitem[Barankay(2012)]{barankay2012rank}
+Iwan Barankay.
+\newblock {Rank incentives: Evidence from a randomized workplace experiment}.
+\newblock \emph{Discussion papers}, 2012.
 
 \bibitem[Besley and Ghatak(2005)]{besley2005competition}
 Timothy Besley and Maitreesh Ghatak.
 \newblock {Competition and Incentives with Motivated Agents}.
 \newblock \emph{The American Economic Review}, 2005.
 
-\bibitem[Blumenstock(2008)]{blumenstock2008size}
-Joshua~E Blumenstock.
-\newblock {Size matters: Word Count as a Measure of Quality on Wikipedia}.
-\newblock In \emph{Proceeding of the 17th international conference}, 2008.
+\bibitem[Boning et~al.(2007)Boning, Ichniowski, and
+  Shaw]{boning2007opportunity}
+Brent Boning, Casey Ichniowski, and Kathryn Shaw.
+\newblock {Opportunity Counts: Teams and the Effectiveness of Production
+  Incentives}.
+\newblock \emph{Journal of Labor Economics}, 2007.
 
-\bibitem[Coffman(2014)]{coffman2014evidence}
-Katherine~Baldiga Coffman.
-\newblock {Evidence on Self-Stereotyping and the Contribution of Ideas}.
-\newblock \emph{The Quarterly Journal of Economics}, 2014.
+\bibitem[Boudreau et~al.(2011)Boudreau, Lacetera, and
+  Lakhani]{boudreau2011incentives}
+Kevin~J Boudreau, Nicola Lacetera, and Karim~R Lakhani.
+\newblock {Incentives and problem uncertainty in innovation contests: An
+  empirical analysis}.
+\newblock \emph{Management Science}, 2011.
 
-\bibitem[Cohen(1992)]{cohen1992power}
-Jacob Cohen.
-\newblock {A power primer}.
-\newblock \emph{Psychological bulletin}, 1992.
+\bibitem[Boudreau et~al.(2016)Boudreau, Lakhani, and
+  Menietti]{boudreau2016performance}
+Kevin~J Boudreau, Karim~R Lakhani, and Michael Menietti.
+\newblock {Performance responses to competition across skill levels in
+  rank-order tournaments: field evidence and implications for tournament
+  design}.
+\newblock \emph{The RAND Journal of Economics}, 2016.
+
+\bibitem[Carpenter and Gong(2016)]{carpenter2016motivating}
+Jeffrey Carpenter and Erick Gong.
+\newblock {Motivating Agents: How Much Does the Mission Matter?}
+\newblock \emph{Journal of Labor Economics}, 34\penalty0 (1):\penalty0
+  211--236, January 2016.
 
 \bibitem[Croson and Gneezy(2009)]{croson2009gender}
 Rachel Croson and Uri Gneezy.
@@ -58,41 +97,58 @@ Josse Delfgaauw and Robert Dur.
 \newblock {Incentives and Workers' Motivation in the Public Sector*}.
 \newblock \emph{Economic Journal}, 2008.
 
-\bibitem[Gibbons and Waldman(1999)]{gibbons1999careers}
-Robert Gibbons and Michael Waldman.
-\newblock {Careers in organizations: Theory and evidence}.
-\newblock In \emph{Handbook of Labor Economics}. 1999.
+\bibitem[Delfgaauw et~al.(2013)Delfgaauw, Dur, Sol, and
+  Verbeke]{delfgaauw2013tournament}
+Josse Delfgaauw, Robert Dur, Joeri Sol, and Willem Verbeke.
+\newblock {Tournament incentives in the field: Gender differences in the
+  workplace}.
+\newblock \emph{Journal of Labor Economics}, 2013.
 
-\bibitem[Green and Stokey(1983)]{green1983comparison}
-Jerry~R Green and Nancy~L Stokey.
-\newblock {A Comparison of Tournaments and Contracts}.
-\newblock \emph{The Journal of Political Economy}, 1983.
+\bibitem[Della~Vigna et~al.(2016)Della~Vigna, List, Malmendier, and
+  Rao]{dellavigna2016estimating}
+Stefano Della~Vigna, John~A List, Ulrike Malmendier, and Gautam Rao.
+\newblock {Estimating Social Preferences and Gift Exchange at Work}.
+\newblock Technical report, 2016.
 
-\bibitem[Kreps(1997)]{kreps1997intrinsic}
-David~M Kreps.
-\newblock {Intrinsic Motivation and Extrinsic Incentives}.
-\newblock \emph{The American Economic Review}, 1997.
+\bibitem[Ehrenberg and Bognanno(1990)]{ehrenberg1990tournaments}
+Ronald~G Ehrenberg and Michael~L Bognanno.
+\newblock {Do Tournaments Have Incentive Effects?}
+\newblock \emph{The Journal of Political Economy}, 1990.
 
-\bibitem[Lazear and Rosen(1981)]{lazear1981rank}
-Edward~P Lazear and Sherwin Rosen.
-\newblock {Rank-Order Tournaments as Optimum Labor Contracts}.
-\newblock \emph{The Journal of Political Economy}, 1981.
+\bibitem[Erev et~al.(1993)Erev, Bornstein, and Galili]{erev1993constructive}
+Ido Erev, Gary Bornstein, and Rachely Galili.
+\newblock {Constructive intergroup competition as a solution to the free rider
+  problem: A field experiment}.
+\newblock \emph{Journal of Experimental Social Psychology}, 29\penalty0
+  (6):\penalty0 463--478, 1993.
 
-\bibitem[Mary et~al.(1984)Mary, Viscusi, and Zeckhauser]{mary1984economic}
-O'Keeffe Mary, W~Kip Viscusi, and Richard~J Zeckhauser.
-\newblock {Economic Contests: Comparative Reward Schemes}.
-\newblock \emph{Journal of Labor Economics}, 1984.
+\bibitem[Gibbs et~al.(2015)Gibbs, Neckermann, and Siemroth]{gibbs2014field}
+Michael Gibbs, Susanne Neckermann, and Christoph Siemroth.
+\newblock {A field experiment in motivating employee ideas}.
+\newblock \emph{Review of Economics and Statistics}, 2015.
+
+\bibitem[Hamilton et~al.(2003)Hamilton, Nickerson, and Owan]{hamilton2003team}
+Barton~H Hamilton, Jack~A Nickerson, and Hideo Owan.
+\newblock {Team incentives and worker heterogeneity: An empirical analysis of
+  the impact of teams on productivity and participation}.
+\newblock \emph{Journal of Political Economy}, 2003.
+
+\bibitem[Knoeber and Thurman(1994)]{knoeber1994testing}
+Charles~R Knoeber and Walter~N Thurman.
+\newblock {Testing the Theory of Tournaments: An Empirical Analysis of Broiler
+  Production}.
+\newblock \emph{Journal of Labor Economics}, 1994.
+
+\bibitem[Mas and Moretti(2009)]{mas2009peers}
+Alexandre Mas and Enrico Moretti.
+\newblock {Peers at work}.
+\newblock \emph{The American Economic Review}, 99\penalty0 (1):\penalty0
+  112--145, 2009.
 
 \bibitem[Morgan(2000)]{morgan2000financing}
 John Morgan.
 \newblock {Financing public goods by means of lotteries}.
 \newblock \emph{Review of Economic Studies}, 2000.
-
-\bibitem[Nalebuff and Stiglitz(1983)]{nalebuff1983prizes}
-Barry~J Nalebuff and Joseph~E Stiglitz.
-\newblock {Prizes and incentives: towards a general theory of compensation and
-  competition}.
-\newblock \emph{The Bell Journal of Economics}, 1983.
 
 \bibitem[Niederle and Vesterlund(2007)]{niederle2007women}
 Muriel Niederle and Lise Vesterlund.
@@ -102,7 +158,8 @@ Muriel Niederle and Lise Vesterlund.
 \bibitem[Prendergast(2007)]{prendergast2007motivation}
 Canice Prendergast.
 \newblock {The Motivation and Bias of Bureaucrats}.
-\newblock \emph{The American Economic Review}, 2007.
+\newblock \emph{The American Economic Review}, 97\penalty0 (1):\penalty0
+  180--196, 2007.
 
 \bibitem[Rotemberg(2006)]{rotemberg2006altruism}
 Julio~J Rotemberg.
@@ -110,16 +167,14 @@ Julio~J Rotemberg.
 \newblock In \emph{Handbook of the economics of giving, altruism and
   reciprocity}. 2006.
 
-\bibitem[Rubin(1974)]{rubin1974estimating}
-Donald~B Rubin.
-\newblock {Estimating causal effects of treatments in randomized and
-  nonrandomized studies.}
-\newblock \emph{Journal of educational Psychology}, 1974.
+\bibitem[Vesterlund(2012)]{vesterlund2012voluntary}
+Lise Vesterlund.
+\newblock {Voluntary giving to public goods: moving beyond the linear VCM}.
+\newblock In \emph{The Handbook of Experimental Economics}. 2012.
 
-\bibitem[Terwiesch and Xu(2008)]{terwiesch2008innovation}
-Christian Terwiesch and Yi~Xu.
-\newblock {Innovation contests, open innovation, and multiagent problem
-  solving}.
-\newblock \emph{Management Science}, 2008.
+\bibitem[Vidal and Nossol(2011)]{blanes2011tournaments}
+Jordi Blanes~i Vidal and Mareike Nossol.
+\newblock {Tournaments Without Prizes: Evidence from Personnel Records}.
+\newblock \emph{Management Science}, 2011.
 
 \end{thebibliography}

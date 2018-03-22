@@ -1,6 +1,9 @@
 # plot timeline of the experiment
-# source("scripts/functions.R")
-load("data-clean/mgh.RData")
+
+# Function to break strings less than 12 chars
+string.break <- function(x) {
+  gsub('(.{1,12})(\\s|$)', '\\1\n', x)
+}
 
 # data about events
 d.timing <- data.frame(matrix(c(
@@ -18,7 +21,6 @@ a <- string.break(d.timing$activity)
 
 # save the plot in pdf format
 pdf("figs/timeline.pdf", width=10, height=5)
-
 par(mar=c(4.1,2.1,4.1,2.1))
 xlim <- range(c(d+15, d-5))
 plot(d, rep(1,7), pch=16, bty="n", yaxt="n", xaxt="n", ann=FALSE
@@ -31,5 +33,4 @@ abline(h=1)
 x.sq <- as.Date(c("2014-08-01", "2014-09-01", "2014-10-01", "2014-11-01"))
 text(x=x.sq, y=1, format(x.sq, "%b"),pos=1)
 points(x=x.sq, y=rep(1, 4), pch=3)
-
 dev.off()

@@ -1,9 +1,13 @@
-#### Define Helper Functions  ####
 require(xtable)
 
-# Change colors for all plots
-cc <- palette(value=c("black", "brown", "navy", "orange", "dodgerblue"))
+# Load data
+load("data/mgh.RData")
 
+# Define new vars
+hc$submit <- hc$num_ideas>0
+
+
+#### Define Helper Functions  ####
 percent <- function(x, ...) {
 	round(100 * x, ...)
 }

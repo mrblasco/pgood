@@ -1,6 +1,5 @@
 # experimental design table
-source("scripts/lib/functions.R")
-load("data-clean/mgh.RData")
+source("scripts/lib/config.R")
 
 # Treatment variable 
 p <- c("Submit your ideas to win an Apple iPad mini"

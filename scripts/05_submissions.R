@@ -1,6 +1,5 @@
 # Submission rates
-source("scripts/functions.R")
-load("data-clean/mgh.RData")
+source("scripts/lib/config.R")
 
 #### FUNCTIONS ####################
 

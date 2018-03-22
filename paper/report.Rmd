@@ -1,7 +1,7 @@
 ---
-title: "Incentives for Public Goods Inside Organizations: Field Experimental Evidence"
+title: "\\textbf{Incentives for Public Goods Inside Organizations: Field Experimental Evidence}"
 
-abstract: "We conduct a natural field experiment at a medical organization that sought contributions to organizational improvement from its 1200 employees. Offering a prize for best submissions boosted participation without affecting the quality of the submissions, as measured by peer ratings and the management. By contrast, offering financial resources to lead one's own project implementation had a negative effect on participation with no effects on quality. Mission-oriented solicitations towards improving the care of patients or the workplace were equally effective on average, but responses were sensitive to the solicited person's gender (with women responding more than men to mission-oriented incentives). Implications xxxx."
+abstract: "Understanding why workers go the extra mile at work is a key problem for many organizations. We conduct a natural field experiment at a medical organization testing motivations for employees to submit project proposals to help improve the workplace. Solicitations offering a prize for top project proposals boosted participation without affecting the quality of the submissions (as measured by peer ratings and the management). By contrast, offering funding to lead the implementation of one's own project had a negative effect on participation with no effects on quality. Solcitations emphasizing mission-oriented goals like helping patients were sensitive to the solicited person's gender, with women responding more than men. These results are compatible with a model of public good contributions in which agents are intrinsically motivated, but provision is ultimately enhanced by a competition awarding small prizes to top contributors." 
 
 
 thanks: "Blasco: Harvard Institute for Quantitative Social Science, Harvard University, 1737 Cambridge Street, Cambridge, MA 02138 (email: ablasco@fas.harvard.edu). Jung: Harvard Business School, Soldiers Field, Boston, MA 02163 (email: oliviajung@gmail.com), Lakhani: Harvard Business School, Soldiers Field, Boston, MA 02163, and National Bureau of Economic Research (email: k@hbs.edu). Menietti: Harvard Institute for Quantitative Social Science, Harvard University, 1737 Cambridge Street, Cambridge, MA 02138 (email: mmenietti@fas.harvard.edu). We gratefully acknowledge the financial support of the MacArthur Foundation (Opening Governance Network), NASA Tournament Lab, and the Harvard Business School Division of Faculty Research and Development. This project would not have been possible without the support of Eric Isselbacher, Julia Jackson, Maulik Majmudar and Perry Band from the Massachusetts General Hospital's Healthcare Transformation Lab."
@@ -65,7 +65,7 @@ require(stargazer)
 options(digits=3)
 
 # Load data
-load("../data-clean/mgh.RData")
+load("../data/mgh.RData")
 capitalize <- function(x) x
 percent <- function(x) round(100*x, 0)
 

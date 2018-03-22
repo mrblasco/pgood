@@ -1,5 +1,5 @@
-# source("scripts/functions.R")
-load("data-clean/mgh.RData")
+# Libraries
+source("scripts/lib/config.R")
 
 # Rating
 tab <- xtabs(~ifelse(num_voted_ideas>0,"Yes","No")+treatment, data=hc)

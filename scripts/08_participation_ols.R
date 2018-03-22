@@ -3,9 +3,8 @@
 # can be explained by differences in the gender, 
 # profession, and organizational role of the employe
 
+source("scripts/lib/config.R")
 library(stargazer)
-source("scripts/lib/functions.R")
-load("data-clean/mgh.RData")
 
 ### FUNCTIONS ##############
 

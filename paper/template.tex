@@ -1,4 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$, titlepage]{$documentclass$}
+\documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$]{$documentclass$}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -132,7 +132,7 @@ $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
 $if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
+\author{$for(author)$$author$$sep$\and $endfor$}
 $endif$
 $if(institute)$
 \providecommand{\institute}[1]{}

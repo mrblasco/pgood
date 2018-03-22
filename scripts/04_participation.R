@@ -1,7 +1,6 @@
 # Tables and figures about employee participation 
 # by solicitation treatment
-source("scripts/lib/functions.R")
-load("data-clean/mgh.RData")
+source("scripts/lib/config.R")
 
 #### FUNCTIONS ###############
 # stats for proportions
@@ -14,21 +13,12 @@ compute_stats <- function(x, y) {
 	lab <- format(p, digits=2)
 	return(list(p=p,n=n,se=se,labels=lab))
 }
-# custom barplot with arrows
-# barplot2 <- function(p, se, labels, add.grid=TRUE, space=.5, ...) {
-# 	b <- barplot(p, las=1, space=space, ...)
-# 	if (add.grid) {
-#   	grid(lty=3, nx=NA, ny=NULL)
-#   	b <- barplot(p, las=1, space=space, add=TRUE,...)
-# 	}
-# 	arrows(x0=b, y0=p, y1=p+sign(p)*se, angle=90, length=0.1)
-# }
 # more barplots
 plot_bars <- function(p, se, labels, ...) {
     b <- barplot(p, las = 1, ...)
     arrows(x0 = b, y0 = p, y1 = p + sign(p) * se, angle = 90, 
         length = 0.1)
-}
+}  
 # default values for custom barplot
 barplot3 <- function(p, ylim=c(0,8), a=15, d=c(10, 50), col=1:2
   , ylab="% employees submitting", xlab="", ...) {
@@ -65,7 +55,6 @@ tabl2 <- function(tab, labels, digits=1) {
 ########################################
 
 # Prepare variables
-hc$submit <- hc$num_ideas>0
 hc$office_y <- ifelse(hc$has_office=="yes","Fixed office", "Ward (no office)")
 hc$gender2 <- factor(hc$gender)
 levels(hc$gender2) <- capitalize(levels(hc$gender2))
