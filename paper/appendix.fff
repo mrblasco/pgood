@@ -1,0 +1,23 @@
+\begin{figure}
+\centering
+\caption{Solicitation email}
+\label{app: solicitation}
+\includegraphics[width=\textwidth]{../figs/img/solicitationEmail.pdf}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\caption{Treatment matching graphics on the contest's website}
+\label{app: graphics}
+\begin{tabular}{cc}
+\includegraphics[width=2in, height=1.5in]{../figs/img/funding.png} &
+\includegraphics[width=2in, height=1.5in]{../figs/img/money.png} \\
+FUND & PRIZE \\
+\includegraphics[width=2in, height=1.5in]{../figs/img/patientcare.png} &
+\includegraphics[width=2in, height=1.5in]{../figs/img/workplace.png} \\
+PCARE & WPLACE
+\end{tabular}
+\end{figure}
+\efloatseparator
+ 
